@@ -7,7 +7,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-UD" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
   <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
-  <meta content="9393980bc585c0b42f9ad19e905d21876ca7f6b1" name="document-revision">
+  <meta content="7fee59c3544586583012cf203322c503abca5f62" name="document-revision">
   <link href="./override.css" rel="stylesheet">
 <style>
 
@@ -692,10 +692,10 @@ dfn > a.self-link::before      { content: "#"; }
        </ol>
      </ol>
     <li>
-     <a href="#named-key-attribute-values"><span class="secno">3</span> <span class="content">Named <code class="idl"><span>key</span></code> Attribute Values</span></a>
+     <a href="#named-key-attribute-values"><span class="secno">3</span> <span class="content">命名 <code class="idl"><span>key</span></code> 属性值</span></a>
      <ol class="toc">
-      <li><a href="#keys-special"><span class="secno">3.1</span> <span class="content">Special Keys</span></a>
-      <li><a href="#keys-modifier"><span class="secno">3.2</span> <span class="content">Modifier Keys</span></a>
+      <li><a href="#keys-special"><span class="secno">3.1</span> <span class="content">特殊按键</span></a>
+      <li><a href="#keys-modifier"><span class="secno">3.2</span> <span class="content">修饰键</span></a>
       <li><a href="#keys-whitespace"><span class="secno">3.3</span> <span class="content">Whitespace Keys</span></a>
       <li><a href="#keys-navigation"><span class="secno">3.4</span> <span class="content">Navigation Keys</span></a>
       <li><a href="#keys-editing"><span class="secno">3.5</span> <span class="content">Editing Keys</span></a>
@@ -919,143 +919,135 @@ dfn > a.self-link::before      { content: "#"; }
       <div class="custom-figcaption">零宽度断字符</div>
      </figure>
     </div>
-    <p class="example" id="example-d54d2b35"><a class="self-link" href="#example-d54d2b35"></a> On a French PC keyboard with a standard French mapping, the <code class="keycap">^</code> key acts as a <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#dead-key" id="ref-for-dead-key">dead key</a> for the combining circumflex diacritical mark.
-				The <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑤">键属性值</a> for this keyboard event is <code class="key">"<a href="#key-Dead">Dead</a>"</code>. </p>
-    <p class="example" id="example-287d42be"><a class="self-link" href="#example-287d42be"></a> Also on a French keyboard with a standard French mapping, the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑥">键属性值</a> for the <code class="keycap">é</code> key (which corresponds to the <code class="keycap">2</code> key on a US keyboard) is <code class="key">"é"</code> (<code class="unicode">U+00E9</code>). </p>
-    <p class="example" id="example-06caf71b"><a class="self-link" href="#example-06caf71b"></a> On a Korean PC keyboard with a standard Korean mapping, the primary
-				function of the <code class="keycap">Ha/En</code> key is to switch between Hangul and English
-				input. There is an entry for this key as a <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑤">命名键属性值</a>, <code class="key">"<a href="#key-HangulMode">HangulMode</a>"</code>, so that should be used as the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑦">键属性值</a>. </p>
+    <p class="example" id="example-7bc56df8"><a class="self-link" href="#example-7bc56df8"></a> 在具有标准法语映射的法式 PC 键盘上， <code class="keycap">^</code> 键充当组合扬抑音符的死键( <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#dead-key" id="ref-for-dead-key">dead key</a> )。这个键盘事件的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑤">键属性值</a> 是 <code class="key">"<a href="#key-Dead">Dead</a>"</code> 。 </p>
+    <p class="example" id="example-39687817"><a class="self-link" href="#example-39687817"></a> 同样在具有标准法语映射的法式键盘上，<code class="keycap">é</code> 键(对应于美国键盘上的 <code class="keycap">2</code> 键)的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑥">键属性值</a> 是 <code class="key">"é"</code> ( <code class="unicode">U+00E9</code> )。 </p>
+    <p class="example" id="example-2bd792de"><a class="self-link" href="#example-2bd792de"></a> 在具有标准韩语映射的韩式 PC 键盘上， <code class="keycap">Ha/En</code> 键的主要功能是在韩语和英语输入之间切换(输入模式切换)。
+				这个按键有一个作为 <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑤">命名键属性值</a> 的记录，即 <code class="key">"<a href="#key-HangulMode">HangulMode</a>"</code> ，
+				因此应将其用作 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑦">键属性值</a> 。 </p>
    </div>
-   <h2 class="heading settled" data-level="3" id="named-key-attribute-values"><span class="secno">3. </span><span class="content">Named <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑧">key</a></code> Attribute Values</span><a class="self-link" href="#named-key-attribute-values"></a></h2>
-   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="named-key-attribute-value">命名键属性值</dfn> is any of the values given in the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑧">键属性值</a> column of any of the tables in this section of the
-	specification.</p>
-   <p>The <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑥">命名键属性值</a> defined here are based
-	in part on the sets of keycodes from
-	the <code>java.awt.event.KeyEvent</code> interface of the Java Platform,
-	Standard Edition 6 API Specification <a data-link-type="biblio" href="#biblio-keyeventjava" title="Java™ Platform, Standard Edition 6 API Specification, Class java.awt.events.KeyEvent">[KeyEventJava]</a>, and the <code>System.Windows.Forms.Keys</code> key enumeration of the Microsoft .NET
-	Framework 4.0 Class Library <a data-link-type="biblio" href="#biblio-keysnet" title=".NET Framework 4.5 Class Library, Keys Enumeration">[KeysNet]</a>. Additional information in this spec
-	comes from Microsoft’s WM_APPCOMMAND messages <a data-link-type="biblio" href="#biblio-wmappcommand" title="MSDN WM_APPCOMMAND message">[WmAppCommand]</a>, and other
-	more specialized specifications as noted in this document.</p>
-   <p>A conforming implementation of the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑦">KeyboardEvent</a></code> interface MUST support
-	this set of values for use in the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑨">key</a></code> attributes,
-	although not all values may be available on all platforms or devices.</p>
-   <p>Future versions of this specification may include <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⓪">key</a></code> values not included
-	here, which have become common since the publication of this specification.</p>
-   <p class="note" role="note"> Note: While every attempt has been made to make this list of values as complete as possible,
-	new values will periodically need to be defined as new input devices are introduced.
-	Rather than allowing user agents to define their own <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑦">命名键属性值</a> (which are unlikely to be consistent across multiple user agents), bugs SHOULD be
-	filed so that this specification can be updated. </p>
-   <h3 class="heading settled" data-level="3.1" id="keys-special"><span class="secno">3.1. </span><span class="content">Special Keys</span><a class="self-link" href="#keys-special"></a></h3>
-   <p>Implementations that are unable to identify a key MUST use <code class="key">"<a href="#key-Unidentified">Unidentified</a>"</code> as the the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑨">键属性值</a>.</p>
+   <h2 class="heading settled" data-level="3" id="named-key-attribute-values"><span class="secno">3. </span><span class="content">命名 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑧">key</a></code> 属性值</span><a class="self-link" href="#named-key-attribute-values"></a></h2>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="named-key-attribute-value">命名键属性值</dfn> (named key attribute value) 是在本规范的本节中的任何一个表的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑧">键属性值</a> 列中给定的任何值。</p>
+   <p>定义在这里的 <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑥">命名键属性值</a> 是部分基于 Java 平台(标准版6 API规范 <a data-link-type="biblio" href="#biblio-keyeventjava" title="Java™ Platform, Standard Edition 6 API Specification, Class java.awt.events.KeyEvent">[KeyEventJava]</a> )的 <code>java.awt.event.KeyEvent</code> 接口、和 
+	Microsoft.NET Framework 4.0 Class Library <a data-link-type="biblio" href="#biblio-keysnet" title=".NET Framework 4.5 Class Library, Keys Enumeration">[KeysNet]</a> 中的按键枚举
+	(<code>System.Windows.Forms.Keys</code>) 的键码集(keycodes)。
+	本规范中的其他信息来自 Microsoft 的 WM_APPCOMMAND messages <a data-link-type="biblio" href="#biblio-wmappcommand" title="MSDN WM_APPCOMMAND message">[WmAppCommand]</a> ，
+	以及本文档中提到的其他更专业的规范。</p>
+   <p><code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑦">KeyboardEvent</a></code> 接口的一个符合规范的实现 <span class="zh-upper">必须</span> 支持在 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑨">key</a></code> 属性中使用的这组值，
+	但是并非所有值都可以在所有平台或设备上使用。</p>
+   <p>本规范的未来版本可能将新增的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⓪">key</a></code> 值包含此处，
+	这些键值是那些自本规范发布以来(在实现中)又变得很常见的键值。</p>
+   <p class="note" role="note"> 注意：虽然已经尽一切努力使该值列表尽可能完整，但随着新输入设备的引入，
+	需要定期定义新值。与其允许用户代理定义自己的 <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑦">命名键属性值</a> (这些属性值很难在多个用户代理机构之间统一)， <span class="zh-upper">应当</span> 提供一种归档方法来更新这个规范， 
+	以便可以检测到这些漏洞(bugs)。 </p>
+   <h3 class="heading settled" data-level="3.1" id="keys-special"><span class="secno">3.1. </span><span class="content">特殊按键</span><a class="self-link" href="#keys-special"></a></h3>
+   <p>如果遇到一个无法识别的按键，实现必须 <span class="zh-upper">必须</span> 使用 <code class="key">"<a href="#key-Unidentified">Unidentified</a>"</code> 作为 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑨">键属性值</a> 。</p>
    <table class="data-table full-width" id="key-table-general">
     <thead>
      <tr>
       <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⓪">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Unidentified">"Unidentified"</code>
-      <td class="key-table-required">Yes
-      <td>This key value is used when an implementation is unable to								identify another key value, due to either hardware,
-								platform, or software constraints. 
+      <td class="key-table-required">是
+      <td>当一个实现由于硬件、平台或软件限制而无法识别另一个键值时								，会使用此键值。 
    </table>
-   <p class="note" role="note"> Conforming implementations MUST only use <code class="key">"<a href="#key-Unidentified">Unidentified</a>"</code> as a key value
-		when there is no way for the implementation to detect the key value.
-		Exposing only this value for all keyboard events MUST NOT indicate a conforming
-		implementation. </p>
-   <h3 class="heading settled" data-level="3.2" id="keys-modifier"><span class="secno">3.2. </span><span class="content">Modifier Keys</span><a class="self-link" href="#keys-modifier"></a></h3>
+   <p class="note" role="note"> 当实现无法确定 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②①">键属性值</a> 时，符合本规范的实现 <span class="zh-upper">必须</span> 只能使用 <code class="key">"<a href="#key-Unidentified">Unidentified</a>"</code> 作为键属性值。
+		但仅使用(Exposing)该值 <span class="zh-upper">不得</span> 表明实现符合本规范。 </p>
+   <h3 class="heading settled" data-level="3.2" id="keys-modifier"><span class="secno">3.2. </span><span class="content">修饰键</span><a class="self-link" href="#keys-modifier"></a></h3>
    <table class="data-table full-width" id="key-table-modifier">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②①">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②②">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Alt">"Alt"</code>
-      <td class="key-table-required">Yes
-      <td>The <code class="keycap">Alt</code> (Alternative) key.<br> This key enables the alternate modifier function for interpreting concurrent or subsequent keyboard input.<br> This key value is also used for the Apple <code class="keycap">Option</code> key. 
+      <td class="key-table-required">是
+      <td><code class="keycap">Alt</code> (Alternative，转换)键。<br> 此键启用转换修饰符功能，用于解译(interpreting)
+								并行或连续的键盘输入。<br> 此键值也见于苹果的 <code class="keycap">Option</code> 键。<br> 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AltGraph">"AltGraph"</code>
-      <td class="key-table-required">Yes
-      <td>The Alternate Graphics (<code class="keycap">AltGr</code> or <code class="keycap">AltGraph</code>) key.								This key is used enable the ISO Level 3 shift modifier (the standard <code class="keycap">Shift</code> key is the level 2 modifier).
-								See <a data-link-type="biblio" href="#biblio-iso9995-1" title="ISO/IEC 9995-1:2009 Information technology -- Keyboard layouts for text and office systems -- Part 1: General principles governing keyboard layouts">[ISO9995-1]</a>. 
+      <td class="key-table-required">是
+      <td>转换字形(Alternate Graphics， <code class="keycap">AltGr</code> 或 <code class="keycap">AltGraph</code> )键。此键用于启用 ISO 3 级上档(shift)修饰符功能
+								(标准 <code class="keycap">Shift</code> 键是级别 2 的修饰键)。参见 <a data-link-type="biblio" href="#biblio-iso9995-1" title="ISO/IEC 9995-1:2009 Information technology -- Keyboard layouts for text and office systems -- Part 1: General principles governing keyboard layouts">[ISO9995-1]</a> 。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-CapsLock">"CapsLock"</code>
-      <td class="key-table-required">Yes
-      <td>The <code class="keycap">Caps Lock</code> (Capital) key.								Toggle capital character lock function for interpreting subsequent keyboard input event. 
+      <td class="key-table-required">是
+      <td><code class="keycap">Caps Lock</code> (大写锁定)键。切换(Toggle)								大写字符锁定功能以解译(interpreting)后续键盘输入事件。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Control">"Control"</code>
-      <td class="key-table-required">Yes
-      <td>The <code class="keycap">Control</code> or <code class="keycap">Ctrl</code> key, to enable control modifier function for interpreting concurrent or subsequent keyboard input.
+      <td class="key-table-required">是
+      <td><code class="keycap">Control</code> 或 <code class="keycap">Ctrl</code> 键，								此键启用控制修饰符功能，用于解译(interpreting)
+								并行或连续的键盘输入。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Fn">"Fn"</code>
-      <td class="key-table-required">No
-      <td>The Function switch <code class="keycap">Fn</code> key.<br> Activating this key simultaneously with another key changes that key’s value to an alternate character or function.
-								This key is often handled directly in the keyboard hardware and does not usually generate key events. 
+      <td class="key-table-required">否
+      <td>功能(Function)开关 <code class="keycap">Fn</code> 键。<br> 与另一个 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#function-key" id="ref-for-function-key">功能键</a> 同时激活该键会将 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#function-key" id="ref-for-function-key①">功能键</a> 的键值更改为备用字符(alternate character)或其他功能。<br> <code class="keycap">Fn</code> 键通常在键盘硬件中直接处理，并且通常不生成按键事件。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FnLock">"FnLock"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Function-Lock (<code class="keycap">FnLock</code> or <code class="keycap">F-Lock</code>) key.								Activating this key switches the mode of the keyboard to changes some keys' values to an alternate character or function.
 								This key is often handled directly in the keyboard hardware and does not usually generate key events. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Meta">"Meta"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The <code class="keycap">Meta</code> key, to enable meta modifier function for interpreting concurrent or subsequent keyboard input.								This key value is used for the <q>Windows Logo</q> key and the Apple <code class="keycap">Command</code> or <code class="keycap">⌘</code> key. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-NumLock">"NumLock"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The <code class="keycap">NumLock</code> or Number Lock key, to toggle numpad mode function for interpreting subsequent keyboard input.
      <tr>
       <td class="key-table-key"><code class="key" id="key-ScrollLock">"ScrollLock"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The <code class="keycap">Scroll Lock</code> key, to toggle between scrolling and cursor movement modes.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Shift">"Shift"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The <code class="keycap">Shift</code> key, to enable shift modifier function for interpreting concurrent or subsequent keyboard input.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Symbol">"Symbol"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Symbol modifier key (used on some virtual keyboards).
      <tr>
       <td class="key-table-key"><code class="key" id="key-SymbolLock">"SymbolLock"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Symbol Lock key.
    </table>
    <p>Legacy modifier keys:</p>
    <table class="data-table full-width" id="key-table-modifier-legacy">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②②">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②③">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Hyper">"Hyper"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The <code class="keycap">Hyper</code> key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Super">"Super"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The <code class="keycap">Super</code> key.
    </table>
    <h3 class="heading settled" data-level="3.3" id="keys-whitespace"><span class="secno">3.3. </span><span class="content">Whitespace Keys</span><a class="self-link" href="#keys-whitespace"></a></h3>
    <table class="data-table full-width" id="key-table-whitespace">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②③">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②④">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Enter">"Enter"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The <code class="keycap">Enter</code> or <code class="keycap">↵</code> key, to activate current selection or accept current input.<br> This key value is also used for the <code class="keycap">Return</code> (Macintosh numpad) key.<br> This key value is also used for the Android <code class="android">KEYCODE_DPAD_CENTER</code>. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Tab">"Tab"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The Horizontal Tabulation <code class="keycap">Tab</code> key.
    </table>
    <p class="note" role="note">The space or spacebar key is encoded as <code class="key">" "</code>.</p>
@@ -1063,372 +1055,372 @@ dfn > a.self-link::before      { content: "#"; }
    <table class="data-table full-width" id="key-table-navigation">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②④">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑤">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-ArrowDown">"ArrowDown"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The down arrow key, to navigate or traverse downward. (<code class="android">KEYCODE_DPAD_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ArrowLeft">"ArrowLeft"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The left arrow key, to navigate or traverse leftward. (<code class="android">KEYCODE_DPAD_LEFT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ArrowRight">"ArrowRight"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The right arrow key, to navigate or traverse rightward. (<code class="android">KEYCODE_DPAD_RIGHT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ArrowUp">"ArrowUp"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The up arrow key, to navigate or traverse upward. (<code class="android">KEYCODE_DPAD_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-End">"End"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The End key, used with keyboard entry to go to the end of content (<code class="android">KEYCODE_MOVE_END</code>).
      <tr>
       <td class="key-table-key"><code class="key" id="key-Home">"Home"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The Home key, used with keyboard entry, to go to start of content (<code class="android">KEYCODE_MOVE_HOME</code>).<br> For the mobile phone <code class="keycap">Home</code> key (which goes to the phone’s main screen), use <code class="key">"<a href="#key-GoHome">GoHome</a>"</code>. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-PageDown">"PageDown"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The Page Down key, to scroll down or display next page of content.
      <tr>
       <td class="key-table-key"><code class="key" id="key-PageUp">"PageUp"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The Page Up key, to scroll up or display previous page of content.
    </table>
    <h3 class="heading settled" data-level="3.5" id="keys-editing"><span class="secno">3.5. </span><span class="content">Editing Keys</span><a class="self-link" href="#keys-editing"></a></h3>
    <table class="data-table full-width" id="key-table-editing">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑤">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑥">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Backspace">"Backspace"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The Backspace key. This key value is also used for the key labeled <code class="keycap">Delete</code> on MacOS keyboards.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Clear">"Clear"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Remove the currently selected input.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Copy">"Copy"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Copy the current selection. (<code class="appcommand">APPCOMMAND_COPY</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-CrSel">"CrSel"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Cursor Select (Crsel) key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Cut">"Cut"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Cut the current selection. (<code class="appcommand">APPCOMMAND_CUT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Delete">"Delete"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The Delete (Del) Key.								This key value is also used for the key labeled <code class="keycap">Delete</code> on MacOS keyboards when modified by the <code class="keycap">Fn</code> key. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-EraseEof">"EraseEof"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Erase to End of Field key.  This key deletes all characters from the current cursor position to the end of the current field.
      <tr>
       <td class="key-table-key"><code class="key" id="key-ExSel">"ExSel"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Extend Selection (Exsel) key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Insert">"Insert"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The Insert (Ins) key, to toggle between text modes for insertion or overtyping. (<code class="android">KEYCODE_INSERT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Paste">"Paste"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Paste key. (<code class="appcommand">APPCOMMAND_PASTE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Redo">"Redo"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Redo the last action. (<code class="appcommand">APPCOMMAND_REDO</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Undo">"Undo"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Undo the last action. (<code class="appcommand">APPCOMMAND_UNDO</code>)
    </table>
    <h3 class="heading settled" data-level="3.6" id="keys-ui"><span class="secno">3.6. </span><span class="content">UI Keys</span><a class="self-link" href="#keys-ui"></a></h3>
    <table class="data-table full-width" id="key-table-ui">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑥">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑦">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Accept">"Accept"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Accept (Commit, OK) key. Accept current option or input method sequence conversion.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Again">"Again"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Again key, to redo or repeat an action.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Attn">"Attn"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Attention (Attn) key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Cancel">"Cancel"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Cancel key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-ContextMenu">"ContextMenu"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>Show the application’s context menu.								This key is commonly found between the right <code class="keycap">Meta</code> key and the right <code class="keycap">Control</code> key. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Escape">"Escape"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The <code class="keycap">Esc</code> key. This key was originally used to initiate an escape sequence, but is								now more generally used to exit or "escape" the current context, such as closing a dialog
 								or exiting full screen mode. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Execute">"Execute"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Execute key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Find">"Find"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Open the Find dialog. (<code class="appcommand">APPCOMMAND_FIND</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Help">"Help"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>Open a help dialog or toggle display of help information. (<code class="appcommand"><code class="appcommand">APPCOMMAND_HELP</code></code>, <code class="android"><code class="android">KEYCODE_HELP</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Pause">"Pause"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>
        Pause the current state or application (as appropriate). 
        <p class="note" role="note">Do not use this value for the <code class="keycap">Pause</code> button on media controllers. Use <code class="key">"<a href="#key-MediaPause">MediaPause</a>"</code> instead.</p>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Play">"Play"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>
        Play or resume the current state or application (as appropriate). 
        <p class="note" role="note">Do not use this value for the <code class="keycap">Play</code> button on media controllers. Use <code class="key">"<a href="#key-MediaPlay">MediaPlay</a>"</code> instead.</p>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Props">"Props"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The properties (Props) key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Select">"Select"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Select key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-ZoomIn">"ZoomIn"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The ZoomIn key. (<code class="android">KEYCODE_ZOOM_IN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ZoomOut">"ZoomOut"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The ZoomOut key. (<code class="android">KEYCODE_ZOOM_OUT</code>)
    </table>
    <h3 class="heading settled" data-level="3.7" id="keys-device"><span class="secno">3.7. </span><span class="content">Device Keys</span><a class="self-link" href="#keys-device"></a></h3>
    <table class="data-table full-width" id="key-table-device">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑦">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑧">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrightnessDown">"BrightnessDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Brightness Down key. Typically controls the display brightness. (<code class="android">KEYCODE_BRIGHTNESS_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrightnessUp">"BrightnessUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Brightness Up key. Typically controls the display brightness. (<code class="android">KEYCODE_BRIGHTNESS_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Eject">"Eject"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle removable media to eject (open) and insert (close) state. (<code class="android">KEYCODE_MEDIA_EJECT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LogOff">"LogOff"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The LogOff key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Power">"Power"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>
        Toggle power state. (<code class="android">KEYCODE_POWER</code>) 
        <p class="note" role="note">Note: Some devices might not expose this key to the operating environment.</p>
      <tr>
       <td class="key-table-key"><code class="key" id="key-PowerOff">"PowerOff"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The <code class="keycap">PowerOff</code> key. Sometime called <code class="keycap">PowerDown</code>.
      <tr>
       <td class="key-table-key"><code class="key" id="key-PrintScreen">"PrintScreen"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The <code class="keycap">Print Screen</code> or <code class="keycap">SnapShot</code> key, to initiate print-screen function.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Hibernate">"Hibernate"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Hibernate key.									This key saves the current state of the computer to disk so that it can be restored. The computer will then shutdown. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Standby">"Standby"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Standby key.									This key turns off the display and places the computer into a low-power mode without completely shutting down.
 									It is sometimes labelled <code class="keycap">Suspend</code> or <code class="keycap">Sleep</code> key. (<code class="android"><code class="android">KEYCODE_SLEEP</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-WakeUp">"WakeUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The WakeUp key. (<code class="android">KEYCODE_WAKEUP</code>)
    </table>
    <h3 class="heading settled" data-level="3.8" id="keys-composition"><span class="secno">3.8. </span><span class="content">IME and Composition Keys</span><a class="self-link" href="#keys-composition"></a></h3>
    <table class="data-table full-width" id="key-table-composition">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑧">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑨">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-AllCandidates">"AllCandidates"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The All Candidates key, to initate the multi-candidate mode.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Alphanumeric">"Alphanumeric"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Alphanumeric key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-CodeInput">"CodeInput"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Code Input key, to initiate the Code Input mode to allow characters to be entered by their code points.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Compose">"Compose"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Compose key, also known as <em>Multi_key</em> on the X Window System.  This key acts in a manner similar to a									dead key, triggering a mode where subsequent key presses are combined to produce a different character. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Convert">"Convert"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Convert key, to convert the current input method sequence.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Dead">"Dead"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>A dead key combining key. It may be any combining key from any keyboard layout. For example, on a									PC/AT French keyboard, using a French mapping and without any modifier activiated, this is the key value <code class="unicode">U+0302</code> COMBINING CIRCUMFLEX ACCENT. In another layout this might be a different unicode combining key.<br> For applications that need to differentiate between specific combining characters, the associated <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#compositionupdate" id="ref-for-compositionupdate">compositionupdate</a> event’s data attribute provides the specific key value. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FinalMode">"FinalMode"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Final Mode <code class="keycap">Final</code> key used on some Asian keyboards, to enable the final mode for IMEs.
      <tr>
       <td class="key-table-key"><code class="key" id="key-GroupFirst">"GroupFirst"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to the first character group. (ISO/IEC 9995)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GroupLast">"GroupLast"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to the last character group. (ISO/IEC 9995)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GroupNext">"GroupNext"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to the next character group. (ISO/IEC 9995)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GroupPrevious">"GroupPrevious"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to the previous character group. (ISO/IEC 9995)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ModeChange">"ModeChange"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Mode Change key, to toggle between or cycle through input modes of IMEs.
      <tr>
       <td class="key-table-key"><code class="key" id="key-NextCandidate">"NextCandidate"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Next Candidate function key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-NonConvert">"NonConvert"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The NonConvert ("Don’t Convert") key, to accept current input method sequence without conversion in IMEs.
      <tr>
       <td class="key-table-key"><code class="key" id="key-PreviousCandidate">"PreviousCandidate"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Previous Candidate function key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Process">"Process"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Process key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-SingleCandidate">"SingleCandidate"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Single Candidate function key.
    </table>
    <p>Keys specific to Korean keyboards:</p>
    <table class="data-table full-width" id="key-table-ime-korean">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑨">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⓪">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-HangulMode">"HangulMode"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Hangul (Korean characters) Mode key, to toggle between Hangul and English modes.
      <tr>
       <td class="key-table-key"><code class="key" id="key-HanjaMode">"HanjaMode"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Hanja (Korean characters) Mode key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-JunjaMode">"JunjaMode"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Junja (Korean characters) Mode key.
    </table>
    <p>Keys specific to Japanese keyboards:</p>
    <table class="data-table full-width" id="key-table-ime-japanese">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⓪">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③①">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Eisu">"Eisu"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Eisu key. This key may close the IME, but its purpose									is defined by the current IME. (<code class="android">KEYCODE_EISU</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Hankaku">"Hankaku"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The (Half-Width) Characters key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Hiragana">"Hiragana"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Hiragana (Japanese Kana characters) key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-HiraganaKatakana">"HiraganaKatakana"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Hiragana/Katakana toggle key. (<code class="android">KEYCODE_KATAKANA_HIRAGANA</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-KanaMode">"KanaMode"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Kana Mode (Kana Lock) key. This key is used to enter									hiragana mode (typically from romaji mode). 
      <tr>
       <td class="key-table-key"><code class="key" id="key-KanjiMode">"KanjiMode"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Kanji (Japanese name for ideographic characters of Chinese origin) Mode key.									This key is typically used to switch to a hiragana keyboard for
 									the purpose of converting input into kanji. (<code class="android">KEYCODE_KANA</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Katakana">"Katakana"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Katakana (Japanese Kana characters) key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Romaji">"Romaji"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Roman characters function key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Zenkaku">"Zenkaku"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Zenkaku (Full-Width) Characters key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-ZenkakuHankaku">"ZenkakuHankaku"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Zenkaku/Hankaku (full-width/half-width) toggle key. (<code class="android">KEYCODE_ZENKAKU_HANKAKU</code>)
    </table>
    <h3 class="heading settled" data-level="3.9" id="keys-function"><span class="secno">3.9. </span><span class="content">General-Purpose Function Keys</span><a class="self-link" href="#keys-function"></a></h3>
@@ -1439,73 +1431,73 @@ dfn > a.self-link::before      { content: "#"; }
    <table class="data-table full-width" id="key-table-function">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③①">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③②">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-F1">"F1"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F1 key, a general purpose function key, as index 1.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F2">"F2"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F2 key, a general purpose function key, as index 2.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F3">"F3"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F3 key, a general purpose function key, as index 3.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F4">"F4"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F4 key, a general purpose function key, as index 4.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F5">"F5"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F5 key, a general purpose function key, as index 5.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F6">"F6"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F6 key, a general purpose function key, as index 6.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F7">"F7"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F7 key, a general purpose function key, as index 7.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F8">"F8"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F8 key, a general purpose function key, as index 8.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F9">"F9"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F9 key, a general purpose function key, as index 9.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F10">"F10"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F10 key, a general purpose function key, as index 10.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F11">"F11"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F11 key, a general purpose function key, as index 11.
      <tr>
       <td class="key-table-key"><code class="key" id="key-F12">"F12"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The F12 key, a general purpose function key, as index 12.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Soft1">"Soft1"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>General purpose virtual function key, as index 1.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Soft2">"Soft2"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>General purpose virtual function key, as index 2.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Soft3">"Soft3"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>General purpose virtual function key, as index 3.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Soft4">"Soft4"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>General purpose virtual function key, as index 4.
    </table>
    <h3 class="heading settled" data-level="3.10" id="keys-multimedia"><span class="secno">3.10. </span><span class="content">Multimedia Keys</span><a class="self-link" href="#keys-multimedia"></a></h3>
@@ -1513,95 +1505,95 @@ dfn > a.self-link::before      { content: "#"; }
    <table class="data-table full-width" id="key-table-multimedia">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③②">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③③">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-ChannelDown">"ChannelDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Select next (numerically or logically) lower channel. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_CHANNEL_DOWN</code></code>, <code class="android"><code class="android">KEYCODE_CHANNEL_DOWN</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ChannelUp">"ChannelUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Select next (numerically or logically) higher channel. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_CHANNEL_UP</code></code>, <code class="android"><code class="android">KEYCODE_CHANNEL_UP</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Close">"Close"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Close the current document or message (Note: This doesn’t close the application). (<code class="appcommand">APPCOMMAND_CLOSE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MailForward">"MailForward"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Open an editor to forward the current message. (<code class="appcommand">APPCOMMAND_FORWARD_MAIL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MailReply">"MailReply"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Open an editor to reply to the current message. (<code class="appcommand">APPCOMMAND_REPLY_TO_MAIL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MailSend">"MailSend"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Send the current message. (<code class="appcommand">APPCOMMAND_SEND_MAIL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaClose">"MediaClose"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Close the current media, for example to close a CD or DVD tray. (<code class="android">KEYCODE_MEDIA_CLOSE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaFastForward">"MediaFastForward"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_FAST_FORWARD</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_FAST_FORWARD</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaPause">"MediaPause"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>
        Pause the currently playing media. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PAUSE</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PAUSE</code></code>) 
        <p class="note" role="note">Media controller devices should use this value rather than <code class="key">"<a href="#key-Pause">Pause</a>"</code> for their pause keys.</p>
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaPlay">"MediaPlay"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Initiate or continue media playback at normal speed, if not currently playing at normal speed. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PLAY</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PLAY</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaPlayPause">"MediaPlayPause"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle media between play and pause states. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PLAY_PAUSE</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PLAY_PAUSE</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaRecord">"MediaRecord"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Initiate or resume recording of currently selected media. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_RECORD</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_RECORD</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaRewind">"MediaRewind"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Initiate or continue reverse playback at faster than normal speed, or increase speed if already rewinding. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_REWIND</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_REWIND</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaStop">"MediaStop"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Stop media playing, pausing, forwarding, rewinding, or recording, if not already stopped. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_STOP</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_STOP</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaTrackNext">"MediaTrackNext"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Seek to next media or program track. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_NEXTTRACK</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_NEXT</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaTrackPrevious">"MediaTrackPrevious"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Seek to previous media or program track. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PREVIOUSTRACK</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PREVIOUS</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-New">"New"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Open a new document or message. (<code class="appcommand">APPCOMMAND_NEW</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Open">"Open"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Open an existing document or message. (<code class="appcommand">APPCOMMAND_OPEN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Print">"Print"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Print the current document or message. (<code class="appcommand">APPCOMMAND_PRINT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Save">"Save"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Save the current document or message. (<code class="appcommand">APPCOMMAND_SAVE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-SpellCheck">"SpellCheck"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Spellcheck the current document or selection. (<code class="appcommand">APPCOMMAND_SPELL_CHECK</code>)
    </table>
    <h3 class="heading settled" data-level="3.11" id="keys-multimedia-numpad"><span class="secno">3.11. </span><span class="content">Multimedia Numpad Keys</span><a class="self-link" href="#keys-multimedia-numpad"></a></h3>
@@ -1613,17 +1605,17 @@ dfn > a.self-link::before      { content: "#"; }
    <table class="data-table full-width" id="key-table-multimedia-numpad">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③③">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③④">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Key11">"Key11"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The <code class="keycap">11</code> key found on media numpads that							have buttons from <code class="keycap">1</code> ... <code class="keycap">12</code>. 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Key12">"Key12"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The <code class="keycap">12</code> key found on media numpads that							have buttons from <code class="keycap">1</code> ... <code class="keycap">12</code>. 
    </table>
    <h3 class="heading settled" data-level="3.12" id="keys-audio"><span class="secno">3.12. </span><span class="content">Audio Keys</span><a class="self-link" href="#keys-audio"></a></h3>
@@ -1631,77 +1623,77 @@ dfn > a.self-link::before      { content: "#"; }
    <table class="data-table full-width" id="key-table-audio">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③④">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑤">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioBalanceLeft">"AudioBalanceLeft"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Adjust audio balance leftward. (<code class="vk">VK_AUDIO_BALANCE_LEFT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioBalanceRight">"AudioBalanceRight"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Adjust audio balance rightward. (<code class="vk">VK_AUDIO_BALANCE_RIGHT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioBassBoostDown">"AudioBassBoostDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Decrease audio bass boost or cycle down through bass boost states. (<code class="appcommand"><code class="appcommand">APPCOMMAND_BASS_DOWN</code></code>, <code class="vk"><code class="vk">VK_BASS_BOOST_DOWN</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioBassBoostToggle">"AudioBassBoostToggle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle bass boost on/off. (<code class="appcommand">APPCOMMAND_BASS_BOOST</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioBassBoostUp">"AudioBassBoostUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Increase audio bass boost or cycle up through bass boost states. (<code class="appcommand"><code class="appcommand">APPCOMMAND_BASS_UP</code></code>, <code class="vk"><code class="vk">VK_BASS_BOOST_UP</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioFaderFront">"AudioFaderFront"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Adjust audio fader towards front. (<code class="vk">VK_FADER_FRONT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioFaderRear">"AudioFaderRear"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Adjust audio fader towards rear. (<code class="vk">VK_FADER_REAR</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioSurroundModeNext">"AudioSurroundModeNext"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Advance surround audio mode to next available mode. (<code class="vk">VK_SURROUND_MODE_NEXT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioTrebleDown">"AudioTrebleDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Decrease treble. (<code class="appcommand">APPCOMMAND_TREBLE_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioTrebleUp">"AudioTrebleUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Increase treble. (<code class="appcommand">APPCOMMAND_TREBLE_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioVolumeDown">"AudioVolumeDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Decrease audio volume. (<code class="appcommand"><code class="appcommand">APPCOMMAND_VOLUME_DOWN</code></code>, <code class="android"><code class="android">KEYCODE_VOLUME_DOWN</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioVolumeUp">"AudioVolumeUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Increase audio volume. (<code class="appcommand"><code class="appcommand">APPCOMMAND_VOLUME_UP</code></code>, <code class="android"><code class="android">KEYCODE_VOLUME_UP</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioVolumeMute">"AudioVolumeMute"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle between muted state and prior volume level. (<code class="appcommand"><code class="appcommand">APPCOMMAND_VOLUME_MUTE</code></code>, <code class="android"><code class="android">KEYCODE_VOLUME_MUTE</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MicrophoneToggle">"MicrophoneToggle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle the microphone on/off. (<code class="appcommand">APPCOMMAND_MIC_ON_OFF_TOGGLE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MicrophoneVolumeDown">"MicrophoneVolumeDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Decrease microphone volume. (<code class="appcommand">APPCOMMAND_MICROPHONE_VOLUME_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MicrophoneVolumeUp">"MicrophoneVolumeUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Increase microphone volume. (<code class="appcommand">APPCOMMAND_MICROPHONE_VOLUME_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MicrophoneVolumeMute">"MicrophoneVolumeMute"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Mute the microphone. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MICROPHONE_VOLUME_MUTE</code></code>, <code class="android"><code class="android">KEYCODE_MUTE</code></code>)
    </table>
    <h3 class="heading settled" data-level="3.13" id="keys-speech"><span class="secno">3.13. </span><span class="content">Speech Keys</span><a class="self-link" href="#keys-speech"></a></h3>
@@ -1709,17 +1701,17 @@ dfn > a.self-link::before      { content: "#"; }
    <table class="data-table full-width" id="key-table-speech">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑤">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑥">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-SpeechCorrectionList">"SpeechCorrectionList"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Show correction list when a word is incorrectly identified. (<code class="appcommand">APPCOMMAND_CORRECTION_LIST</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-SpeechInputToggle">"SpeechInputToggle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle between dictation mode and command/control mode. (<code class="appcommand">APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE</code>)
    </table>
    <h3 class="heading settled" data-level="3.14" id="keys-apps"><span class="secno">3.14. </span><span class="content">Application Keys</span><a class="self-link" href="#keys-apps"></a></h3>
@@ -1729,288 +1721,288 @@ dfn > a.self-link::before      { content: "#"; }
    <table class="data-table full-width" id="key-table-apps">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑥">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑦">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchApplication1">"LaunchApplication1"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The first generic "LaunchApplication" key. This is commonly associated with launching "My Computer", and may have a computer symbol on the key. (<code class="appcommand">APPCOMMAND_LAUNCH_APP1</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchApplication2">"LaunchApplication2"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The second generic "LaunchApplication" key. This is commonly associated with launching "Calculator", and may have a calculator symbol on the key. (<code class="appcommand"><code class="appcommand">APPCOMMAND_LAUNCH_APP2</code></code>, <code class="android"><code class="android">KEYCODE_CALCULATOR</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchCalendar">"LaunchCalendar"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "Calendar" key. (<code class="android">KEYCODE_CALENDAR</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchContacts">"LaunchContacts"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "Contacts" key. (<code class="android">KEYCODE_CONTACTS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchMail">"LaunchMail"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "Mail" key. (<code class="appcommand">APPCOMMAND_LAUNCH_MAIL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchMediaPlayer">"LaunchMediaPlayer"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "Media Player" key. (<code class="appcommand">APPCOMMAND_LAUNCH_MEDIA_SELECT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchMusicPlayer">"LaunchMusicPlayer"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "Music Player" key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchPhone">"LaunchPhone"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "Phone" key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchScreenSaver">"LaunchScreenSaver"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "Screen Saver" key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchSpreadsheet">"LaunchSpreadsheet"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "Spreadsheet" key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchWebBrowser">"LaunchWebBrowser"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "Web Browser" key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchWebCam">"LaunchWebCam"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "WebCam" key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchWordProcessor">"LaunchWordProcessor"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The "Word Processor" key.
    </table>
    <h3 class="heading settled" data-level="3.15" id="keys-browser"><span class="secno">3.15. </span><span class="content">Browser Keys</span><a class="self-link" href="#keys-browser"></a></h3>
    <table class="data-table full-width" id="key-table-browser">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑦">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑧">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserBack">"BrowserBack"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Navigate to previous content or page in current history. (<code class="appcommand">APPCOMMAND_BROWSER_BACKWARD</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserFavorites">"BrowserFavorites"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Open the list of browser favorites. (<code class="appcommand">APPCOMMAND_BROWSER_FAVORITES</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserForward">"BrowserForward"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Navigate to next content or page in current history. (<code class="appcommand">APPCOMMAND_BROWSER_FORWARD</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserHome">"BrowserHome"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Go to the user’s preferred home page. (<code class="appcommand">APPCOMMAND_BROWSER_HOME</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserRefresh">"BrowserRefresh"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Refresh the current page or content. (<code class="appcommand">APPCOMMAND_BROWSER_REFRESH</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserSearch">"BrowserSearch"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Call up the user’s preferred search page. (<code class="appcommand">APPCOMMAND_BROWSER_SEARCH</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserStop">"BrowserStop"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Stop loading the current page or content. (<code class="appcommand">APPCOMMAND_BROWSER_STOP</code>)
    </table>
    <h3 class="heading settled" data-level="3.16" id="keys-mobile"><span class="secno">3.16. </span><span class="content">Mobile Phone Keys</span><a class="self-link" href="#keys-mobile"></a></h3>
    <table class="data-table full-width" id="key-table-mobile-phone">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑧">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑨">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-AppSwitch">"AppSwitch"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Application switch key, which provides a list of recent apps to switch between. (<code class="android">KEYCODE_APP_SWITCH</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Call">"Call"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Call key. (<code class="android">KEYCODE_CALL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Camera">"Camera"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Camera key. (<code class="android">KEYCODE_CAMERA</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-CameraFocus">"CameraFocus"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Camera focus key. (<code class="android">KEYCODE_FOCUS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-EndCall">"EndCall"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The End Call key. (<code class="android">KEYCODE_ENDCALL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GoBack">"GoBack"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Back key. (<code class="android">KEYCODE_BACK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GoHome">"GoHome"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Home key, which goes to the phone’s main screen. (<code class="android">KEYCODE_HOME</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-HeadsetHook">"HeadsetHook"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Headset Hook key. (<code class="android">KEYCODE_HEADSETHOOK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LastNumberRedial">"LastNumberRedial"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Last Number Redial key.
      <tr>
       <td class="key-table-key"><code class="key" id="key-Notification">"Notification"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Notification key. (<code class="android">KEYCODE_NOTIFICATION</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MannerMode">"MannerMode"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle between manner mode state: silent, vibrate, ring, ... (<code class="android">KEYCODE_MANNER_MODE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-VoiceDial">"VoiceDial"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>The Voice Dial key.
    </table>
    <h3 class="heading settled" data-level="3.17" id="keys-tv"><span class="secno">3.17. </span><span class="content">TV Keys</span><a class="self-link" href="#keys-tv"></a></h3>
    <table class="data-table full-width" id="key-table-tv">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑨">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④⓪">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-TV">"TV"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to viewing TV. (<code class="android">KEYCODE_TV</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TV3DMode">"TV3DMode"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>TV 3D Mode. (<code class="android">KEYCODE_3D_MODE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVAntennaCable">"TVAntennaCable"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle between antenna and cable input. (<code class="android">KEYCODE_TV_ANTENNA_CABLE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVAudioDescription">"TVAudioDescription"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Audio description. (<code class="android">KEYCODE_TV_AUDIO_DESCRIPTION</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVAudioDescriptionMixDown">"TVAudioDescriptionMixDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Audio description mixing volume down. (<code class="android">KEYCODE_TV_AUDIO_DESCRIPTION_MIX_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVAudioDescriptionMixUp">"TVAudioDescriptionMixUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Audio description mixing volume up. (<code class="android">KEYCODE_TV_AUDIO_DESCRIPTION_MIX_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVContentsMenu">"TVContentsMenu"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Contents menu. (<code class="android">KEYCODE_TV_CONTENTS_MENU</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVDataService">"TVDataService"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Contents menu. (<code class="android">KEYCODE_TV_DATA_SERVICE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInput">"TVInput"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch the input mode on an external TV. (<code class="android">KEYCODE_TV_INPUT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputComponent1">"TVInputComponent1"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to component input #1. (<code class="android">KEYCODE_TV_INPUT_COMPONENT_1</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputComponent2">"TVInputComponent2"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to component input #2. (<code class="android">KEYCODE_TV_INPUT_COMPONENT_2</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputComposite1">"TVInputComposite1"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to composite input #1. (<code class="android">KEYCODE_TV_INPUT_COMPOSITE_1</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputComposite2">"TVInputComposite2"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to composite input #2. (<code class="android">KEYCODE_TV_INPUT_COMPOSITE_2</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputHDMI1">"TVInputHDMI1"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to HDMI input #1. (<code class="android">KEYCODE_TV_INPUT_HDMI_1</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputHDMI2">"TVInputHDMI2"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to HDMI input #2. (<code class="android">KEYCODE_TV_INPUT_HDMI_2</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputHDMI3">"TVInputHDMI3"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to HDMI input #3. (<code class="android">KEYCODE_TV_INPUT_HDMI_3</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputHDMI4">"TVInputHDMI4"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to HDMI input #4. (<code class="android">KEYCODE_TV_INPUT_HDMI_4</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputVGA1">"TVInputVGA1"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch to VGA input #1. (<code class="android">KEYCODE_TV_INPUT_VGA_1</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVMediaContext">"TVMediaContext"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Media context menu. (<code class="android">KEYCODE_TV_MEDIA_CONTEXT_MENU</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVNetwork">"TVNetwork"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle network. (<code class="android">KEYCODE_TV_NETWORK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVNumberEntry">"TVNumberEntry"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Number entry. (<code class="android">KEYCODE_TV_NUMBER_ENTRY</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVPower">"TVPower"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle the power on an external TV. (<code class="android">KEYCODE_TV_POWER</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVRadioService">"TVRadioService"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Radio. (<code class="android">KEYCODE_TV_RADIO_SERVICE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVSatellite">"TVSatellite"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Satellite. (<code class="android">KEYCODE_TV_SATELLITE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVSatelliteBS">"TVSatelliteBS"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Broadcast Satellite. (<code class="android">KEYCODE_TV_SATELLITE_BS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVSatelliteCS">"TVSatelliteCS"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Communication Satellite. (<code class="android">KEYCODE_TV_SATELLITE_CS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVSatelliteToggle">"TVSatelliteToggle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle between available satellites. (<code class="android">KEYCODE_TV_SATELLITE_SERVICE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVTerrestrialAnalog">"TVTerrestrialAnalog"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Analog Terrestrial. (<code class="android">KEYCODE_TV_TERRESTRIAL_ANALOG</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVTerrestrialDigital">"TVTerrestrialDigital"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Digital Terrestrial. (<code class="android">KEYCODE_TV_TERRESTRIAL_DIGITAL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVTimer">"TVTimer"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Timer programming. (<code class="android">KEYCODE_TV_TIMER_PROGRAMMING</code>)
    </table>
    <h3 class="heading settled" data-level="3.18" id="keys-media-controller"><span class="secno">3.18. </span><span class="content">Media Controller Keys</span><a class="self-link" href="#keys-media-controller"></a></h3>
-   <p>The <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④⓪">键属性值</a> for media controllers (e.g. remote controls for
+   <p>The <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④①">键属性值</a> for media controllers (e.g. remote controls for
 		television, audio systems, and set-top boxes) are derived in part from
 		the consumer electronics technical specifications:</p>
    <ul>
@@ -2027,299 +2019,299 @@ Interface on UPnP Networks and the Internet <a data-link-type="biblio" href="#bi
    <table class="data-table full-width" id="key-table-media-controller">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④①">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④②">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key" id="key-AVRInput">"AVRInput"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch the input mode on an external AVR (audio/video receiver). (<code class="android">KEYCODE_AVR_INPUT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AVRPower">"AVRPower"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle the power on an external AVR (audio/video receiver). (<code class="android">KEYCODE_AVR_POWER</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF0Red">"ColorF0Red"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>General purpose color-coded media function key, as index 0 (red). (<code class="vk"><code class="vk">VK_COLORED_KEY_0</code></code>, <code class="android"><code class="android">KEYCODE_PROG_RED</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF1Green">"ColorF1Green"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>General purpose color-coded media function key, as index 1 (green). (<code class="vk"><code class="vk">VK_COLORED_KEY_1</code></code>, <code class="android"><code class="android">KEYCODE_PROG_GREEN</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF2Yellow">"ColorF2Yellow"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>General purpose color-coded media function key, as index 2 (yellow). (<code class="vk"><code class="vk">VK_COLORED_KEY_2</code></code>, <code class="android"><code class="android">KEYCODE_PROG_YELLOW</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF3Blue">"ColorF3Blue"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>General purpose color-coded media function key, as index 3 (blue). (<code class="vk"><code class="vk">VK_COLORED_KEY_3</code></code>, <code class="android"><code class="android">KEYCODE_PROG_BLUE</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF4Grey">"ColorF4Grey"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>General purpose color-coded media function key, as index 4 (grey). (<code class="vk">VK_COLORED_KEY_4</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF5Brown">"ColorF5Brown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>General purpose color-coded media function key, as index 5 (brown). (<code class="vk">VK_COLORED_KEY_5</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ClosedCaptionToggle">"ClosedCaptionToggle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle the display of Closed Captions. (<code class="vk"><code class="vk">VK_CC</code></code>, <code class="android"><code class="android">KEYCODE_CAPTIONS</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Dimmer">"Dimmer"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Adjust brightness of device, by toggling between or cycling through states. (<code class="vk">VK_DIMMER</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-DisplaySwap">"DisplaySwap"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Swap video sources. (<code class="vk">VK_DISPLAY_SWAP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-DVR">"DVR"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Select Digital Video Rrecorder. (<code class="android">KEYCODE_DVR</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Exit">"Exit"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Exit the current application. (<code class="vk">VK_EXIT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteClear0">"FavoriteClear0"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Clear program or content stored as favorite 0. (<code class="vk">VK_CLEAR_FAVORITE_0</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteClear1">"FavoriteClear1"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Clear program or content stored as favorite 1. (<code class="vk">VK_CLEAR_FAVORITE_1</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteClear2">"FavoriteClear2"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Clear program or content stored as favorite 2. (<code class="vk">VK_CLEAR_FAVORITE_2</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteClear3">"FavoriteClear3"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Clear program or content stored as favorite 3. (<code class="vk">VK_CLEAR_FAVORITE_3</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteRecall0">"FavoriteRecall0"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Select (recall) program or content stored as favorite 0. (<code class="vk">VK_RECALL_FAVORITE_0</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteRecall1">"FavoriteRecall1"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Select (recall) program or content stored as favorite 1. (<code class="vk">VK_RECALL_FAVORITE_1</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteRecall2">"FavoriteRecall2"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Select (recall) program or content stored as favorite 2. (<code class="vk">VK_RECALL_FAVORITE_2</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteRecall3">"FavoriteRecall3"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Select (recall) program or content stored as favorite 3. (<code class="vk">VK_RECALL_FAVORITE_3</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteStore0">"FavoriteStore0"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Store current program or content as favorite 0. (<code class="vk">VK_STORE_FAVORITE_0</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteStore1">"FavoriteStore1"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Store current program or content as favorite 1. (<code class="vk">VK_STORE_FAVORITE_1</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteStore2">"FavoriteStore2"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Store current program or content as favorite 2. (<code class="vk">VK_STORE_FAVORITE_2</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteStore3">"FavoriteStore3"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Store current program or content as favorite 3. (<code class="vk">VK_STORE_FAVORITE_3</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Guide">"Guide"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle display of program or content guide. (<code class="vk"><code class="vk">VK_GUIDE</code></code>, <code class="android"><code class="android">KEYCODE_GUIDE</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GuideNextDay">"GuideNextDay"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>If guide is active and displayed, then display next day’s content. (<code class="vk">VK_NEXT_DAY</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GuidePreviousDay">"GuidePreviousDay"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>If guide is active and displayed, then display previous day’s content. (<code class="vk">VK_PREV_DAY</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Info">"Info"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle display of information about currently selected context or media. (<code class="vk"><code class="vk">VK_INFO</code></code>, <code class="android"><code class="android">KEYCODE_INFO</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-InstantReplay">"InstantReplay"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle instant replay. (<code class="vk">VK_INSTANT_REPLAY</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Link">"Link"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Launch linked content, if available and appropriate. (<code class="vk">VK_LINK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ListProgram">"ListProgram"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>List the current program. (<code class="vk">VK_LIST</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LiveContent">"LiveContent"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle display listing of currently available live content or programs. (<code class="vk">VK_LIVE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Lock">"Lock"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Lock or unlock current content or program. (<code class="vk">VK_LOCK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaApps">"MediaApps"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>
        Show a list of media applications: audio/video players and image viewers. (<code class="vk">VK_APPS</code>) 
        <p class="note" role="note">Do not confuse this key value with the Windows' <code class="vk"><code class="vk">VK_APPS</code></code> / <code class="vk"><code class="vk">VK_CONTEXT_MENU</code></code> key, which is encoded as <code class="key">"<a href="#key-ContextMenu">ContextMenu</a>"</code>.</p>
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaAudioTrack">"MediaAudioTrack"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Audio track key. (<code class="android">KEYCODE_MEDIA_AUDIO_TRACK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaLast">"MediaLast"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Select previously selected channel or media. (<code class="vk"><code class="vk">VK_LAST</code></code>, <code class="android"><code class="android">KEYCODE_LAST_CHANNEL</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaSkipBackward">"MediaSkipBackward"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Skip backward to next content or program. (<code class="android">KEYCODE_MEDIA_SKIP_BACKWARD</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaSkipForward">"MediaSkipForward"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Skip forward to next content or program. (<code class="vk"><code class="vk">VK_SKIP</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_SKIP_FORWARD</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaStepBackward">"MediaStepBackward"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Step backward to next content or program. (<code class="android">KEYCODE_MEDIA_STEP_BACKWARD</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaStepForward">"MediaStepForward"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Step forward to next content or program. (<code class="android">KEYCODE_MEDIA_STEP_FORWARD</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaTopMenu">"MediaTopMenu"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Media top menu. (<code class="android">KEYCODE_MEDIA_TOP_MENU</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NavigateIn">"NavigateIn"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Navigate in. (<code class="android">KEYCODE_NAVIGATE_IN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NavigateNext">"NavigateNext"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Navigate to next key. (<code class="android">KEYCODE_NAVIGATE_NEXT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NavigateOut">"NavigateOut"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Navigate out. (<code class="android">KEYCODE_NAVIGATE_OUT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NavigatePrevious">"NavigatePrevious"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Navigate to previous key. (<code class="android">KEYCODE_NAVIGATE_PREVIOUS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NextFavoriteChannel">"NextFavoriteChannel"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Cycle to next favorite channel (in favorites list). (<code class="vk">VK_NEXT_FAVORITE_CHANNEL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NextUserProfile">"NextUserProfile"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Cycle to next user profile (if there are multiple user profiles). (<code class="vk">VK_USER</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-OnDemand">"OnDemand"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Access on-demand content or programs. (<code class="vk">VK_ON_DEMAND</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Pairing">"Pairing"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Pairing key to pair devices. (<code class="android">KEYCODE_PAIRING</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-PinPDown">"PinPDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Move picture-in-picture window down. (<code class="vk">VK_PINP_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-PinPMove">"PinPMove"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Move picture-in-picture window. (<code class="vk">VK_PINP_MOVE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-PinPToggle">"PinPToggle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle display of picture-in-picture window. (<code class="vk">VK_PINP_TOGGLE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-PinPUp">"PinPUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Move picture-in-picture window up. (<code class="vk">VK_PINP_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-PlaySpeedDown">"PlaySpeedDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Decrease media playback speed. (<code class="vk">VK_PLAY_SPEED_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-PlaySpeedReset">"PlaySpeedReset"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Reset playback to normal speed. (<code class="vk">VK_PLAY_SPEED_RESET</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-PlaySpeedUp">"PlaySpeedUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Increase media playback speed. (<code class="vk">VK_PLAY_SPEED_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-RandomToggle">"RandomToggle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle random media or content shuffle mode. (<code class="vk">VK_RANDOM_TOGGLE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-RcLowBattery">"RcLowBattery"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Not a physical key, but this key code is sent when the remote control battery is low. (<code class="vk">VK_RC_LOW_BATTERY</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-RecordSpeedNext">"RecordSpeedNext"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle or cycle between media recording speeds. (<code class="vk">VK_RECORD_SPEED_NEXT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-RfBypass">"RfBypass"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle RF (radio frequency) input bypass mode (pass RF input directly to the RF output). (<code class="vk">VK_RF_BYPASS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ScanChannelsToggle">"ScanChannelsToggle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle scan channels mode. (<code class="vk">VK_SCAN_CHANNELS_TOGGLE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ScreenModeNext">"ScreenModeNext"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Advance display screen mode to next available mode. (<code class="vk">VK_SCREEN_MODE_NEXT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Settings">"Settings"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle display of device settings screen. (<code class="vk"><code class="vk">VK_SETTINGS</code></code>, <code class="android"><code class="android">KEYCODE_SETTINGS</code></code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-SplitScreenToggle">"SplitScreenToggle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle split screen mode. (<code class="vk">VK_SPLIT_SCREEN_TOGGLE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-STBInput">"STBInput"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Switch the input mode on an external STB (set top box). (<code class="android">KEYCODE_STB_INPUT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-STBPower">"STBPower"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle the power on an external STB (set top box). (<code class="android">KEYCODE_STB_POWER</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Subtitle">"Subtitle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle display of subtitles, if available. (<code class="vk">VK_SUBTITLE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Teletext">"Teletext"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle display of teletext, if available (<code class="vk"><code class="vk">VK_TELETEXT</code></code>, <code class="android"><code class="android">KEYCODE_TV_TELETEXT</code></code>).
      <tr>
       <td class="key-table-key"><code class="key" id="key-VideoModeNext">"VideoModeNext"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Advance video mode to next available mode. (<code class="vk">VK_VIDEO_MODE_NEXT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Wink">"Wink"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Cause device to identify itself in some manner, e.g., audibly or visibly. (<code class="vk">VK_WINK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ZoomToggle">"ZoomToggle"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle between full-screen and scaled content, or alter magnification level. (<code class="vk"><code class="vk">VK_ZOOM</code></code>, <code class="android"><code class="android">KEYCODE_TV_ZOOM_MODE</code></code>)
    </table>
    <p>Some of the keys defined in the media controller standards already have
@@ -2329,101 +2321,101 @@ Interface on UPnP Networks and the Internet <a data-link-type="biblio" href="#bi
    <table class="data-table full-width" id="key-table-media-controller-dup">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④②">键属性值</a>
-      <th style="width:10%">Required
-      <th style="width:70%">Typical Usage (Non-normative)
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④③">键属性值</a>
+      <th style="text-align:center;min-width:55px;width:10%">必需的
+      <th style="width:70%">典型用途 (非规范性的)
     <tbody>
      <tr>
       <td class="key-table-key"><code class="key">"AudioVolumeDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Decrease audio volume. (<code class="vk">VK_VOLUME_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key">"AudioVolumeUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Increase audio volume. (<code class="vk">VK_VOLUME_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key">"AudioVolumeMute"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle between muted state and prior volume level. (<code class="vk">VK_VOLUME_MUTE</code>)
      <tr>
       <td class="key-table-key"><code class="key">"BrowserBack"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Navigate to previous content or page in current history. (<code class="vk">VK_BACK</code>)
      <tr>
       <td class="key-table-key"><code class="key">"BrowserForward"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Navigate to next content or page in current history. (<code class="vk">VK_FORWARD</code>)
      <tr>
       <td class="key-table-key"><code class="key">"ChannelDown"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Select next (numerically or logically) lower channel. (<code class="vk">VK_CHANNEL_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key">"ChannelUp"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Select next (numerically or logically) higher channel. (<code class="vk">VK_CHANNEL_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key">"ContextMenu"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>Toggle display of the on-screen menu. (<code class="vk">VK_MENU</code>)
      <tr>
       <td class="key-table-key"><code class="key">"Eject"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle removable media to eject (open) and insert (close) state. (<code class="vk">VK_EJECT_TOGGLE</code>)
      <tr>
       <td class="key-table-key"><code class="key">"End"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The End key, used with keyboard entry to go to the end of content. (<code class="vk">VK_GO_TO_END</code>)
      <tr>
       <td class="key-table-key"><code class="key">"Enter"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The Enter key, to activate current selection or accept current input. (<code class="vk">VK_SELECT</code>)
      <tr>
       <td class="key-table-key"><code class="key">"Home"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>The Home key, used with keyboard entry, to go to start of content. (<code class="vk">VK_GO_TO_START</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaFastForward"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding. (<code class="vk">VK_FAST_FWD</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaPlay"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Initiate or continue media playback at normal speed, if not currently playing at normal speed. (<code class="vk">VK_PLAY</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaPlayPause"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle media between play and pause states. (<code class="vk">VK_PLAY_PAUSE</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaRecord"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Initiate or resume recording of currently selected media. (<code class="vk">VK_RECORD</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaRewind"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Initiate or continue reverse playback at faster than normal speed, or increase speed if already rewinding. (<code class="vk">VK_REWIND</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaStop"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Stop media playing, pausing, forwarding, rewinding, or recording, if not already stopped. (<code class="vk">VK_STOP</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaNextTrack"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Seek to next media or program track. (<code class="vk">VK_TRACK_NEXT</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaPause"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Pause the currently playing media. (<code class="vk">VK_PAUSE</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaPreviousTrack"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Seek to previous media or program track. (<code class="vk">VK_TRACK_PREV</code>)
      <tr>
       <td class="key-table-key"><code class="key">"Power"</code>
-      <td class="key-table-required">No
+      <td class="key-table-required">否
       <td>Toggle power state. (<code class="vk">VK_POWER</code>)
      <tr>
       <td class="key-table-key"><code class="key">"Unidentified"</code>
-      <td class="key-table-required">Yes
+      <td class="key-table-required">是
       <td>This key value is used when an implementations is unable to identify another key value, due to either hardware, platform, or software constraints. (<code class="vk">VK_UNDEFINED</code>)
    </table>
    <h2 class="heading settled" data-level="4" id="accessibility"><span class="secno">4. </span><span class="content">Accessibility</span><a class="self-link" href="#accessibility"></a></h2>
@@ -2550,7 +2542,7 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-interface-keyboardevent⑥">2.2.1. 
 		
 		选择一个适合的键属性值</a>
-    <li><a href="#ref-for-interface-keyboardevent⑦">3. Named key Attribute Values</a>
+    <li><a href="#ref-for-interface-keyboardevent⑦">3. 命名 key 属性值</a>
     <li><a href="#ref-for-interface-keyboardevent⑧">8. Acknowledgements</a>
    </ul>
   </aside>
@@ -2586,7 +2578,7 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-dom-keyboardevent-key⑦">2.2.1. 
 		
 		选择一个适合的键属性值</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑧">3. Named key Attribute Values</a> <a href="#ref-for-dom-keyboardevent-key⑨">(2)</a> <a href="#ref-for-dom-keyboardevent-key①⓪">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key⑧">3. 命名 key 属性值</a> <a href="#ref-for-dom-keyboardevent-key⑨">(2)</a> <a href="#ref-for-dom-keyboardevent-key①⓪">(3)</a>
     <li><a href="#ref-for-dom-keyboardevent-key①①">3.11. Multimedia Numpad Keys</a>
     <li><a href="#ref-for-dom-keyboardevent-key①②">4. Accessibility</a> <a href="#ref-for-dom-keyboardevent-key①③">(2)</a>
     <li><a href="#ref-for-dom-keyboardevent-key①④">6. Security Considerations</a> <a href="#ref-for-dom-keyboardevent-key①⑤">(2)</a>
@@ -2604,6 +2596,12 @@ something specific to the values defined in this document</p>
    <span id="infopaneltitle-for-0d409042d1d90223e9ee78bb851c1d32" style="display:none">Info about the '键帽' external reference.</span><a href="https://mangwu.github.io/uievents-cn/#key-legends">https://mangwu.github.io/uievents-cn/#key-legends</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-key-legends">1.1. 格式规约</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-592c2c640d119b848e57ce039ac95f2c" class="dfn-panel" data-for="592c2c640d119b848e57ce039ac95f2c" id="infopanel-for-592c2c640d119b848e57ce039ac95f2c">
+   <span id="infopaneltitle-for-592c2c640d119b848e57ce039ac95f2c" style="display:none">Info about the '功能键' external reference.</span><a href="https://mangwu.github.io/uievents-code-cn/#function-key">https://mangwu.github.io/uievents-code-cn/#function-key</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-function-key">3.2. 修饰键</a> <a href="#ref-for-function-key①">(2)</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-984d037e70ff8d75a57589fea4a4008e" class="dfn-panel" data-for="984d037e70ff8d75a57589fea4a4008e" id="infopanel-for-984d037e70ff8d75a57589fea4a4008e">
@@ -2645,6 +2643,7 @@ something specific to the values defined in this document</p>
    <li>
     <a data-link-type="biblio">[UIEvents-Code]</a> defines the following terms:
     <ul>
+     <li><span class="dfn-paneled" id="592c2c640d119b848e57ce039ac95f2c">功能键</span>
      <li><span class="dfn-paneled" id="984d037e70ff8d75a57589fea4a4008e">字母数字区域</span>
      <li><span class="dfn-paneled" id="b1a501e8d898512da05b98716633eee8">小键盘</span>
      <li><span class="dfn-paneled" id="0d03d1fc8bca69b3a01f4b6f7f4795cd">按键码属性值</span>
@@ -2695,25 +2694,25 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-key-attribute-value⑧">2.2.1. 
 		
 		选择一个适合的键属性值</a> <a href="#ref-for-key-attribute-value⑨">(2)</a> <a href="#ref-for-key-attribute-value①⓪">(3)</a> <a href="#ref-for-key-attribute-value①①">(4)</a> <a href="#ref-for-key-attribute-value①②">(5)</a> <a href="#ref-for-key-attribute-value①③">(6)</a> <a href="#ref-for-key-attribute-value①④">(7)</a> <a href="#ref-for-key-attribute-value①⑤">(8)</a> <a href="#ref-for-key-attribute-value①⑥">(9)</a> <a href="#ref-for-key-attribute-value①⑦">(10)</a>
-    <li><a href="#ref-for-key-attribute-value①⑧">3. Named key Attribute Values</a>
-    <li><a href="#ref-for-key-attribute-value①⑨">3.1. Special Keys</a> <a href="#ref-for-key-attribute-value②⓪">(2)</a>
-    <li><a href="#ref-for-key-attribute-value②①">3.2. Modifier Keys</a> <a href="#ref-for-key-attribute-value②②">(2)</a>
-    <li><a href="#ref-for-key-attribute-value②③">3.3. Whitespace Keys</a>
-    <li><a href="#ref-for-key-attribute-value②④">3.4. Navigation Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑤">3.5. Editing Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑥">3.6. UI Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑦">3.7. Device Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑧">3.8. IME and Composition Keys</a> <a href="#ref-for-key-attribute-value②⑨">(2)</a> <a href="#ref-for-key-attribute-value③⓪">(3)</a>
-    <li><a href="#ref-for-key-attribute-value③①">3.9. General-Purpose Function Keys</a>
-    <li><a href="#ref-for-key-attribute-value③②">3.10. Multimedia Keys</a>
-    <li><a href="#ref-for-key-attribute-value③③">3.11. Multimedia Numpad Keys</a>
-    <li><a href="#ref-for-key-attribute-value③④">3.12. Audio Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑤">3.13. Speech Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑥">3.14. Application Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑦">3.15. Browser Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑧">3.16. Mobile Phone Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑨">3.17. TV Keys</a>
-    <li><a href="#ref-for-key-attribute-value④⓪">3.18. Media Controller Keys</a> <a href="#ref-for-key-attribute-value④①">(2)</a> <a href="#ref-for-key-attribute-value④②">(3)</a>
+    <li><a href="#ref-for-key-attribute-value①⑧">3. 命名 key 属性值</a>
+    <li><a href="#ref-for-key-attribute-value①⑨">3.1. 特殊按键</a> <a href="#ref-for-key-attribute-value②⓪">(2)</a> <a href="#ref-for-key-attribute-value②①">(3)</a>
+    <li><a href="#ref-for-key-attribute-value②②">3.2. 修饰键</a> <a href="#ref-for-key-attribute-value②③">(2)</a>
+    <li><a href="#ref-for-key-attribute-value②④">3.3. Whitespace Keys</a>
+    <li><a href="#ref-for-key-attribute-value②⑤">3.4. Navigation Keys</a>
+    <li><a href="#ref-for-key-attribute-value②⑥">3.5. Editing Keys</a>
+    <li><a href="#ref-for-key-attribute-value②⑦">3.6. UI Keys</a>
+    <li><a href="#ref-for-key-attribute-value②⑧">3.7. Device Keys</a>
+    <li><a href="#ref-for-key-attribute-value②⑨">3.8. IME and Composition Keys</a> <a href="#ref-for-key-attribute-value③⓪">(2)</a> <a href="#ref-for-key-attribute-value③①">(3)</a>
+    <li><a href="#ref-for-key-attribute-value③②">3.9. General-Purpose Function Keys</a>
+    <li><a href="#ref-for-key-attribute-value③③">3.10. Multimedia Keys</a>
+    <li><a href="#ref-for-key-attribute-value③④">3.11. Multimedia Numpad Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑤">3.12. Audio Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑥">3.13. Speech Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑦">3.14. Application Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑧">3.15. Browser Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑨">3.16. Mobile Phone Keys</a>
+    <li><a href="#ref-for-key-attribute-value④⓪">3.17. TV Keys</a>
+    <li><a href="#ref-for-key-attribute-value④①">3.18. Media Controller Keys</a> <a href="#ref-for-key-attribute-value④②">(2)</a> <a href="#ref-for-key-attribute-value④③">(3)</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-key-string" class="dfn-panel" data-for="key-string" id="infopanel-for-key-string">
@@ -2763,7 +2762,7 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-named-key-attribute-value③">2.2.1. 
 		
 		选择一个适合的键属性值</a> <a href="#ref-for-named-key-attribute-value④">(2)</a> <a href="#ref-for-named-key-attribute-value⑤">(3)</a>
-    <li><a href="#ref-for-named-key-attribute-value⑥">3. Named key Attribute Values</a> <a href="#ref-for-named-key-attribute-value⑦">(2)</a>
+    <li><a href="#ref-for-named-key-attribute-value⑥">3. 命名 key 属性值</a> <a href="#ref-for-named-key-attribute-value⑦">(2)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */

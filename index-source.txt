@@ -175,6 +175,8 @@ url: https://mangwu.github.io/uievents-code-cn/#keypad; type: dfn; spec: uievent
 	text: 小键盘
 url: https://mangwu.github.io/uievents-code-cn/#alphanumeric-section; type: dfn; spec: uievents-code;
 	text: 字母数字区域
+url: https://mangwu.github.io/uievents-code-cn/#function-key; type: dfn; spec: uievents-code;
+	text: 功能键
 </pre>
 
 <pre class="include">
@@ -469,90 +471,88 @@ path: stylesheet-extra.include
 			
 
 			<p class="example">
-				On a French PC keyboard with a standard French mapping, the KEYCAP{^}
-				key acts as a [=dead key=] for the combining circumflex diacritical mark.
-				The [=键属性值=] for this keyboard event is KEY{Dead}.
+				在具有标准法语映射的法式 PC 键盘上， KEYCAP{^} 键充当组合扬抑音符的死键(
+				[=dead key=] )。这个键盘事件的 [=键属性值=] 是 KEY{Dead} 。
 			</p>
 
 			<p class="example">
-				Also on a French keyboard with a standard French mapping, the
-				[=键属性值=] for the KEYCAP{é} key (which corresponds to the
-				KEYCAP{2} key on a US keyboard) is KEY_NOLINK{é} (UNI{U+00E9}).
+				同样在具有标准法语映射的法式键盘上，KEYCAP{é} 键(对应于美国键盘上的 
+				KEYCAP{2} 键)的 [=键属性值=] 是 KEY_NOLINK{é} ( UNI{U+00E9} )。
 			</p>
 
 			<p class="example">
-				On a Korean PC keyboard with a standard Korean mapping, the primary
-				function of the KEYCAP{Ha/En} key is to switch between Hangul and English
-				input. There is an entry for this key as a [=命名键属性值=],
-				KEY{HangulMode}, so that should be used as the [=键属性值=].
+				在具有标准韩语映射的韩式 PC 键盘上， KEYCAP{Ha/En} 
+				键的主要功能是在韩语和英语输入之间切换(输入模式切换)。
+				这个按键有一个作为 [=命名键属性值=] 的记录，即 KEY{HangulMode} ，
+				因此应将其用作 [=键属性值=] 。
 			</p>
 
 		</div>
 
 	
-<h2 id="named-key-attribute-values">Named {{KeyboardEvent/key}} Attribute Values</h2>
+<h2 id="named-key-attribute-values">命名 {{KeyboardEvent/key}} 属性值</h2>
 
-	A <dfn id="named-key-attribute-value">命名键属性值</dfn> is any of the values given in the
-	[=键属性值=] column of any of the tables in this section of the
-	specification.
+	<dfn id="named-key-attribute-value">命名键属性值</dfn> 
+	(named key attribute value) 是在本规范的本节中的任何一个表的 [=键属性值=] 
+	列中给定的任何值。
 	
-	The [=命名键属性值=] defined here are based
-	in part on the sets of keycodes from
-	the <code>java.awt.event.KeyEvent</code> interface of the Java Platform,
-	Standard Edition 6 API Specification [[KeyEventJava]], and the
-	<code>System.Windows.Forms.Keys</code> key enumeration of the Microsoft .NET
-	Framework 4.0 Class Library [[KeysNet]]. Additional information in this spec
-	comes from Microsoft's WM_APPCOMMAND messages [[WmAppCommand]], and other
-	more specialized specifications as noted in this document.
+	定义在这里的 [=命名键属性值=] 是部分基于 Java 平台(标准版6 API规范 
+	[[KeyEventJava]] )的 <code>java.awt.event.KeyEvent</code> 接口、和 
+	Microsoft.NET Framework 4.0 Class Library [[KeysNet]] 中的按键枚举
+	(<code>System.Windows.Forms.Keys</code>) 的键码集(keycodes)。
+	本规范中的其他信息来自 Microsoft 的 WM_APPCOMMAND messages [[WmAppCommand]] ，
+	以及本文档中提到的其他更专业的规范。
 
-	A conforming implementation of the {{KeyboardEvent}} interface MUST support
-	this set of values for use in the {{KeyboardEvent/key}} attributes,
-	although not all values may be available on all platforms or devices.
+	{{KeyboardEvent}} 接口的一个符合规范的实现 <span class="zh-upper">必须</span> 
+	支持在 {{KeyboardEvent/key}} 属性中使用的这组值，
+	但是并非所有值都可以在所有平台或设备上使用。
 
-	Future versions of this specification may include {{KeyboardEvent/key}} values not included
-	here, which have become common since the publication of this specification.
+	本规范的未来版本可能将新增的 {{KeyboardEvent/key}} 值包含此处，
+	这些键值是那些自本规范发布以来(在实现中)又变得很常见的键值。
 
-	<p class="note">	
-	Note: While every attempt has been made to make this list of values as complete as possible,
-	new values will periodically need to be defined as new input devices are introduced.
-	Rather than allowing user agents to define their own [=命名键属性值=]
-	(which are unlikely to be consistent across multiple user agents), bugs SHOULD be
-	filed so that this specification can be updated.
+	<p class="note">
+	注意：虽然已经尽一切努力使该值列表尽可能完整，但随着新输入设备的引入，
+	需要定期定义新值。与其允许用户代理定义自己的 [=命名键属性值=] 
+	(这些属性值很难在多个用户代理机构之间统一)， 
+	<span class="zh-upper">应当</span> 提供一种归档方法来更新这个规范， 
+	以便可以检测到这些漏洞(bugs)。
 	</p>
 
-	<h3 id="keys-special">Special Keys</h3>
+	<h3 id="keys-special">特殊按键</h3>
 
-		Implementations that are unable to identify a key MUST use KEY{Unidentified}
-		as the the [=键属性值=].
+		如果遇到一个无法识别的按键，实现必须 <span class="zh-upper">必须</span> 使用
+		KEY{Unidentified} 作为 [=键属性值=] 。
 
 		BEGIN_KEY_TABLE general
-			KEY Unidentified	This key value is used when an implementation is unable to
-								identify another key value, due to either hardware,
-								platform, or software constraints.
+			KEY Unidentified	当一个实现由于硬件、平台或软件限制而无法识别另一个键值时
+								，会使用此键值。
 		END_KEY_TABLE
 
 		<p class="note">
-		Conforming implementations MUST only use KEY{Unidentified} as a key value
-		when there is no way for the implementation to detect the key value.
-		Exposing only this value for all keyboard events MUST NOT indicate a conforming
-		implementation.
+		当实现无法确定 [=键属性值=] 时，符合本规范的实现 
+		<span class="zh-upper">必须</span> 只能使用 KEY{Unidentified} 作为键属性值。
+		但仅使用(Exposing)该值 <span class="zh-upper">不得</span> 表明实现符合本规范。
 		</p>
 
-	<h3 id="keys-modifier">Modifier Keys</h3>
+	<h3 id="keys-modifier">修饰键</h3>
 
 		BEGIN_KEY_TABLE modifier
-			KEY Alt				The KEYCAP{Alt} (Alternative) key.<br/>
-								This key enables the alternate modifier function for interpreting concurrent or subsequent keyboard input.<br/>
-								This key value is also used for the Apple KEYCAP{Option} key.
-			KEY AltGraph		The Alternate Graphics (KEYCAP{AltGr} or KEYCAP{AltGraph}) key.
-								This key is used enable the ISO Level 3 shift modifier (the standard KEYCAP{Shift} key is the level 2 modifier).
-								See [[ISO9995-1]].
-			KEY CapsLock		The KEYCAP{Caps Lock} (Capital) key.
-								Toggle capital character lock function for interpreting subsequent keyboard input event.
-			KEY Control			The KEYCAP{Control} or KEYCAP{Ctrl} key, to enable control modifier function for interpreting concurrent or subsequent keyboard input.
-			KEY_OPT Fn			The Function switch KEYCAP{Fn} key.<br/>
-								Activating this key simultaneously with another key changes that key's value to an alternate character or function.
-								This key is often handled directly in the keyboard hardware and does not usually generate key events.
+			KEY Alt				KEYCAP{Alt} (Alternative，转换)键。<br/>
+								此键启用转换修饰符功能，用于解译(interpreting)
+								并行或连续的键盘输入。<br/>
+								此键值也见于苹果的 KEYCAP{Option} 键。<br/>
+			KEY AltGraph		转换字形(Alternate Graphics， KEYCAP{AltGr} 或 
+								KEYCAP{AltGraph} )键。此键用于启用 ISO 3 级上档(shift)修饰符功能
+								(标准 KEYCAP{Shift} 键是级别 2 的修饰键)。参见 [[ISO9995-1]] 。
+			KEY CapsLock		KEYCAP{Caps Lock} (大写锁定)键。切换(Toggle)
+								大写字符锁定功能以解译(interpreting)后续键盘输入事件。
+			KEY Control			KEYCAP{Control} 或 KEYCAP{Ctrl} 键，
+								此键启用控制修饰符功能，用于解译(interpreting)
+								并行或连续的键盘输入。
+			KEY_OPT Fn			功能(Function)开关 KEYCAP{Fn} 键。<br/>
+								与另一个 [=功能键=] 同时激活该键会将 [=功能键=] 
+								的键值更改为备用字符(alternate character)或其他功能。<br/>
+								KEYCAP{Fn} 键通常在键盘硬件中直接处理，并且通常不生成按键事件。
 			KEY_OPT FnLock		The Function-Lock (KEYCAP{FnLock} or KEYCAP{F-Lock}) key.
 								Activating this key switches the mode of the keyboard to changes some keys' values to an alternate character or function.
 								This key is often handled directly in the keyboard hardware and does not usually generate key events.

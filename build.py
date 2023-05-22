@@ -32,9 +32,9 @@ class Parser():
 		if self.key == None:
 			return ''
 
-		req = "Yes"
+		req = "是"
 		if self.opt:
-			req = "No"
+			req = "否"
 		if self.is_dup:
 			return (
 				'<tr><td class="key-table-key"><code class="key">"%s"</code></td>\n'
@@ -189,8 +189,8 @@ class Parser():
 				'<table id="key-table-%s" class="data-table full-width">\n'
 				'<thead><tr>'
 				'<th style="width:20%%">[=键属性值=]</th>'
-				'<th style="width:10%%">Required</th>'
-				'<th style="width:70%%">Typical Usage (Non-normative)</th>'
+				'<th style="text-align:center;min-width:55px;width:10%%">必需的</th>'
+				'<th style="width:70%%">典型用途 (非规范性的)</th>'
 				'</tr></thead>\n'
 				'<tbody>\n') % name
 
