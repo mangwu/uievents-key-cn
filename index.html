@@ -7,7 +7,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-UD" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
   <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
-  <meta content="41ddcc2a2d42bde0935263dfe91a28eb7acbbc4f" name="document-revision">
+  <meta content="9393980bc585c0b42f9ad19e905d21876ca7f6b1" name="document-revision">
   <link href="./override.css" rel="stylesheet">
 <style>
 
@@ -646,8 +646,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
    <h2 class="no-num no-toc no-ref heading settled" id="abstract-cn"> <span class="content">摘要</span> </h2>
-    本规范定义的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value">键属性值</a> 必须用于 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent">KeyboardEvent</a></code> 事件的{ 
-	{KeyboardEvent/key}} 属性，该键属性被定义为用户界面事件规范 <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> 的一部分。 
+    本规范定义的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value">键属性值</a> 必须用于 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent">KeyboardEvent</a></code> 事件的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key">key</a></code> 属性，该键属性被定义为用户界面事件规范 <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> 的一部分。 
    <h2 class="no-num no-toc no-ref heading settled" id="sotd-cn"> <span class="content">文档状态</span> </h2>
    <div data-fill-with="status-cn">
     <p><em> 本节介绍了本文件发布时的状态。
@@ -684,12 +683,12 @@ dfn > a.self-link::before      { content: "#"; }
       <li>
        <a href="#keys-unicode"><span class="secno">2.1</span> <span class="content">Unicode 值</span></a>
        <ol class="toc">
-        <li><a href="#control"><span class="secno">2.1.1</span> <span class="content">Control Characters</span></a>
+        <li><a href="#control"><span class="secno">2.1.1</span> <span class="content">控制字符</span></a>
        </ol>
       <li>
-       <a href="#selecting-key-attribute-values"><span class="secno">2.2</span> <span class="content">Selecting <code class="idl"><span>key</span></code> Attribute Values</span></a>
+       <a href="#selecting-key-attribute-values"><span class="secno">2.2</span> <span class="content">选择 <code class="idl"><span>key</span></code> 属性值</span></a>
        <ol class="toc">
-        <li><a href="#h-clipboard-read"><span class="secno">2.2.1</span> <span class="content"><span>select an appropriate key attribute value</span></span></a>
+        <li><a href="#h-clipboard-read"><span class="secno">2.2.1</span> <span class="content"> <span> 选择一个适合的键属性值</span></span></a>
        </ol>
      </ol>
     <li>
@@ -743,26 +742,26 @@ dfn > a.self-link::before      { content: "#"; }
 <script defer src="./custom-script.js"></script>
 <script src="./backup-script.js"></script>
    <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">简介</span><a class="self-link" href="#introduction"></a></h2>
-   <p>本文档指定了一组有效的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①">键属性值</a> 集合，它们 <span class="zh-upper">必须</span> 在 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent①">KeyboardEvent</a></code> 事件的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key">key</a></code> 属性中使用，以对键的含义进行编码。
-	请注意，特定键的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①">key</a></code> 值将根据用户当前的区域设置而有所不同。
+   <p>本文档指定了一组有效的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①">键属性值</a> 集合，它们 <span class="zh-upper">必须</span> 在 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent①">KeyboardEvent</a></code> 事件的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①">key</a></code> 属性中使用，以对键的含义进行编码。
+	请注意，特定键的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key②">key</a></code> 值将根据用户当前的区域设置而有所不同。
 	有关仅基于键在键盘上的物理位置而不因区域设置而变化的值，请参阅 <a data-link-type="biblio" href="#biblio-uievents-code" title="UI Events KeyboardEvent code Values">[UIEvents-Code]</a> 中描述的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code">code</a></code> 。</p>
    <h3 class="heading settled" data-level="1.1" id="style-conventions"><span class="secno">1.1. </span><span class="content">格式规约</span><a class="self-link" href="#style-conventions"></a></h3>
     本规范遵循以下规约: 
    <ul>
     <li data-md>
-     <p>打印在 <em><a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#key-legends" id="ref-for-key-legends">键帽</a></em> 上的键显示为 <code class="keycap">↓</code>， <code class="keycap">=</code> 或 <code class="keycap">Q</code> 。这用于从用户的角度引用键，而不考虑生成的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent②">KeyboardEvent</a></code> 事件中的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key②">key</a></code> (键) 和 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①">code</a></code> (键码)。</p>
+     <p>打印在 <em><a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#key-legends" id="ref-for-key-legends">键帽</a></em> 上的键显示为 <code class="keycap">↓</code>， <code class="keycap">=</code> 或 <code class="keycap">Q</code> 。这用于从用户的角度引用键，而不考虑生成的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent②">KeyboardEvent</a></code> 事件中的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key③">key</a></code> (键) 和 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①">code</a></code> (键码)。</p>
     <li data-md>
      <p>代表字符的字形(Glyphs)显示为: <code class="glyph">"a"</code> ， <code class="glyph">"é"</code> ， <code class="glyph">"ر"</code> ， <code class="glyph">"字"</code> 。</p>
     <li data-md>
      <p>Unicode( <a data-link-type="biblio" href="#biblio-unicode" title="The Unicode Standard">[Unicode]</a> )码点( <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#code-point" id="ref-for-code-point">code points</a> ) 显示为: <code class="unicode">U+003D</code> 。</p>
     <li data-md>
-     <p>有效的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②">键属性值</a> ，即 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent③">KeyboardEvent</a></code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key③">key</a></code> 属性值显示为: <code class="key">"<a href="#key-ArrowDown">ArrowDown</a>"</code> ， <code class="key">"="</code> ， <code class="key">"q"</code> 或 <code class="key">"Q"</code> 。</p>
+     <p>有效的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②">键属性值</a> ，即 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent③">KeyboardEvent</a></code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key④">key</a></code> 属性值显示为: <code class="key">"<a href="#key-ArrowDown">ArrowDown</a>"</code> ， <code class="key">"="</code> ， <code class="key">"q"</code> 或 <code class="key">"Q"</code> 。</p>
     <li data-md>
      <p>有效的 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#key-code-attribute-values" id="ref-for-key-code-attribute-values">按键码属性值</a> ，即 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent④">KeyboardEvent</a></code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②">code</a></code> 属性值显示为: <code class="code">"ArrowDown"</code>，<code class="code">"Equal"</code> 或 <code class="code">"KeyQ"</code>。</p>
    </ul>
    <p class="note custom-note" role="note"> 在 <a href="https://mangwu.github.io/uievents-cn/#style-conventions"> UIEvents</a> 规范本体的格式规约中，也对键帽，字符，代码点和键，
 		键值的属性值进行了说明，但是渲染显示不一样，本规范中的渲染会更显眼。 </p>
-   <h2 class="heading settled" data-level="2" id="key-attr-values"><span class="secno">2. </span><span class="content">键盘事件 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key④">key</a></code> 属性值</span><a class="self-link" href="#key-attr-values"></a></h2>
+   <h2 class="heading settled" data-level="2" id="key-attr-values"><span class="secno">2. </span><span class="content">键盘事件 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑤">key</a></code> 属性值</span><a class="self-link" href="#key-attr-values"></a></h2>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="key-attribute-value">键属性值</dfn> 被定义为包含如下内容的一个 <code>DOMString</code> :</p>
    <ul>
     <li data-md>
@@ -780,15 +779,22 @@ dfn > a.self-link::before      { content: "#"; }
 		但是有一小部分 Unicode 字符集合 <span class="zh-upper">不得</span> 使用。
 		我们引入了 <a data-link-type="dfn" href="#key-string" id="ref-for-key-string①">键字符串</a> 的概念，以标识适合用作 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value⑥">键属性值</a> 的 Unicode 
 		字符集合。</p>
-   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="key-string">键字符串</dfn> 是一个字符串，包含0个或1个 <a data-link-type="dfn" href="#non-control-character" id="ref-for-non-control-character">非控制字符</a> ("基础"字符)，后跟0个或多个 <a data-link-type="dfn" href="#combining-character" id="ref-for-combining-character">组合字符</a> 。字符串 <span class="zh-upper">必须</span> 采用规范化形式 C(Normalized Form C ，
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="key-string">键字符串</dfn> (key string)是一个字符串，包含0个或1个 <a data-link-type="dfn" href="#non-control-character" id="ref-for-non-control-character">非控制字符</a> ("基础"字符)，后跟0个或多个 <a data-link-type="dfn" href="#combining-character" id="ref-for-combining-character">组合字符</a> 。字符串 <span class="zh-upper">必须</span> 采用规范化形式 C (Normalized Form C ，
 		NFC)，如 <a data-link-type="biblio" href="#biblio-uax15" title="Unicode Normalization Forms">[UAX15]</a> 中所述。</p>
-   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="non-control-character">非控制字符</dfn> is any valid Unicode character except
-		those that are part of the "Other, Control" ("Cc") General Category.</p>
-   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="combining-character">组合字符</dfn> is any valid Unicode character in the
-		"Mark, Spacing Combining" ("Mc") General Category or with a non-zero
-		Combining Class.</p>
-   <div class="example" id="example-f2dd3a1e">
-    <a class="self-link" href="#example-f2dd3a1e"></a> The following are some examples of simple <a data-link-type="dfn" href="#key-string" id="ref-for-key-string②">键字符串</a>: 
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="non-control-character">非控制字符</dfn> (non-control character)
+		是任何有效的 Unicode 字符，但排除那些属于"其他，控制(Other，Control)"
+		("Cc")一般类别(General Category)的字符。</p>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="combining-character">组合字符</dfn> (combining character)
+		是"标记、间距组合(Mark，Spacing Combining)"("Mc")一般类别
+		(General Category)中的，或具有非零组合类别(non-zero Combining 
+		Class)的任何有效 Unicode 字符。</p>
+   <div class="note custom-note" id="key-string-note" role="note"><a class="self-link" href="#key-string-note"></a> 这里对键字符串的定义基于对 Unicode 字符类别的认识，其中 "Other, Control" 是 
+		Unicode 的一个字符类别，类别码为 [Cc] ，包含 65 个字符( <a href="https://www.fileformat.info/info/unicode/category/Cc/list.htm"> 网络资料</a> 查阅得知); 而 "Mark ，Spacing Combining" 同样是 Unicode 
+		的一个字符类别，类别码为 [Mc] ，包含 452 个字符( <a href="https://www.fileformat.info/info/unicode/category/Mc/list.htm"> 网络资料</a> 查阅得知)。关于组合字符以及非零组合类别可以查阅 Unicode 
+		标准的 <a href="https://www.unicode.org/versions/Unicode15.0.0/ch03.pdf"> 第3章</a> 。 <br> 总之，本节对于非控制字符，组合字符的定义是为了确定键字符串在 Unicode 
+		中使用的字符范围以及字符串的组合形式。这样就保证了 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value⑦">键属性值</a> 的字符串的确定性。 </div>
+   <div class="example" id="example-c2742445">
+    <a class="self-link" href="#example-c2742445"></a> 以下是一些简单 <a data-link-type="dfn" href="#key-string" id="ref-for-key-string②">键字符串</a> 的例子: 
     <ul>
      <li data-md>
       <p><code class="key">"a"</code>, <code class="key">"A"</code>, <code class="key">"b"</code>, <code class="key">"B"</code>, ..., <code class="key">"å"</code>, <code class="key">"é"</code>, <code class="key">"ü"</code>, <code class="key">"ñ"</code></p>
@@ -804,37 +810,51 @@ dfn > a.self-link::before      { content: "#"; }
       <p><code class="key">"±"</code>, <code class="key">"ʶ"</code>, <code class="key">"϶"</code>, <code class="key">"൹"</code>, <code class="key">"℉"</code></p>
     </ul>
    </div>
-   <div class="example" id="example-dc8e351d">
-    <a class="self-link" href="#example-dc8e351d"></a> With the exception of <code class="keycap">Tab</code> and <code class="keycap">Enter</code> (see <a href="#control">§ 2.1.1 Control Characters</a>),
-			all non-control whitespace Unicode characters are considered to
-			be valid <a data-link-type="dfn" href="#key-string" id="ref-for-key-string③">键字符串</a>. 
+   <div class="example" id="example-13f613f1">
+    <a class="self-link" href="#example-13f613f1"></a> 除了 <code class="keycap">Tab</code> 和 <code class="keycap">Enter</code> (参见 <a href="#control">§ 2.1.1 控制字符</a> )，所有非控制空白 
+			Unicode 字符都被视为有效的 <a data-link-type="dfn" href="#key-string" id="ref-for-key-string③">键字符串</a> 。 
     <ul>
      <li data-md>
-      <p><code class="key">" "</code> = <code class="unicode">U+0020</code> Space</p>
+      <p><code class="key">" "</code> = <code class="unicode">U+0020</code> 空格 (Space)</p>
      <li data-md>
-      <p><code class="key">" "</code> = <code class="unicode">U+00A0</code> No-Break Space</p>
+      <p><code class="key">" "</code> = <code class="unicode">U+00A0</code> 无中断空格 (No-Break Space)</p>
      <li data-md>
-      <p><code class="key">" "</code> = <code class="unicode">U+2009</code> Thin Space</p>
+      <p><code class="key">" "</code> = <code class="unicode">U+2009</code> 细空格 (Thin Space)</p>
      <li data-md>
-      <p><code class="key">"　"</code> = <code class="unicode">U+3000</code> Ideographic Space</p>
+      <p><code class="key">"　"</code> = <code class="unicode">U+3000</code> 表意空格 (Ideographic Space)</p>
     </ul>
    </div>
-   <div class="example" id="example-a45db6b0">
-    <a class="self-link" href="#example-a45db6b0"></a> The following are some examples of <a data-link-type="dfn" href="#key-string" id="ref-for-key-string④">键字符串</a> with <a data-link-type="dfn" href="#combining-character" id="ref-for-combining-character①">组合字符</a>: 
+   <div class="note custom-note" role="note">
+     空格的形式是多样的，在 Unicode 中有 "Separator, Space" 这一组字符类别( <a href="https://www.fileformat.info/info/unicode/category/Zs/list.htm"> 网络资料</a> 查阅得知)，类别码为 [Zs] ，它包含 17 个字符，
+		都是关于空格分隔符的，不同的空格符号有不同的宽度和用法，查阅维基百科 <a href="https://en.wikipedia.org/wiki/Whitespace_character"> Whitespace_character</a> 获取更多信息，如下是空格字符宽度对比的图像: 
+    <figure id="figure-Punctuation-Spaces">
+      <img alt="不同空格字符的宽度对比" height="450" src="images/Punctuation-Spaces.svg" width="363"> 
+     <div class="custom-figcaption">不同空格字符的宽度对比域</div>
+    </figure>
+   </div>
+   <div class="example" id="example-a75fb4a5">
+    <a class="self-link" href="#example-a75fb4a5"></a> 以下是一些拥有 <a data-link-type="dfn" href="#combining-character" id="ref-for-combining-character①">组合字符</a> 的 <a data-link-type="dfn" href="#key-string" id="ref-for-key-string④">键字符串</a> 的例子: 
     <ul>
      <li data-md>
-      <p><code class="key">"ô"</code> = <code class="unicode">U+00F4</code> (NOT "o" + " ̂" (<code class="unicode">U+006F</code> <code class="unicode">U+0302</code>)
-because pre-composed characters must be used if available)</p>
+      <p><code class="key">"ô"</code> = <code class="unicode">U+00F4</code> [ <span class="zh-upper">不是</span> (NOT) "o" + " ̂" (<code class="unicode">U+006F</code> <code class="unicode">U+0302</code>)，因为如果可以，则必须使用预组字符(pre-composed characters)]</p>
      <li data-md>
-      <p><code class="key">"ḍ̇"</code> = <code class="unicode">U+1E0D</code> + <code class="unicode">U+0307</code> (NOT "d" + " ̣" + " ̇" (<code class="unicode">U+0064</code> <code class="unicode">U+0323</code> <code class="unicode">U+0307</code>)
-because precomposed characters must be used if available,
-and NOT "ḋ" + " ̣" (<code class="unicode">U+1E0B</code> <code class="unicode">U+0323</code>)
-because accents must be ordered before substituting with a precomposed version)</p>
+      <p><code class="key">"ḍ̇"</code> = <code class="unicode">U+1E0D</code> + <code class="unicode">U+0307</code> [ <span class="zh-upper">不是</span> (NOT) "d" + " ̣" + " ̇"
+(<code class="unicode">U+0064</code> <code class="unicode">U+0323</code> <code class="unicode">U+0307</code>)，因为如果可用，
+则必须使用预组字符(pre-composed characters)，并且 <span class="zh-upper">不是</span> (NOT) "ḋ" + " ̣" 
+(<code class="unicode">U+1E0B</code> <code class="unicode">U+0323</code>)，因为在用预组字符(pre-composed characters)
+替换之前必须对重音符号(accents)进行排序]</p>
     </ul>
    </div>
-   <h4 class="heading settled" data-level="2.1.1" id="control"><span class="secno">2.1.1. </span><span class="content">Control Characters</span><a class="self-link" href="#control"></a></h4>
-   <p>A small number of characters in the Unicode "Cc" General Category are
-			supported as <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value①">命名键属性值</a>. These named values are as
+   <div class="note custom-note" role="note"> <q>预组字符(precomposed character)是 Unicode 字符集中的实体，
+		定义为一个或多字符序列。预组字符可以表示一个字母与一个附加符号，例如 <code class="glyph">"é"</code> (小写拉丁字母e带一个尖音符)。 技术上， <code class="glyph">"é"</code> (U+00E9)是一个字符，
+		可以分解为 Unicode 等效字符串 <code class="glyph">"e"</code> (U+0065)与尖音符 " ́"
+		(U+0301)。</q> —— 维基百科 <a href="https://zh.wikipedia.org/wiki/预组字符"> 预组字符</a> <br> 这里给出了这些组合字符的具体 Unicode 编码，并对这些编码的合理性进行解释 ——<wbr>不是简单的用单码字符拼接而成，而使用已有的预组字符。其中 <code class="key">"ḍ̇"</code> 的编码是用预组字符 <code class="glyph">"ḍ"</code> 和 单字符 
+		" ̇" 组合而成，因为不存在这三个符号的预组字符，
+		同时也说明了组合字符时，单字符排序的问题。<br> 以上非引用说法不一定准确，请参阅 <a data-link-type="biblio" href="#biblio-uax15" title="Unicode Normalization Forms">[UAX15]</a> 标准以获取准确信息。 </div>
+   <h4 class="heading settled" data-level="2.1.1" id="control"><span class="secno">2.1.1. </span><span class="content">控制字符</span><a class="self-link" href="#control"></a></h4>
+   <p>支持 Unicode "Cc" 一般类别(General Category)中的少量字符作为 <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value①">命名键属性值</a> 这些命名值如下所示:
+			A small number of characters in the Unicode "Cc" General Category are
+			supported as <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value②">命名键属性值</a>. These named values are as
 			follows:</p>
    <ul>
     <li data-md>
@@ -848,57 +868,68 @@ because accents must be ordered before substituting with a precomposed version)<
     <li data-md>
      <p><code class="unicode">U+007F</code> <code class="key">"<a href="#key-Delete">Delete</a>"</code></p>
    </ul>
-   <h3 class="heading settled" data-level="2.2" id="selecting-key-attribute-values"><span class="secno">2.2. </span><span class="content">Selecting <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑤">key</a></code> Attribute Values</span><a class="self-link" href="#selecting-key-attribute-values"></a></h3>
-   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="glyph-modifier-key">glyph modifier key</dfn> is any of the following modifier keys: <code class="keycap">Shift</code>, <code class="keycap">CapsLock</code> or <code class="keycap">AltGr</code>.</p>
+   <div class="note custom-note" role="note"> 这里的 "Cc" 就是 "'Other, Control" Unicode 字符类别的类别码，
+			查看键字符串的 <a href="#key-string-note">非标准注释</a> 以获取更多信息。 </div>
+   <h3 class="heading settled" data-level="2.2" id="selecting-key-attribute-values"><span class="secno">2.2. </span><span class="content">选择 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑥">key</a></code> 属性值</span><a class="self-link" href="#selecting-key-attribute-values"></a></h3>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="glyph-modifier-key">字形修饰键</dfn> (glyph modifier key)
+		是其中的任何一个修饰符键: <code class="keycap">Shift</code>, <code class="keycap">CapsLock</code> 或 <code class="keycap">AltGr</code>。</p>
    <div class="algorithm" data-algorithm="clipboard-read">
-    <h4 class="heading settled" data-level="2.2.1" id="h-clipboard-read"><span class="secno">2.2.1. </span><span class="content"><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="select-an-appropriate-key-attribute-value">select an appropriate key attribute value</dfn></span><a class="self-link" href="#h-clipboard-read"></a></h4>
-     To <a data-link-type="dfn" href="#select-an-appropriate-key-attribute-value" id="ref-for-select-an-appropriate-key-attribute-value">select an appropriate key attribute value</a> to store in a <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑥">KeyboardEvent</a></code>'s <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑥">key</a></code> attribute, run these steps: 
+    <h4 class="heading settled" data-level="2.2.1" id="h-clipboard-read"><span class="secno">2.2.1. </span><span class="content"> <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="选择一个适合的键属性值" data-noexport id="select-an-appropriate-key-attribute-value"> 选择一个适合的键属性值</dfn></span><a class="self-link" href="#h-clipboard-read"></a></h4>
+     要 <a data-link-type="dfn" href="#select-an-appropriate-key-attribute-value" id="ref-for-select-an-appropriate-key-attribute-value">选择一个适合的键属性值</a> 以保存在 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑥">KeyboardEvent</a></code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑦">key</a></code> 属性中，请运行以下步骤: 
     <ol>
      <li data-md>
-      <p>Let <var>key</var> be a DOMString initially set to <code class="key">"<a href="#key-Unidentified">Unidentified</a>"</code>.</p>
+      <p>声明一个 DOMString 类型的 <var>key</var> 变量，初始化为 <code class="key">"<a href="#key-Unidentified">Unidentified</a>"</code> 。</p>
      <li data-md>
-      <p>If there exists an appropriate <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value②">命名键属性值</a> for this
-key event, then</p>
+      <p>如果对于这个按键事件，存在一个适合的 <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value③">命名键属性值</a> ，那么</p>
       <ol>
        <li data-md>
-        <p>Set <var>key</var> to that <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value③">命名键属性值</a>.</p>
+        <p>赋值 <var>key</var> 为那个 <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value④">命名键属性值</a>.</p>
       </ol>
      <li data-md>
-      <p>Else, if the key event generates a valid <a data-link-type="dfn" href="#key-string" id="ref-for-key-string⑤">键字符串</a>, then</p>
+      <p>否则，如果按键事件生成了一个有效的 <a data-link-type="dfn" href="#key-string" id="ref-for-key-string⑤">键字符串</a> ，那么</p>
       <ol>
        <li data-md>
-        <p>Set <var>key</var> to that <a data-link-type="dfn" href="#key-string" id="ref-for-key-string⑥">键字符串</a> value.</p>
+        <p>赋值 <var>key</var> 为那个 <a data-link-type="dfn" href="#key-string" id="ref-for-key-string⑥">键字符串</a> 值.</p>
       </ol>
      <li data-md>
-      <p>Else, if the key event has any modifier keys other than <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-modifier-key">glyph modifier keys</a>, then</p>
+      <p>否则，如果按键事件关联了除了 <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-modifier-key">字形修饰键</a> 之外的任何修饰符按键，那么</p>
       <ol>
        <li data-md>
-        <p>Set <var>key</var> to the <a data-link-type="dfn" href="#key-string" id="ref-for-key-string⑦">键字符串</a> that would have been generated
-by this event if it had been typed with all modifer keys removed
-except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-modifier-key①">glyph modifier keys</a>.</p>
+        <p>赋值 <var>key</var> 为 指定的 <a data-link-type="dfn" href="#key-string" id="ref-for-key-string⑦">键字符串</a> ，这个 <a data-link-type="dfn" href="#key-string" id="ref-for-key-string⑧">键字符串</a> 由按键事件生成，但保证在键入时的关联按键是 <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-modifier-key①">字形修饰键</a> 之外的所有修饰符键。</p>
       </ol>
      <li data-md>
-      <p>Return <var>key</var> as the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value⑦">键属性值</a> for this key event.</p>
+      <p>将 <var>key</var> 作为此按键事件的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value⑧">键属性值</a> 返回。</p>
     </ol>
-    <p class="example" id="example-228d7b47"><a class="self-link" href="#example-228d7b47"></a> On a standard US keyboard, the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value⑧">键属性值</a> for the key labeled <code class="keycap">Q</code> is <code class="key">"q"</code> (or <code class="key">"Q"</code> if the <code class="keycap">Shift</code> modifier
-				key is also held). </p>
-    <p class="example" id="example-e8796216"><a class="self-link" href="#example-e8796216"></a> On a standard US keyboard, <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value⑨">键属性值</a> for <code class="keycap">Control</code> + <code class="keycap">Q</code> is <code class="key">"q"</code>. </p>
-    <p class="example" id="example-3c3f2043"><a class="self-link" href="#example-3c3f2043"></a> On a US keyboard with a right-handed Dvorak key mapping, the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⓪">键属性值</a> for the key labeled <code class="keycap">Q</code> is <code class="key">"5"</code> (or <code class="key">"%"</code> with <code class="keycap">Shift</code> modifier). </p>
-    <p class="example" id="example-a6a9718e"><a class="self-link" href="#example-a6a9718e"></a> On the same US Dvorak keyboard layout as the previous example, the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①①">键属性值</a> for <code class="keycap">Control</code> + <code class="keycap">Q</code> is <code class="key">"5"</code>. </p>
-    <p class="example" id="example-27cf6d61"><a class="self-link" href="#example-27cf6d61"></a> On a Bolnagri keyboard layout, the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①②">键属性值</a> for the
-				key labeled <code class="keycap">Q</code> is a string containing the single Unicode
-				character <code class="unicode">U+200C</code> (ZWNJ or Zero Width Non-Joining Space). </p>
+    <p class="example" id="example-5086b899"><a class="self-link" href="#example-5086b899"></a> 在标准的美国键盘上，按键键帽标签为 <code class="keycap">Q</code> 的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value⑨">键属性值</a> 为 <code class="key">"q"</code> (如果同时按住 <code class="keycap">Shift</code> <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-modifier-key②">字形修饰键</a> ，则为 <code class="key">"Q"</code> )。 </p>
+    <div class="note custom-note" role="note"> 例子 4 中 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⓪">键属性值</a> 的结果 <code class="key">"q"</code> ，源于上面步骤的第 3 步。
+			另外，这里配合 <code class="keycap">Shift</code> 将键入字符 "q" 修饰成大写的，
+			是在大写锁定状态是默认关闭的情况下(没有 <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-modifier-key③">字形修饰键</a> <code class="keycap">CapsLock</code> 的影响)。 </div>
+    <p class="example" id="example-abb2be2e"><a class="self-link" href="#example-abb2be2e"></a> 在标准的美国键盘上， <code class="keycap">Control</code> + <code class="keycap">Q</code> 组合键的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①①">键属性值</a> 为 <code class="key">"q"</code> 。 </p>
+    <p class="example" id="example-9411bb26"><a class="self-link" href="#example-9411bb26"></a> 在使用右手德沃夏克式键映射的美国键盘上，按键键帽标签为 <code class="keycap">Q</code> 的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①②">键属性值</a> 为 <code class="key">"5"</code> (如果同时按住 <code class="keycap">Shift</code> <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-modifier-key④">字形修饰键</a> ，则为 <code class="key">"%"</code> )。 </p>
+    <p class="example" id="example-8dd62508"><a class="self-link" href="#example-8dd62508"></a> 在与前面的示例相同的德沃夏克式的美国键盘布局上，<code class="keycap">Control</code> + <code class="keycap">Q</code> 组合键的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①③">键属性值</a> 为 <code class="key">"5"</code> 。 </p>
+    <div class="note custom-note" role="note"> 关于德沃夏克键盘，请参阅维基百科 <a href="https://en.wikipedia.org/wiki/Dvorak_keyboard_layout"> Dvorak keyboard layout</a> 。 </div>
+    <p class="example" id="example-c7735813"><a class="self-link" href="#example-c7735813"></a> 在一个 Bolnagri 式键盘布局上，按键键帽标签为 <code class="keycap">Q</code> 的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①④">键属性值</a> 是一个 包含单个 Unicode 字符 —— <code class="unicode">U+200C</code> 的字符串
+				(显示为 ZWNJ 或零宽度断字符(Zero Width Non-Joining Space)) </p>
+    <div class="note custom-note" role="note">
+      Bolnagri 是印地语的一种键盘布局。零宽度空格符 (zero-width space) <code class="unicode">U+200B</code> : 用于较长单词的换行分隔; 零宽度断字符 (Zero-width non-joiner) <code class="unicode">U+200C</code> : 用于阿拉伯文，德文，印度语系等文字中，
+			阻止会发生连字的字符间的连字效果。查阅维基百科 <a href="https://en.wikipedia.org/wiki/Zero-width_non-joiner"> Zero-width non-joiner</a> 以获取更多信息，
+			如下是零宽度断字符在键盘上的显示: 
+     <figure id="figure-Zero-width_non-joiner">
+       <img alt="零宽度断字符" height="100" src="images/Zero-width_non-joiner.svg" width="100"> 
+      <div class="custom-figcaption">零宽度断字符</div>
+     </figure>
+    </div>
     <p class="example" id="example-d54d2b35"><a class="self-link" href="#example-d54d2b35"></a> On a French PC keyboard with a standard French mapping, the <code class="keycap">^</code> key acts as a <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#dead-key" id="ref-for-dead-key">dead key</a> for the combining circumflex diacritical mark.
-				The <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①③">键属性值</a> for this keyboard event is <code class="key">"<a href="#key-Dead">Dead</a>"</code>. </p>
-    <p class="example" id="example-287d42be"><a class="self-link" href="#example-287d42be"></a> Also on a French keyboard with a standard French mapping, the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①④">键属性值</a> for the <code class="keycap">é</code> key (which corresponds to the <code class="keycap">2</code> key on a US keyboard) is <code class="key">"é"</code> (<code class="unicode">U+00E9</code>). </p>
+				The <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑤">键属性值</a> for this keyboard event is <code class="key">"<a href="#key-Dead">Dead</a>"</code>. </p>
+    <p class="example" id="example-287d42be"><a class="self-link" href="#example-287d42be"></a> Also on a French keyboard with a standard French mapping, the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑥">键属性值</a> for the <code class="keycap">é</code> key (which corresponds to the <code class="keycap">2</code> key on a US keyboard) is <code class="key">"é"</code> (<code class="unicode">U+00E9</code>). </p>
     <p class="example" id="example-06caf71b"><a class="self-link" href="#example-06caf71b"></a> On a Korean PC keyboard with a standard Korean mapping, the primary
 				function of the <code class="keycap">Ha/En</code> key is to switch between Hangul and English
-				input. There is an entry for this key as a <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value④">命名键属性值</a>, <code class="key">"<a href="#key-HangulMode">HangulMode</a>"</code>, so that should be used as the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑤">键属性值</a>. </p>
+				input. There is an entry for this key as a <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑤">命名键属性值</a>, <code class="key">"<a href="#key-HangulMode">HangulMode</a>"</code>, so that should be used as the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑦">键属性值</a>. </p>
    </div>
-   <h2 class="heading settled" data-level="3" id="named-key-attribute-values"><span class="secno">3. </span><span class="content">Named <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑦">key</a></code> Attribute Values</span><a class="self-link" href="#named-key-attribute-values"></a></h2>
-   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="named-key-attribute-value">命名键属性值</dfn> is any of the values given in the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑥">键属性值</a> column of any of the tables in this section of the
+   <h2 class="heading settled" data-level="3" id="named-key-attribute-values"><span class="secno">3. </span><span class="content">Named <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑧">key</a></code> Attribute Values</span><a class="self-link" href="#named-key-attribute-values"></a></h2>
+   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="named-key-attribute-value">命名键属性值</dfn> is any of the values given in the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑧">键属性值</a> column of any of the tables in this section of the
 	specification.</p>
-   <p>The <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑤">命名键属性值</a> defined here are based
+   <p>The <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑥">命名键属性值</a> defined here are based
 	in part on the sets of keycodes from
 	the <code>java.awt.event.KeyEvent</code> interface of the Java Platform,
 	Standard Edition 6 API Specification <a data-link-type="biblio" href="#biblio-keyeventjava" title="Java™ Platform, Standard Edition 6 API Specification, Class java.awt.events.KeyEvent">[KeyEventJava]</a>, and the <code>System.Windows.Forms.Keys</code> key enumeration of the Microsoft .NET
@@ -906,20 +937,20 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
 	comes from Microsoft’s WM_APPCOMMAND messages <a data-link-type="biblio" href="#biblio-wmappcommand" title="MSDN WM_APPCOMMAND message">[WmAppCommand]</a>, and other
 	more specialized specifications as noted in this document.</p>
    <p>A conforming implementation of the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑦">KeyboardEvent</a></code> interface MUST support
-	this set of values for use in the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑧">key</a></code> attributes,
+	this set of values for use in the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑨">key</a></code> attributes,
 	although not all values may be available on all platforms or devices.</p>
-   <p>Future versions of this specification may include <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑨">key</a></code> values not included
+   <p>Future versions of this specification may include <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⓪">key</a></code> values not included
 	here, which have become common since the publication of this specification.</p>
    <p class="note" role="note"> Note: While every attempt has been made to make this list of values as complete as possible,
 	new values will periodically need to be defined as new input devices are introduced.
-	Rather than allowing user agents to define their own <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑥">命名键属性值</a> (which are unlikely to be consistent across multiple user agents), bugs SHOULD be
+	Rather than allowing user agents to define their own <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑦">命名键属性值</a> (which are unlikely to be consistent across multiple user agents), bugs SHOULD be
 	filed so that this specification can be updated. </p>
    <h3 class="heading settled" data-level="3.1" id="keys-special"><span class="secno">3.1. </span><span class="content">Special Keys</span><a class="self-link" href="#keys-special"></a></h3>
-   <p>Implementations that are unable to identify a key MUST use <code class="key">"<a href="#key-Unidentified">Unidentified</a>"</code> as the the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑦">键属性值</a>.</p>
+   <p>Implementations that are unable to identify a key MUST use <code class="key">"<a href="#key-Unidentified">Unidentified</a>"</code> as the the <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑨">键属性值</a>.</p>
    <table class="data-table full-width" id="key-table-general">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑧">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⓪">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -937,7 +968,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-modifier">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑨">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②①">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -997,7 +1028,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-modifier-legacy">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⓪">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②②">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1014,7 +1045,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-whitespace">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②①">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②③">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1032,7 +1063,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-navigation">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②②">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②④">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1073,7 +1104,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-editing">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②③">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑤">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1130,7 +1161,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-ui">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②④">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑥">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1204,7 +1235,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-device">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑤">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑦">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1256,7 +1287,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-composition">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑥">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑧">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1333,7 +1364,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-ime-korean">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑦">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑨">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1354,7 +1385,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-ime-japanese">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑧">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⓪">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1408,7 +1439,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-function">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②⑨">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③①">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1482,7 +1513,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-multimedia">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⓪">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③②">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1578,11 +1609,11 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
 		are encoded as <code class="key">"0"</code> ... <code class="key">"9"</code>, but some
 		multimedia keypads have buttons numbered from <code class="keycap">1</code> ... <code class="keycap">12</code>.
 		In these instances, the <code class="keycap">10</code> key is often labeled <code class="keycap">10 /0</code>.</p>
-   <p class="note" role="note"> Note: If supported, the <code class="keycap">10</code> or <code class="keycap">10 /0</code> key MUST be assigned a <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⓪">key</a></code> value of <code class="key">"0"</code>. </p>
+   <p class="note" role="note"> Note: If supported, the <code class="keycap">10</code> or <code class="keycap">10 /0</code> key MUST be assigned a <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①①">key</a></code> value of <code class="key">"0"</code>. </p>
    <table class="data-table full-width" id="key-table-multimedia-numpad">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③①">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③③">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1600,7 +1631,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-audio">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③②">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③④">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1678,7 +1709,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-speech">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③③">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑤">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1698,7 +1729,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-apps">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③④">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑥">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1759,7 +1790,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-browser">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑤">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑦">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1796,7 +1827,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-mobile-phone">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑥">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑧">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1853,7 +1884,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
    <table class="data-table full-width" id="key-table-tv">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑦">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑨">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -1979,7 +2010,7 @@ except for <a data-link-type="dfn" href="#glyph-modifier-key" id="ref-for-glyph-
       <td>Timer programming. (<code class="android">KEYCODE_TV_TIMER_PROGRAMMING</code>)
    </table>
    <h3 class="heading settled" data-level="3.18" id="keys-media-controller"><span class="secno">3.18. </span><span class="content">Media Controller Keys</span><a class="self-link" href="#keys-media-controller"></a></h3>
-   <p>The <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑧">键属性值</a> for media controllers (e.g. remote controls for
+   <p>The <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④⓪">键属性值</a> for media controllers (e.g. remote controls for
 		television, audio systems, and set-top boxes) are derived in part from
 		the consumer electronics technical specifications:</p>
    <ul>
@@ -1996,7 +2027,7 @@ Interface on UPnP Networks and the Internet <a data-link-type="biblio" href="#bi
    <table class="data-table full-width" id="key-table-media-controller">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value③⑨">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④①">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -2298,7 +2329,7 @@ Interface on UPnP Networks and the Internet <a data-link-type="biblio" href="#bi
    <table class="data-table full-width" id="key-table-media-controller-dup">
     <thead>
      <tr>
-      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④⓪">键属性值</a>
+      <th style="width:20%"><a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④②">键属性值</a>
       <th style="width:10%">Required
       <th style="width:70%">Typical Usage (Non-normative)
     <tbody>
@@ -2396,11 +2427,11 @@ Interface on UPnP Networks and the Internet <a data-link-type="biblio" href="#bi
       <td>This key value is used when an implementations is unable to identify another key value, due to either hardware, platform, or software constraints. (<code class="vk">VK_UNDEFINED</code>)
    </table>
    <h2 class="heading settled" data-level="4" id="accessibility"><span class="secno">4. </span><span class="content">Accessibility</span><a class="self-link" href="#accessibility"></a></h2>
-   <p>This specification simply defines a set of values that are valid for use in the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①①">key</a></code> attribute. Thus, it does not introduce any features that have
+   <p>This specification simply defines a set of values that are valid for use in the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①②">key</a></code> attribute. Thus, it does not introduce any features that have
 	accessibility concerns.</p>
    <p>The <a href="https://w3c.github.io/apa/fast/checklist.html">FAST checklist</a> has been completed and nothing is applicable to this specification.</p>
    <p>A note related to the FAST checklist item: "If technology provides internationalization support".
-	This specification inherently defines <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①②">key</a></code> values that support international hardware, e.g.,
+	This specification inherently defines <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①③">key</a></code> values that support international hardware, e.g.,
 	keyboards for different languages or layouts. It also defines many special keys which are given
 	human-readable names (like "Shift", "Control", "Home" or "ArrowLeft").</p>
    <p>These special key values are defined as human-readable strings so that code to detect special keys
@@ -2415,20 +2446,20 @@ Interface on UPnP Networks and the Internet <a data-link-type="biblio" href="#bi
    <ul>
     <li data-md>
      <p><em>2.1 What information might this feature expose to Web sites or other parties, and for what purposes is that exposure necessary?</em>:
-This spec defines a set of valid values for the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①③">key</a></code> attribute of the various
+This spec defines a set of valid values for the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①④">key</a></code> attribute of the various
 key events. This is necessary so that users can type text.</p>
     <li data-md>
      <p><em>2.17 How does your feature handle non-"fully active" documents?</em>:
 This attribute is only associated with key events, and events are not sent if the document is
 not fully active.</p>
    </ul>
-   <p>Security concerns associated with the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①④">key</a></code> attribute are addressed in the <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> specification.</p>
+   <p>Security concerns associated with the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑤">key</a></code> attribute are addressed in the <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> specification.</p>
    <h2 class="heading settled" data-level="7" id="privacy"><span class="secno">7. </span><span class="content">Privacy Considerations</span><a class="self-link" href="#privacy"></a></h2>
    <p>The <a href="https://www.w3.org/TR/security-privacy-questionnaire/">Security and Privacy Self-Review Questionairre</a> has been completed with the following notes:</p>
    <ul>
     <li data-md>
      <p><em>2.6 Do the features in your specification expose information about the underlying platform to origins?</em>:
-The <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑤">key</a></code> attribute contains the value of the key that is pressed by the user.
+The <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑥">key</a></code> attribute contains the value of the key that is pressed by the user.
 This could be used to infer that a user is using a keyboard with a particular locale (or IME)
 enabled.</p>
     <li data-md>
@@ -2436,13 +2467,13 @@ enabled.</p>
 A site could capture all keypresses and build a map of the values generated by the keyboard. If the
 user types enough values (and doesn’t change keyboard), then the site could try to match those values
 against a database of known keyboard layouts to guess the user’s current keyboard layout. However,
-that’s a concern for the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑥">key</a></code> attribute itself (defined in the <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> specification) rather than
+that’s a concern for the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑦">key</a></code> attribute itself (defined in the <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> specification) rather than
 something specific to the values defined in this document</p>
    </ul>
-   <p>Privacy concerns associated with the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑦">key</a></code> attribute are addressed in the <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> specification.</p>
+   <p>Privacy concerns associated with the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑧">key</a></code> attribute are addressed in the <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> specification.</p>
    <h2 class="heading settled" data-level="8" id="acknowledgements-contributors"><span class="secno">8. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements-contributors"></a></h2>
    <p>Over the years, many people contributed to the DOM <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑧">KeyboardEvent</a></code> specifications, including many participants of the DOM Working Group and the
-	WebApps Working Group. The current set of <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑧">key</a></code> values is
+	WebApps Working Group. The current set of <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑨">key</a></code> values is
 	the result of iterating over many proposals and variations during that time.
 	We especially thank the following participants for their contributions:</p>
    <p>Gary Kacmarcik (Google),
@@ -2496,12 +2527,12 @@ something specific to the values defined in this document</p>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
    <li><a href="#named-key-attribute-value">命名键属性值</a><span>, in § 3</span>
+   <li><a href="#glyph-modifier-key">字形修饰键</a><span>, in § 2.2</span>
    <li><a href="#combining-character">组合字符</a><span>, in § 2.1</span>
+   <li><a href="#select-an-appropriate-key-attribute-value">选择一个适合的键属性值</a><span>, in § 2.2.1</span>
    <li><a href="#key-string">键字符串</a><span>, in § 2.1</span>
    <li><a href="#key-attribute-value">键属性值</a><span>, in § 2</span>
    <li><a href="#non-control-character">非控制字符</a><span>, in § 2.1</span>
-   <li><a href="#glyph-modifier-key">glyph modifier key</a><span>, in § 2.2</span>
-   <li><a href="#select-an-appropriate-key-attribute-value">select an appropriate key attribute value</a><span>, in § 2.2.1</span>
   </ul>
   <aside aria-labelledby="infopaneltitle-for-4103741029595e9e13c67dab91d1e3bd" class="dfn-panel" data-for="4103741029595e9e13c67dab91d1e3bd" id="infopanel-for-4103741029595e9e13c67dab91d1e3bd">
    <span id="infopaneltitle-for-4103741029595e9e13c67dab91d1e3bd" style="display:none">Info about the 'code point' external reference.</span><a href="https://infra.spec.whatwg.org/#code-point">https://infra.spec.whatwg.org/#code-point</a><b>Referenced in:</b>
@@ -2516,7 +2547,9 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-interface-keyboardevent①">1. 简介</a>
     <li><a href="#ref-for-interface-keyboardevent②">1.1. 格式规约</a> <a href="#ref-for-interface-keyboardevent③">(2)</a> <a href="#ref-for-interface-keyboardevent④">(3)</a>
     <li><a href="#ref-for-interface-keyboardevent⑤">2. 键盘事件 key 属性值</a>
-    <li><a href="#ref-for-interface-keyboardevent⑥">2.2.1. select an appropriate key attribute value</a>
+    <li><a href="#ref-for-interface-keyboardevent⑥">2.2.1. 
+		
+		选择一个适合的键属性值</a>
     <li><a href="#ref-for-interface-keyboardevent⑦">3. Named key Attribute Values</a>
     <li><a href="#ref-for-interface-keyboardevent⑧">8. Acknowledgements</a>
    </ul>
@@ -2537,23 +2570,28 @@ something specific to the values defined in this document</p>
   <aside aria-labelledby="infopaneltitle-for-63c261eb1dbb07786e4650f823bf1e1b" class="dfn-panel" data-for="63c261eb1dbb07786e4650f823bf1e1b" id="infopanel-for-63c261eb1dbb07786e4650f823bf1e1b">
    <span id="infopaneltitle-for-63c261eb1dbb07786e4650f823bf1e1b" style="display:none">Info about the 'dead key' external reference.</span><a href="https://mangwu.github.io/uievents-cn/#dead-key">https://mangwu.github.io/uievents-cn/#dead-key</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dead-key">2.2.1. select an appropriate key attribute value</a>
+    <li><a href="#ref-for-dead-key">2.2.1. 
+		
+		选择一个适合的键属性值</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-1a04750240f24bd353e259d0606ef96f" class="dfn-panel" data-for="1a04750240f24bd353e259d0606ef96f" id="infopanel-for-1a04750240f24bd353e259d0606ef96f">
    <span id="infopaneltitle-for-1a04750240f24bd353e259d0606ef96f" style="display:none">Info about the 'key' external reference.</span><a href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key">https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-keyboardevent-key">1. 简介</a> <a href="#ref-for-dom-keyboardevent-key①">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key②">1.1. 格式规约</a> <a href="#ref-for-dom-keyboardevent-key③">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key④">2. 键盘事件 key 属性值</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑤">2.2. Selecting key Attribute Values</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑥">2.2.1. select an appropriate key attribute value</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑦">3. Named key Attribute Values</a> <a href="#ref-for-dom-keyboardevent-key⑧">(2)</a> <a href="#ref-for-dom-keyboardevent-key⑨">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①⓪">3.11. Multimedia Numpad Keys</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①①">4. Accessibility</a> <a href="#ref-for-dom-keyboardevent-key①②">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①③">6. Security Considerations</a> <a href="#ref-for-dom-keyboardevent-key①④">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①⑤">7. Privacy Considerations</a> <a href="#ref-for-dom-keyboardevent-key①⑥">(2)</a> <a href="#ref-for-dom-keyboardevent-key①⑦">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①⑧">8. Acknowledgements</a>
+    <li><a href="#ref-for-dom-keyboardevent-key">Unnumbered Section</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①">1. 简介</a> <a href="#ref-for-dom-keyboardevent-key②">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key③">1.1. 格式规约</a> <a href="#ref-for-dom-keyboardevent-key④">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key⑤">2. 键盘事件 key 属性值</a>
+    <li><a href="#ref-for-dom-keyboardevent-key⑥">2.2. 选择 key 属性值</a>
+    <li><a href="#ref-for-dom-keyboardevent-key⑦">2.2.1. 
+		
+		选择一个适合的键属性值</a>
+    <li><a href="#ref-for-dom-keyboardevent-key⑧">3. Named key Attribute Values</a> <a href="#ref-for-dom-keyboardevent-key⑨">(2)</a> <a href="#ref-for-dom-keyboardevent-key①⓪">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①①">3.11. Multimedia Numpad Keys</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①②">4. Accessibility</a> <a href="#ref-for-dom-keyboardevent-key①③">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①④">6. Security Considerations</a> <a href="#ref-for-dom-keyboardevent-key①⑤">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①⑥">7. Privacy Considerations</a> <a href="#ref-for-dom-keyboardevent-key①⑦">(2)</a> <a href="#ref-for-dom-keyboardevent-key①⑧">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①⑨">8. Acknowledgements</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-1861c8d3eb50338c70f9bd4cf62d73fc" class="dfn-panel" data-for="1861c8d3eb50338c70f9bd4cf62d73fc" id="infopanel-for-1861c8d3eb50338c70f9bd4cf62d73fc">
@@ -2653,27 +2691,29 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-key-attribute-value①">1. 简介</a>
     <li><a href="#ref-for-key-attribute-value②">1.1. 格式规约</a>
     <li><a href="#ref-for-key-attribute-value③">2. 键盘事件 key 属性值</a> <a href="#ref-for-key-attribute-value④">(2)</a>
-    <li><a href="#ref-for-key-attribute-value⑤">2.1. Unicode 值</a> <a href="#ref-for-key-attribute-value⑥">(2)</a>
-    <li><a href="#ref-for-key-attribute-value⑦">2.2.1. select an appropriate key attribute value</a> <a href="#ref-for-key-attribute-value⑧">(2)</a> <a href="#ref-for-key-attribute-value⑨">(3)</a> <a href="#ref-for-key-attribute-value①⓪">(4)</a> <a href="#ref-for-key-attribute-value①①">(5)</a> <a href="#ref-for-key-attribute-value①②">(6)</a> <a href="#ref-for-key-attribute-value①③">(7)</a> <a href="#ref-for-key-attribute-value①④">(8)</a> <a href="#ref-for-key-attribute-value①⑤">(9)</a>
-    <li><a href="#ref-for-key-attribute-value①⑥">3. Named key Attribute Values</a>
-    <li><a href="#ref-for-key-attribute-value①⑦">3.1. Special Keys</a> <a href="#ref-for-key-attribute-value①⑧">(2)</a>
-    <li><a href="#ref-for-key-attribute-value①⑨">3.2. Modifier Keys</a> <a href="#ref-for-key-attribute-value②⓪">(2)</a>
-    <li><a href="#ref-for-key-attribute-value②①">3.3. Whitespace Keys</a>
-    <li><a href="#ref-for-key-attribute-value②②">3.4. Navigation Keys</a>
-    <li><a href="#ref-for-key-attribute-value②③">3.5. Editing Keys</a>
-    <li><a href="#ref-for-key-attribute-value②④">3.6. UI Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑤">3.7. Device Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑥">3.8. IME and Composition Keys</a> <a href="#ref-for-key-attribute-value②⑦">(2)</a> <a href="#ref-for-key-attribute-value②⑧">(3)</a>
-    <li><a href="#ref-for-key-attribute-value②⑨">3.9. General-Purpose Function Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⓪">3.10. Multimedia Keys</a>
-    <li><a href="#ref-for-key-attribute-value③①">3.11. Multimedia Numpad Keys</a>
-    <li><a href="#ref-for-key-attribute-value③②">3.12. Audio Keys</a>
-    <li><a href="#ref-for-key-attribute-value③③">3.13. Speech Keys</a>
-    <li><a href="#ref-for-key-attribute-value③④">3.14. Application Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑤">3.15. Browser Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑥">3.16. Mobile Phone Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑦">3.17. TV Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑧">3.18. Media Controller Keys</a> <a href="#ref-for-key-attribute-value③⑨">(2)</a> <a href="#ref-for-key-attribute-value④⓪">(3)</a>
+    <li><a href="#ref-for-key-attribute-value⑤">2.1. Unicode 值</a> <a href="#ref-for-key-attribute-value⑥">(2)</a> <a href="#ref-for-key-attribute-value⑦">(3)</a>
+    <li><a href="#ref-for-key-attribute-value⑧">2.2.1. 
+		
+		选择一个适合的键属性值</a> <a href="#ref-for-key-attribute-value⑨">(2)</a> <a href="#ref-for-key-attribute-value①⓪">(3)</a> <a href="#ref-for-key-attribute-value①①">(4)</a> <a href="#ref-for-key-attribute-value①②">(5)</a> <a href="#ref-for-key-attribute-value①③">(6)</a> <a href="#ref-for-key-attribute-value①④">(7)</a> <a href="#ref-for-key-attribute-value①⑤">(8)</a> <a href="#ref-for-key-attribute-value①⑥">(9)</a> <a href="#ref-for-key-attribute-value①⑦">(10)</a>
+    <li><a href="#ref-for-key-attribute-value①⑧">3. Named key Attribute Values</a>
+    <li><a href="#ref-for-key-attribute-value①⑨">3.1. Special Keys</a> <a href="#ref-for-key-attribute-value②⓪">(2)</a>
+    <li><a href="#ref-for-key-attribute-value②①">3.2. Modifier Keys</a> <a href="#ref-for-key-attribute-value②②">(2)</a>
+    <li><a href="#ref-for-key-attribute-value②③">3.3. Whitespace Keys</a>
+    <li><a href="#ref-for-key-attribute-value②④">3.4. Navigation Keys</a>
+    <li><a href="#ref-for-key-attribute-value②⑤">3.5. Editing Keys</a>
+    <li><a href="#ref-for-key-attribute-value②⑥">3.6. UI Keys</a>
+    <li><a href="#ref-for-key-attribute-value②⑦">3.7. Device Keys</a>
+    <li><a href="#ref-for-key-attribute-value②⑧">3.8. IME and Composition Keys</a> <a href="#ref-for-key-attribute-value②⑨">(2)</a> <a href="#ref-for-key-attribute-value③⓪">(3)</a>
+    <li><a href="#ref-for-key-attribute-value③①">3.9. General-Purpose Function Keys</a>
+    <li><a href="#ref-for-key-attribute-value③②">3.10. Multimedia Keys</a>
+    <li><a href="#ref-for-key-attribute-value③③">3.11. Multimedia Numpad Keys</a>
+    <li><a href="#ref-for-key-attribute-value③④">3.12. Audio Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑤">3.13. Speech Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑥">3.14. Application Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑦">3.15. Browser Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑧">3.16. Mobile Phone Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑨">3.17. TV Keys</a>
+    <li><a href="#ref-for-key-attribute-value④⓪">3.18. Media Controller Keys</a> <a href="#ref-for-key-attribute-value④①">(2)</a> <a href="#ref-for-key-attribute-value④②">(3)</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-key-string" class="dfn-panel" data-for="key-string" id="infopanel-for-key-string">
@@ -2681,7 +2721,9 @@ something specific to the values defined in this document</p>
    <ul>
     <li><a href="#ref-for-key-string">2. 键盘事件 key 属性值</a>
     <li><a href="#ref-for-key-string①">2.1. Unicode 值</a> <a href="#ref-for-key-string②">(2)</a> <a href="#ref-for-key-string③">(3)</a> <a href="#ref-for-key-string④">(4)</a>
-    <li><a href="#ref-for-key-string⑤">2.2.1. select an appropriate key attribute value</a> <a href="#ref-for-key-string⑥">(2)</a> <a href="#ref-for-key-string⑦">(3)</a>
+    <li><a href="#ref-for-key-string⑤">2.2.1. 
+		
+		选择一个适合的键属性值</a> <a href="#ref-for-key-string⑥">(2)</a> <a href="#ref-for-key-string⑦">(3)</a> <a href="#ref-for-key-string⑧">(4)</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-non-control-character" class="dfn-panel" data-for="non-control-character" id="infopanel-for-non-control-character">
@@ -2697,24 +2739,31 @@ something specific to the values defined in this document</p>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-glyph-modifier-key" class="dfn-panel" data-for="glyph-modifier-key" id="infopanel-for-glyph-modifier-key">
-   <span id="infopaneltitle-for-glyph-modifier-key" style="display:none">Info about the 'glyph modifier key' definition.</span><b><a href="#glyph-modifier-key">#glyph-modifier-key</a></b><b>Referenced in:</b>
+   <span id="infopaneltitle-for-glyph-modifier-key" style="display:none">Info about the '字形修饰键' definition.</span><b><a href="#glyph-modifier-key">#glyph-modifier-key</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-glyph-modifier-key">2.2.1. select an appropriate key attribute value</a> <a href="#ref-for-glyph-modifier-key①">(2)</a>
+    <li><a href="#ref-for-glyph-modifier-key">2.2.1. 
+		
+		选择一个适合的键属性值</a> <a href="#ref-for-glyph-modifier-key①">(2)</a> <a href="#ref-for-glyph-modifier-key②">(3)</a> <a href="#ref-for-glyph-modifier-key③">(4)</a> <a href="#ref-for-glyph-modifier-key④">(5)</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-select-an-appropriate-key-attribute-value" class="dfn-panel" data-for="select-an-appropriate-key-attribute-value" id="infopanel-for-select-an-appropriate-key-attribute-value">
-   <span id="infopaneltitle-for-select-an-appropriate-key-attribute-value" style="display:none">Info about the 'select an appropriate key attribute value' definition.</span><b><a href="#select-an-appropriate-key-attribute-value">#select-an-appropriate-key-attribute-value</a></b><b>Referenced in:</b>
+   <span id="infopaneltitle-for-select-an-appropriate-key-attribute-value" style="display:none">Info about the '
+		选择一个适合的键属性值' definition.</span><b><a href="#select-an-appropriate-key-attribute-value">#select-an-appropriate-key-attribute-value</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-select-an-appropriate-key-attribute-value">2.2.1. select an appropriate key attribute value</a>
+    <li><a href="#ref-for-select-an-appropriate-key-attribute-value">2.2.1. 
+		
+		选择一个适合的键属性值</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-named-key-attribute-value" class="dfn-panel" data-for="named-key-attribute-value" id="infopanel-for-named-key-attribute-value">
    <span id="infopaneltitle-for-named-key-attribute-value" style="display:none">Info about the '命名键属性值' definition.</span><b><a href="#named-key-attribute-value">#named-key-attribute-value</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-named-key-attribute-value">2. 键盘事件 key 属性值</a>
-    <li><a href="#ref-for-named-key-attribute-value①">2.1.1. Control Characters</a>
-    <li><a href="#ref-for-named-key-attribute-value②">2.2.1. select an appropriate key attribute value</a> <a href="#ref-for-named-key-attribute-value③">(2)</a> <a href="#ref-for-named-key-attribute-value④">(3)</a>
-    <li><a href="#ref-for-named-key-attribute-value⑤">3. Named key Attribute Values</a> <a href="#ref-for-named-key-attribute-value⑥">(2)</a>
+    <li><a href="#ref-for-named-key-attribute-value①">2.1.1. 控制字符</a> <a href="#ref-for-named-key-attribute-value②">(2)</a>
+    <li><a href="#ref-for-named-key-attribute-value③">2.2.1. 
+		
+		选择一个适合的键属性值</a> <a href="#ref-for-named-key-attribute-value④">(2)</a> <a href="#ref-for-named-key-attribute-value⑤">(3)</a>
+    <li><a href="#ref-for-named-key-attribute-value⑥">3. Named key Attribute Values</a> <a href="#ref-for-named-key-attribute-value⑦">(2)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */

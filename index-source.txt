@@ -30,8 +30,8 @@ Abstract:
 	<h2 class="no-num no-toc no-ref heading settled" id="abstract-cn">
 	<span class="content">摘要</span>
 	</h2>
-	本规范定义的 [=键属性值=] 必须用于 {{KeyboardEvent}} 事件的{ 
-	{KeyboardEvent/key}} 属性，该键属性被定义为用户界面事件规范 [[!UIEvents]] 
+	本规范定义的 [=键属性值=] 必须用于 {{KeyboardEvent}} 事件的
+	{{KeyboardEvent/key}} 属性，该键属性被定义为用户界面事件规范 [[!UIEvents]] 
 	的一部分。
 
 	<h2 class="no-num no-toc no-ref heading settled" id="sotd-cn">
@@ -242,20 +242,37 @@ path: stylesheet-extra.include
 		我们引入了 [=键字符串=] 的概念，以标识适合用作 [=键属性值=] 的 Unicode 
 		字符集合。
 
-		<dfn id="key-string">键字符串</dfn> 是一个字符串，包含0个或1个 
+		<dfn id="key-string">键字符串</dfn> (key string)是一个字符串，包含0个或1个 
 		[=非控制字符=] ("基础"字符)，后跟0个或多个 [=组合字符=] 。字符串 
-		<span class="zh-upper">必须</span> 采用规范化形式 C(Normalized Form C ，
+		<span class="zh-upper">必须</span> 采用规范化形式 C (Normalized Form C ，
 		NFC)，如 [[!UAX15]] 中所述。
 		
-		A <dfn id="non-control-character">非控制字符</dfn> is any valid Unicode character except
-		those that are part of the "Other, Control" ("Cc") General Category.
+		<dfn id="non-control-character">非控制字符</dfn> (non-control character)
+		是任何有效的 Unicode 字符，但排除那些属于"其他，控制(Other，Control)"
+		("Cc")一般类别(General Category)的字符。
 
-		A <dfn id="combining-character">组合字符</dfn> is any valid Unicode character in the
-		"Mark, Spacing Combining" ("Mc") General Category or with a non-zero
-		Combining Class.
+		<dfn id="combining-character">组合字符</dfn> (combining character)
+		是"标记、间距组合(Mark，Spacing Combining)"("Mc")一般类别
+		(General Category)中的，或具有非零组合类别(non-zero Combining 
+		Class)的任何有效 Unicode 字符。
+
+		<div class="note custom-note" id="key-string-note">
+		这里对键字符串的定义基于对 Unicode 字符类别的认识，其中 "Other, Control" 是 
+		Unicode 的一个字符类别，类别码为 [Cc] ，包含 65 个字符( 
+		<a href="https://www.fileformat.info/info/unicode/category/Cc/list.htm">
+		网络资料</a> 查阅得知); 而 "Mark ，Spacing Combining" 同样是 Unicode 
+		的一个字符类别，类别码为 [Mc] ，包含 452 个字符( 
+		<a href="https://www.fileformat.info/info/unicode/category/Mc/list.htm">
+		网络资料</a> 查阅得知)。关于组合字符以及非零组合类别可以查阅 Unicode 
+		标准的 <a href="https://www.unicode.org/versions/Unicode15.0.0/ch03.pdf">
+		第3章</a> 。 <br/>
+		总之，本节对于非控制字符，组合字符的定义是为了确定键字符串在 Unicode 
+		中使用的字符范围以及字符串的组合形式。这样就保证了 [=键属性值=] 
+		的字符串的确定性。
+		</div>
 		
 		<div class="example">
-			The following are some examples of simple [=键字符串=]:
+			以下是一些简单 [=键字符串=] 的例子:
 		
 			* KEY_NOLINK{a}, KEY_NOLINK{A}, KEY_NOLINK{b}, KEY_NOLINK{B}, ...,
 				KEY_NOLINK{å}, KEY_NOLINK{é}, KEY_NOLINK{ü}, KEY_NOLINK{ñ}
@@ -266,44 +283,83 @@ path: stylesheet-extra.include
 			* KEY_NOLINK{あ}, KEY_NOLINK{日}, KEY_NOLINK{中}, ...,
 				KEY_NOLINK{一}, KEY_NOLINK{二}, KEY_NOLINK{三}
 
-			* KEY_NOLINK{&#x0627;}, KEY_NOLINK{&#x0628;}, KEY_NOLINK{&#x0629;}, KEY_NOLINK{&#x062A;}, ...,
-				KEY_NOLINK{&#x0661;}, KEY_NOLINK{&#x0662;}, KEY_NOLINK{&#x0663;}
+			* KEY_NOLINK{&#x0627;}, KEY_NOLINK{&#x0628;}, KEY_NOLINK{&#x0629;}, 
+				KEY_NOLINK{&#x062A;}, ..., KEY_NOLINK{&#x0661;}, KEY_NOLINK{&#x0662;}, 
+				KEY_NOLINK{&#x0663;}
 
-			* KEY_NOLINK{&#x0430;}, KEY_NOLINK{&#x0431;}, KEY_NOLINK{&#x0432;}, KEY_NOLINK{&#x0433;}
+			* KEY_NOLINK{&#x0430;}, KEY_NOLINK{&#x0431;}, KEY_NOLINK{&#x0432;}, 
+				KEY_NOLINK{&#x0433;}
 			
-			* KEY_NOLINK{&#x00B1;}, KEY_NOLINK{&#x02B6;}, KEY_NOLINK{&#x03F6;}, KEY_NOLINK{&#x0D79;}, KEY_NOLINK{&#x2109;}
+			* KEY_NOLINK{&#x00B1;}, KEY_NOLINK{&#x02B6;}, KEY_NOLINK{&#x03F6;}, 
+				KEY_NOLINK{&#x0D79;}, KEY_NOLINK{&#x2109;}
 		</div>
 
 		<div class="example">
-			With the exception of KEYCAP{Tab} and KEYCAP{Enter} (see [[#control]]),
-			all non-control whitespace Unicode characters are considered to
-			be valid [=键字符串=].
+			除了 KEYCAP{Tab} 和 KEYCAP{Enter} (参见 [[#control]] )，所有非控制空白 
+			Unicode 字符都被视为有效的 [=键字符串=] 。
 			
-			* KEY_NOLINK{&#x0020} = UNI{U+0020} Space
+			* KEY_NOLINK{&#x0020} = UNI{U+0020} 空格 (Space)
 
-			* KEY_NOLINK{&#x00a0} = UNI{U+00A0} No-Break Space
+			* KEY_NOLINK{&#x00a0} = UNI{U+00A0} 无中断空格 (No-Break Space)
 			
-			* KEY_NOLINK{&#x2009} = UNI{U+2009} Thin Space
+			* KEY_NOLINK{&#x2009} = UNI{U+2009} 细空格 (Thin Space)
 
-			* KEY_NOLINK{&#x3000} = UNI{U+3000} Ideographic Space
+			* KEY_NOLINK{&#x3000} = UNI{U+3000} 表意空格 (Ideographic Space)
 		</div>
 
+		<div class="note custom-note">
+		空格的形式是多样的，在 Unicode 中有 "Separator, Space" 这一组字符类别( 
+		<a href="https://www.fileformat.info/info/unicode/category/Zs/list.htm">
+		网络资料</a> 查阅得知)，类别码为 [Zs] ，它包含 17 个字符，
+		都是关于空格分隔符的，不同的空格符号有不同的宽度和用法，查阅维基百科 
+		<a href="https://en.wikipedia.org/wiki/Whitespace_character">
+		Whitespace_character</a> 获取更多信息，如下是空格字符宽度对比的图像:
+
+		<figure id="figure-Punctuation-Spaces">
+			<img src="images/Punctuation-Spaces.svg" width="363" height="450"
+				alt="不同空格字符的宽度对比" />
+			<div class="custom-figcaption">不同空格字符的宽度对比域</div>
+		</figure>
+
+		</div>
+		
+
 		<div class="example">
-			The following are some examples of [=键字符串=] with [=组合字符=]:
+			以下是一些拥有 [=组合字符=] 的 [=键字符串=] 的例子: 
 		
 			* KEY_NOLINK{&#x00f4} = UNI{U+00F4}
-				(NOT "o" + " &#x0302" (UNI{U+006F} UNI{U+0302})
-				because pre-composed characters must be used if available)
+				[ <span class="zh-upper">不是</span> (NOT) "o" + " &#x0302" (UNI{U+006F} 
+				UNI{U+0302})，因为如果可以，则必须使用预组字符(pre-composed characters)]
 
 			* KEY_NOLINK{&#x1e0d&#x0307} = UNI{U+1E0D} + UNI{U+0307}
-				(NOT "d" + " &#x0323" + " &#x0307" (UNI{U+0064} UNI{U+0323} UNI{U+0307})
-				because precomposed characters must be used if available,
-				and NOT "&#x1e0b" + " &#x0323" (UNI{U+1E0B} UNI{U+0323})
-				because accents must be ordered before substituting with a precomposed version)
+				[ <span class="zh-upper">不是</span> (NOT) "d" + " &#x0323" + " &#x0307"
+				(UNI{U+0064} UNI{U+0323} UNI{U+0307})，因为如果可用，
+				则必须使用预组字符(pre-composed characters)，并且
+				<span class="zh-upper">不是</span> (NOT) "&#x1e0b" + " &#x0323" 
+				(UNI{U+1E0B} UNI{U+0323})，因为在用预组字符(pre-composed characters)
+				替换之前必须对重音符号(accents)进行排序]
+		</div>
+
+		<div class="note custom-note">
+		<q>预组字符(precomposed character)是 Unicode 字符集中的实体，
+		定义为一个或多字符序列。预组字符可以表示一个字母与一个附加符号，例如 
+		GLYPH{é} (小写拉丁字母e带一个尖音符)。 技术上， GLYPH{é} (U+00E9)是一个字符，
+		可以分解为 Unicode 等效字符串 GLYPH{e} (U+0065)与尖音符 " &#x0301"
+		(U+0301)。</q> —— 维基百科 <a href="https://zh.wikipedia.org/wiki/预组字符">
+		预组字符</a> <br/>
+		这里给出了这些组合字符的具体 Unicode 编码，并对这些编码的合理性进行解释 ——
+		不是简单的用单码字符拼接而成，而使用已有的预组字符。其中 
+		KEY_NOLINK{&#x1e0d&#x0307} 的编码是用预组字符 GLYPH{ḍ} 和 单字符 
+		" &#x0307" 组合而成，因为不存在这三个符号的预组字符，
+		同时也说明了组合字符时，单字符排序的问题。<br/>
+		以上非引用说法不一定准确，请参阅 [[!UAX15]] 标准以获取准确信息。
 		</div>
 		
-		<h4 id="control">Control Characters</h4>
 		
+		<h4 id="control">控制字符</h4>
+		
+			支持 Unicode "Cc" 一般类别(General Category)中的少量字符作为 
+			[=命名键属性值=] 这些命名值如下所示:
 			A small number of characters in the Unicode "Cc" General Category are
 			supported as [=命名键属性值=]. These named values are as
 			follows:
@@ -317,63 +373,100 @@ path: stylesheet-extra.include
 			* UNI{U+001B} KEY{Escape}
 
 			* UNI{U+007F} KEY{Delete}
-		
-	<h3 id="selecting-key-attribute-values">Selecting {{KeyboardEvent/key}} Attribute Values</h3>
 
-		A <dfn>glyph modifier key</dfn> is any of the following modifier keys:
-		KEYCAP{Shift}, KEYCAP{CapsLock} or KEYCAP{AltGr}.
+			<div class="note custom-note">
+			这里的 "Cc" 就是 "'Other, Control" Unicode 字符类别的类别码，
+			查看键字符串的 <a href="#key-string-note">非标准注释</a> 以获取更多信息。
+			</div>
+			
+		
+	<h3 id="selecting-key-attribute-values">选择 {{KeyboardEvent/key}} 属性值</h3>
+
+		<dfn id="glyph-modifier-key">字形修饰键</dfn> (glyph modifier key)
+		是其中的任何一个修饰符键: KEYCAP{Shift}, KEYCAP{CapsLock} 或 KEYCAP{AltGr}。
 		
 		<div class="algorithm" data-algorithm="clipboard-read">
-		<h4 id="h-clipboard-read"><dfn>select an appropriate key attribute value</dfn></h4>
-		To [=select an appropriate key attribute value=] to store in a {{KeyboardEvent}}'s
-		{{KeyboardEvent/key}} attribute, run these steps:
+		<h4 id="h-clipboard-read">
+		<dfn id="select-an-appropriate-key-attribute-value">
+		选择一个适合的键属性值</dfn></h4>
+		要 [=选择一个适合的键属性值=] 以保存在 {{KeyboardEvent}} 的 
+		{{KeyboardEvent/key}} 属性中，请运行以下步骤: 
 
-			1. Let |key| be a DOMString initially set to KEY{Unidentified}.
+			1. 声明一个 DOMString 类型的 |key| 变量，初始化为 KEY{Unidentified} 。
 			
-			1. If there exists an appropriate [=命名键属性值=] for this
-				key event, then
+			1. 如果对于这个按键事件，存在一个适合的 [=命名键属性值=] ，那么
 				
-				1. Set |key| to that [=命名键属性值=].
+				1. 赋值 |key| 为那个 [=命名键属性值=].
 
-			1. Else, if the key event generates a valid [=键字符串=], then
+			1. 否则，如果按键事件生成了一个有效的 [=键字符串=] ，那么
 			
-				1. Set |key| to that [=键字符串=] value.
+				1. 赋值 |key| 为那个 [=键字符串=] 值.
 
-			1. Else, if the key event has any modifier keys other than [=glyph modifier keys=], then
+			1. 否则，如果按键事件关联了除了 [=字形修饰键=] 之外的任何修饰符按键，那么
 
-				1. Set |key| to the [=键字符串=] that would have been generated
-					by this event if it had been typed with all modifer keys removed
-					except for [=glyph modifier keys=].
+				1. 赋值 |key| 为 指定的 [=键字符串=] ，这个 [=键字符串=] 
+					由按键事件生成，但保证在键入时的关联按键是 [=字形修饰键=] 
+					之外的所有修饰符键。
 
-			1. Return |key| as the [=键属性值=] for this key event.
-
-			<p class="example">
-				On a standard US keyboard, the [=键属性值=] for the key labeled
-				KEYCAP{Q} is KEY_NOLINK{q} (or KEY_NOLINK{Q} if the KEYCAP{Shift} modifier
-				key is also held).
-			</p>
+			1. 将 |key| 作为此按键事件的 [=键属性值=] 返回。
 
 			<p class="example">
-				On a standard US keyboard, [=键属性值=] for KEYCAP{Control} +
-				KEYCAP{Q} is KEY_NOLINK{q}.
+				在标准的美国键盘上，按键键帽标签为 KEYCAP{Q} 的 [=键属性值=] 为 
+				KEY_NOLINK{q} (如果同时按住 KEYCAP{Shift} [=字形修饰键=] ，则为 
+				KEY_NOLINK{Q} )。
 			</p>
 
-			<p class="example">
-				On a US keyboard with a right-handed Dvorak key mapping, the
-				[=键属性值=] for the key labeled KEYCAP{Q} is
-				KEY_NOLINK{5} (or KEY_NOLINK{%} with KEYCAP{Shift} modifier).
-			</p>
-
-			<p class="example">
-				On the same US Dvorak keyboard layout as the previous example, the
-				[=键属性值=] for KEYCAP{Control} + KEYCAP{Q} is KEY_NOLINK{5}.
-			</p>
+			<div class="note custom-note">
+			例子 4 中 [=键属性值=] 的结果 KEY_NOLINK{q} ，源于上面步骤的第 3 步。
+			另外，这里配合 KEYCAP{Shift} 将键入字符 "q" 修饰成大写的，
+			是在大写锁定状态是默认关闭的情况下(没有 [=字形修饰键=] KEYCAP{CapsLock} 
+			的影响)。
+			</div>
 			
 			<p class="example">
-				On a Bolnagri keyboard layout, the [=键属性值=] for the
-				key labeled KEYCAP{Q} is a string containing the single Unicode
-				character UNI{U+200C} (ZWNJ or Zero Width Non-Joining Space).
+				在标准的美国键盘上， KEYCAP{Control} + KEYCAP{Q} 组合键的 [=键属性值=] 
+				为 KEY_NOLINK{q} 。
 			</p>
+
+			<p class="example">
+				在使用右手德沃夏克式键映射的美国键盘上，按键键帽标签为 KEYCAP{Q} 的
+				[=键属性值=] 为 KEY_NOLINK{5} (如果同时按住 KEYCAP{Shift} [=字形修饰键=] 
+				，则为 KEY_NOLINK{%} )。
+			</p>
+
+			<p class="example">
+				在与前面的示例相同的德沃夏克式的美国键盘布局上，KEYCAP{Control} + 
+				KEYCAP{Q} 组合键的 [=键属性值=] 为 KEY_NOLINK{5} 。
+			</p>
+			
+			<div class="note custom-note">
+			关于德沃夏克键盘，请参阅维基百科 
+			<a href="https://en.wikipedia.org/wiki/Dvorak_keyboard_layout">
+			Dvorak keyboard layout</a> 。
+			</div>
+			
+			<p class="example">
+				在一个 Bolnagri 式键盘布局上，按键键帽标签为 KEYCAP{Q} 的
+				[=键属性值=] 是一个 包含单个 Unicode 字符 —— UNI{U+200C} 的字符串
+				(显示为 ZWNJ 或零宽度断字符(Zero Width Non-Joining Space)) 
+			</p>
+			
+			<div class="note custom-note">
+			Bolnagri 是印地语的一种键盘布局。零宽度空格符 (zero-width space) 
+			UNI{U+200B} : 用于较长单词的换行分隔; 零宽度断字符 (Zero-width non-joiner) 
+			UNI{U+200C} : 用于阿拉伯文，德文，印度语系等文字中，
+			阻止会发生连字的字符间的连字效果。查阅维基百科 
+			<a href="https://en.wikipedia.org/wiki/Zero-width_non-joiner">
+			Zero-width non-joiner</a> 以获取更多信息，
+			如下是零宽度断字符在键盘上的显示: 
+			
+			<figure id="figure-Zero-width_non-joiner">
+				<img src="images/Zero-width_non-joiner.svg" width="100" height="100"
+				alt="零宽度断字符" />
+				<div class="custom-figcaption">零宽度断字符</div>
+			</figure>
+			</div>
+			
 
 			<p class="example">
 				On a French PC keyboard with a standard French mapping, the KEYCAP{^}
