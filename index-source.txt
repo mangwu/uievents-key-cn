@@ -1,22 +1,112 @@
-<h1>UI Events KeyboardEvent key Values</h1>
+<link href="./override.css" rel="stylesheet" />
+<script defer src="./custom-script.js"></script>
+<script src="./backup-script.js"></script>
 
 <pre class="metadata">
-Shortname: uievents-key
-Level:
+Title: 用户界面事件键盘事件 key 属性值(UI Events KeyboardEvent key Values)
+Shortname: uievents-key-cn
+Level: none
 Group: webapps
-Status: WD
-TR: http://www.w3.org/TR/uievents-key/
-ED: https://w3c.github.io/uievents-key/
-Repository: w3c/uievents-key
-Previous Version:
-	http://www.w3.org/TR/2015/WD-uievents-key-20151215/
-!Implementation Report: <a href="https://w3c.github.io/uievents-key/impl-report.html">https://w3c.github.io/uievents-key/impl-report.html</a>
-Editor: Gary Kacmarcik, Google, garykac@google.com
-Editor: Travis Leithead, Invited Expert, travisleithead@hotmail.com
+Status: UD
+ED: 
+Repository: mangwu/uievents-key-cn
+Boilerplate: repository-issue-tracking off, copyright off, property-index off
+No Editor: true
+Text Macro: DATE 2023年5月22日
+Text Macro: LONGSTATUS 翻译草案
+!本版本: <a href="https://mangwu.github.io/uievents-key-cn/">https://mangwu.github.io/uievents-key-cn/</a>
+!最新提案: <a href="https://w3c.github.io/uievents-key/">https://w3c.github.io/uievents-key/</a>
+!上个版本: <a href="https://www.w3.org/TR/2016/WD-uievents-key-20161024/">https://www.w3.org/TR/2016/WD-uievents-key-20161024/</a>
+!历史记录: <a href="https://www.w3.org/standards/history/uievents-key">https://www.w3.org/standards/history/uievents-key</a>
+!规范反馈: <a href="https://github.com/w3c/uievents-key/issues/">GitHub-w3c-uievents-key-issues</a>
+!翻译反馈: <a href="https://github.com/mangwu/uievents-key-cn/issues/">GitHub-mangwu-uievents-key-cn-issues</a>
+!实现报告: <a href="https://mangwu.github.io/uievents-key-cn/impl-report.html">https://mangwu.github.io/uievents-key-cn/impl-report.html</a>
+!编辑者: 
+	<a class="p-name fn u-email email" href="mailto:garykac@google.com">Gary Kacmarcik</a>(Google)
+	<a class="p-name fn u-email email" href="mailto:travisleithead@hotmail.com">Travis Leithead</a>(Invited Expert)
+!翻译者: 
+	<a class="p-name fn u-email email" href="mailto:1185956753@qq.com">mangwu</a>
 Abstract:
-	This specification defines the [=key attribute values=] that must be used for
-	{{KeyboardEvent}}'s {{KeyboardEvent/key}} attribute, which is defined as part
-	of the UI Events Specification [[!UIEvents]].
+	<h2 class="no-num no-toc no-ref heading settled" id="abstract-cn">
+	<span class="content">摘要</span>
+	</h2>
+	本规范定义的 [=键属性值=] 必须用于 {{KeyboardEvent}} 事件的{ 
+	{KeyboardEvent/key}} 属性，该键属性被定义为用户界面事件规范 [[!UIEvents]] 
+	的一部分。
+
+	<h2 class="no-num no-toc no-ref heading settled" id="sotd-cn">
+	<span class="content">文档状态</span>
+	</h2>
+	<div data-fill-with="status-cn">
+		<p><em>
+		本节介绍了本文件发布时的状态。
+		当前 <abbr title="World Wide Web Consortium">W3C</abbr> 
+		出版物列表和本技术报告的最新修订版可在
+		<a href="https://www.w3.org/TR/">
+		<abbr title="World Wide Web Consortium">W3C</abbr> 技术报告索引
+		</a>
+		中找到，网址为 https://www.w3.org/TR/ 。
+		</em></p>
+
+		<p> 本文件由
+		<a href="https://www.w3.org/groups/wg/webapps">网络应用程序工作组</a>
+		作为 <strong>编辑草稿</strong> (Editors Draft)发布。 
+		<span class="del-content">本文档旨在成为W3C推荐标准</span> 。
+		</p>
+
+		<p></p>
+
+		<p> 本文件由
+		<a href="https://www.w3.org/groups/wg/webapps">网络应用程序工作组</a>
+		作为 <strong>工作草案</strong> (Working Draft)发布。
+		欢迎对本规范提出反馈和意见。请使用
+		<a href="https://github.com/w3c/uievents-code/issues">GitHub issues</a>
+		对源文档进行问题讨论; 请使用
+		<a href="https://github.com/mangwu/uievents-code-cn/issues">GitHub issues</a>
+		对翻译文档进行问题讨论; 
+		官方的问题存档地址为
+		<a href="https://lists.w3.org/Archives/Public/public-webapps/">
+		public-webapps@w3.org archives
+		</a> 。
+		</p>
+
+		<p>
+		作为编辑草案出版并不意味着
+		<abbr title="World Wide Web Consortium">W3C</abbr>
+		及其成员的认可。 
+		这是一份草案文档，可以随时被其他文档更新、替换或作废。
+		本文档不适合被其它正在编写的规范作为引用。
+		</p>
+
+		<p> 本文档由一个根据
+		<a href="https://www.w3.org/Consortium/Patent-Policy-20200915/">
+		<abbr title="World Wide Web Consortium">W3C</abbr> 专利政策</a>
+		运作的小组编写。
+		<abbr title="World Wide Web Consortium">W3C</abbr>
+		保留了一份与该小组可交付成果相关的
+		<a href="https://www.w3.org/2004/01/pp-impl/114929/status" rel="disclosure">
+		所有可披露专利的公开列表
+		</a> ; 该页面还包括公开一份专利的说明。
+		对认为包含
+		<a 
+		href=
+		"https://www.w3.org/Consortium/Patent-Policy-20200915/#def-essential">
+		基本权利要求
+		</a>
+		（Essential Claim(s)）的专利有实际了解的个人必须根据
+		<a
+		href=
+		"https://www.w3.org/Consortium/Patent-Policy-20200915/#sec-Disclosure">
+		<abbr title="World Wide Web Consortium">W3C</abbr>专利政策第6节
+		</a> 
+		公开信息。
+		</p>
+
+		<p>本文件受
+		<a href="https://www.w3.org/2021/Process-20211102/" id="w3c_process_revision-cn">
+		2021 11月2日 W3C处理文档</a> 规范管理。
+		</p>
+  </div>
 </pre>
 
 <pre class="biblio">
@@ -68,100 +158,104 @@ Abstract:
 </pre>
 
 <pre class="anchors">
-urlPrefix: http://www.w3.org/TR/uievents/#interface-; type: interface; spec: uievents;
+urlPrefix: https://mangwu.github.io/uievents-cn/#interface-; type: interface; spec: uievents;
 	text: KeyboardEvent
-urlPrefix: http://www.w3.org/TR/uievents/#dom-keyboardevent-; type: attribute; for: KeyboardEvent; spec: uievents;
+urlPrefix: https://mangwu.github.io/uievents-cn/#dom-keyboardevent-; type: attribute; for: KeyboardEvent; spec: uievents;
 	text: key
 	text: code
 	text: location
-urlPrefix: http://www.w3.org/TR/uievents/#; type: dfn; spec: uievents;
+urlPrefix: https://mangwu.github.io/uievents-cn/#; type: dfn; spec: uievents;
 	text: compositionupdate
 	text: dead key
-url: http://www.w3.org/TR/uievents/#key-legends; type: dfn; spec: uievents;
-	text: key cap
-url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uievents-code;
-	text: key code attribute value
+url: https://mangwu.github.io/uievents-cn/#key-legends; type: dfn; spec: uievents;
+	text: 键帽
+url: https://mangwu.github.io/uievents-code-cn/#key-code-attribute-values; type: dfn; spec: uievents-code;
+	text: 按键码属性值
+url: https://mangwu.github.io/uievents-code-cn/#keypad; type: dfn; spec: uievents-code;
+	text: 小键盘
+url: https://mangwu.github.io/uievents-code-cn/#alphanumeric-section; type: dfn; spec: uievents-code;
+	text: 字母数字区域
 </pre>
 
 <pre class="include">
 path: stylesheet-extra.include
 </pre>
 
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction">简介</h2>
 
-	This document specifies the set of valid [=key attribute values=] that MUST be used
-	in the {{KeyboardEvent}}'s {{KeyboardEvent/key}} attribute to encode the key's
-	meaning. Note that the {{KeyboardEvent/key}} value for a particular key will differ
-	based on the user's current locale setting. For a value that is based only on the key's
-	physical location on the keyboard and does not vary based on locale, see
-	{{KeyboardEvent/code}} described in [[!UIEvents-Code]].
+	本文档指定了一组有效的 [=键属性值=] 集合，它们 
+	<span class="zh-upper">必须</span> 在 {{KeyboardEvent}} 事件的 
+	{{KeyboardEvent/key}} 属性中使用，以对键的含义进行编码。
+	请注意，特定键的 {{KeyboardEvent/key}} 值将根据用户当前的区域设置而有所不同。
+	有关仅基于键在键盘上的物理位置而不因区域设置而变化的值，请参阅 
+	[[!UIEvents-Code]] 中描述的 {{KeyboardEvent/code}} 。
 
-	<h3 id="style-conventions">Stylistic Conventions</h3>
+	<h3 id="style-conventions">格式规约</h3>
+		本规范遵循以下规约: 
 
-		This specification uses the following conventions:
+		* 打印在 <em>[=键帽=]</em> 上的键显示为 KEYCAP{&darr;}， KEYCAP{=} 或 
+			KEYCAP{Q} 。这用于从用户的角度引用键，而不考虑生成的 {{KeyboardEvent}} 
+			事件中的 {{KeyboardEvent/key}} (键) 和 {{KeyboardEvent/code}} (键码)。
 
-		*   The <em>[=key cap=]</em> printed on a key is shown as
-			KEYCAP{&darr;}, KEYCAP{=} or KEYCAP{Q}. This is used to refer to a
-			key from the user's perspective without regard for the
-			{{KeyboardEvent/key}} and {{KeyboardEvent/code}} values in the
-			generated {{KeyboardEvent}}.
+		* 代表字符的字形(Glyphs)显示为: GLYPH{a} ， 
+			GLYPH{é} ， GLYPH{ر} ，  GLYPH{字} 。
 
-		*   Glyphs representing character are shown as: GLYPH{a}, GLYPH{é},
-			GLYPH{ر}, GLYPH{字}.
+		* Unicode( [[!Unicode]] )码点( [=code points=] ) 显示为: UNI{U+003D} 。
 
-		*   Unicode [[!Unicode]] code points are shown as: UNI{U+003D}.
+		* 有效的 [=键属性值=] ，即 {{KeyboardEvent}} 的 {{KeyboardEvent/key}} 
+			属性值显示为: KEY{ArrowDown} ， KEY_NOLINK{=} ， KEY_NOLINK{q} 或 
+			KEY_NOLINK{Q} 。
 
-		*   Valid [=key attribute values=] (i.e., the value of
-			a {{KeyboardEvent}}'s {{KeyboardEvent/key}} attribute) are shown as:
-			KEY{ArrowDown}, KEY_NOLINK{=}, KEY_NOLINK{q} or KEY_NOLINK{Q}.
-
-		* Valid [=key code attribute values=] (i.e., the
-			value of a {{KeyboardEvent}}'s {{KeyboardEvent/code}} attribute) are shown as:
-			CODE{ArrowDown}, CODE{Equal} or CODE{KeyQ}.
-
-<h2 id="key-attr-values">Keyboard Event {{KeyboardEvent/key}} Attribute Values</h2>
-
-	A <dfn>key attribute value</dfn> is defined as being a <code>DOMString</code> that
-	contains one of the following:
-
-	* A [=key string=] that corresponds to
-		the character typed by the user, taking into account the user's current locale
-		setting, modifier state, and any system-level keyboard mapping overrides that are
-		in effect.
-
-	* A [=named key attribute value=], as defined by the tables in this document.
-
-	A [=key attribute value=] MUST always contain a value that falls into one of these
-	two categories (even if the value is KEY{Unidentified}).
-
-	It is acceptable for multiple keys on a keyboard to generate the same
-	[=key attribute value=]. For example, on an EN-US keyboard layout, the keys on the
-	numeric keypad (e.g., the keypad KEYCAP{1} key) will generate the same
-	[=key attribute values=] as their non-keypad counterparts (e.g., the KEYCAP{1} key
-	in the main part of the keyboard). The {{KeyboardEvent}}'s
-	{{KeyboardEvent/location}} attribute can be used to determine if a key
-	originated from the numeric keypad.
-
-	<h3 id="keys-unicode">Unicode Values</h3>
-
-		Almost every Unicode character can be used as a valid [=key attribute value=], but
-		there is a small set of Unicode characters which MUST NOT be used.
-		We introduce the concept of a [=key string=] to identify the set of
-		Unicode strings that are appropriate for use as a [=key attribute value=].
-
-		A <dfn>key string</dfn> is a string containing a 0 or 1 [=non-control characters=]
-		("base" characters) followed by 0 or more [=combining characters=]. The string MUST
-		be in Normalized Form C (NFC) as described in [[!UAX15]].
+		* 有效的 [=按键码属性值=] ，即 {{KeyboardEvent}} 的 
+			{{KeyboardEvent/code}} 属性值显示为: CODE{ArrowDown}，CODE{Equal} 或 
+			CODE{KeyQ}。
 		
-		A <dfn>non-control character</dfn> is any valid Unicode character except
+		<p class="note custom-note">
+		在 <a href="https://mangwu.github.io/uievents-cn/#style-conventions">
+		UIEvents</a> 规范本体的格式规约中，也对键帽，字符，代码点和键，
+		键值的属性值进行了说明，但是渲染显示不一样，本规范中的渲染会更显眼。
+		</p>
+
+<h2 id="key-attr-values">键盘事件 {{KeyboardEvent/key}} 属性值</h2>
+
+	<dfn id="key-attribute-value">键属性值</dfn> 被定义为包含如下内容的一个
+	<code>DOMString</code> :
+
+	* 一个与用户键入的字符相对应的 [=键字符串=] ，同时考虑用户当前的区域设置、
+		修饰符状态和任何有效的系统级键盘映射覆盖。
+
+	* 由本文档中的表定义的一个 [=命名键属性值=] 。
+
+	一个 [=键属性值=] <span class="zh-upper">必须</span> 
+	始终包含属于这两个类别之一的值(即使该值为 KEY{Unidentified} )。
+
+	键盘上的多个键可以生成相同的 [=键属性值=] 。例如，在一个 EN-US 键盘布局上，
+	数字 [=小键盘=] 上的键(例如，小键盘 KEYCAP{1} 键)
+	将生成与其非小键盘一对一(例如，键盘主要部分 [[=字母数字区域=]] 中的 KEYCAP{1} 
+	键)相同的键属性值。 {{KeyboardEvent}} 的 {{KeyboardEvent/location}} 
+	属性可用于确定按键是否源自数字 [=小键盘=] 。
+
+	<h3 id="keys-unicode">Unicode 值</h3>
+
+		几乎每个 Unicode 字符都可以用作有效字符 [=键属性值=] ， 
+		但是有一小部分 Unicode 字符集合 <span class="zh-upper">不得</span> 使用。
+		我们引入了 [=键字符串=] 的概念，以标识适合用作 [=键属性值=] 的 Unicode 
+		字符集合。
+
+		<dfn id="key-string">键字符串</dfn> 是一个字符串，包含0个或1个 
+		[=非控制字符=] ("基础"字符)，后跟0个或多个 [=组合字符=] 。字符串 
+		<span class="zh-upper">必须</span> 采用规范化形式 C(Normalized Form C ，
+		NFC)，如 [[!UAX15]] 中所述。
+		
+		A <dfn id="non-control-character">非控制字符</dfn> is any valid Unicode character except
 		those that are part of the "Other, Control" ("Cc") General Category.
 
-		A <dfn>combining character</dfn> is any valid Unicode character in the
+		A <dfn id="combining-character">组合字符</dfn> is any valid Unicode character in the
 		"Mark, Spacing Combining" ("Mc") General Category or with a non-zero
 		Combining Class.
 		
 		<div class="example">
-			The following are some examples of simple [=key strings=]:
+			The following are some examples of simple [=键字符串=]:
 		
 			* KEY_NOLINK{a}, KEY_NOLINK{A}, KEY_NOLINK{b}, KEY_NOLINK{B}, ...,
 				KEY_NOLINK{å}, KEY_NOLINK{é}, KEY_NOLINK{ü}, KEY_NOLINK{ñ}
@@ -183,7 +277,7 @@ path: stylesheet-extra.include
 		<div class="example">
 			With the exception of KEYCAP{Tab} and KEYCAP{Enter} (see [[#control]]),
 			all non-control whitespace Unicode characters are considered to
-			be valid [=key strings=].
+			be valid [=键字符串=].
 			
 			* KEY_NOLINK{&#x0020} = UNI{U+0020} Space
 
@@ -195,7 +289,7 @@ path: stylesheet-extra.include
 		</div>
 
 		<div class="example">
-			The following are some examples of [=key strings=] with [=combining characters=]:
+			The following are some examples of [=键字符串=] with [=组合字符=]:
 		
 			* KEY_NOLINK{&#x00f4} = UNI{U+00F4}
 				(NOT "o" + " &#x0302" (UNI{U+006F} UNI{U+0302})
@@ -211,7 +305,7 @@ path: stylesheet-extra.include
 		<h4 id="control">Control Characters</h4>
 		
 			A small number of characters in the Unicode "Cc" General Category are
-			supported as [=named key attribute values=]. These named values are as
+			supported as [=命名键属性值=]. These named values are as
 			follows:
 			
 			* UNI{U+0008} KEY{Backspace}
@@ -236,47 +330,47 @@ path: stylesheet-extra.include
 
 			1. Let |key| be a DOMString initially set to KEY{Unidentified}.
 			
-			1. If there exists an appropriate [=named key attribute value=] for this
+			1. If there exists an appropriate [=命名键属性值=] for this
 				key event, then
 				
-				1. Set |key| to that [=named key attribute value=].
+				1. Set |key| to that [=命名键属性值=].
 
-			1. Else, if the key event generates a valid [=key string=], then
+			1. Else, if the key event generates a valid [=键字符串=], then
 			
-				1. Set |key| to that [=key string=] value.
+				1. Set |key| to that [=键字符串=] value.
 
 			1. Else, if the key event has any modifier keys other than [=glyph modifier keys=], then
 
-				1. Set |key| to the [=key string=] that would have been generated
+				1. Set |key| to the [=键字符串=] that would have been generated
 					by this event if it had been typed with all modifer keys removed
 					except for [=glyph modifier keys=].
 
-			1. Return |key| as the [=key attribute value=] for this key event.
+			1. Return |key| as the [=键属性值=] for this key event.
 
 			<p class="example">
-				On a standard US keyboard, the [=key attribute value=] for the key labeled
+				On a standard US keyboard, the [=键属性值=] for the key labeled
 				KEYCAP{Q} is KEY_NOLINK{q} (or KEY_NOLINK{Q} if the KEYCAP{Shift} modifier
 				key is also held).
 			</p>
 
 			<p class="example">
-				On a standard US keyboard, [=key attribute value=] for KEYCAP{Control} +
+				On a standard US keyboard, [=键属性值=] for KEYCAP{Control} +
 				KEYCAP{Q} is KEY_NOLINK{q}.
 			</p>
 
 			<p class="example">
 				On a US keyboard with a right-handed Dvorak key mapping, the
-				[=key attribute value=] for the key labeled KEYCAP{Q} is
+				[=键属性值=] for the key labeled KEYCAP{Q} is
 				KEY_NOLINK{5} (or KEY_NOLINK{%} with KEYCAP{Shift} modifier).
 			</p>
 
 			<p class="example">
 				On the same US Dvorak keyboard layout as the previous example, the
-				[=key attribute value=] for KEYCAP{Control} + KEYCAP{Q} is KEY_NOLINK{5}.
+				[=键属性值=] for KEYCAP{Control} + KEYCAP{Q} is KEY_NOLINK{5}.
 			</p>
 			
 			<p class="example">
-				On a Bolnagri keyboard layout, the [=key attribute value=] for the
+				On a Bolnagri keyboard layout, the [=键属性值=] for the
 				key labeled KEYCAP{Q} is a string containing the single Unicode
 				character UNI{U+200C} (ZWNJ or Zero Width Non-Joining Space).
 			</p>
@@ -284,20 +378,20 @@ path: stylesheet-extra.include
 			<p class="example">
 				On a French PC keyboard with a standard French mapping, the KEYCAP{^}
 				key acts as a [=dead key=] for the combining circumflex diacritical mark.
-				The [=key attribute value=] for this keyboard event is KEY{Dead}.
+				The [=键属性值=] for this keyboard event is KEY{Dead}.
 			</p>
 
 			<p class="example">
 				Also on a French keyboard with a standard French mapping, the
-				[=key attribute value=] for the KEYCAP{é} key (which corresponds to the
+				[=键属性值=] for the KEYCAP{é} key (which corresponds to the
 				KEYCAP{2} key on a US keyboard) is KEY_NOLINK{é} (UNI{U+00E9}).
 			</p>
 
 			<p class="example">
 				On a Korean PC keyboard with a standard Korean mapping, the primary
 				function of the KEYCAP{Ha/En} key is to switch between Hangul and English
-				input. There is an entry for this key as a [=named key attribute value=],
-				KEY{HangulMode}, so that should be used as the [=key attribute value=].
+				input. There is an entry for this key as a [=命名键属性值=],
+				KEY{HangulMode}, so that should be used as the [=键属性值=].
 			</p>
 
 		</div>
@@ -305,11 +399,11 @@ path: stylesheet-extra.include
 	
 <h2 id="named-key-attribute-values">Named {{KeyboardEvent/key}} Attribute Values</h2>
 
-	A <dfn>named key attribute value</dfn> is any of the values given in the
-	[=key attribute value=] column of any of the tables in this section of the
+	A <dfn id="named-key-attribute-value">命名键属性值</dfn> is any of the values given in the
+	[=键属性值=] column of any of the tables in this section of the
 	specification.
 	
-	The [=named key attribute values=] defined here are based
+	The [=命名键属性值=] defined here are based
 	in part on the sets of keycodes from
 	the <code>java.awt.event.KeyEvent</code> interface of the Java Platform,
 	Standard Edition 6 API Specification [[KeyEventJava]], and the
@@ -328,7 +422,7 @@ path: stylesheet-extra.include
 	<p class="note">	
 	Note: While every attempt has been made to make this list of values as complete as possible,
 	new values will periodically need to be defined as new input devices are introduced.
-	Rather than allowing user agents to define their own [=named key attribute values=]
+	Rather than allowing user agents to define their own [=命名键属性值=]
 	(which are unlikely to be consistent across multiple user agents), bugs SHOULD be
 	filed so that this specification can be updated.
 	</p>
@@ -336,7 +430,7 @@ path: stylesheet-extra.include
 	<h3 id="keys-special">Special Keys</h3>
 
 		Implementations that are unable to identify a key MUST use KEY{Unidentified}
-		as the the [=key attribute value=].
+		as the the [=键属性值=].
 
 		BEGIN_KEY_TABLE general
 			KEY Unidentified	This key value is used when an implementation is unable to
@@ -722,7 +816,7 @@ path: stylesheet-extra.include
 
 	<h3 id="keys-media-controller">Media Controller Keys</h3>
 
-		The [=key attribute values=] for media controllers (e.g. remote controls for
+		The [=键属性值=] for media controllers (e.g. remote controls for
 		television, audio systems, and set-top boxes) are derived in part from
 		the consumer electronics technical specifications:
 

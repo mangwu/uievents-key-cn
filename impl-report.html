@@ -6,9 +6,9 @@
   <meta content="ED" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
-  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
+  <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
   <link href="https://w3c.github.io/uievents-key/impl-report.html" rel="canonical">
-  <meta content="0fe3d58dad5c4041bff6c3df4d4192afa1671550" name="document-revision">
+  <meta content="41ddcc2a2d42bde0935263dfe91a28eb7acbbc4f" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -356,7 +356,8 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    width: 300px;
+    min-width: min-content;
+    max-width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -373,15 +374,8 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
-.dfn-panel li a {
-    white-space: pre;
-    display: inline-block;
-    max-width: calc(300px - 1.5em - 1em);
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -392,7 +386,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled[role="button"] { cursor: pointer; }
+.dfn-paneled { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -606,7 +600,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1>UI Events KeyboardEvent key Implementation Report</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">Editor’s Draft</a>, <time class="dt-updated" datetime="2023-05-09">9 May 2023</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">Editor’s Draft</a>, <time class="dt-updated" datetime="2023-05-22">22 May 2023</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
@@ -764,7 +758,7 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
    <table class="data-table full-width" id="key-table-unnamed">
     <thead>
      <tr>
-      <th><a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#" id="ref-for-something">key attribute value</a>
+      <th><a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#" id="ref-for-fe52c84e3d2271582868085c55b67cb4">键属性值</a>
       <th class="key-impl-data">Chrome
       <th class="key-impl-data">Edge
       <th class="key-impl-data">Firefox
@@ -806,7 +800,7 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
    <table class="data-table full-width" id="key-table-required">
     <thead>
      <tr>
-      <th><a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#" id="ref-for-something①">key attribute value</a>
+      <th><a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#" id="ref-for-fe52c84e3d2271582868085c55b67cb4①">键属性值</a>
       <th class="key-impl-data">Chrome
       <th class="key-impl-data">Edge
       <th class="key-impl-data">Firefox
@@ -814,7 +808,7 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
       <th>Notes
     <tbody>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Unidentified"><code class="key">"Unidentified"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Unidentified"><code class="key">"Unidentified"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
@@ -823,56 +817,56 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Modifier Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Alt"><code class="key">"Alt"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Alt"><code class="key">"Alt"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AltGraph"><code class="key">"AltGraph"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AltGraph"><code class="key">"AltGraph"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-CapsLock"><code class="key">"CapsLock"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-CapsLock"><code class="key">"CapsLock"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Control"><code class="key">"Control"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Control"><code class="key">"Control"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Meta"><code class="key">"Meta"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Meta"><code class="key">"Meta"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-NumLock"><code class="key">"NumLock"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-NumLock"><code class="key">"NumLock"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ScrollLock"><code class="key">"ScrollLock"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ScrollLock"><code class="key">"ScrollLock"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Shift"><code class="key">"Shift"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Shift"><code class="key">"Shift"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
@@ -881,14 +875,14 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Whitespace Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Enter"><code class="key">"Enter"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Enter"><code class="key">"Enter"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Tab"><code class="key">"Tab"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Tab"><code class="key">"Tab"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
@@ -897,56 +891,56 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Navigation Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ArrowDown"><code class="key">"ArrowDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ArrowDown"><code class="key">"ArrowDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ArrowLeft"><code class="key">"ArrowLeft"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ArrowLeft"><code class="key">"ArrowLeft"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ArrowRight"><code class="key">"ArrowRight"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ArrowRight"><code class="key">"ArrowRight"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ArrowUp"><code class="key">"ArrowUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ArrowUp"><code class="key">"ArrowUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-End"><code class="key">"End"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-End"><code class="key">"End"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Home"><code class="key">"Home"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Home"><code class="key">"Home"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PageDown"><code class="key">"PageDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PageDown"><code class="key">"PageDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PageUp"><code class="key">"PageUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PageUp"><code class="key">"PageUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
@@ -955,21 +949,21 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Editing Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Backspace"><code class="key">"Backspace"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Backspace"><code class="key">"Backspace"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Delete"><code class="key">"Delete"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Delete"><code class="key">"Delete"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Insert"><code class="key">"Insert"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Insert"><code class="key">"Insert"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
@@ -978,21 +972,21 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">UI Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ContextMenu"><code class="key">"ContextMenu"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ContextMenu"><code class="key">"ContextMenu"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Escape"><code class="key">"Escape"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Escape"><code class="key">"Escape"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Pause"><code class="key">"Pause"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Pause"><code class="key">"Pause"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
@@ -1001,7 +995,7 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Device Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PrintScreen"><code class="key">"PrintScreen"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PrintScreen"><code class="key">"PrintScreen"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
@@ -1010,84 +1004,84 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">General-Purpose Function Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F1"><code class="key">"F1"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F1"><code class="key">"F1"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>Chrome opens help page and doesn’t send keyup event
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F2"><code class="key">"F2"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F2"><code class="key">"F2"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F3"><code class="key">"F3"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F3"><code class="key">"F3"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>Chrome/Firefox open Find bar. Chrome doesn’t send keyup event
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F4"><code class="key">"F4"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F4"><code class="key">"F4"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F5"><code class="key">"F5"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F5"><code class="key">"F5"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>Chrome/Firefox refresh page
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F6"><code class="key">"F6"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F6"><code class="key">"F6"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F7"><code class="key">"F7"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F7"><code class="key">"F7"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>Firefox enables/disables Caret Browsing.
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F8"><code class="key">"F8"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F8"><code class="key">"F8"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F9"><code class="key">"F9"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F9"><code class="key">"F9"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F10"><code class="key">"F10"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F10"><code class="key">"F10"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F11"><code class="key">"F11"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F11"><code class="key">"F11"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td>Chrome enters/leaves fullscreen 
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-F12"><code class="key">"F12"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-F12"><code class="key">"F12"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
@@ -1100,7 +1094,7 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
    <table class="data-table full-width" id="key-table-editing">
     <thead>
      <tr>
-      <th><a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#" id="ref-for-something②">key attribute value</a>
+      <th><a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#" id="ref-for-fe52c84e3d2271582868085c55b67cb4②">键属性值</a>
       <th class="key-impl-data">Chrome
       <th class="key-impl-data">Edge
       <th class="key-impl-data">Firefox
@@ -1110,63 +1104,63 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Editing Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Clear"><code class="key">"Clear"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Clear"><code class="key">"Clear"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Copy"><code class="key">"Copy"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Copy"><code class="key">"Copy"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-CrSel"><code class="key">"CrSel"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-CrSel"><code class="key">"CrSel"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Cut"><code class="key">"Cut"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Cut"><code class="key">"Cut"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-EraseEof"><code class="key">"EraseEof"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-EraseEof"><code class="key">"EraseEof"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ExSel"><code class="key">"ExSel"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ExSel"><code class="key">"ExSel"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Paste"><code class="key">"Paste"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Paste"><code class="key">"Paste"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Redo"><code class="key">"Redo"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Redo"><code class="key">"Redo"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Undo"><code class="key">"Undo"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Undo"><code class="key">"Undo"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
@@ -1175,119 +1169,119 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">IME and Composition Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AllCandidates"><code class="key">"AllCandidates"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AllCandidates"><code class="key">"AllCandidates"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Alphanumeric"><code class="key">"Alphanumeric"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Alphanumeric"><code class="key">"Alphanumeric"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-CodeInput"><code class="key">"CodeInput"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-CodeInput"><code class="key">"CodeInput"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Compose"><code class="key">"Compose"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Compose"><code class="key">"Compose"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Convert"><code class="key">"Convert"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Convert"><code class="key">"Convert"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Dead"><code class="key">"Dead"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Dead"><code class="key">"Dead"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FinalMode"><code class="key">"FinalMode"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FinalMode"><code class="key">"FinalMode"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-GroupFirst"><code class="key">"GroupFirst"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-GroupFirst"><code class="key">"GroupFirst"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-GroupLast"><code class="key">"GroupLast"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-GroupLast"><code class="key">"GroupLast"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-GroupNext"><code class="key">"GroupNext"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-GroupNext"><code class="key">"GroupNext"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-GroupPrevious"><code class="key">"GroupPrevious"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-GroupPrevious"><code class="key">"GroupPrevious"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ModeChange"><code class="key">"ModeChange"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ModeChange"><code class="key">"ModeChange"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-NextCandidate"><code class="key">"NextCandidate"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-NextCandidate"><code class="key">"NextCandidate"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-NonConvert"><code class="key">"NonConvert"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-NonConvert"><code class="key">"NonConvert"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PreviousCandidate"><code class="key">"PreviousCandidate"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PreviousCandidate"><code class="key">"PreviousCandidate"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Process"><code class="key">"Process"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Process"><code class="key">"Process"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-SingleCandidate"><code class="key">"SingleCandidate"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-SingleCandidate"><code class="key">"SingleCandidate"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1296,21 +1290,21 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">IME keys specific to Korean keyboards
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-HangulMode"><code class="key">"HangulMode"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-HangulMode"><code class="key">"HangulMode"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-HanjaMode"><code class="key">"HanjaMode"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-HanjaMode"><code class="key">"HanjaMode"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-JunjaMode"><code class="key">"JunjaMode"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-JunjaMode"><code class="key">"JunjaMode"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
@@ -1319,70 +1313,70 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">IME keys specific to Japanese keyboards
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Eisu"><code class="key">"Eisu"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Eisu"><code class="key">"Eisu"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Hankaku"><code class="key">"Hankaku"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Hankaku"><code class="key">"Hankaku"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Hiragana"><code class="key">"Hiragana"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Hiragana"><code class="key">"Hiragana"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-HiraganaKatakana"><code class="key">"HiraganaKatakana"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-HiraganaKatakana"><code class="key">"HiraganaKatakana"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-KanaMode"><code class="key">"KanaMode"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-KanaMode"><code class="key">"KanaMode"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-KanjiMode"><code class="key">"KanjiMode"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-KanjiMode"><code class="key">"KanjiMode"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Katakana"><code class="key">"Katakana"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Katakana"><code class="key">"Katakana"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Romaji"><code class="key">"Romaji"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Romaji"><code class="key">"Romaji"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Zenkaku"><code class="key">"Zenkaku"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Zenkaku"><code class="key">"Zenkaku"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ZenkakuHankaku"><code class="key">"ZenkakuHankaku"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ZenkakuHankaku"><code class="key">"ZenkakuHankaku"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1405,7 +1399,7 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
    <table class="data-table full-width" id="key-table-optional">
     <thead>
      <tr>
-      <th><a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#" id="ref-for-something③">key attribute value</a>
+      <th><a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#" id="ref-for-fe52c84e3d2271582868085c55b67cb4③">键属性值</a>
       <th class="key-impl-data">Chrome
       <th class="key-impl-data">Edge
       <th class="key-impl-data">Firefox
@@ -1415,28 +1409,28 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Modifier Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Fn"><code class="key">"Fn"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Fn"><code class="key">"Fn"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FnLock"><code class="key">"FnLock"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FnLock"><code class="key">"FnLock"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Symbol"><code class="key">"Symbol"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Symbol"><code class="key">"Symbol"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-SymbolLock"><code class="key">"SymbolLock"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-SymbolLock"><code class="key">"SymbolLock"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1445,14 +1439,14 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Legacy modifier keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Hyper"><code class="key">"Hyper"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Hyper"><code class="key">"Hyper"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Super"><code class="key">"Super"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Super"><code class="key">"Super"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1461,84 +1455,84 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">UI Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Accept"><code class="key">"Accept"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Accept"><code class="key">"Accept"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Again"><code class="key">"Again"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Again"><code class="key">"Again"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Attn"><code class="key">"Attn"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Attn"><code class="key">"Attn"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Cancel"><code class="key">"Cancel"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Cancel"><code class="key">"Cancel"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Execute"><code class="key">"Execute"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Execute"><code class="key">"Execute"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Find"><code class="key">"Find"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Find"><code class="key">"Find"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Help"><code class="key">"Help"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Help"><code class="key">"Help"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Play"><code class="key">"Play"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Play"><code class="key">"Play"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Props"><code class="key">"Props"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Props"><code class="key">"Props"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Select"><code class="key">"Select"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Select"><code class="key">"Select"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ZoomIn"><code class="key">"ZoomIn"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ZoomIn"><code class="key">"ZoomIn"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ZoomOut"><code class="key">"ZoomOut"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ZoomOut"><code class="key">"ZoomOut"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1547,63 +1541,63 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Device Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-BrightnessDown"><code class="key">"BrightnessDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-BrightnessDown"><code class="key">"BrightnessDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-BrightnessUp"><code class="key">"BrightnessUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-BrightnessUp"><code class="key">"BrightnessUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Eject"><code class="key">"Eject"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Eject"><code class="key">"Eject"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LogOff"><code class="key">"LogOff"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LogOff"><code class="key">"LogOff"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Power"><code class="key">"Power"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Power"><code class="key">"Power"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PowerOff"><code class="key">"PowerOff"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PowerOff"><code class="key">"PowerOff"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Hibernate"><code class="key">"Hibernate"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Hibernate"><code class="key">"Hibernate"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Standby"><code class="key">"Standby"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Standby"><code class="key">"Standby"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-WakeUp"><code class="key">"WakeUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-WakeUp"><code class="key">"WakeUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1612,28 +1606,28 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">General-Purpose Function Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Soft1"><code class="key">"Soft1"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Soft1"><code class="key">"Soft1"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Soft2"><code class="key">"Soft2"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Soft2"><code class="key">"Soft2"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Soft3"><code class="key">"Soft3"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Soft3"><code class="key">"Soft3"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Soft4"><code class="key">"Soft4"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Soft4"><code class="key">"Soft4"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1642,147 +1636,147 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Multimedia Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ChannelDown"><code class="key">"ChannelDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ChannelDown"><code class="key">"ChannelDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ChannelUp"><code class="key">"ChannelUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ChannelUp"><code class="key">"ChannelUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Close"><code class="key">"Close"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Close"><code class="key">"Close"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MailForward"><code class="key">"MailForward"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MailForward"><code class="key">"MailForward"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MailReply"><code class="key">"MailReply"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MailReply"><code class="key">"MailReply"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MailSend"><code class="key">"MailSend"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MailSend"><code class="key">"MailSend"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaClose"><code class="key">"MediaClose"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaClose"><code class="key">"MediaClose"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaFastForward"><code class="key">"MediaFastForward"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaFastForward"><code class="key">"MediaFastForward"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaPause"><code class="key">"MediaPause"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaPause"><code class="key">"MediaPause"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaPlay"><code class="key">"MediaPlay"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaPlay"><code class="key">"MediaPlay"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaPlayPause"><code class="key">"MediaPlayPause"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaPlayPause"><code class="key">"MediaPlayPause"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaRecord"><code class="key">"MediaRecord"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaRecord"><code class="key">"MediaRecord"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaRewind"><code class="key">"MediaRewind"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaRewind"><code class="key">"MediaRewind"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaStop"><code class="key">"MediaStop"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaStop"><code class="key">"MediaStop"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaTrackNext"><code class="key">"MediaTrackNext"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaTrackNext"><code class="key">"MediaTrackNext"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaTrackPrevious"><code class="key">"MediaTrackPrevious"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaTrackPrevious"><code class="key">"MediaTrackPrevious"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-New"><code class="key">"New"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-New"><code class="key">"New"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Open"><code class="key">"Open"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Open"><code class="key">"Open"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Print"><code class="key">"Print"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Print"><code class="key">"Print"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>Firefox returns PrintScreen; Chrome returns Undefined
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Save"><code class="key">"Save"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Save"><code class="key">"Save"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-SpellCheck"><code class="key">"SpellCheck"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-SpellCheck"><code class="key">"SpellCheck"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1791,14 +1785,14 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Multimedia Numpad Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Key11"><code class="key">"Key11"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Key11"><code class="key">"Key11"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Key12"><code class="key">"Key12"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Key12"><code class="key">"Key12"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1807,119 +1801,119 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Audio Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioBalanceLeft"><code class="key">"AudioBalanceLeft"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioBalanceLeft"><code class="key">"AudioBalanceLeft"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioBalanceRight"><code class="key">"AudioBalanceRight"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioBalanceRight"><code class="key">"AudioBalanceRight"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioBassBoostDown"><code class="key">"AudioBassBoostDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioBassBoostDown"><code class="key">"AudioBassBoostDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioBassBoostToggle"><code class="key">"AudioBassBoostToggle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioBassBoostToggle"><code class="key">"AudioBassBoostToggle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioBassBoostUp"><code class="key">"AudioBassBoostUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioBassBoostUp"><code class="key">"AudioBassBoostUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioFaderFront"><code class="key">"AudioFaderFront"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioFaderFront"><code class="key">"AudioFaderFront"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioFaderRear"><code class="key">"AudioFaderRear"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioFaderRear"><code class="key">"AudioFaderRear"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioSurroundModeNext"><code class="key">"AudioSurroundModeNext"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioSurroundModeNext"><code class="key">"AudioSurroundModeNext"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioTrebleDown"><code class="key">"AudioTrebleDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioTrebleDown"><code class="key">"AudioTrebleDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioTrebleUp"><code class="key">"AudioTrebleUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioTrebleUp"><code class="key">"AudioTrebleUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioVolumeDown"><code class="key">"AudioVolumeDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioVolumeDown"><code class="key">"AudioVolumeDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioVolumeUp"><code class="key">"AudioVolumeUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioVolumeUp"><code class="key">"AudioVolumeUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AudioVolumeMute"><code class="key">"AudioVolumeMute"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AudioVolumeMute"><code class="key">"AudioVolumeMute"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MicrophoneToggle"><code class="key">"MicrophoneToggle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MicrophoneToggle"><code class="key">"MicrophoneToggle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MicrophoneVolumeDown"><code class="key">"MicrophoneVolumeDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MicrophoneVolumeDown"><code class="key">"MicrophoneVolumeDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MicrophoneVolumeUp"><code class="key">"MicrophoneVolumeUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MicrophoneVolumeUp"><code class="key">"MicrophoneVolumeUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MicrophoneVolumeMute"><code class="key">"MicrophoneVolumeMute"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MicrophoneVolumeMute"><code class="key">"MicrophoneVolumeMute"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1928,14 +1922,14 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Speech Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-SpeechCorrectionList"><code class="key">"SpeechCorrectionList"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-SpeechCorrectionList"><code class="key">"SpeechCorrectionList"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-SpeechInputToggle"><code class="key">"SpeechInputToggle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-SpeechInputToggle"><code class="key">"SpeechInputToggle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -1944,91 +1938,91 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Application Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchApplication1"><code class="key">"LaunchApplication1"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchApplication1"><code class="key">"LaunchApplication1"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchApplication2"><code class="key">"LaunchApplication2"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchApplication2"><code class="key">"LaunchApplication2"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchCalendar"><code class="key">"LaunchCalendar"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchCalendar"><code class="key">"LaunchCalendar"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchContacts"><code class="key">"LaunchContacts"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchContacts"><code class="key">"LaunchContacts"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchMail"><code class="key">"LaunchMail"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchMail"><code class="key">"LaunchMail"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchMediaPlayer"><code class="key">"LaunchMediaPlayer"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchMediaPlayer"><code class="key">"LaunchMediaPlayer"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchMusicPlayer"><code class="key">"LaunchMusicPlayer"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchMusicPlayer"><code class="key">"LaunchMusicPlayer"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchPhone"><code class="key">"LaunchPhone"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchPhone"><code class="key">"LaunchPhone"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchScreenSaver"><code class="key">"LaunchScreenSaver"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchScreenSaver"><code class="key">"LaunchScreenSaver"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchSpreadsheet"><code class="key">"LaunchSpreadsheet"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchSpreadsheet"><code class="key">"LaunchSpreadsheet"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchWebBrowser"><code class="key">"LaunchWebBrowser"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchWebBrowser"><code class="key">"LaunchWebBrowser"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchWebCam"><code class="key">"LaunchWebCam"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchWebCam"><code class="key">"LaunchWebCam"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LaunchWordProcessor"><code class="key">"LaunchWordProcessor"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LaunchWordProcessor"><code class="key">"LaunchWordProcessor"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -2037,49 +2031,49 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Browser Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-BrowserBack"><code class="key">"BrowserBack"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-BrowserBack"><code class="key">"BrowserBack"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-BrowserFavorites"><code class="key">"BrowserFavorites"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-BrowserFavorites"><code class="key">"BrowserFavorites"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>Key handled by browser in Firefox
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-BrowserForward"><code class="key">"BrowserForward"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-BrowserForward"><code class="key">"BrowserForward"</code></a>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-yes">Pass</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-BrowserHome"><code class="key">"BrowserHome"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-BrowserHome"><code class="key">"BrowserHome"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-BrowserRefresh"><code class="key">"BrowserRefresh"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-BrowserRefresh"><code class="key">"BrowserRefresh"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-BrowserSearch"><code class="key">"BrowserSearch"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-BrowserSearch"><code class="key">"BrowserSearch"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-BrowserStop"><code class="key">"BrowserStop"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-BrowserStop"><code class="key">"BrowserStop"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -2088,84 +2082,84 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Mobile Phone Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AppSwitch"><code class="key">"AppSwitch"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AppSwitch"><code class="key">"AppSwitch"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Call"><code class="key">"Call"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Call"><code class="key">"Call"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Camera"><code class="key">"Camera"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Camera"><code class="key">"Camera"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-CameraFocus"><code class="key">"CameraFocus"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-CameraFocus"><code class="key">"CameraFocus"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-EndCall"><code class="key">"EndCall"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-EndCall"><code class="key">"EndCall"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-GoBack"><code class="key">"GoBack"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-GoBack"><code class="key">"GoBack"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-GoHome"><code class="key">"GoHome"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-GoHome"><code class="key">"GoHome"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-HeadsetHook"><code class="key">"HeadsetHook"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-HeadsetHook"><code class="key">"HeadsetHook"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LastNumberRedial"><code class="key">"LastNumberRedial"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LastNumberRedial"><code class="key">"LastNumberRedial"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Notification"><code class="key">"Notification"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Notification"><code class="key">"Notification"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MannerMode"><code class="key">"MannerMode"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MannerMode"><code class="key">"MannerMode"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-VoiceDial"><code class="key">"VoiceDial"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-VoiceDial"><code class="key">"VoiceDial"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -2174,210 +2168,210 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">TV Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TV"><code class="key">"TV"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TV"><code class="key">"TV"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TV3DMode"><code class="key">"TV3DMode"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TV3DMode"><code class="key">"TV3DMode"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVAntennaCable"><code class="key">"TVAntennaCable"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVAntennaCable"><code class="key">"TVAntennaCable"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVAudioDescription"><code class="key">"TVAudioDescription"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVAudioDescription"><code class="key">"TVAudioDescription"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVAudioDescriptionMixDown"><code class="key">"TVAudioDescriptionMixDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVAudioDescriptionMixDown"><code class="key">"TVAudioDescriptionMixDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVAudioDescriptionMixUp"><code class="key">"TVAudioDescriptionMixUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVAudioDescriptionMixUp"><code class="key">"TVAudioDescriptionMixUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVContentsMenu"><code class="key">"TVContentsMenu"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVContentsMenu"><code class="key">"TVContentsMenu"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVDataService"><code class="key">"TVDataService"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVDataService"><code class="key">"TVDataService"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVInput"><code class="key">"TVInput"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVInput"><code class="key">"TVInput"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVInputComponent1"><code class="key">"TVInputComponent1"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVInputComponent1"><code class="key">"TVInputComponent1"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVInputComponent2"><code class="key">"TVInputComponent2"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVInputComponent2"><code class="key">"TVInputComponent2"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVInputComposite1"><code class="key">"TVInputComposite1"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVInputComposite1"><code class="key">"TVInputComposite1"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVInputComposite2"><code class="key">"TVInputComposite2"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVInputComposite2"><code class="key">"TVInputComposite2"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVInputHDMI1"><code class="key">"TVInputHDMI1"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVInputHDMI1"><code class="key">"TVInputHDMI1"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVInputHDMI2"><code class="key">"TVInputHDMI2"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVInputHDMI2"><code class="key">"TVInputHDMI2"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVInputHDMI3"><code class="key">"TVInputHDMI3"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVInputHDMI3"><code class="key">"TVInputHDMI3"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVInputHDMI4"><code class="key">"TVInputHDMI4"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVInputHDMI4"><code class="key">"TVInputHDMI4"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVInputVGA1"><code class="key">"TVInputVGA1"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVInputVGA1"><code class="key">"TVInputVGA1"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVMediaContext"><code class="key">"TVMediaContext"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVMediaContext"><code class="key">"TVMediaContext"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVNetwork"><code class="key">"TVNetwork"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVNetwork"><code class="key">"TVNetwork"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVNumberEntry"><code class="key">"TVNumberEntry"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVNumberEntry"><code class="key">"TVNumberEntry"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVPower"><code class="key">"TVPower"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVPower"><code class="key">"TVPower"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVRadioService"><code class="key">"TVRadioService"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVRadioService"><code class="key">"TVRadioService"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVSatellite"><code class="key">"TVSatellite"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVSatellite"><code class="key">"TVSatellite"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVSatelliteBS"><code class="key">"TVSatelliteBS"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVSatelliteBS"><code class="key">"TVSatelliteBS"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVSatelliteCS"><code class="key">"TVSatelliteCS"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVSatelliteCS"><code class="key">"TVSatelliteCS"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVSatelliteToggle"><code class="key">"TVSatelliteToggle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVSatelliteToggle"><code class="key">"TVSatelliteToggle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVTerrestrialAnalog"><code class="key">"TVTerrestrialAnalog"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVTerrestrialAnalog"><code class="key">"TVTerrestrialAnalog"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVTerrestrialDigital"><code class="key">"TVTerrestrialDigital"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVTerrestrialDigital"><code class="key">"TVTerrestrialDigital"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-TVTimer"><code class="key">"TVTimer"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-TVTimer"><code class="key">"TVTimer"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -2386,504 +2380,504 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Media Controller Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AVRInput"><code class="key">"AVRInput"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AVRInput"><code class="key">"AVRInput"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-AVRPower"><code class="key">"AVRPower"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-AVRPower"><code class="key">"AVRPower"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ColorF0Red"><code class="key">"ColorF0Red"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ColorF0Red"><code class="key">"ColorF0Red"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ColorF1Green"><code class="key">"ColorF1Green"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ColorF1Green"><code class="key">"ColorF1Green"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ColorF2Yellow"><code class="key">"ColorF2Yellow"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ColorF2Yellow"><code class="key">"ColorF2Yellow"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ColorF3Blue"><code class="key">"ColorF3Blue"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ColorF3Blue"><code class="key">"ColorF3Blue"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ColorF4Grey"><code class="key">"ColorF4Grey"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ColorF4Grey"><code class="key">"ColorF4Grey"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ColorF5Brown"><code class="key">"ColorF5Brown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ColorF5Brown"><code class="key">"ColorF5Brown"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ClosedCaptionToggle"><code class="key">"ClosedCaptionToggle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ClosedCaptionToggle"><code class="key">"ClosedCaptionToggle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Dimmer"><code class="key">"Dimmer"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Dimmer"><code class="key">"Dimmer"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-DisplaySwap"><code class="key">"DisplaySwap"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-DisplaySwap"><code class="key">"DisplaySwap"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-DVR"><code class="key">"DVR"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-DVR"><code class="key">"DVR"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Exit"><code class="key">"Exit"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Exit"><code class="key">"Exit"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteClear0"><code class="key">"FavoriteClear0"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteClear0"><code class="key">"FavoriteClear0"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteClear1"><code class="key">"FavoriteClear1"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteClear1"><code class="key">"FavoriteClear1"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteClear2"><code class="key">"FavoriteClear2"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteClear2"><code class="key">"FavoriteClear2"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteClear3"><code class="key">"FavoriteClear3"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteClear3"><code class="key">"FavoriteClear3"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteRecall0"><code class="key">"FavoriteRecall0"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteRecall0"><code class="key">"FavoriteRecall0"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteRecall1"><code class="key">"FavoriteRecall1"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteRecall1"><code class="key">"FavoriteRecall1"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteRecall2"><code class="key">"FavoriteRecall2"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteRecall2"><code class="key">"FavoriteRecall2"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteRecall3"><code class="key">"FavoriteRecall3"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteRecall3"><code class="key">"FavoriteRecall3"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteStore0"><code class="key">"FavoriteStore0"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteStore0"><code class="key">"FavoriteStore0"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteStore1"><code class="key">"FavoriteStore1"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteStore1"><code class="key">"FavoriteStore1"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteStore2"><code class="key">"FavoriteStore2"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteStore2"><code class="key">"FavoriteStore2"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-FavoriteStore3"><code class="key">"FavoriteStore3"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-FavoriteStore3"><code class="key">"FavoriteStore3"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Guide"><code class="key">"Guide"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Guide"><code class="key">"Guide"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-GuideNextDay"><code class="key">"GuideNextDay"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-GuideNextDay"><code class="key">"GuideNextDay"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-GuidePreviousDay"><code class="key">"GuidePreviousDay"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-GuidePreviousDay"><code class="key">"GuidePreviousDay"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Info"><code class="key">"Info"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Info"><code class="key">"Info"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-InstantReplay"><code class="key">"InstantReplay"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-InstantReplay"><code class="key">"InstantReplay"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Link"><code class="key">"Link"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Link"><code class="key">"Link"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ListProgram"><code class="key">"ListProgram"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ListProgram"><code class="key">"ListProgram"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-LiveContent"><code class="key">"LiveContent"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-LiveContent"><code class="key">"LiveContent"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Lock"><code class="key">"Lock"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Lock"><code class="key">"Lock"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaApps"><code class="key">"MediaApps"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaApps"><code class="key">"MediaApps"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaAudioTrack"><code class="key">"MediaAudioTrack"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaAudioTrack"><code class="key">"MediaAudioTrack"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaLast"><code class="key">"MediaLast"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaLast"><code class="key">"MediaLast"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaSkipBackward"><code class="key">"MediaSkipBackward"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaSkipBackward"><code class="key">"MediaSkipBackward"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaSkipForward"><code class="key">"MediaSkipForward"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaSkipForward"><code class="key">"MediaSkipForward"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaStepBackward"><code class="key">"MediaStepBackward"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaStepBackward"><code class="key">"MediaStepBackward"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaStepForward"><code class="key">"MediaStepForward"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaStepForward"><code class="key">"MediaStepForward"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-MediaTopMenu"><code class="key">"MediaTopMenu"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-MediaTopMenu"><code class="key">"MediaTopMenu"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-NavigateIn"><code class="key">"NavigateIn"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-NavigateIn"><code class="key">"NavigateIn"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-NavigateNext"><code class="key">"NavigateNext"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-NavigateNext"><code class="key">"NavigateNext"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-NavigateOut"><code class="key">"NavigateOut"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-NavigateOut"><code class="key">"NavigateOut"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-NavigatePrevious"><code class="key">"NavigatePrevious"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-NavigatePrevious"><code class="key">"NavigatePrevious"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-NextFavoriteChannel"><code class="key">"NextFavoriteChannel"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-NextFavoriteChannel"><code class="key">"NextFavoriteChannel"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-NextUserProfile"><code class="key">"NextUserProfile"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-NextUserProfile"><code class="key">"NextUserProfile"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-OnDemand"><code class="key">"OnDemand"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-OnDemand"><code class="key">"OnDemand"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Pairing"><code class="key">"Pairing"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Pairing"><code class="key">"Pairing"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PinPDown"><code class="key">"PinPDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PinPDown"><code class="key">"PinPDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PinPMove"><code class="key">"PinPMove"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PinPMove"><code class="key">"PinPMove"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PinPToggle"><code class="key">"PinPToggle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PinPToggle"><code class="key">"PinPToggle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PinPUp"><code class="key">"PinPUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PinPUp"><code class="key">"PinPUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PlaySpeedDown"><code class="key">"PlaySpeedDown"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PlaySpeedDown"><code class="key">"PlaySpeedDown"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PlaySpeedReset"><code class="key">"PlaySpeedReset"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PlaySpeedReset"><code class="key">"PlaySpeedReset"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-PlaySpeedUp"><code class="key">"PlaySpeedUp"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-PlaySpeedUp"><code class="key">"PlaySpeedUp"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-RandomToggle"><code class="key">"RandomToggle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-RandomToggle"><code class="key">"RandomToggle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-RcLowBattery"><code class="key">"RcLowBattery"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-RcLowBattery"><code class="key">"RcLowBattery"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-RecordSpeedNext"><code class="key">"RecordSpeedNext"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-RecordSpeedNext"><code class="key">"RecordSpeedNext"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-RfBypass"><code class="key">"RfBypass"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-RfBypass"><code class="key">"RfBypass"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ScanChannelsToggle"><code class="key">"ScanChannelsToggle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ScanChannelsToggle"><code class="key">"ScanChannelsToggle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ScreenModeNext"><code class="key">"ScreenModeNext"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ScreenModeNext"><code class="key">"ScreenModeNext"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Settings"><code class="key">"Settings"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Settings"><code class="key">"Settings"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-SplitScreenToggle"><code class="key">"SplitScreenToggle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-SplitScreenToggle"><code class="key">"SplitScreenToggle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-STBInput"><code class="key">"STBInput"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-STBInput"><code class="key">"STBInput"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-STBPower"><code class="key">"STBPower"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-STBPower"><code class="key">"STBPower"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Subtitle"><code class="key">"Subtitle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Subtitle"><code class="key">"Subtitle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Teletext"><code class="key">"Teletext"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Teletext"><code class="key">"Teletext"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-VideoModeNext"><code class="key">"VideoModeNext"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-VideoModeNext"><code class="key">"VideoModeNext"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-Wink"><code class="key">"Wink"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-Wink"><code class="key">"Wink"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-key/#key-ZoomToggle"><code class="key">"ZoomToggle"</code></a>
+      <td class="key-table-key"><a href="https://mangwu.github.io/uievents-key-cn/#key-ZoomToggle"><code class="key">"ZoomToggle"</code></a>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
       <td class="key-impl-data"><span class="key-impl-no">Fail</span>
@@ -2921,37 +2915,59 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
     with <code>class="note"</code>,
     like this: </p>
    <p class="note" role="note">Note, this is an informative note.</p>
-   <section>
-    <h3 class="no-ref no-num heading settled" id="w3c-conformant-algorithms"><span class="content">Conformant Algorithms</span><a class="self-link" href="#w3c-conformant-algorithms"></a></h3>
-    <p>Requirements phrased in the imperative as part of algorithms
+   <h3 class="no-ref no-num heading settled" id="w3c-conformant-algorithms"><span class="content">Conformant Algorithms</span><a class="self-link" href="#w3c-conformant-algorithms"></a></h3>
+   <p>Requirements phrased in the imperative as part of algorithms
     (such as "strip any leading space characters"
     or "return false and abort these steps")
     are to be interpreted with the meaning of the key word
     ("must", "should", "may", etc)
     used in introducing the algorithm. </p>
-    <p>Conformance requirements phrased as algorithms or specific steps
+   <p>Conformance requirements phrased as algorithms or specific steps
     can be implemented in any manner,
     so long as the end result is equivalent.
     In particular, the algorithms defined in this specification
     are intended to be easy to understand
     and are not intended to be performant.
     Implementers are encouraged to optimize. </p>
-   </section>
   </div>
 <script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <aside aria-labelledby="infopaneltitle-for-cc098e4aaaed4380e9c039d6ee9f9661" class="dfn-panel" data-for="cc098e4aaaed4380e9c039d6ee9f9661" id="infopanel-for-cc098e4aaaed4380e9c039d6ee9f9661">
+   <span id="infopaneltitle-for-cc098e4aaaed4380e9c039d6ee9f9661" style="display:none">Info about the 'KeyboardEvent' external reference.</span><a href="https://w3c.github.io/uievents/#keyboardevent">https://w3c.github.io/uievents/#keyboardevent</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-keyboardevent">3.2.1. The key Attribute</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-5a50000bda605c4f87b025f76082494a" class="dfn-panel" data-for="5a50000bda605c4f87b025f76082494a" id="infopanel-for-5a50000bda605c4f87b025f76082494a">
+   <span id="infopaneltitle-for-5a50000bda605c4f87b025f76082494a" style="display:none">Info about the 'key' external reference.</span><a href="https://w3c.github.io/uievents/#dom-keyboardevent-key">https://w3c.github.io/uievents/#dom-keyboardevent-key</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-keyboardevent-key">1. Introduction</a> <a href="#ref-for-dom-keyboardevent-key①">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key②">3.1. Summary</a>
+    <li><a href="#ref-for-dom-keyboardevent-key③">3.2.1. The key Attribute</a> <a href="#ref-for-dom-keyboardevent-key④">(2)</a> <a href="#ref-for-dom-keyboardevent-key⑤">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key⑥">3.2.2. Required Unnamed Keys</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-fe52c84e3d2271582868085c55b67cb4" class="dfn-panel" data-for="fe52c84e3d2271582868085c55b67cb4" id="infopanel-for-fe52c84e3d2271582868085c55b67cb4">
+   <span id="infopaneltitle-for-fe52c84e3d2271582868085c55b67cb4" style="display:none">Info about the '键属性值' external reference.</span><a href="http://www.w3.org/TR/uievents-key/#">http://www.w3.org/TR/uievents-key/#</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-fe52c84e3d2271582868085c55b67cb4">3.2.2. Required Unnamed Keys</a>
+    <li><a href="#ref-for-fe52c84e3d2271582868085c55b67cb4">3.2.3. Required Named Keys</a>
+    <li><a href="#ref-for-fe52c84e3d2271582868085c55b67cb4">3.2.4. Optional Editing Named Keys</a>
+    <li><a href="#ref-for-fe52c84e3d2271582868085c55b67cb4">3.2.5. Optional Device-specific Named Keys</a>
+   </ul>
+  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[UIEvents]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="1fc098b2">KeyboardEvent</span>
-     <li><span class="dfn-paneled" id="1b33fddd">key</span>
+     <li><span class="dfn-paneled" id="cc098e4aaaed4380e9c039d6ee9f9661">KeyboardEvent</span>
+     <li><span class="dfn-paneled" id="5a50000bda605c4f87b025f76082494a">key</span>
     </ul>
    <li>
     <a data-link-type="biblio">[UIEvents-Key]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="66a6a532">key attribute value</span>
+     <li><span class="dfn-paneled" id="fe52c84e3d2271582868085c55b67cb4">键属性值</span>
     </ul>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
@@ -2969,65 +2985,18 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    const dfnsJson = window.dfnsJson || {};
-
-    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
-        return mk.aside({
-            class: "dfn-panel",
-            id: `infopanel-for-${dfnID}`,
-            "data-for": dfnID,
-            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
-            },
-            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
-                `Info about the '${dfnText}' ${external?"external":""} reference.`),
-            mk.a({href:url}, url),
-            mk.b({}, "Referenced in:"),
-            mk.ul({},
-                ...refSections.map(section=>
-                    mk.li({},
-                        ...section.refs.map((ref, refI)=>
-                            [
-                                mk.a({
-                                    href: `#${ref.id}`
-                                    },
-                                    (refI == 0) ? section.title : `(${refI + 1})`
-                                ),
-                                " ",
-                            ]
-                        ),
-                    ),
-                ),
-            ),
-        );
+    function queryAll(sel) {
+        return [].slice.call(document.querySelectorAll(sel));
     }
 
-    function genAllDfnPanels() {
-        for(const panelData of Object.values(window.dfnpanelData)) {
-            const dfnID = panelData.dfnID;
-            const dfn = document.getElementById(dfnID);
-            if(!dfn) {
-                console.log(`Can't find dfn#${dfnID}.`, panelData);
-            } else {
-                const panel = genDfnPanel(panelData);
-                append(document.body, panel);
-                insertDfnPopupAction(dfn, panel)
-            }
-        }
-    }
+    // Add popup behavior to all dfns to show the corresponding dfn-panel.
+    var dfns = document.querySelectorAll('.dfn-paneled');
+    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
 
-    document.addEventListener("DOMContentLoaded", ()=>{
-        genAllDfnPanels();
-
-        // Add popup behavior to all dfns to show the corresponding dfn-panel.
-        var dfns = queryAll('.dfn-paneled');
-        for(let dfn of dfns) { ; }
-
-        document.body.addEventListener("click", (e) => {
-            // If not handled already, just hide all dfn panels.
-            hideAllDfnPanels();
-        });
-    })
-
+    document.body.addEventListener("click", (e) => {
+        // If not handled already, just hide all dfn panels.
+        hideAllDfnPanels();
+    });
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -3077,246 +3046,49 @@ one. Instead, a sampling of 63 of the most common keys are tested.</p>
         }
     }
 
-    function insertDfnPopupAction(dfn, dfnPanel) {
+    function insertDfnPopupAction(dfn) {
         // Find dfn panel
-        const panelWrapper = document.createElement('span');
-        panelWrapper.appendChild(dfnPanel);
-        panelWrapper.style.position = "relative";
-        panelWrapper.style.height = "0px";
-        dfn.insertAdjacentElement("afterend", panelWrapper);
-        dfn.setAttribute('role', 'button');
-        dfn.setAttribute('aria-expanded', 'false')
-        dfn.tabIndex = 0;
-        dfn.classList.add('has-dfn-panel');
-        dfn.addEventListener('click', (event) => {
-            showDfnPanel(dfnPanel, dfn);
-            event.stopPropagation();
-        });
-        dfn.addEventListener('keypress', (event) => {
-            const kc = event.keyCode;
-            // 32->Space, 13->Enter
-            if(kc == 32 || kc == 13) {
-                toggleDfnPanel(dfnPanel, dfn);
+        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
+        if (dfnPanel) {
+            const panelWrapper = document.createElement('span');
+            panelWrapper.appendChild(dfnPanel);
+            panelWrapper.style.position = "relative";
+            panelWrapper.style.height = "0px";
+            dfn.insertAdjacentElement("afterend", panelWrapper);
+            dfn.setAttribute('role', 'button');
+            dfn.setAttribute('aria-expanded', 'false')
+            dfn.tabIndex = 0;
+            dfn.classList.add('has-dfn-panel');
+            dfn.addEventListener('click', (event) => {
+                showDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-                event.preventDefault();
-            }
-        });
+            });
+            dfn.addEventListener('keypress', (event) => {
+                const kc = event.keyCode;
+                // 32->Space, 13->Enter
+                if(kc == 32 || kc == 13) {
+                    toggleDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            });
 
-        dfnPanel.addEventListener('click', (event) => {
-            if (event.target.nodeName == 'A') {
+            dfnPanel.addEventListener('click', (event) => {
                 pinDfnPanel(dfnPanel);
-            }
-            event.stopPropagation();
-        });
-
-        dfnPanel.addEventListener('keydown', (event) => {
-            if(event.keyCode == 27) { // Escape key
-                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-                event.preventDefault();
-            }
-        })
+            });
+
+            dfnPanel.addEventListener('keydown', (event) => {
+                if(event.keyCode == 27) { // Escape key
+                    hideDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            })
+
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
+        }
     }
 }
 </script>
-<script>/* script-dfn-panel-json */
-window.dfnpanelData = {};
-window.dfnpanelData['1fc098b2'] = {"dfnID": "1fc098b2", "url": "https://w3c.github.io/uievents/#keyboardevent", "dfnText": "KeyboardEvent", "refSections": [{"refs": [{"id": "ref-for-keyboardevent"}], "title": "3.2.1. The key Attribute"}], "external": true};
-window.dfnpanelData['1b33fddd'] = {"dfnID": "1b33fddd", "url": "https://w3c.github.io/uievents/#dom-keyboardevent-key", "dfnText": "key", "refSections": [{"refs": [{"id": "ref-for-dom-keyboardevent-key"}, {"id": "ref-for-dom-keyboardevent-key\u2460"}], "title": "1. Introduction"}, {"refs": [{"id": "ref-for-dom-keyboardevent-key\u2461"}], "title": "3.1. Summary"}, {"refs": [{"id": "ref-for-dom-keyboardevent-key\u2462"}, {"id": "ref-for-dom-keyboardevent-key\u2463"}, {"id": "ref-for-dom-keyboardevent-key\u2464"}], "title": "3.2.1. The key Attribute"}, {"refs": [{"id": "ref-for-dom-keyboardevent-key\u2465"}], "title": "3.2.2. Required Unnamed Keys"}], "external": true};
-window.dfnpanelData['66a6a532'] = {"dfnID": "66a6a532", "url": "http://www.w3.org/TR/uievents-key/#", "dfnText": "key attribute value", "refSections": [{"refs": [{"id": "ref-for-something"}], "title": "3.2.2. Required Unnamed Keys"}, {"refs": [{"id": "ref-for-something\u2460"}], "title": "3.2.3. Required Named Keys"}, {"refs": [{"id": "ref-for-something\u2461"}], "title": "3.2.4. Optional Editing Named Keys"}, {"refs": [{"id": "ref-for-something\u2462"}], "title": "3.2.5. Optional Device-specific Named Keys"}], "external": true};
-</script>
-<script>/* script-dom-helper */
-function query(sel) { return document.querySelector(sel); }
-
-function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
-
-function iter(obj) {
-	if(!obj) return [];
-	var it = obj[Symbol.iterator];
-	if(it) return it;
-	return Object.entries(obj);
-}
-
-function mk(tagname, attrs, ...children) {
-	const el = document.createElement(tagname);
-	for(const [k,v] of iter(attrs)) {
-		if(k.slice(0,3) == "_on") {
-			const eventName = k.slice(3);
-			el.addEventListener(eventName, v);
-		} else if(k[0] == "_") {
-			// property, not attribute
-			el[k.slice(1)] = v;
-		} else {
-			if(v === false || v == null) {
-        continue;
-      } else if(v === true) {
-        el.setAttribute(k, "");
-        continue;
-      } else {
-  			el.setAttribute(k, v);
-      }
-		}
-	}
-	append(el, children);
-	return el;
-}
-
-/* Create shortcuts for every known HTML element */
-[
-  "a",
-  "abbr",
-  "acronym",
-  "address",
-  "applet",
-  "area",
-  "article",
-  "aside",
-  "audio",
-  "b",
-  "base",
-  "basefont",
-  "bdo",
-  "big",
-  "blockquote",
-  "body",
-  "br",
-  "button",
-  "canvas",
-  "caption",
-  "center",
-  "cite",
-  "code",
-  "col",
-  "colgroup",
-  "datalist",
-  "dd",
-  "del",
-  "details",
-  "dfn",
-  "dialog",
-  "div",
-  "dl",
-  "dt",
-  "em",
-  "embed",
-  "fieldset",
-  "figcaption",
-  "figure",
-  "font",
-  "footer",
-  "form",
-  "frame",
-  "frameset",
-  "head",
-  "header",
-  "h1",
-  "h2",
-  "h3",
-  "h4",
-  "h5",
-  "h6",
-  "hr",
-  "html",
-  "i",
-  "iframe",
-  "img",
-  "input",
-  "ins",
-  "kbd",
-  "label",
-  "legend",
-  "li",
-  "link",
-  "main",
-  "map",
-  "mark",
-  "meta",
-  "meter",
-  "nav",
-  "nobr",
-  "noscript",
-  "object",
-  "ol",
-  "optgroup",
-  "option",
-  "output",
-  "p",
-  "param",
-  "pre",
-  "progress",
-  "q",
-  "s",
-  "samp",
-  "script",
-  "section",
-  "select",
-  "small",
-  "source",
-  "span",
-  "strike",
-  "strong",
-  "style",
-  "sub",
-  "summary",
-  "sup",
-  "table",
-  "tbody",
-  "td",
-  "template",
-  "textarea",
-  "tfoot",
-  "th",
-  "thead",
-  "time",
-  "title",
-  "tr",
-  "u",
-  "ul",
-  "var",
-  "video",
-  "wbr",
-  "xmp",
-].forEach(tagname=>{
-	mk[tagname] = (...args) => mk(tagname, ...args);
-});
-
-function* nodesFromChildList(children) {
-	for(const child of children.flat(Infinity)) {
-		if(child instanceof Node) {
-			yield child;
-		} else {
-			yield new Text(child);
-		}
-	}
-}
-function append(el, ...children) {
-	for(const child of nodesFromChildList(children)) {
-		if(el instanceof Node) el.appendChild(child);
-		else el.push(child);
-	}
-	return el;
-}
-
-function insertAfter(el, ...children) {
-	for(const child of nodesFromChildList(children)) {
-		el.parentNode.insertBefore(child, el.nextSibling);
-	}
-	return el;
-}
-
-function clearContents(el) {
-	el.innerHTML = "";
-	return el;
-}
-
-function parseHTML(markup) {
-	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
-		const doc = document.implementation.createHTMLDocument("");
-		doc.documentElement.innerHTML = markup;
-		return doc;
-	} else {
-		const el = mk.template({});
-		el.innerHTML = markup;
-		return el.content;
-	}
-}</script>

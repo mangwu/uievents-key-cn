@@ -62,7 +62,7 @@ class Parser():
 				keys = self.key.split('-')
 				result += '...'.join(['<code class="key">"%s"</code>' % key for key in keys])
 		else:
-			result += '<a href="https://w3c.github.io/uievents-key/#key-%s">' % self.key
+			result += '<a href="https://mangwu.github.io/uievents-key-cn/#key-%s">' % self.key
 			result += '<code class="key">"%s"</code>' % self.key
 			result += '</a>'
 		result += '</td>\n'
@@ -188,7 +188,7 @@ class Parser():
 			return (
 				'<table id="key-table-%s" class="data-table full-width">\n'
 				'<thead><tr>'
-				'<th style="width:20%%">[=key attribute value=]</th>'
+				'<th style="width:20%%">[=键属性值=]</th>'
 				'<th style="width:10%%">Required</th>'
 				'<th style="width:70%%">Typical Usage (Non-normative)</th>'
 				'</tr></thead>\n'
@@ -231,7 +231,7 @@ class Parser():
 			self.key = None
 			self.in_impl_table = True
 			name = m.group(1)
-			header = '<thead><tr><th>[=key attribute value=]</th>'
+			header = '<thead><tr><th>[=键属性值=]</th>'
 			for ua in USER_AGENTS:
 				header += '<th class="key-impl-data">%s</th>' % ua
 			header += '<th>Notes</th></tr></thead>\n'
@@ -265,12 +265,12 @@ class Parser():
 			error('File "%s" doesn\'t exist' % src)
 
 		try:
-			infile = open(src, 'r')
+			infile = open(src, 'r', -1, "utf-8")
 		except IOError as e:
 			error('Unable to open "%s" for reading: %s' % (src, e))
 
 		try:
-			outfile = open(dst, 'w')
+			outfile = open(dst, 'w', -1, "utf-8")
 		except IOError as e:
 			error('Unable to open "%s" for writing: %s' % (dst, e))
 

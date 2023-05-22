@@ -14,7 +14,7 @@ Abstract:
 
 <pre class="anchors">
 url: http://www.w3.org/TR/uievents-key/#; type: dfn; spec: uievents-key;
-	text: key attribute value
+	text: 键属性值
 </pre>
 
 <pre class="include">
