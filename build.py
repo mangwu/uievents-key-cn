@@ -96,7 +96,8 @@ class Parser():
 			pre = self.process_text(m.group(1))
 			name = m.group(2)
 			post = self.process_text(m.group(3))
-			desc = pre + '<code class="code">"' + name + '"</code>' + post
+			# desc = pre + '<code class="code">"' + name + '"</code>' + post
+			desc = '%s<code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-%s">%s</a>"</code>%s' % (pre, name, name, post)
 
 		m = re.match(r'^(.*)KEY{(.+?)}(.*)$', desc)
 		if m:

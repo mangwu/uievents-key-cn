@@ -93,7 +93,7 @@ Abstract:
 		"https://www.w3.org/Consortium/Patent-Policy-20200915/#def-essential">
 		基本权利要求
 		</a>
-		（Essential Claim(s)）的专利有实际了解的个人必须根据
+		( Essential Claim(s) )的专利有实际了解的个人必须根据
 		<a
 		href=
 		"https://www.w3.org/Consortium/Patent-Policy-20200915/#sec-Disclosure">
@@ -177,6 +177,12 @@ url: https://mangwu.github.io/uievents-code-cn/#alphanumeric-section; type: dfn;
 	text: 字母数字区域
 url: https://mangwu.github.io/uievents-code-cn/#function-key; type: dfn; spec: uievents-code;
 	text: 功能键
+url: https://mangwu.github.io/uievents-code-cn/#numpad; type: dfn; spec: uievents-code;
+	text: 数字板
+url: https://mangwu.github.io/uievents-code-cn/#enter-edit-keys; type: dfn; spec: uievents-code;
+	text: 回车键和编辑键
+url: https://mangwu.github.io/uievents-cn/#ime; type: dfn; spec: uievents-code;
+	text: IME
 </pre>
 
 <pre class="include">
@@ -342,7 +348,7 @@ path: stylesheet-extra.include
 				替换之前必须对重音符号(accents)进行排序]
 		</div>
 
-		<div class="note custom-note">
+		<div class="note custom-note" id="precomposed-char-note">
 		<q>预组字符(precomposed character)是 Unicode 字符集中的实体，
 		定义为一个或多字符序列。预组字符可以表示一个字母与一个附加符号，例如 
 		GLYPH{é} (小写拉丁字母e带一个尖音符)。 技术上， GLYPH{é} (U+00E9)是一个字符，
@@ -553,164 +559,232 @@ path: stylesheet-extra.include
 								与另一个 [=功能键=] 同时激活该键会将 [=功能键=] 
 								的键值更改为备用字符(alternate character)或其他功能。<br/>
 								KEYCAP{Fn} 键通常在键盘硬件中直接处理，并且通常不生成按键事件。
-			KEY_OPT FnLock		The Function-Lock (KEYCAP{FnLock} or KEYCAP{F-Lock}) key.
-								Activating this key switches the mode of the keyboard to changes some keys' values to an alternate character or function.
-								This key is often handled directly in the keyboard hardware and does not usually generate key events.
-			KEY Meta			The KEYCAP{Meta} key, to enable meta modifier function for interpreting concurrent or subsequent keyboard input.
-								This key value is used for the <q>Windows Logo</q> key and the Apple KEYCAP{Command} or KEYCAP{&#x2318;} key.
-			KEY NumLock			The KEYCAP{NumLock} or Number Lock key, to toggle numpad mode function for interpreting subsequent keyboard input.
-			KEY ScrollLock		The KEYCAP{Scroll Lock} key, to toggle between scrolling and cursor movement modes.
-			KEY Shift			The KEYCAP{Shift} key, to enable shift modifier function for interpreting concurrent or subsequent keyboard input.
-			KEY_OPT Symbol		The Symbol modifier key (used on some virtual keyboards).
-			KEY_OPT SymbolLock	The Symbol Lock key.
+			KEY_OPT FnLock		功能锁定( KEYCAP{FnLock} 或 KEYCAP{F-Lock} )键。
+								激活此键可切换键盘模式，将 [=功能键=] 的值更改为备用字符
+								(alternate character)或其他功能。 KEYCAP{FnLock} 
+								通常在键盘硬件中直接处理，并且通常不生成键事件。
+			KEY Meta			KEYCAP{Meta} 键，此键启用变换修饰符功能，以解译
+								(interpreting)并行或连续的键盘输入。此键值用于 <q>Windows 
+								徽标</q> 键和苹果的 KEYCAP{Command} 或 KEYCAP{&#x2318;} 键。
+			KEY NumLock			KEYCAP{NumLock} 或数字锁定(Number Lock)键，用于切换 
+								[=小键盘=] 的功能模式，以解译(interpreting)连续的键盘输入。
+			KEY ScrollLock		KEYCAP{Scroll Lock} (滚动锁定)键，
+								用于在滚动和光标移动模式之间切换。
+			KEY Shift			KEYCAP{Shift} 键，此键启用上档(shift)修饰符功能，以解译
+								(interpreting)并行或连续的键盘输入。
+			KEY_OPT Symbol		符号(Symbol)修饰符键(用于某些虚拟键盘)。
+			KEY_OPT SymbolLock	符号锁定(Symbol Lock)键。
 		END_KEY_TABLE
 
-		Legacy modifier keys:
+		遗留修饰键:
 
 		BEGIN_KEY_TABLE modifier-legacy
-			KEY_OPT Hyper		The KEYCAP{Hyper} key.
-			KEY_OPT Super		The KEYCAP{Super} key.
+			KEY_OPT Hyper		KEYCAP{Hyper} 键。
+			KEY_OPT Super		KEYCAP{Super} 键.
 		END_KEY_TABLE
 
-	<h3 id="keys-whitespace">Whitespace Keys</h3>
+	<h3 id="keys-whitespace">空格键</h3>
 
 		BEGIN_KEY_TABLE whitespace
-			KEY Enter	The KEYCAP{Enter} or KEYCAP{&crarr;} key, to activate current selection or accept current input.<br/>
-						This key value is also used for the KEYCAP{Return} (Macintosh numpad) key.<br/>
-						This key value is also used for the Android KEYCODE_DPAD_CENTER.
-			KEY Tab		The Horizontal Tabulation KEYCAP{Tab} key.
+			KEY Enter	KEYCAP{Enter} 或 KEYCAP{&crarr;} 键，
+						用于激活当前选择或接受当前输入。<br/>
+						此键值也用做 KEYCAP{Return} (在 Macintosh [=数字板=] 上)键。<br/>
+						此键值也用做 Android KEYCODE_DPAD_CENTER。
+			KEY Tab		水平制表(Horizontal Tabulation) KEYCAP{Tab} 键。
 		END_KEY_TABLE
 
-		<p class="note">The space or spacebar key is encoded as KEY_NOLINK{&nbsp;}.</p>
+		<p class="note">空格或空格键编码为 KEY_NOLINK{&nbsp;} 。</p>
 
-	<h3 id="keys-navigation">Navigation Keys</h3>
+	<h3 id="keys-navigation">导航按键</h3>
 
 		BEGIN_KEY_TABLE navigation
-			KEY ArrowDown	The down arrow key, to navigate or traverse downward. (KEYCODE_DPAD_DOWN)
-			KEY ArrowLeft	The left arrow key, to navigate or traverse leftward. (KEYCODE_DPAD_LEFT)
-			KEY ArrowRight	The right arrow key, to navigate or traverse rightward. (KEYCODE_DPAD_RIGHT)
-			KEY ArrowUp		The up arrow key, to navigate or traverse upward. (KEYCODE_DPAD_UP)
-			KEY End			The End key, used with keyboard entry to go to the end of content (KEYCODE_MOVE_END).
-			KEY Home		The Home key, used with keyboard entry, to go to start of content (KEYCODE_MOVE_HOME).<br/>
-							For the mobile phone KEYCAP{Home} key (which goes to the phone's main screen), use KEY{GoHome}.
-			KEY PageDown	The Page Down key, to scroll down or display next page of content.
-			KEY PageUp		The Page Up key, to scroll up or display previous page of content.
+			KEY ArrowDown	下箭头键，用于向下导航或遍历。(KEYCODE_DPAD_DOWN)
+			KEY ArrowLeft	左箭头键，用于向左导航或遍历。(KEYCODE_DPAD_LEFT)
+			KEY ArrowRight	右箭头键，用于向右导航或遍历。(KEYCODE_DPAD_RIGHT)
+			KEY ArrowUp		上箭头键，用于向上导航或遍历。(KEYCODE_DPAD_UP)
+			KEY End			结束(End)键，配合键盘输入使用，用于跳转到输入内容的末尾 
+							(KEYCODE_MOVE_END)。
+			KEY Home		起始(Home)键，配合键盘输入使用，用于跳转到输入内容的开头 
+							(KEYCODE_MOVE_HOME)。<br/> 对于手机 KEYCAP{Home} 键
+							(用于进入手机主屏幕)，请使用 KEY{GoHome} 。
+			KEY PageDown	向下翻页(Page Down)键，向下滚动或显示下一页内容。
+			KEY PageUp		向上翻页(Page Up)键, 向上滚动或显示上一页内容。
 		END_KEY_TABLE
 
-	<h3 id="keys-editing">Editing Keys</h3>
+	<h3 id="keys-editing">编辑键</h3>
 
 		BEGIN_KEY_TABLE editing
-			KEY Backspace		The Backspace key. This key value is also used for the key labeled KEYCAP{Delete} on MacOS keyboards.
-			KEY_OPT Clear		Remove the currently selected input.
-			KEY_OPT Copy		Copy the current selection. (APPCOMMAND_COPY)
-			KEY_OPT CrSel		The Cursor Select (Crsel) key.
-			KEY_OPT Cut			Cut the current selection. (APPCOMMAND_CUT)
-			KEY Delete			The Delete (Del) Key.
-								This key value is also used for the key labeled KEYCAP{Delete} on MacOS keyboards when modified by the KEYCAP{Fn} key.
-			KEY_OPT EraseEof	The Erase to End of Field key.  This key deletes all characters from the current cursor position to the end of the current field.
-			KEY_OPT ExSel		The Extend Selection (Exsel) key.
-			KEY Insert			The Insert (Ins) key, to toggle between text modes for insertion or overtyping. (KEYCODE_INSERT)
-			KEY_OPT Paste		The Paste key. (APPCOMMAND_PASTE)
-			KEY_OPT Redo		Redo the last action. (APPCOMMAND_REDO)
-			KEY_OPT Undo		Undo the last action. (APPCOMMAND_UNDO)
+			KEY Backspace		回退(Backspace)键。在 MacOS 键盘上，
+								该键值也对应的按键键帽标签为 KEYCAP{Delete} 。
+			KEY_OPT Clear		删除当前选定的输入。
+			KEY_OPT Copy		复制当前选择对象。 (APPCOMMAND_COPY)
+			KEY_OPT CrSel		光标选择(Cursor Select (Crsel))键。
+			KEY_OPT Cut			剪切当前选择对象。 (APPCOMMAND_CUT)
+			KEY Delete			删除(Delete (Del))键。
+								当被 KEYCAP{Fn} 键修饰时，在 MacOS 键盘上，
+								该键值对应的按键键帽标签为 KEYCAP{Delete} 。
+								<div class="note custom-note">
+								在 MacOS 键盘上，其键帽为 KEYCAP{Backspace} 和 KEYCAP{Delete} 
+								的按键的键值分别为 KEY{Delete} 和 KEY{Backspace} 
+								(和标准美式键盘正好相反)，类似地，按键的 <code>code</code> 
+								值也是相反的，分别为 CODE{Delete} 和 CODE{Backspace} (见 
+								[[!UIEvents-Code]] )。此处将 KEYCAP{Fn} 键引入，
+								说明键值是可以被修饰符修改的(而 <code>code</code> 值不会)，
+								并且在 MacOS 中，将 KEYCAP{Delete} 原初的 KEY{Backspace} 
+								键值修改成了 KEY{Delete} 。
+								</div>
+								
+			KEY_OPT EraseEof	擦除到字段末尾(Erase to End of Field)键。 
+								该键删除从当前光标位置到当前字段末尾的所有字符。 
+			KEY_OPT ExSel		展开所选内容(Extend Selection (Exsel))键。
+			KEY Insert			插入(Insert (Ins))键, 在文本模式之间切换以进行插入或覆写
+								(KEYCODE_INSERT)。 <div class="note custom-note">
+								详见 [=回车键和编辑键=] 中的插入键。
+								</div>
+								
+			KEY_OPT Paste		粘贴(Paste)键。 (APPCOMMAND_PASTE)
+			KEY_OPT Redo		重做上一个操作。 (APPCOMMAND_REDO)
+			KEY_OPT Undo		撤消上一个操作。 (APPCOMMAND_UNDO)
 		END_KEY_TABLE
 
-	<h3 id="keys-ui">UI Keys</h3>
+	<h3 id="keys-ui">UI(用户界面)按键</h3>
 
 		BEGIN_KEY_TABLE ui
-			KEY_OPT Accept		The Accept (Commit, OK) key. Accept current option or input method sequence conversion.
-			KEY_OPT Again		The Again key, to redo or repeat an action.
-			KEY_OPT Attn		The Attention (Attn) key.
-			KEY_OPT Cancel		The Cancel key.
-			KEY ContextMenu		Show the application's context menu.
-								This key is commonly found between the right KEYCAP{Meta} key and the right KEYCAP{Control} key.
-			KEY Escape			The KEYCAP{Esc} key. This key was originally used to initiate an escape sequence, but is
-								now more generally used to exit or "escape" the current context, such as closing a dialog
-								or exiting full screen mode.
-			KEY_OPT Execute		The Execute key.
-			KEY_OPT Find		Open the Find dialog. (APPCOMMAND_FIND)
-			KEY Help			Open a help dialog or toggle display of help information. (APPCOMMAND_HELP, KEYCODE_HELP)
-			KEY Pause			Pause the current state or application (as appropriate).
-								<p class="note">Do not use this value for the KEYCAP{Pause} button on media controllers. Use KEY{MediaPause} instead.</p>
-			KEY_OPT Play		Play or resume the current state or application (as appropriate).
-								<p class="note">Do not use this value for the KEYCAP{Play} button on media controllers. Use KEY{MediaPlay} instead.</p>
-			KEY_OPT Props		The properties (Props) key.
-			KEY_OPT Select		The Select key.
-			KEY_OPT ZoomIn		The ZoomIn key. (KEYCODE_ZOOM_IN)
-			KEY_OPT ZoomOut		The ZoomOut key. (KEYCODE_ZOOM_OUT)
+			KEY_OPT Accept		接收(Accept，Commit，OK，提交，确定)键。 
+								接收当前选项结果或接收当前输入法下序列的转换结果。
+			KEY_OPT Again			再次(Again)键，重做或重复一个动作。
+			KEY_OPT Attn			注意(Attention，Attn)键。
+			KEY_OPT Cancel		取消(Cancel)键。
+			KEY ContextMenu		显示应用程序的上下文菜单。该键通常位于右侧 KEYCAP{Meta} 
+								键和右侧 KEYCAP{Control} 键之间。
+			KEY Escape				KEYCAP{Esc} 键。该键最初用于生成转义字符(Escape 
+								character)序列，但现在更常用于退出或"逃离"当前上下文，
+								例如关闭对话框或退出全屏模式。
+			KEY_OPT Execute		执行(Execute)键。
+			KEY_OPT Find			打开"查找(Find)"对话框。(APPCOMMAND_FIND)
+			KEY Help					打开帮助对话框或切换帮助信息的显示方式(display)。
+								(APPCOMMAND_HELP, KEYCODE_HELP)
+			KEY Pause					暂停当前状态或应用程序(视情况而定)。
+								<p class="note">
+								不要将此值用于媒体控制器(media controller)上的 KEYCAP{Pause} 
+								按钮。如果想要用媒体暂停，请改用 KEY{MediaPause} 。</p>
+			KEY_OPT Play			继续或恢复当前状态或应用程序(视情况而定)。
+								<p class="note">
+								不要将此值用于媒体控制器(media controller)上的 KEYCAP{Play} 
+								按钮。如果想要用媒体暂停，请改用 KEY{MediaPlay} 。</p>
+			KEY_OPT Props			属性(properties ，Props)键。
+			KEY_OPT Select		选择(Select)键。
+			KEY_OPT ZoomIn		放大(ZoomIn)键。(KEYCODE_ZOOM_IN)
+			KEY_OPT ZoomOut		缩小(ZoomOut)键。(KEYCODE_ZOOM_OUT)
 		END_KEY_TABLE
 
-	<h3 id="keys-device">Device Keys</h3>
+	<h3 id="keys-device">设备(Device)按键</h3>
 
 		BEGIN_KEY_TABLE device
-			KEY_OPT BrightnessDown	The Brightness Down key. Typically controls the display brightness. (KEYCODE_BRIGHTNESS_DOWN)
-			KEY_OPT BrightnessUp	The Brightness Up key. Typically controls the display brightness. (KEYCODE_BRIGHTNESS_UP)
-			KEY_OPT Eject			Toggle removable media to eject (open) and insert (close) state. (KEYCODE_MEDIA_EJECT)
-			KEY_OPT LogOff			The LogOff key.
-			KEY_OPT Power			Toggle power state. (KEYCODE_POWER)
-									<p class="note">Note: Some devices might not expose this key to the operating environment.</p>
-			KEY_OPT PowerOff		The KEYCAP{PowerOff} key. Sometime called KEYCAP{PowerDown}.
-			KEY PrintScreen			The KEYCAP{Print Screen} or KEYCAP{SnapShot} key, to initiate print-screen function.
-			KEY_OPT Hibernate		The Hibernate key.
-									This key saves the current state of the computer to disk so that it can be restored. The computer will then shutdown.
-			KEY_OPT Standby			The Standby key.
-									This key turns off the display and places the computer into a low-power mode without completely shutting down.
-									It is sometimes labelled KEYCAP{Suspend} or KEYCAP{Sleep} key. (KEYCODE_SLEEP)
-			KEY_OPT WakeUp			The WakeUp key. (KEYCODE_WAKEUP)
+			KEY_OPT BrightnessDown	降低亮度(Brightness Down)键。 
+									通常用于控制显示器的亮度。 (KEYCODE_BRIGHTNESS_DOWN)
+			KEY_OPT BrightnessUp		提高亮度(Brightness Up)键。 
+									通常用于控制显示器的亮度。 (KEYCODE_BRIGHTNESS_UP)
+			KEY_OPT Eject						将可移动媒介(removable media)切换到弹出
+									(打开)和插入(关闭)状态。(KEYCODE_MEDIA_EJECT)
+			KEY_OPT LogOff					注销(LogOff)键。
+			KEY_OPT Power						切换电源状态(电源开关)。(KEYCODE_POWER)
+									<p class="note">
+									注意: 某些设备可能不会将此键暴露给操作环境。</p>
+			KEY_OPT PowerOff		KEYCAP{PowerOff} 键。 有时候键帽标签也是
+									KEYCAP{PowerDown} 。
+			KEY PrintScreen			KEYCAP{Print Screen} 或 KEYCAP{SnapShot} (截屏)键， 
+									启动屏幕打印的功能。
+			KEY_OPT Hibernate		睡眠(Hibernate)键。此键将计算机的当前状态保存到磁盘，
+									以便(之后开机时)对其进行恢复。在这之后计算机会停止工作。
+			KEY_OPT Standby			待机(Standby)键。
+									此键可关闭显示器并将计算机置于低功耗模式，
+									但计算机不会完全停止工作。有时改键值对应的键帽标签为 
+									KEYCAP{Suspend} 或 KEYCAP{Sleep} 键。(KEYCODE_SLEEP)
+			KEY_OPT WakeUp			唤醒(WakeUp)键。 (KEYCODE_WAKEUP)
 		END_KEY_TABLE
 
-	<h3 id="keys-composition">IME and Composition Keys</h3>
+	<h3 id="keys-composition">输入法和组合(IME and Composition)键</h3>
+
+		<div class="note custom-note">
+		IME 全称 Input Method Editor ，即输入法编辑器，
+		是指键盘击键或鼠标移动翻译成字符来输入的操作系统组件，见 [[UIEvents]] 的 
+		[=IME=] 获取更多信息。
+		</div>
 
 		BEGIN_KEY_TABLE composition
-			KEY_OPT AllCandidates	The All Candidates key, to initate the multi-candidate mode.
-			KEY_OPT Alphanumeric	The Alphanumeric key.
-			KEY_OPT CodeInput		The Code Input key, to initiate the Code Input mode to allow characters to be entered by their code points.
-			KEY_OPT Compose			The Compose key, also known as <em>Multi_key</em> on the X Window System.  This key acts in a manner similar to a
-									dead key, triggering a mode where subsequent key presses are combined to produce a different character.
-			KEY_OPT Convert			The Convert key, to convert the current input method sequence.
-			KEY_OPT Dead			A dead key combining key. It may be any combining key from any keyboard layout. For example, on a
-									PC/AT French keyboard, using a French mapping and without any modifier activiated, this is the key value
-									UNI{U+0302} COMBINING CIRCUMFLEX ACCENT. In another layout this might be a different unicode combining key.<br/>
-									For applications that need to differentiate between specific combining characters, the associated [=compositionupdate=]
-									event's data attribute provides the specific key value.
-			KEY_OPT FinalMode		The Final Mode KEYCAP{Final} key used on some Asian keyboards, to enable the final mode for IMEs.
-			KEY_OPT GroupFirst		Switch to the first character group. (ISO/IEC 9995)
-			KEY_OPT GroupLast		Switch to the last character group. (ISO/IEC 9995)
-			KEY_OPT GroupNext		Switch to the next character group. (ISO/IEC 9995)
-			KEY_OPT GroupPrevious	Switch to the previous character group. (ISO/IEC 9995)
-			KEY_OPT ModeChange		The Mode Change key, to toggle between or cycle through input modes of IMEs.
-			KEY_OPT NextCandidate	The Next Candidate function key.
-			KEY_OPT NonConvert		The NonConvert ("Don't Convert") key, to accept current input method sequence without conversion in IMEs.
-			KEY_OPT PreviousCandidate	The Previous Candidate function key.
-			KEY_OPT Process			The Process key.
-			KEY_OPT SingleCandidate	The Single Candidate function key.
+			KEY_OPT AllCandidates	所有候选(All Candidates)键，用于启动多候选模式。
+			KEY_OPT Alphanumeric	字母数字(Alphanumeric)键。
+			KEY_OPT CodeInput		码元输入(Code Input)键，用于启动"码元输入"模式，
+									以允许通过字符的码点(code points)输入字符。
+			KEY_OPT Compose			组合(Compose)键，在 X Window 系统上也称为 
+									<em>Multi_key</em>。该键的作用方式类似于死键( [=dead key=] )，
+									切换到一种模式，在该模式下，
+									随后的按键输入组合在一起产生一个不同的字符。
+									<div class="note custom-note">
+									实际上就是生成了预组字符(precomposed character)，参见 例子 3 
+									的 <a href="#precomposed-char-note">非规范注释</a> 。
+									</div>
+			KEY_OPT Convert			KEYCAP{変換} (Convert)键，用于转换当前输入法下的序列。
+									<div class="note custom-note">
+									KEYCAP{変換} 属于日式标准 "106" 键盘布局上的按键，查阅 
+									CODE{Convert} 以获取更多信息。
+									</div>
+									
+			KEY_OPT Dead			一个死键组合(dead key combining)键。
+									它可以是任何键盘布局中的任何组合键。例如，在使用法语映射的
+									PC/AT 法语键盘上，如果没有激活(activiated)任何修饰键，
+									该键的键值是 UNI{U+0302} 组合扬抑音符(COMBINING CIRCUMFLEX 
+									ACCENT)。在另一种布局中，这可能是不同的 unicode 组合键。<br/>
+									对于需要区分特定组合字符的应用程序，关联的 
+									[=compositionupdate=] 事件的 {{CompositionEvent/data}} 
+									属性提供特定的键值。
+			KEY_OPT FinalMode		一些亚洲键盘上使用最终模式(Final Mode KEYCAP{Final} 
+									)键，用于启用 [=IMEs=] 的最终模式。
+			KEY_OPT GroupFirst		切换到第一个字符组。(ISO/IEC 9995)
+			KEY_OPT GroupLast		切换到最后一个字符组。(ISO/IEC 9995)
+			KEY_OPT GroupNext		切换到下一个字符组。(ISO/IEC 9995)
+			KEY_OPT GroupPrevious	切换到上一个字符组。(ISO/IEC 9995)
+			KEY_OPT ModeChange		模式切换(Mode Change)键，以在 [=IMEs=] 
+									不同的输入模式之间切换或循环切换。
+			KEY_OPT NextCandidate	下一个候选功能(Next Candidate function)键。
+			KEY_OPT NonConvert		KEYCAP{無変換} (NonConvert ，即"不变换") 键，
+									用于接收当前输入法下的在 [=IMEs=] 中不转换(without conversion)
+									的序列结果。 <div class="note custom-note">
+									KEYCAP{無変換} 属于日式标准 "106" 键盘布局上的按键，查阅 
+									CODE{NonConvert} 以获取更多信息。
+									</div>
+									
+			KEY_OPT PreviousCandidate	上一个候选功能(Previous Candidate function)键。
+			KEY_OPT Process			步骤(Process)键。
+			KEY_OPT SingleCandidate	单一候选功能(Single Candidate function)键。
 		END_KEY_TABLE
 
 		Keys specific to Korean keyboards:
 
 		BEGIN_KEY_TABLE ime-korean
-			KEY_OPT HangulMode	The Hangul (Korean characters) Mode key, to toggle between Hangul and English modes.
-			KEY_OPT HanjaMode	The Hanja (Korean characters) Mode key.
-			KEY_OPT JunjaMode	The Junja (Korean characters) Mode key.
+			KEY_OPT HangulMode	Hangul (Korean characters) Mode 键，to toggle between Hangul and English modes.
+			KEY_OPT HanjaMode	(Hanja (Korean characters) Mode)键。
+			KEY_OPT JunjaMode	(Junja (Korean characters) Mode)键。
 		END_KEY_TABLE
 
 		Keys specific to Japanese keyboards:
 
 		BEGIN_KEY_TABLE ime-japanese
-			KEY_OPT Eisu			The Eisu key. This key may close the IME, but its purpose
+			KEY_OPT Eisu			(Eisu)键。 This key may close the IME, but its purpose
 									is defined by the current IME. (KEYCODE_EISU)
-			KEY_OPT Hankaku			The (Half-Width) Characters key.
-			KEY_OPT Hiragana		The Hiragana (Japanese Kana characters) key.
-			KEY_OPT HiraganaKatakana	The Hiragana/Katakana toggle key. (KEYCODE_KATAKANA_HIRAGANA)
-			KEY_OPT KanaMode		The Kana Mode (Kana Lock) key. This key is used to enter
+			KEY_OPT Hankaku			((Half-Width) Characters)键。
+			KEY_OPT Hiragana		(Hiragana (Japanese Kana characters))键。
+			KEY_OPT HiraganaKatakana	(Hiragana/Katakana toggle)键。 (KEYCODE_KATAKANA_HIRAGANA)
+			KEY_OPT KanaMode		(Kana Mode (Kana Lock))键。 This key is used to enter
 									hiragana mode (typically from romaji mode).
-			KEY_OPT KanjiMode		The Kanji (Japanese name for ideographic characters of Chinese origin) Mode key.
+			KEY_OPT KanjiMode		(Kanji (Japanese name for ideographic characters of Chinese origin) Mode)键。
 									This key is typically used to switch to a hiragana keyboard for
 									the purpose of converting input into kanji. (KEYCODE_KANA)
-			KEY_OPT Katakana		The Katakana (Japanese Kana characters) key.
-			KEY_OPT Romaji			The Roman characters function key.
-			KEY_OPT Zenkaku			The Zenkaku (Full-Width) Characters key.
-			KEY_OPT ZenkakuHankaku	The Zenkaku/Hankaku (full-width/half-width) toggle key. (KEYCODE_ZENKAKU_HANKAKU)
+			KEY_OPT Katakana		(Katakana (Japanese Kana characters))键。
+			KEY_OPT Romaji			(Roman characters function)键。
+			KEY_OPT Zenkaku			(Zenkaku (Full-Width) Characters)键。
+			KEY_OPT ZenkakuHankaku	(Zenkaku/Hankaku (full-width/half-width) toggle)键。 (KEYCODE_ZENKAKU_HANKAKU)
 		END_KEY_TABLE
 
 	<h3 id="keys-function">General-Purpose Function Keys</h3>
@@ -830,17 +904,17 @@ path: stylesheet-extra.include
 		BEGIN_KEY_TABLE apps
 			KEY_OPT LaunchApplication1	The first generic "LaunchApplication" key. This is commonly associated with launching "My Computer", and may have a computer symbol on the key. (APPCOMMAND_LAUNCH_APP1)
 			KEY_OPT LaunchApplication2	The second generic "LaunchApplication" key. This is commonly associated with launching "Calculator", and may have a calculator symbol on the key. (APPCOMMAND_LAUNCH_APP2, KEYCODE_CALCULATOR)
-			KEY_OPT LaunchCalendar		The "Calendar" key. (KEYCODE_CALENDAR)
-			KEY_OPT LaunchContacts		The "Contacts" key. (KEYCODE_CONTACTS)
-			KEY_OPT LaunchMail			The "Mail" key. (APPCOMMAND_LAUNCH_MAIL)
-			KEY_OPT LaunchMediaPlayer	The "Media Player" key. (APPCOMMAND_LAUNCH_MEDIA_SELECT)
-			KEY_OPT LaunchMusicPlayer	The "Music Player" key.
-			KEY_OPT LaunchPhone			The "Phone" key.
-			KEY_OPT LaunchScreenSaver	The "Screen Saver" key.
-			KEY_OPT LaunchSpreadsheet	The "Spreadsheet" key.
-			KEY_OPT LaunchWebBrowser	The "Web Browser" key.
-			KEY_OPT LaunchWebCam		The "WebCam" key.
-			KEY_OPT LaunchWordProcessor	The "Word Processor" key.
+			KEY_OPT LaunchCalendar		("Calendar")键。 (KEYCODE_CALENDAR)
+			KEY_OPT LaunchContacts		("Contacts")键。 (KEYCODE_CONTACTS)
+			KEY_OPT LaunchMail			("Mail")键。 (APPCOMMAND_LAUNCH_MAIL)
+			KEY_OPT LaunchMediaPlayer	("Media Player")键。 (APPCOMMAND_LAUNCH_MEDIA_SELECT)
+			KEY_OPT LaunchMusicPlayer	("Music Player")键。
+			KEY_OPT LaunchPhone			("Phone")键。
+			KEY_OPT LaunchScreenSaver	("Screen Saver")键。
+			KEY_OPT LaunchSpreadsheet	("Spreadsheet")键。
+			KEY_OPT LaunchWebBrowser	("Web Browser")键。
+			KEY_OPT LaunchWebCam		("WebCam")键。
+			KEY_OPT LaunchWordProcessor	("Word Processor")键。
 		END_KEY_TABLE
 
 	<h3 id="keys-browser">Browser Keys</h3>
@@ -858,18 +932,18 @@ path: stylesheet-extra.include
 	<h3 id="keys-mobile">Mobile Phone Keys</h3>
 
 		BEGIN_KEY_TABLE mobile-phone
-			KEY_OPT AppSwitch		The Application switch key, which provides a list of recent apps to switch between. (KEYCODE_APP_SWITCH)
-			KEY_OPT Call			The Call key. (KEYCODE_CALL)
-			KEY_OPT Camera			The Camera key. (KEYCODE_CAMERA)
-			KEY_OPT CameraFocus		The Camera focus key. (KEYCODE_FOCUS)
-			KEY_OPT EndCall			The End Call key. (KEYCODE_ENDCALL)
-			KEY_OPT GoBack			The Back key. (KEYCODE_BACK)
-			KEY_OPT GoHome			The Home key, which goes to the phone's main screen. (KEYCODE_HOME)
-			KEY_OPT HeadsetHook		The Headset Hook key. (KEYCODE_HEADSETHOOK)
-			KEY_OPT LastNumberRedial	The Last Number Redial key.
-			KEY_OPT Notification	The Notification key. (KEYCODE_NOTIFICATION)
+			KEY_OPT AppSwitch		Application switch 键，which provides a list of recent apps to switch between. (KEYCODE_APP_SWITCH)
+			KEY_OPT Call			(Call)键。 (KEYCODE_CALL)
+			KEY_OPT Camera			(Camera)键。 (KEYCODE_CAMERA)
+			KEY_OPT CameraFocus		(Camera focus)键。 (KEYCODE_FOCUS)
+			KEY_OPT EndCall			(End Call)键。 (KEYCODE_ENDCALL)
+			KEY_OPT GoBack			(Back)键。 (KEYCODE_BACK)
+			KEY_OPT GoHome			Home 键，which goes to the phone's main screen. (KEYCODE_HOME)
+			KEY_OPT HeadsetHook		(Headset Hook)键。 (KEYCODE_HEADSETHOOK)
+			KEY_OPT LastNumberRedial	(Last Number Redial)键。
+			KEY_OPT Notification	(Notification)键。 (KEYCODE_NOTIFICATION)
 			KEY_OPT MannerMode		Toggle between manner mode state: silent, vibrate, ring, ... (KEYCODE_MANNER_MODE)
-			KEY_OPT VoiceDial		The Voice Dial key.
+			KEY_OPT VoiceDial		(Voice Dial)键。
 		END_KEY_TABLE
 
 	<h3 id="keys-tv">TV Keys</h3>
@@ -1010,9 +1084,9 @@ path: stylesheet-extra.include
 			KEY_DUP_OPT ChannelUp			Select next (numerically or logically) higher channel. (VK_CHANNEL_UP)
 			KEY_DUP ContextMenu				Toggle display of the on-screen menu. (VK_MENU)
 			KEY_DUP_OPT Eject				Toggle removable media to eject (open) and insert (close) state. (VK_EJECT_TOGGLE)
-			KEY_DUP End						The End key, used with keyboard entry to go to the end of content. (VK_GO_TO_END)
-			KEY_DUP Enter					The Enter key, to activate current selection or accept current input. (VK_SELECT)
-			KEY_DUP Home					The Home key, used with keyboard entry, to go to start of content. (VK_GO_TO_START)
+			KEY_DUP End						End 键，used with keyboard entry to go to the end of content. (VK_GO_TO_END)
+			KEY_DUP Enter					Enter 键，to activate current selection or accept current input. (VK_SELECT)
+			KEY_DUP Home					Home 键，used with keyboard entry, to go to start of content. (VK_GO_TO_START)
 			KEY_DUP_OPT MediaFastForward	Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding. (VK_FAST_FWD)
 			KEY_DUP_OPT MediaPlay			Initiate or continue media playback at normal speed, if not currently playing at normal speed. (VK_PLAY)
 			KEY_DUP_OPT MediaPlayPause		Toggle media between play and pause states. (VK_PLAY_PAUSE)

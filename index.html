@@ -7,7 +7,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-UD" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
   <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
-  <meta content="7fee59c3544586583012cf203322c503abca5f62" name="document-revision">
+  <meta content="9d82a38a9b66168fab1797c4dca61c43398a206d" name="document-revision">
   <link href="./override.css" rel="stylesheet">
 <style>
 
@@ -611,7 +611,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">用户界面事件键盘事件 key 属性值(UI Events KeyboardEvent key Values)</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#UD">翻译草案</a>, <time class="dt-updated" datetime="2023-05-22">2023年5月22日</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#UD">翻译草案</a>, <time class="dt-updated" datetime="2023-05-23">2023年5月22日</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
@@ -660,7 +660,7 @@ dfn > a.self-link::before      { content: "#"; }
 		这是一份草案文档，可以随时被其他文档更新、替换或作废。
 		本文档不适合被其它正在编写的规范作为引用。 </p>
     <p> 本文档由一个根据 <a href="https://www.w3.org/Consortium/Patent-Policy-20200915/"> <abbr title="World Wide Web Consortium">W3C</abbr> 专利政策</a> 运作的小组编写。 <abbr title="World Wide Web Consortium">W3C</abbr> 保留了一份与该小组可交付成果相关的 <a href="https://www.w3.org/2004/01/pp-impl/114929/status" rel="disclosure"> 所有可披露专利的公开列表 </a> ; 该页面还包括公开一份专利的说明。
-		对认为包含 <a href="https://www.w3.org/Consortium/Patent-Policy-20200915/#def-essential"> 基本权利要求 </a> （Essential Claim(s)）的专利有实际了解的个人必须根据 <a href="https://www.w3.org/Consortium/Patent-Policy-20200915/#sec-Disclosure"> <abbr title="World Wide Web Consortium">W3C</abbr>专利政策第6节 </a> 公开信息。 </p>
+		对认为包含 <a href="https://www.w3.org/Consortium/Patent-Policy-20200915/#def-essential"> 基本权利要求 </a> ( Essential Claim(s) )的专利有实际了解的个人必须根据 <a href="https://www.w3.org/Consortium/Patent-Policy-20200915/#sec-Disclosure"> <abbr title="World Wide Web Consortium">W3C</abbr>专利政策第6节 </a> 公开信息。 </p>
     <p>本文件受 <a href="https://www.w3.org/2021/Process-20211102/" id="w3c_process_revision-cn"> 2021 11月2日 W3C处理文档</a> 规范管理。 </p>
    </div>
   </div>
@@ -696,12 +696,12 @@ dfn > a.self-link::before      { content: "#"; }
      <ol class="toc">
       <li><a href="#keys-special"><span class="secno">3.1</span> <span class="content">特殊按键</span></a>
       <li><a href="#keys-modifier"><span class="secno">3.2</span> <span class="content">修饰键</span></a>
-      <li><a href="#keys-whitespace"><span class="secno">3.3</span> <span class="content">Whitespace Keys</span></a>
-      <li><a href="#keys-navigation"><span class="secno">3.4</span> <span class="content">Navigation Keys</span></a>
-      <li><a href="#keys-editing"><span class="secno">3.5</span> <span class="content">Editing Keys</span></a>
-      <li><a href="#keys-ui"><span class="secno">3.6</span> <span class="content">UI Keys</span></a>
-      <li><a href="#keys-device"><span class="secno">3.7</span> <span class="content">Device Keys</span></a>
-      <li><a href="#keys-composition"><span class="secno">3.8</span> <span class="content">IME and Composition Keys</span></a>
+      <li><a href="#keys-whitespace"><span class="secno">3.3</span> <span class="content">空格键</span></a>
+      <li><a href="#keys-navigation"><span class="secno">3.4</span> <span class="content">导航按键</span></a>
+      <li><a href="#keys-editing"><span class="secno">3.5</span> <span class="content">编辑键</span></a>
+      <li><a href="#keys-ui"><span class="secno">3.6</span> <span class="content">UI(用户界面)按键</span></a>
+      <li><a href="#keys-device"><span class="secno">3.7</span> <span class="content">设备(Device)按键</span></a>
+      <li><a href="#keys-composition"><span class="secno">3.8</span> <span class="content">输入法和组合(IME and Composition)键</span></a>
       <li><a href="#keys-function"><span class="secno">3.9</span> <span class="content">General-Purpose Function Keys</span></a>
       <li><a href="#keys-multimedia"><span class="secno">3.10</span> <span class="content">Multimedia Keys</span></a>
       <li><a href="#keys-multimedia-numpad"><span class="secno">3.11</span> <span class="content">Multimedia Numpad Keys</span></a>
@@ -757,7 +757,7 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>有效的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value②">键属性值</a> ，即 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent③">KeyboardEvent</a></code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key④">key</a></code> 属性值显示为: <code class="key">"<a href="#key-ArrowDown">ArrowDown</a>"</code> ， <code class="key">"="</code> ， <code class="key">"q"</code> 或 <code class="key">"Q"</code> 。</p>
     <li data-md>
-     <p>有效的 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#key-code-attribute-values" id="ref-for-key-code-attribute-values">按键码属性值</a> ，即 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent④">KeyboardEvent</a></code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②">code</a></code> 属性值显示为: <code class="code">"ArrowDown"</code>，<code class="code">"Equal"</code> 或 <code class="code">"KeyQ"</code>。</p>
+     <p>有效的 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#key-code-attribute-values" id="ref-for-key-code-attribute-values">按键码属性值</a> ，即 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent④">KeyboardEvent</a></code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②">code</a></code> 属性值显示为: <code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-ArrowDown">ArrowDown</a>"</code>，<code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-Equal">Equal</a>"</code> 或 <code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-KeyQ">KeyQ</a>"</code>。</p>
    </ul>
    <p class="note custom-note" role="note"> 在 <a href="https://mangwu.github.io/uievents-cn/#style-conventions"> UIEvents</a> 规范本体的格式规约中，也对键帽，字符，代码点和键，
 		键值的属性值进行了说明，但是渲染显示不一样，本规范中的渲染会更显眼。 </p>
@@ -845,7 +845,7 @@ dfn > a.self-link::before      { content: "#"; }
 替换之前必须对重音符号(accents)进行排序]</p>
     </ul>
    </div>
-   <div class="note custom-note" role="note"> <q>预组字符(precomposed character)是 Unicode 字符集中的实体，
+   <div class="note custom-note" id="precomposed-char-note" role="note"><a class="self-link" href="#precomposed-char-note"></a> <q>预组字符(precomposed character)是 Unicode 字符集中的实体，
 		定义为一个或多字符序列。预组字符可以表示一个字母与一个附加符号，例如 <code class="glyph">"é"</code> (小写拉丁字母e带一个尖音符)。 技术上， <code class="glyph">"é"</code> (U+00E9)是一个字符，
 		可以分解为 Unicode 等效字符串 <code class="glyph">"e"</code> (U+0065)与尖音符 " ́"
 		(U+0301)。</q> —— 维基百科 <a href="https://zh.wikipedia.org/wiki/预组字符"> 预组字符</a> <br> 这里给出了这些组合字符的具体 Unicode 编码，并对这些编码的合理性进行解释 ——<wbr>不是简单的用单码字符拼接而成，而使用已有的预组字符。其中 <code class="key">"ḍ̇"</code> 的编码是用预组字符 <code class="glyph">"ḍ"</code> 和 单字符 
@@ -989,34 +989,35 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-FnLock">"FnLock"</code>
       <td class="key-table-required">否
-      <td>The Function-Lock (<code class="keycap">FnLock</code> or <code class="keycap">F-Lock</code>) key.								Activating this key switches the mode of the keyboard to changes some keys' values to an alternate character or function.
-								This key is often handled directly in the keyboard hardware and does not usually generate key events. 
+      <td>功能锁定( <code class="keycap">FnLock</code> 或 <code class="keycap">F-Lock</code> )键。								激活此键可切换键盘模式，将 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#function-key" id="ref-for-function-key②">功能键</a> 的值更改为备用字符
+								(alternate character)或其他功能。 <code class="keycap">FnLock</code> 通常在键盘硬件中直接处理，并且通常不生成键事件。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Meta">"Meta"</code>
       <td class="key-table-required">是
-      <td>The <code class="keycap">Meta</code> key, to enable meta modifier function for interpreting concurrent or subsequent keyboard input.								This key value is used for the <q>Windows Logo</q> key and the Apple <code class="keycap">Command</code> or <code class="keycap">⌘</code> key. 
+      <td><code class="keycap">Meta</code> 键，此键启用变换修饰符功能，以解译								(interpreting)并行或连续的键盘输入。此键值用于 <q>Windows 
+								徽标</q> 键和苹果的 <code class="keycap">Command</code> 或 <code class="keycap">⌘</code> 键。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-NumLock">"NumLock"</code>
       <td class="key-table-required">是
-      <td>The <code class="keycap">NumLock</code> or Number Lock key, to toggle numpad mode function for interpreting subsequent keyboard input.
+      <td><code class="keycap">NumLock</code> 或数字锁定(Number Lock)键，用于切换 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#keypad" id="ref-for-keypad②">小键盘</a> 的功能模式，以解译(interpreting)连续的键盘输入。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ScrollLock">"ScrollLock"</code>
       <td class="key-table-required">是
-      <td>The <code class="keycap">Scroll Lock</code> key, to toggle between scrolling and cursor movement modes.
+      <td><code class="keycap">Scroll Lock</code> (滚动锁定)键，								用于在滚动和光标移动模式之间切换。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Shift">"Shift"</code>
       <td class="key-table-required">是
-      <td>The <code class="keycap">Shift</code> key, to enable shift modifier function for interpreting concurrent or subsequent keyboard input.
+      <td><code class="keycap">Shift</code> 键，此键启用上档(shift)修饰符功能，以解译								(interpreting)并行或连续的键盘输入。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Symbol">"Symbol"</code>
       <td class="key-table-required">否
-      <td>The Symbol modifier key (used on some virtual keyboards).
+      <td>符号(Symbol)修饰符键(用于某些虚拟键盘)。
      <tr>
       <td class="key-table-key"><code class="key" id="key-SymbolLock">"SymbolLock"</code>
       <td class="key-table-required">否
-      <td>The Symbol Lock key.
+      <td>符号锁定(Symbol Lock)键。
    </table>
-   <p>Legacy modifier keys:</p>
+   <p>遗留修饰键:</p>
    <table class="data-table full-width" id="key-table-modifier-legacy">
     <thead>
      <tr>
@@ -1027,13 +1028,13 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-Hyper">"Hyper"</code>
       <td class="key-table-required">否
-      <td>The <code class="keycap">Hyper</code> key.
+      <td><code class="keycap">Hyper</code> 键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Super">"Super"</code>
       <td class="key-table-required">否
-      <td>The <code class="keycap">Super</code> key.
+      <td><code class="keycap">Super</code> 键.
    </table>
-   <h3 class="heading settled" data-level="3.3" id="keys-whitespace"><span class="secno">3.3. </span><span class="content">Whitespace Keys</span><a class="self-link" href="#keys-whitespace"></a></h3>
+   <h3 class="heading settled" data-level="3.3" id="keys-whitespace"><span class="secno">3.3. </span><span class="content">空格键</span><a class="self-link" href="#keys-whitespace"></a></h3>
    <table class="data-table full-width" id="key-table-whitespace">
     <thead>
      <tr>
@@ -1044,14 +1045,14 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-Enter">"Enter"</code>
       <td class="key-table-required">是
-      <td>The <code class="keycap">Enter</code> or <code class="keycap">↵</code> key, to activate current selection or accept current input.<br> This key value is also used for the <code class="keycap">Return</code> (Macintosh numpad) key.<br> This key value is also used for the Android <code class="android">KEYCODE_DPAD_CENTER</code>. 
+      <td><code class="keycap">Enter</code> 或 <code class="keycap">↵</code> 键，						用于激活当前选择或接受当前输入。<br> 此键值也用做 <code class="keycap">Return</code> (在 Macintosh <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#numpad" id="ref-for-numpad">数字板</a> 上)键。<br> 此键值也用做 Android <code class="android">KEYCODE_DPAD_CENTER</code>。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Tab">"Tab"</code>
       <td class="key-table-required">是
-      <td>The Horizontal Tabulation <code class="keycap">Tab</code> key.
+      <td>水平制表(Horizontal Tabulation) <code class="keycap">Tab</code> 键。
    </table>
-   <p class="note" role="note">The space or spacebar key is encoded as <code class="key">" "</code>.</p>
-   <h3 class="heading settled" data-level="3.4" id="keys-navigation"><span class="secno">3.4. </span><span class="content">Navigation Keys</span><a class="self-link" href="#keys-navigation"></a></h3>
+   <p class="note" role="note">空格或空格键编码为 <code class="key">" "</code> 。</p>
+   <h3 class="heading settled" data-level="3.4" id="keys-navigation"><span class="secno">3.4. </span><span class="content">导航按键</span><a class="self-link" href="#keys-navigation"></a></h3>
    <table class="data-table full-width" id="key-table-navigation">
     <thead>
      <tr>
@@ -1062,37 +1063,38 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-ArrowDown">"ArrowDown"</code>
       <td class="key-table-required">是
-      <td>The down arrow key, to navigate or traverse downward. (<code class="android">KEYCODE_DPAD_DOWN</code>)
+      <td>下箭头键，用于向下导航或遍历。(<code class="android">KEYCODE_DPAD_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ArrowLeft">"ArrowLeft"</code>
       <td class="key-table-required">是
-      <td>The left arrow key, to navigate or traverse leftward. (<code class="android">KEYCODE_DPAD_LEFT</code>)
+      <td>左箭头键，用于向左导航或遍历。(<code class="android">KEYCODE_DPAD_LEFT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ArrowRight">"ArrowRight"</code>
       <td class="key-table-required">是
-      <td>The right arrow key, to navigate or traverse rightward. (<code class="android">KEYCODE_DPAD_RIGHT</code>)
+      <td>右箭头键，用于向右导航或遍历。(<code class="android">KEYCODE_DPAD_RIGHT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ArrowUp">"ArrowUp"</code>
       <td class="key-table-required">是
-      <td>The up arrow key, to navigate or traverse upward. (<code class="android">KEYCODE_DPAD_UP</code>)
+      <td>上箭头键，用于向上导航或遍历。(<code class="android">KEYCODE_DPAD_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-End">"End"</code>
       <td class="key-table-required">是
-      <td>The End key, used with keyboard entry to go to the end of content (<code class="android">KEYCODE_MOVE_END</code>).
+      <td>结束(End)键，配合键盘输入使用，用于跳转到输入内容的末尾 							(<code class="android">KEYCODE_MOVE_END</code>)。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Home">"Home"</code>
       <td class="key-table-required">是
-      <td>The Home key, used with keyboard entry, to go to start of content (<code class="android">KEYCODE_MOVE_HOME</code>).<br> For the mobile phone <code class="keycap">Home</code> key (which goes to the phone’s main screen), use <code class="key">"<a href="#key-GoHome">GoHome</a>"</code>. 
+      <td>起始(Home)键，配合键盘输入使用，用于跳转到输入内容的开头 							(<code class="android"><code class="android">KEYCODE_MOVE_HOME</code></code>)。<br> 对于手机 <code class="keycap">Home</code> 键
+							(用于进入手机主屏幕)，请使用 <code class="key">"<a href="#key-GoHome">GoHome</a>"</code> 。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-PageDown">"PageDown"</code>
       <td class="key-table-required">是
-      <td>The Page Down key, to scroll down or display next page of content.
+      <td>向下翻页(Page Down)键，向下滚动或显示下一页内容。
      <tr>
       <td class="key-table-key"><code class="key" id="key-PageUp">"PageUp"</code>
       <td class="key-table-required">是
-      <td>The Page Up key, to scroll up or display previous page of content.
+      <td>向上翻页(Page Up)键, 向上滚动或显示上一页内容。
    </table>
-   <h3 class="heading settled" data-level="3.5" id="keys-editing"><span class="secno">3.5. </span><span class="content">Editing Keys</span><a class="self-link" href="#keys-editing"></a></h3>
+   <h3 class="heading settled" data-level="3.5" id="keys-editing"><span class="secno">3.5. </span><span class="content">编辑键</span><a class="self-link" href="#keys-editing"></a></h3>
    <table class="data-table full-width" id="key-table-editing">
     <thead>
      <tr>
@@ -1103,53 +1105,60 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-Backspace">"Backspace"</code>
       <td class="key-table-required">是
-      <td>The Backspace key. This key value is also used for the key labeled <code class="keycap">Delete</code> on MacOS keyboards.
+      <td>回退(Backspace)键。在 MacOS 键盘上，								该键值也对应的按键键帽标签为 <code class="keycap">Delete</code> 。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Clear">"Clear"</code>
       <td class="key-table-required">否
-      <td>Remove the currently selected input.
+      <td>删除当前选定的输入。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Copy">"Copy"</code>
       <td class="key-table-required">否
-      <td>Copy the current selection. (<code class="appcommand">APPCOMMAND_COPY</code>)
+      <td>复制当前选择对象。 (<code class="appcommand">APPCOMMAND_COPY</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-CrSel">"CrSel"</code>
       <td class="key-table-required">否
-      <td>The Cursor Select (Crsel) key.
+      <td>光标选择(Cursor Select (Crsel))键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Cut">"Cut"</code>
       <td class="key-table-required">否
-      <td>Cut the current selection. (<code class="appcommand">APPCOMMAND_CUT</code>)
+      <td>剪切当前选择对象。 (<code class="appcommand">APPCOMMAND_CUT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Delete">"Delete"</code>
       <td class="key-table-required">是
-      <td>The Delete (Del) Key.								This key value is also used for the key labeled <code class="keycap">Delete</code> on MacOS keyboards when modified by the <code class="keycap">Fn</code> key. 
+      <td>
+       删除(Delete (Del))键。								当被 <code class="keycap">Fn</code> 键修饰时，在 MacOS 键盘上，
+								该键值对应的按键键帽标签为 <code class="keycap">Delete</code> 。 
+       <div class="note custom-note" role="note"> 在 MacOS 键盘上，其键帽为 <code class="keycap">Backspace</code> 和 <code class="keycap">Delete</code> 的按键的键值分别为 <code class="key">"<a href="#key-Delete">Delete</a>"</code> 和 <code class="key">"<a href="#key-Backspace">Backspace</a>"</code> (和标准美式键盘正好相反)，类似地，按键的 <code>code</code> 值也是相反的，分别为 <code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-Delete">Delete</a>"</code> 和 <code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-Backspace">Backspace</a>"</code> (见 <a data-link-type="biblio" href="#biblio-uievents-code" title="UI Events KeyboardEvent code Values">[UIEvents-Code]</a> )。此处将 <code class="keycap">Fn</code> 键引入，
+								说明键值是可以被修饰符修改的(而 <code>code</code> 值不会)，
+								并且在 MacOS 中，将 <code class="keycap">Delete</code> 原初的 <code class="key">"<a href="#key-Backspace">Backspace</a>"</code> 键值修改成了 <code class="key">"<a href="#key-Delete">Delete</a>"</code> 。 </div>
      <tr>
       <td class="key-table-key"><code class="key" id="key-EraseEof">"EraseEof"</code>
       <td class="key-table-required">否
-      <td>The Erase to End of Field key.  This key deletes all characters from the current cursor position to the end of the current field.
+      <td>擦除到字段末尾(Erase to End of Field)键。 								该键删除从当前光标位置到当前字段末尾的所有字符。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ExSel">"ExSel"</code>
       <td class="key-table-required">否
-      <td>The Extend Selection (Exsel) key.
+      <td>展开所选内容(Extend Selection (Exsel))键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Insert">"Insert"</code>
       <td class="key-table-required">是
-      <td>The Insert (Ins) key, to toggle between text modes for insertion or overtyping. (<code class="android">KEYCODE_INSERT</code>)
+      <td>
+       插入(Insert (Ins))键, 在文本模式之间切换以进行插入或覆写								(<code class="android">KEYCODE_INSERT</code>)。 
+       <div class="note custom-note" role="note"> 详见 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#enter-edit-keys" id="ref-for-enter-edit-keys">回车键和编辑键</a> 中的插入键。 </div>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Paste">"Paste"</code>
       <td class="key-table-required">否
-      <td>The Paste key. (<code class="appcommand">APPCOMMAND_PASTE</code>)
+      <td>粘贴(Paste)键。 (<code class="appcommand">APPCOMMAND_PASTE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Redo">"Redo"</code>
       <td class="key-table-required">否
-      <td>Redo the last action. (<code class="appcommand">APPCOMMAND_REDO</code>)
+      <td>重做上一个操作。 (<code class="appcommand">APPCOMMAND_REDO</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Undo">"Undo"</code>
       <td class="key-table-required">否
-      <td>Undo the last action. (<code class="appcommand">APPCOMMAND_UNDO</code>)
+      <td>撤消上一个操作。 (<code class="appcommand">APPCOMMAND_UNDO</code>)
    </table>
-   <h3 class="heading settled" data-level="3.6" id="keys-ui"><span class="secno">3.6. </span><span class="content">UI Keys</span><a class="self-link" href="#keys-ui"></a></h3>
+   <h3 class="heading settled" data-level="3.6" id="keys-ui"><span class="secno">3.6. </span><span class="content">UI(用户界面)按键</span><a class="self-link" href="#keys-ui"></a></h3>
    <table class="data-table full-width" id="key-table-ui">
     <thead>
      <tr>
@@ -1160,70 +1169,70 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-Accept">"Accept"</code>
       <td class="key-table-required">否
-      <td>The Accept (Commit, OK) key. Accept current option or input method sequence conversion.
+      <td>接收(Accept，Commit，OK，提交，确定)键。 								接收当前选项结果或接收当前输入法下序列的转换结果。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Again">"Again"</code>
       <td class="key-table-required">否
-      <td>The Again key, to redo or repeat an action.
+      <td>再次(Again)键，重做或重复一个动作。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Attn">"Attn"</code>
       <td class="key-table-required">否
-      <td>The Attention (Attn) key.
+      <td>注意(Attention，Attn)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Cancel">"Cancel"</code>
       <td class="key-table-required">否
-      <td>The Cancel key.
+      <td>取消(Cancel)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-ContextMenu">"ContextMenu"</code>
       <td class="key-table-required">是
-      <td>Show the application’s context menu.								This key is commonly found between the right <code class="keycap">Meta</code> key and the right <code class="keycap">Control</code> key. 
+      <td>显示应用程序的上下文菜单。该键通常位于右侧 <code class="keycap">Meta</code> 键和右侧 <code class="keycap">Control</code> 键之间。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Escape">"Escape"</code>
       <td class="key-table-required">是
-      <td>The <code class="keycap">Esc</code> key. This key was originally used to initiate an escape sequence, but is								now more generally used to exit or "escape" the current context, such as closing a dialog
-								or exiting full screen mode. 
+      <td><code class="keycap">Esc</code> 键。该键最初用于生成转义字符(Escape 								character)序列，但现在更常用于退出或"逃离"当前上下文，
+								例如关闭对话框或退出全屏模式。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Execute">"Execute"</code>
       <td class="key-table-required">否
-      <td>The Execute key.
+      <td>执行(Execute)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Find">"Find"</code>
       <td class="key-table-required">否
-      <td>Open the Find dialog. (<code class="appcommand">APPCOMMAND_FIND</code>)
+      <td>打开"查找(Find)"对话框。(<code class="appcommand">APPCOMMAND_FIND</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Help">"Help"</code>
       <td class="key-table-required">是
-      <td>Open a help dialog or toggle display of help information. (<code class="appcommand"><code class="appcommand">APPCOMMAND_HELP</code></code>, <code class="android"><code class="android">KEYCODE_HELP</code></code>)
+      <td>打开帮助对话框或切换帮助信息的显示方式(display)。								(<code class="appcommand"><code class="appcommand">APPCOMMAND_HELP</code></code>, <code class="android"><code class="android">KEYCODE_HELP</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Pause">"Pause"</code>
       <td class="key-table-required">是
       <td>
-       Pause the current state or application (as appropriate). 
-       <p class="note" role="note">Do not use this value for the <code class="keycap">Pause</code> button on media controllers. Use <code class="key">"<a href="#key-MediaPause">MediaPause</a>"</code> instead.</p>
+       暂停当前状态或应用程序(视情况而定)。 
+       <p class="note" role="note"> 不要将此值用于媒体控制器(media controller)上的 <code class="keycap">Pause</code> 按钮。如果想要用媒体暂停，请改用 <code class="key">"<a href="#key-MediaPause">MediaPause</a>"</code> 。</p>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Play">"Play"</code>
       <td class="key-table-required">否
       <td>
-       Play or resume the current state or application (as appropriate). 
-       <p class="note" role="note">Do not use this value for the <code class="keycap">Play</code> button on media controllers. Use <code class="key">"<a href="#key-MediaPlay">MediaPlay</a>"</code> instead.</p>
+       继续或恢复当前状态或应用程序(视情况而定)。 
+       <p class="note" role="note"> 不要将此值用于媒体控制器(media controller)上的 <code class="keycap">Play</code> 按钮。如果想要用媒体暂停，请改用 <code class="key">"<a href="#key-MediaPlay">MediaPlay</a>"</code> 。</p>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Props">"Props"</code>
       <td class="key-table-required">否
-      <td>The properties (Props) key.
+      <td>属性(properties ，Props)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Select">"Select"</code>
       <td class="key-table-required">否
-      <td>The Select key.
+      <td>选择(Select)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-ZoomIn">"ZoomIn"</code>
       <td class="key-table-required">否
-      <td>The ZoomIn key. (<code class="android">KEYCODE_ZOOM_IN</code>)
+      <td>放大(ZoomIn)键。(<code class="android">KEYCODE_ZOOM_IN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ZoomOut">"ZoomOut"</code>
       <td class="key-table-required">否
-      <td>The ZoomOut key. (<code class="android">KEYCODE_ZOOM_OUT</code>)
+      <td>缩小(ZoomOut)键。(<code class="android">KEYCODE_ZOOM_OUT</code>)
    </table>
-   <h3 class="heading settled" data-level="3.7" id="keys-device"><span class="secno">3.7. </span><span class="content">Device Keys</span><a class="self-link" href="#keys-device"></a></h3>
+   <h3 class="heading settled" data-level="3.7" id="keys-device"><span class="secno">3.7. </span><span class="content">设备(Device)按键</span><a class="self-link" href="#keys-device"></a></h3>
    <table class="data-table full-width" id="key-table-device">
     <thead>
      <tr>
@@ -1234,48 +1243,50 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrightnessDown">"BrightnessDown"</code>
       <td class="key-table-required">否
-      <td>The Brightness Down key. Typically controls the display brightness. (<code class="android">KEYCODE_BRIGHTNESS_DOWN</code>)
+      <td>降低亮度(Brightness Down)键。 									通常用于控制显示器的亮度。 (<code class="android">KEYCODE_BRIGHTNESS_DOWN</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrightnessUp">"BrightnessUp"</code>
       <td class="key-table-required">否
-      <td>The Brightness Up key. Typically controls the display brightness. (<code class="android">KEYCODE_BRIGHTNESS_UP</code>)
+      <td>提高亮度(Brightness Up)键。 									通常用于控制显示器的亮度。 (<code class="android">KEYCODE_BRIGHTNESS_UP</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Eject">"Eject"</code>
       <td class="key-table-required">否
-      <td>Toggle removable media to eject (open) and insert (close) state. (<code class="android">KEYCODE_MEDIA_EJECT</code>)
+      <td>将可移动媒介(removable media)切换到弹出									(打开)和插入(关闭)状态。(<code class="android">KEYCODE_MEDIA_EJECT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-LogOff">"LogOff"</code>
       <td class="key-table-required">否
-      <td>The LogOff key.
+      <td>注销(LogOff)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Power">"Power"</code>
       <td class="key-table-required">否
       <td>
-       Toggle power state. (<code class="android">KEYCODE_POWER</code>) 
-       <p class="note" role="note">Note: Some devices might not expose this key to the operating environment.</p>
+       切换电源状态(电源开关)。(<code class="android">KEYCODE_POWER</code>) 
+       <p class="note" role="note"> 注意: 某些设备可能不会将此键暴露给操作环境。</p>
      <tr>
       <td class="key-table-key"><code class="key" id="key-PowerOff">"PowerOff"</code>
       <td class="key-table-required">否
-      <td>The <code class="keycap">PowerOff</code> key. Sometime called <code class="keycap">PowerDown</code>.
+      <td><code class="keycap">PowerOff</code> 键。 有时候键帽标签也是 <code class="keycap">PowerDown</code> 。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-PrintScreen">"PrintScreen"</code>
       <td class="key-table-required">是
-      <td>The <code class="keycap">Print Screen</code> or <code class="keycap">SnapShot</code> key, to initiate print-screen function.
+      <td><code class="keycap">Print Screen</code> 或 <code class="keycap">SnapShot</code> (截屏)键， 									启动屏幕打印的功能。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Hibernate">"Hibernate"</code>
       <td class="key-table-required">否
-      <td>The Hibernate key.									This key saves the current state of the computer to disk so that it can be restored. The computer will then shutdown. 
+      <td>睡眠(Hibernate)键。此键将计算机的当前状态保存到磁盘，									以便(之后开机时)对其进行恢复。在这之后计算机会停止工作。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Standby">"Standby"</code>
       <td class="key-table-required">否
-      <td>The Standby key.									This key turns off the display and places the computer into a low-power mode without completely shutting down.
-									It is sometimes labelled <code class="keycap">Suspend</code> or <code class="keycap">Sleep</code> key. (<code class="android"><code class="android">KEYCODE_SLEEP</code></code>) 
+      <td>待机(Standby)键。									此键可关闭显示器并将计算机置于低功耗模式，
+									但计算机不会完全停止工作。有时改键值对应的键帽标签为 <code class="keycap">Suspend</code> 或 <code class="keycap">Sleep</code> 键。(<code class="android"><code class="android">KEYCODE_SLEEP</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-WakeUp">"WakeUp"</code>
       <td class="key-table-required">否
-      <td>The WakeUp key. (<code class="android">KEYCODE_WAKEUP</code>)
+      <td>唤醒(WakeUp)键。 (<code class="android">KEYCODE_WAKEUP</code>)
    </table>
-   <h3 class="heading settled" data-level="3.8" id="keys-composition"><span class="secno">3.8. </span><span class="content">IME and Composition Keys</span><a class="self-link" href="#keys-composition"></a></h3>
+   <h3 class="heading settled" data-level="3.8" id="keys-composition"><span class="secno">3.8. </span><span class="content">输入法和组合(IME and Composition)键</span><a class="self-link" href="#keys-composition"></a></h3>
+   <div class="note custom-note" role="note"> IME 全称 Input Method Editor ，即输入法编辑器，
+		是指键盘击键或鼠标移动翻译成字符来输入的操作系统组件，见 <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> 的 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#ime" id="ref-for-ime">IME</a> 获取更多信息。 </div>
    <table class="data-table full-width" id="key-table-composition">
     <thead>
      <tr>
@@ -1286,71 +1297,84 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-AllCandidates">"AllCandidates"</code>
       <td class="key-table-required">否
-      <td>The All Candidates key, to initate the multi-candidate mode.
+      <td>所有候选(All Candidates)键，用于启动多候选模式。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Alphanumeric">"Alphanumeric"</code>
       <td class="key-table-required">否
-      <td>The Alphanumeric key.
+      <td>字母数字(Alphanumeric)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-CodeInput">"CodeInput"</code>
       <td class="key-table-required">否
-      <td>The Code Input key, to initiate the Code Input mode to allow characters to be entered by their code points.
+      <td>码元输入(Code Input)键，用于启动"码元输入"模式，									以允许通过字符的码点(code points)输入字符。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Compose">"Compose"</code>
       <td class="key-table-required">否
-      <td>The Compose key, also known as <em>Multi_key</em> on the X Window System.  This key acts in a manner similar to a									dead key, triggering a mode where subsequent key presses are combined to produce a different character. 
+      <td>
+       组合(Compose)键，在 X Window 系统上也称为 <em>Multi_key</em>。该键的作用方式类似于死键( <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#dead-key" id="ref-for-dead-key①">dead key</a> )，
+									切换到一种模式，在该模式下，
+									随后的按键输入组合在一起产生一个不同的字符。 
+       <div class="note custom-note" role="note"> 实际上就是生成了预组字符(precomposed character)，参见 例子 3 
+									的 <a href="#precomposed-char-note">非规范注释</a> 。 </div>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Convert">"Convert"</code>
       <td class="key-table-required">否
-      <td>The Convert key, to convert the current input method sequence.
+      <td>
+       <code class="keycap">変換</code> (Convert)键，用于转换当前输入法下的序列。 
+       <div class="note custom-note" role="note"> <code class="keycap">変換</code> 属于日式标准 "106" 键盘布局上的按键，查阅 <code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-Convert">Convert</a>"</code> 以获取更多信息。 </div>
      <tr>
       <td class="key-table-key"><code class="key" id="key-Dead">"Dead"</code>
       <td class="key-table-required">否
-      <td>A dead key combining key. It may be any combining key from any keyboard layout. For example, on a									PC/AT French keyboard, using a French mapping and without any modifier activiated, this is the key value <code class="unicode">U+0302</code> COMBINING CIRCUMFLEX ACCENT. In another layout this might be a different unicode combining key.<br> For applications that need to differentiate between specific combining characters, the associated <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#compositionupdate" id="ref-for-compositionupdate">compositionupdate</a> event’s data attribute provides the specific key value. 
+      <td>一个死键组合(dead key combining)键。									它可以是任何键盘布局中的任何组合键。例如，在使用法语映射的
+									PC/AT 法语键盘上，如果没有激活(activiated)任何修饰键，
+									该键的键值是 <code class="unicode">U+0302</code> 组合扬抑音符(COMBINING CIRCUMFLEX 
+									ACCENT)。在另一种布局中，这可能是不同的 unicode 组合键。<br> 对于需要区分特定组合字符的应用程序，关联的 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#compositionupdate" id="ref-for-compositionupdate">compositionupdate</a> 事件的 <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/uievents/#dom-compositionevent-data" id="ref-for-dom-compositionevent-data">data</a></code> 属性提供特定的键值。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FinalMode">"FinalMode"</code>
       <td class="key-table-required">否
-      <td>The Final Mode <code class="keycap">Final</code> key used on some Asian keyboards, to enable the final mode for IMEs.
+      <td>一些亚洲键盘上使用最终模式(Final Mode <code class="keycap">Final</code> )键，用于启用 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#ime" id="ref-for-ime①">IMEs</a> 的最终模式。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-GroupFirst">"GroupFirst"</code>
       <td class="key-table-required">否
-      <td>Switch to the first character group. (ISO/IEC 9995)
+      <td>切换到第一个字符组。(ISO/IEC 9995)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GroupLast">"GroupLast"</code>
       <td class="key-table-required">否
-      <td>Switch to the last character group. (ISO/IEC 9995)
+      <td>切换到最后一个字符组。(ISO/IEC 9995)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GroupNext">"GroupNext"</code>
       <td class="key-table-required">否
-      <td>Switch to the next character group. (ISO/IEC 9995)
+      <td>切换到下一个字符组。(ISO/IEC 9995)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GroupPrevious">"GroupPrevious"</code>
       <td class="key-table-required">否
-      <td>Switch to the previous character group. (ISO/IEC 9995)
+      <td>切换到上一个字符组。(ISO/IEC 9995)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ModeChange">"ModeChange"</code>
       <td class="key-table-required">否
-      <td>The Mode Change key, to toggle between or cycle through input modes of IMEs.
+      <td>模式切换(Mode Change)键，以在 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#ime" id="ref-for-ime②">IMEs</a> 不同的输入模式之间切换或循环切换。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-NextCandidate">"NextCandidate"</code>
       <td class="key-table-required">否
-      <td>The Next Candidate function key.
+      <td>下一个候选功能(Next Candidate function)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-NonConvert">"NonConvert"</code>
       <td class="key-table-required">否
-      <td>The NonConvert ("Don’t Convert") key, to accept current input method sequence without conversion in IMEs.
+      <td>
+       <code class="keycap">無変換</code> (NonConvert ，即"不变换") 键，									用于接收当前输入法下的在 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#ime" id="ref-for-ime③">IMEs</a> 中不转换(without conversion)
+									的序列结果。 
+       <div class="note custom-note" role="note"> <code class="keycap">無変換</code> 属于日式标准 "106" 键盘布局上的按键，查阅 <code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-NonConvert">NonConvert</a>"</code> 以获取更多信息。 </div>
      <tr>
       <td class="key-table-key"><code class="key" id="key-PreviousCandidate">"PreviousCandidate"</code>
       <td class="key-table-required">否
-      <td>The Previous Candidate function key.
+      <td>上一个候选功能(Previous Candidate function)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Process">"Process"</code>
       <td class="key-table-required">否
-      <td>The Process key.
+      <td>步骤(Process)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-SingleCandidate">"SingleCandidate"</code>
       <td class="key-table-required">否
-      <td>The Single Candidate function key.
+      <td>单一候选功能(Single Candidate function)键。
    </table>
    <p>Keys specific to Korean keyboards:</p>
    <table class="data-table full-width" id="key-table-ime-korean">
@@ -1363,15 +1387,15 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-HangulMode">"HangulMode"</code>
       <td class="key-table-required">否
-      <td>The Hangul (Korean characters) Mode key, to toggle between Hangul and English modes.
+      <td>Hangul (Korean characters) Mode 键，to toggle between Hangul and English modes.
      <tr>
       <td class="key-table-key"><code class="key" id="key-HanjaMode">"HanjaMode"</code>
       <td class="key-table-required">否
-      <td>The Hanja (Korean characters) Mode key.
+      <td>(Hanja (Korean characters) Mode)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-JunjaMode">"JunjaMode"</code>
       <td class="key-table-required">否
-      <td>The Junja (Korean characters) Mode key.
+      <td>(Junja (Korean characters) Mode)键。
    </table>
    <p>Keys specific to Japanese keyboards:</p>
    <table class="data-table full-width" id="key-table-ime-japanese">
@@ -1384,44 +1408,44 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-Eisu">"Eisu"</code>
       <td class="key-table-required">否
-      <td>The Eisu key. This key may close the IME, but its purpose									is defined by the current IME. (<code class="android">KEYCODE_EISU</code>) 
+      <td>(Eisu)键。 This key may close the IME, but its purpose									is defined by the current IME. (<code class="android">KEYCODE_EISU</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Hankaku">"Hankaku"</code>
       <td class="key-table-required">否
-      <td>The (Half-Width) Characters key.
+      <td>((Half-Width) Characters)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Hiragana">"Hiragana"</code>
       <td class="key-table-required">否
-      <td>The Hiragana (Japanese Kana characters) key.
+      <td>(Hiragana (Japanese Kana characters))键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-HiraganaKatakana">"HiraganaKatakana"</code>
       <td class="key-table-required">否
-      <td>The Hiragana/Katakana toggle key. (<code class="android">KEYCODE_KATAKANA_HIRAGANA</code>)
+      <td>(Hiragana/Katakana toggle)键。 (<code class="android">KEYCODE_KATAKANA_HIRAGANA</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-KanaMode">"KanaMode"</code>
       <td class="key-table-required">否
-      <td>The Kana Mode (Kana Lock) key. This key is used to enter									hiragana mode (typically from romaji mode). 
+      <td>(Kana Mode (Kana Lock))键。 This key is used to enter									hiragana mode (typically from romaji mode). 
      <tr>
       <td class="key-table-key"><code class="key" id="key-KanjiMode">"KanjiMode"</code>
       <td class="key-table-required">否
-      <td>The Kanji (Japanese name for ideographic characters of Chinese origin) Mode key.									This key is typically used to switch to a hiragana keyboard for
+      <td>(Kanji (Japanese name for ideographic characters of Chinese origin) Mode)键。									This key is typically used to switch to a hiragana keyboard for
 									the purpose of converting input into kanji. (<code class="android">KEYCODE_KANA</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Katakana">"Katakana"</code>
       <td class="key-table-required">否
-      <td>The Katakana (Japanese Kana characters) key.
+      <td>(Katakana (Japanese Kana characters))键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Romaji">"Romaji"</code>
       <td class="key-table-required">否
-      <td>The Roman characters function key.
+      <td>(Roman characters function)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Zenkaku">"Zenkaku"</code>
       <td class="key-table-required">否
-      <td>The Zenkaku (Full-Width) Characters key.
+      <td>(Zenkaku (Full-Width) Characters)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-ZenkakuHankaku">"ZenkakuHankaku"</code>
       <td class="key-table-required">否
-      <td>The Zenkaku/Hankaku (full-width/half-width) toggle key. (<code class="android">KEYCODE_ZENKAKU_HANKAKU</code>)
+      <td>(Zenkaku/Hankaku (full-width/half-width) toggle)键。 (<code class="android">KEYCODE_ZENKAKU_HANKAKU</code>)
    </table>
    <h3 class="heading settled" data-level="3.9" id="keys-function"><span class="secno">3.9. </span><span class="content">General-Purpose Function Keys</span><a class="self-link" href="#keys-function"></a></h3>
    <p>The exact number of these general purpose function keys varies on different
@@ -1736,47 +1760,47 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchCalendar">"LaunchCalendar"</code>
       <td class="key-table-required">否
-      <td>The "Calendar" key. (<code class="android">KEYCODE_CALENDAR</code>)
+      <td>("Calendar")键。 (<code class="android">KEYCODE_CALENDAR</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchContacts">"LaunchContacts"</code>
       <td class="key-table-required">否
-      <td>The "Contacts" key. (<code class="android">KEYCODE_CONTACTS</code>)
+      <td>("Contacts")键。 (<code class="android">KEYCODE_CONTACTS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchMail">"LaunchMail"</code>
       <td class="key-table-required">否
-      <td>The "Mail" key. (<code class="appcommand">APPCOMMAND_LAUNCH_MAIL</code>)
+      <td>("Mail")键。 (<code class="appcommand">APPCOMMAND_LAUNCH_MAIL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchMediaPlayer">"LaunchMediaPlayer"</code>
       <td class="key-table-required">否
-      <td>The "Media Player" key. (<code class="appcommand">APPCOMMAND_LAUNCH_MEDIA_SELECT</code>)
+      <td>("Media Player")键。 (<code class="appcommand">APPCOMMAND_LAUNCH_MEDIA_SELECT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchMusicPlayer">"LaunchMusicPlayer"</code>
       <td class="key-table-required">否
-      <td>The "Music Player" key.
+      <td>("Music Player")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchPhone">"LaunchPhone"</code>
       <td class="key-table-required">否
-      <td>The "Phone" key.
+      <td>("Phone")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchScreenSaver">"LaunchScreenSaver"</code>
       <td class="key-table-required">否
-      <td>The "Screen Saver" key.
+      <td>("Screen Saver")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchSpreadsheet">"LaunchSpreadsheet"</code>
       <td class="key-table-required">否
-      <td>The "Spreadsheet" key.
+      <td>("Spreadsheet")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchWebBrowser">"LaunchWebBrowser"</code>
       <td class="key-table-required">否
-      <td>The "Web Browser" key.
+      <td>("Web Browser")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchWebCam">"LaunchWebCam"</code>
       <td class="key-table-required">否
-      <td>The "WebCam" key.
+      <td>("WebCam")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchWordProcessor">"LaunchWordProcessor"</code>
       <td class="key-table-required">否
-      <td>The "Word Processor" key.
+      <td>("Word Processor")键。
    </table>
    <h3 class="heading settled" data-level="3.15" id="keys-browser"><span class="secno">3.15. </span><span class="content">Browser Keys</span><a class="self-link" href="#keys-browser"></a></h3>
    <table class="data-table full-width" id="key-table-browser">
@@ -1826,43 +1850,43 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-AppSwitch">"AppSwitch"</code>
       <td class="key-table-required">否
-      <td>The Application switch key, which provides a list of recent apps to switch between. (<code class="android">KEYCODE_APP_SWITCH</code>)
+      <td>Application switch 键，which provides a list of recent apps to switch between. (<code class="android">KEYCODE_APP_SWITCH</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Call">"Call"</code>
       <td class="key-table-required">否
-      <td>The Call key. (<code class="android">KEYCODE_CALL</code>)
+      <td>(Call)键。 (<code class="android">KEYCODE_CALL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Camera">"Camera"</code>
       <td class="key-table-required">否
-      <td>The Camera key. (<code class="android">KEYCODE_CAMERA</code>)
+      <td>(Camera)键。 (<code class="android">KEYCODE_CAMERA</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-CameraFocus">"CameraFocus"</code>
       <td class="key-table-required">否
-      <td>The Camera focus key. (<code class="android">KEYCODE_FOCUS</code>)
+      <td>(Camera focus)键。 (<code class="android">KEYCODE_FOCUS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-EndCall">"EndCall"</code>
       <td class="key-table-required">否
-      <td>The End Call key. (<code class="android">KEYCODE_ENDCALL</code>)
+      <td>(End Call)键。 (<code class="android">KEYCODE_ENDCALL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GoBack">"GoBack"</code>
       <td class="key-table-required">否
-      <td>The Back key. (<code class="android">KEYCODE_BACK</code>)
+      <td>(Back)键。 (<code class="android">KEYCODE_BACK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GoHome">"GoHome"</code>
       <td class="key-table-required">否
-      <td>The Home key, which goes to the phone’s main screen. (<code class="android">KEYCODE_HOME</code>)
+      <td>Home 键，which goes to the phone’s main screen. (<code class="android">KEYCODE_HOME</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-HeadsetHook">"HeadsetHook"</code>
       <td class="key-table-required">否
-      <td>The Headset Hook key. (<code class="android">KEYCODE_HEADSETHOOK</code>)
+      <td>(Headset Hook)键。 (<code class="android">KEYCODE_HEADSETHOOK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LastNumberRedial">"LastNumberRedial"</code>
       <td class="key-table-required">否
-      <td>The Last Number Redial key.
+      <td>(Last Number Redial)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Notification">"Notification"</code>
       <td class="key-table-required">否
-      <td>The Notification key. (<code class="android">KEYCODE_NOTIFICATION</code>)
+      <td>(Notification)键。 (<code class="android">KEYCODE_NOTIFICATION</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MannerMode">"MannerMode"</code>
       <td class="key-table-required">否
@@ -1870,7 +1894,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-VoiceDial">"VoiceDial"</code>
       <td class="key-table-required">否
-      <td>The Voice Dial key.
+      <td>(Voice Dial)键。
    </table>
    <h3 class="heading settled" data-level="3.17" id="keys-tv"><span class="secno">3.17. </span><span class="content">TV Keys</span><a class="self-link" href="#keys-tv"></a></h3>
    <table class="data-table full-width" id="key-table-tv">
@@ -2364,15 +2388,15 @@ Interface on UPnP Networks and the Internet <a data-link-type="biblio" href="#bi
      <tr>
       <td class="key-table-key"><code class="key">"End"</code>
       <td class="key-table-required">是
-      <td>The End key, used with keyboard entry to go to the end of content. (<code class="vk">VK_GO_TO_END</code>)
+      <td>End 键，used with keyboard entry to go to the end of content. (<code class="vk">VK_GO_TO_END</code>)
      <tr>
       <td class="key-table-key"><code class="key">"Enter"</code>
       <td class="key-table-required">是
-      <td>The Enter key, to activate current selection or accept current input. (<code class="vk">VK_SELECT</code>)
+      <td>Enter 键，to activate current selection or accept current input. (<code class="vk">VK_SELECT</code>)
      <tr>
       <td class="key-table-key"><code class="key">"Home"</code>
       <td class="key-table-required">是
-      <td>The Home key, used with keyboard entry, to go to start of content. (<code class="vk">VK_GO_TO_START</code>)
+      <td>Home 键，used with keyboard entry, to go to start of content. (<code class="vk">VK_GO_TO_START</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaFastForward"</code>
       <td class="key-table-required">否
@@ -2556,7 +2580,13 @@ something specific to the values defined in this document</p>
   <aside aria-labelledby="infopaneltitle-for-49e3aafb31794aeae0585a62fde001c8" class="dfn-panel" data-for="49e3aafb31794aeae0585a62fde001c8" id="infopanel-for-49e3aafb31794aeae0585a62fde001c8">
    <span id="infopaneltitle-for-49e3aafb31794aeae0585a62fde001c8" style="display:none">Info about the 'compositionupdate' external reference.</span><a href="https://mangwu.github.io/uievents-cn/#compositionupdate">https://mangwu.github.io/uievents-cn/#compositionupdate</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-compositionupdate">3.8. IME and Composition Keys</a>
+    <li><a href="#ref-for-compositionupdate">3.8. 输入法和组合(IME and Composition)键</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-0af7fb52f3ee6f3abb1e690d2aa4b587" class="dfn-panel" data-for="0af7fb52f3ee6f3abb1e690d2aa4b587" id="infopanel-for-0af7fb52f3ee6f3abb1e690d2aa4b587">
+   <span id="infopaneltitle-for-0af7fb52f3ee6f3abb1e690d2aa4b587" style="display:none">Info about the 'data' external reference.</span><a href="https://w3c.github.io/uievents/#dom-compositionevent-data">https://w3c.github.io/uievents/#dom-compositionevent-data</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-compositionevent-data">3.8. 输入法和组合(IME and Composition)键</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-63c261eb1dbb07786e4650f823bf1e1b" class="dfn-panel" data-for="63c261eb1dbb07786e4650f823bf1e1b" id="infopanel-for-63c261eb1dbb07786e4650f823bf1e1b">
@@ -2565,6 +2595,7 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-dead-key">2.2.1. 
 		
 		选择一个适合的键属性值</a>
+    <li><a href="#ref-for-dead-key①">3.8. 输入法和组合(IME and Composition)键</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-1a04750240f24bd353e259d0606ef96f" class="dfn-panel" data-for="1a04750240f24bd353e259d0606ef96f" id="infopanel-for-1a04750240f24bd353e259d0606ef96f">
@@ -2598,10 +2629,22 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-key-legends">1.1. 格式规约</a>
    </ul>
   </aside>
+  <aside aria-labelledby="infopaneltitle-for-c6ced23147032607debba8f8bb06289f" class="dfn-panel" data-for="c6ced23147032607debba8f8bb06289f" id="infopanel-for-c6ced23147032607debba8f8bb06289f">
+   <span id="infopaneltitle-for-c6ced23147032607debba8f8bb06289f" style="display:none">Info about the 'ime' external reference.</span><a href="https://mangwu.github.io/uievents-cn/#ime">https://mangwu.github.io/uievents-cn/#ime</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-ime">3.8. 输入法和组合(IME and Composition)键</a> <a href="#ref-for-ime①">(2)</a> <a href="#ref-for-ime②">(3)</a> <a href="#ref-for-ime③">(4)</a>
+   </ul>
+  </aside>
   <aside aria-labelledby="infopaneltitle-for-592c2c640d119b848e57ce039ac95f2c" class="dfn-panel" data-for="592c2c640d119b848e57ce039ac95f2c" id="infopanel-for-592c2c640d119b848e57ce039ac95f2c">
    <span id="infopaneltitle-for-592c2c640d119b848e57ce039ac95f2c" style="display:none">Info about the '功能键' external reference.</span><a href="https://mangwu.github.io/uievents-code-cn/#function-key">https://mangwu.github.io/uievents-code-cn/#function-key</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-function-key">3.2. 修饰键</a> <a href="#ref-for-function-key①">(2)</a>
+    <li><a href="#ref-for-function-key">3.2. 修饰键</a> <a href="#ref-for-function-key①">(2)</a> <a href="#ref-for-function-key②">(3)</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-88dc5e635e0c018623e7071555520f65" class="dfn-panel" data-for="88dc5e635e0c018623e7071555520f65" id="infopanel-for-88dc5e635e0c018623e7071555520f65">
+   <span id="infopaneltitle-for-88dc5e635e0c018623e7071555520f65" style="display:none">Info about the '回车键和编辑键' external reference.</span><a href="https://mangwu.github.io/uievents-code-cn/#enter-edit-keys">https://mangwu.github.io/uievents-code-cn/#enter-edit-keys</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-enter-edit-keys">3.5. 编辑键</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-984d037e70ff8d75a57589fea4a4008e" class="dfn-panel" data-for="984d037e70ff8d75a57589fea4a4008e" id="infopanel-for-984d037e70ff8d75a57589fea4a4008e">
@@ -2614,12 +2657,19 @@ something specific to the values defined in this document</p>
    <span id="infopaneltitle-for-b1a501e8d898512da05b98716633eee8" style="display:none">Info about the '小键盘' external reference.</span><a href="https://mangwu.github.io/uievents-code-cn/#keypad">https://mangwu.github.io/uievents-code-cn/#keypad</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-keypad">2. 键盘事件 key 属性值</a> <a href="#ref-for-keypad①">(2)</a>
+    <li><a href="#ref-for-keypad②">3.2. 修饰键</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-0d03d1fc8bca69b3a01f4b6f7f4795cd" class="dfn-panel" data-for="0d03d1fc8bca69b3a01f4b6f7f4795cd" id="infopanel-for-0d03d1fc8bca69b3a01f4b6f7f4795cd">
    <span id="infopaneltitle-for-0d03d1fc8bca69b3a01f4b6f7f4795cd" style="display:none">Info about the '按键码属性值' external reference.</span><a href="https://mangwu.github.io/uievents-code-cn/#key-code-attribute-values">https://mangwu.github.io/uievents-code-cn/#key-code-attribute-values</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-key-code-attribute-values">1.1. 格式规约</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-d7191f6c75c067140bc081b149ca2e00" class="dfn-panel" data-for="d7191f6c75c067140bc081b149ca2e00" id="infopanel-for-d7191f6c75c067140bc081b149ca2e00">
+   <span id="infopaneltitle-for-d7191f6c75c067140bc081b149ca2e00" style="display:none">Info about the '数字板' external reference.</span><a href="https://mangwu.github.io/uievents-code-cn/#numpad">https://mangwu.github.io/uievents-code-cn/#numpad</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-numpad">3.3. 空格键</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
@@ -2635,6 +2685,7 @@ something specific to the values defined in this document</p>
      <li><span class="dfn-paneled" id="1246e9558c3d1dd8867cf3e18395cb0f">KeyboardEvent</span>
      <li><span class="dfn-paneled" id="25c7a6d3bc26c87047f8b36ab22f873e">code</span>
      <li><span class="dfn-paneled" id="49e3aafb31794aeae0585a62fde001c8">compositionupdate</span>
+     <li><span class="dfn-paneled" id="0af7fb52f3ee6f3abb1e690d2aa4b587">data</span>
      <li><span class="dfn-paneled" id="63c261eb1dbb07786e4650f823bf1e1b">dead key</span>
      <li><span class="dfn-paneled" id="1a04750240f24bd353e259d0606ef96f">key</span>
      <li><span class="dfn-paneled" id="1861c8d3eb50338c70f9bd4cf62d73fc">location</span>
@@ -2643,10 +2694,13 @@ something specific to the values defined in this document</p>
    <li>
     <a data-link-type="biblio">[UIEvents-Code]</a> defines the following terms:
     <ul>
+     <li><span class="dfn-paneled" id="c6ced23147032607debba8f8bb06289f">ime</span>
      <li><span class="dfn-paneled" id="592c2c640d119b848e57ce039ac95f2c">功能键</span>
+     <li><span class="dfn-paneled" id="88dc5e635e0c018623e7071555520f65">回车键和编辑键</span>
      <li><span class="dfn-paneled" id="984d037e70ff8d75a57589fea4a4008e">字母数字区域</span>
      <li><span class="dfn-paneled" id="b1a501e8d898512da05b98716633eee8">小键盘</span>
      <li><span class="dfn-paneled" id="0d03d1fc8bca69b3a01f4b6f7f4795cd">按键码属性值</span>
+     <li><span class="dfn-paneled" id="d7191f6c75c067140bc081b149ca2e00">数字板</span>
     </ul>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
@@ -2697,12 +2751,12 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-key-attribute-value①⑧">3. 命名 key 属性值</a>
     <li><a href="#ref-for-key-attribute-value①⑨">3.1. 特殊按键</a> <a href="#ref-for-key-attribute-value②⓪">(2)</a> <a href="#ref-for-key-attribute-value②①">(3)</a>
     <li><a href="#ref-for-key-attribute-value②②">3.2. 修饰键</a> <a href="#ref-for-key-attribute-value②③">(2)</a>
-    <li><a href="#ref-for-key-attribute-value②④">3.3. Whitespace Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑤">3.4. Navigation Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑥">3.5. Editing Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑦">3.6. UI Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑧">3.7. Device Keys</a>
-    <li><a href="#ref-for-key-attribute-value②⑨">3.8. IME and Composition Keys</a> <a href="#ref-for-key-attribute-value③⓪">(2)</a> <a href="#ref-for-key-attribute-value③①">(3)</a>
+    <li><a href="#ref-for-key-attribute-value②④">3.3. 空格键</a>
+    <li><a href="#ref-for-key-attribute-value②⑤">3.4. 导航按键</a>
+    <li><a href="#ref-for-key-attribute-value②⑥">3.5. 编辑键</a>
+    <li><a href="#ref-for-key-attribute-value②⑦">3.6. UI(用户界面)按键</a>
+    <li><a href="#ref-for-key-attribute-value②⑧">3.7. 设备(Device)按键</a>
+    <li><a href="#ref-for-key-attribute-value②⑨">3.8. 输入法和组合(IME and Composition)键</a> <a href="#ref-for-key-attribute-value③⓪">(2)</a> <a href="#ref-for-key-attribute-value③①">(3)</a>
     <li><a href="#ref-for-key-attribute-value③②">3.9. General-Purpose Function Keys</a>
     <li><a href="#ref-for-key-attribute-value③③">3.10. Multimedia Keys</a>
     <li><a href="#ref-for-key-attribute-value③④">3.11. Multimedia Numpad Keys</a>
