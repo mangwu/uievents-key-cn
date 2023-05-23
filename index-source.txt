@@ -935,55 +935,69 @@ path: stylesheet-extra.include
 									(APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE)
 		END_KEY_TABLE
 
-	<h3 id="keys-apps">Application Keys</h3>
+	<h3 id="keys-apps">应用程序键</h3>
 
-		The Application Keys are special keys that are assigned to launch a particular application.
-		Additional application key names can be defined by concatenating "Launch" with the name
-		of the application.
+		应用程序按键(Application Keys)是用于启动特定应用程序的特殊按键。
+		通过将"启动(Launch)"与应用程序的名称连接起来，
+		可以定义附加的应用程序按键名称。
 
 		BEGIN_KEY_TABLE apps
-			KEY_OPT LaunchApplication1	The first generic "LaunchApplication" key. This is commonly associated with launching "My Computer", and may have a computer symbol on the key. (APPCOMMAND_LAUNCH_APP1)
-			KEY_OPT LaunchApplication2	The second generic "LaunchApplication" key. This is commonly associated with launching "Calculator", and may have a calculator symbol on the key. (APPCOMMAND_LAUNCH_APP2, KEYCODE_CALCULATOR)
-			KEY_OPT LaunchCalendar		("Calendar")键。 (KEYCODE_CALENDAR)
-			KEY_OPT LaunchContacts		("Contacts")键。 (KEYCODE_CONTACTS)
-			KEY_OPT LaunchMail			("Mail")键。 (APPCOMMAND_LAUNCH_MAIL)
-			KEY_OPT LaunchMediaPlayer	("Media Player")键。 (APPCOMMAND_LAUNCH_MEDIA_SELECT)
-			KEY_OPT LaunchMusicPlayer	("Music Player")键。
-			KEY_OPT LaunchPhone			("Phone")键。
-			KEY_OPT LaunchScreenSaver	("Screen Saver")键。
-			KEY_OPT LaunchSpreadsheet	("Spreadsheet")键。
-			KEY_OPT LaunchWebBrowser	("Web Browser")键。
-			KEY_OPT LaunchWebCam		("WebCam")键。
-			KEY_OPT LaunchWordProcessor	("Word Processor")键。
+			KEY_OPT LaunchApplication1	第一个通用的"LaunchApplication"键。
+								该按键通常与启动"我的电脑(My Computer)"有关，
+								并且可能在键帽上有一个电脑符号。(APPCOMMAND_LAUNCH_APP1)
+			KEY_OPT LaunchApplication2	第二个通用的"LaunchApplication"键。
+								该按键通常与启动"计算器(LaunchApplication)"有关，
+								并且可能在键帽上有一个计算器符号。
+								(APPCOMMAND_LAUNCH_APP2, KEYCODE_CALCULATOR)
+			KEY_OPT LaunchCalendar			日历("Calendar")键。 (KEYCODE_CALENDAR)
+			KEY_OPT LaunchContacts			联系人("Contacts")键。 (KEYCODE_CONTACTS)
+			KEY_OPT LaunchMail					邮箱("Mail")键。 (APPCOMMAND_LAUNCH_MAIL)
+			KEY_OPT LaunchMediaPlayer		媒体播放器("Media Player")键。 
+								(APPCOMMAND_LAUNCH_MEDIA_SELECT)
+			KEY_OPT LaunchMusicPlayer		音乐播放器("Music Player")键。
+			KEY_OPT LaunchPhone					电话("Phone")键。
+			KEY_OPT LaunchScreenSaver		屏幕保护程序("Screen Saver")键。
+			KEY_OPT LaunchSpreadsheet		电子表格("Spreadsheet")键。
+			KEY_OPT LaunchWebBrowser		Web 浏览器("Web Browser")键。
+			KEY_OPT LaunchWebCam				网络摄像头("WebCam")键。
+			KEY_OPT LaunchWordProcessor	文字处理器("Word Processor")键。
 		END_KEY_TABLE
 
-	<h3 id="keys-browser">Browser Keys</h3>
+	<h3 id="keys-browser">浏览器键</h3>
 
 		BEGIN_KEY_TABLE browser
-			KEY_OPT BrowserBack			Navigate to previous content or page in current history. (APPCOMMAND_BROWSER_BACKWARD)
-			KEY_OPT BrowserFavorites	Open the list of browser favorites. (APPCOMMAND_BROWSER_FAVORITES)
-			KEY_OPT BrowserForward		Navigate to next content or page in current history. (APPCOMMAND_BROWSER_FORWARD)
-			KEY_OPT BrowserHome			Go to the user's preferred home page. (APPCOMMAND_BROWSER_HOME)
-			KEY_OPT BrowserRefresh		Refresh the current page or content. (APPCOMMAND_BROWSER_REFRESH)
-			KEY_OPT BrowserSearch		Call up the user's preferred search page. (APPCOMMAND_BROWSER_SEARCH)
-			KEY_OPT BrowserStop			Stop loading the current page or content. (APPCOMMAND_BROWSER_STOP)
+			KEY_OPT BrowserBack				导航到当前历史记录中的上一个内容或页面。
+								(APPCOMMAND_BROWSER_BACKWARD)
+			KEY_OPT BrowserFavorites	打开浏览器收藏夹列表。 
+								(APPCOMMAND_BROWSER_FAVORITES)
+			KEY_OPT BrowserForward		导航到当前历史记录中的下一个内容或页面。
+								(APPCOMMAND_BROWSER_FORWARD)
+			KEY_OPT BrowserHome				跳转到用户的首选(自定义)主页。
+								(APPCOMMAND_BROWSER_HOME)
+			KEY_OPT BrowserRefresh		刷新当前页面或内容。(APPCOMMAND_BROWSER_REFRESH)
+			KEY_OPT BrowserSearch			调出用户的首选搜索页面。
+								(APPCOMMAND_BROWSER_SEARCH)
+			KEY_OPT BrowserStop				停止加载当前页面或内容。
+								(APPCOMMAND_BROWSER_STOP)
 		END_KEY_TABLE
 
-	<h3 id="keys-mobile">Mobile Phone Keys</h3>
+	<h3 id="keys-mobile">移动电话按键</h3>
 
 		BEGIN_KEY_TABLE mobile-phone
-			KEY_OPT AppSwitch		Application switch 键，which provides a list of recent apps to switch between. (KEYCODE_APP_SWITCH)
-			KEY_OPT Call			(Call)键。 (KEYCODE_CALL)
-			KEY_OPT Camera			(Camera)键。 (KEYCODE_CAMERA)
-			KEY_OPT CameraFocus		(Camera focus)键。 (KEYCODE_FOCUS)
-			KEY_OPT EndCall			(End Call)键。 (KEYCODE_ENDCALL)
-			KEY_OPT GoBack			(Back)键。 (KEYCODE_BACK)
-			KEY_OPT GoHome			Home 键，which goes to the phone's main screen. (KEYCODE_HOME)
-			KEY_OPT HeadsetHook		(Headset Hook)键。 (KEYCODE_HEADSETHOOK)
-			KEY_OPT LastNumberRedial	(Last Number Redial)键。
-			KEY_OPT Notification	(Notification)键。 (KEYCODE_NOTIFICATION)
-			KEY_OPT MannerMode		Toggle between manner mode state: silent, vibrate, ring, ... (KEYCODE_MANNER_MODE)
-			KEY_OPT VoiceDial		(Voice Dial)键。
+			KEY_OPT AppSwitch		应用程序转换(Application switch)键，
+								它提供了一个可在其中切换最近应用程序的列表。(KEYCODE_APP_SWITCH)
+			KEY_OPT Call				呼叫(Call)键。 (KEYCODE_CALL)
+			KEY_OPT Camera			相机(Camera)键。 (KEYCODE_CAMERA)
+			KEY_OPT CameraFocus	摄像头焦点(Camera focus)键。 (KEYCODE_FOCUS)
+			KEY_OPT EndCall			结束通话(End Call)键。 (KEYCODE_ENDCALL)
+			KEY_OPT GoBack			返回(Back)键。 (KEYCODE_BACK)
+			KEY_OPT GoHome			Home 键，用于进入手机的主屏幕. (KEYCODE_HOME)
+			KEY_OPT HeadsetHook		耳机挂钩(Headset Hook)键。 (KEYCODE_HEADSETHOOK)
+			KEY_OPT LastNumberRedial	重拨(Last Number Redial)键。
+			KEY_OPT Notification	通知(Notification)键。 (KEYCODE_NOTIFICATION)
+			KEY_OPT MannerMode		切换(铃声的)模式状态: 静音、振动、响铃...
+								(KEYCODE_MANNER_MODE)
+			KEY_OPT VoiceDial		语音拨号(Voice Dial)键。
 		END_KEY_TABLE
 
 	<h3 id="keys-tv">TV Keys</h3>
