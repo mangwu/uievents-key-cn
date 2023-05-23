@@ -7,7 +7,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-UD" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
   <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
-  <meta content="2546e688490c38d196554b6586cbb72f89e55724" name="document-revision">
+  <meta content="aa43ebb580928e84dd9d56c31919114afa909c37" name="document-revision">
   <link href="./override.css" rel="stylesheet">
 <style>
 
@@ -707,9 +707,9 @@ dfn > a.self-link::before      { content: "#"; }
       <li><a href="#keys-multimedia-numpad"><span class="secno">3.11</span> <span class="content">多媒体数字键盘键</span></a>
       <li><a href="#keys-audio"><span class="secno">3.12</span> <span class="content">音频键</span></a>
       <li><a href="#keys-speech"><span class="secno">3.13</span> <span class="content">语音键</span></a>
-      <li><a href="#keys-apps"><span class="secno">3.14</span> <span class="content">Application Keys</span></a>
-      <li><a href="#keys-browser"><span class="secno">3.15</span> <span class="content">Browser Keys</span></a>
-      <li><a href="#keys-mobile"><span class="secno">3.16</span> <span class="content">Mobile Phone Keys</span></a>
+      <li><a href="#keys-apps"><span class="secno">3.14</span> <span class="content">应用程序键</span></a>
+      <li><a href="#keys-browser"><span class="secno">3.15</span> <span class="content">浏览器键</span></a>
+      <li><a href="#keys-mobile"><span class="secno">3.16</span> <span class="content">移动电话按键</span></a>
       <li><a href="#keys-tv"><span class="secno">3.17</span> <span class="content">TV Keys</span></a>
       <li><a href="#keys-media-controller"><span class="secno">3.18</span> <span class="content">Media Controller Keys</span></a>
      </ol>
@@ -1724,10 +1724,10 @@ dfn > a.self-link::before      { content: "#"; }
       <td>在听写模式(dictation mode)和命令/控制模式									(command/control mode)之间切换。
 									(<code class="appcommand">APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE</code>) 
    </table>
-   <h3 class="heading settled" data-level="3.14" id="keys-apps"><span class="secno">3.14. </span><span class="content">Application Keys</span><a class="self-link" href="#keys-apps"></a></h3>
-   <p>The Application Keys are special keys that are assigned to launch a particular application.
-		Additional application key names can be defined by concatenating "Launch" with the name
-		of the application.</p>
+   <h3 class="heading settled" data-level="3.14" id="keys-apps"><span class="secno">3.14. </span><span class="content">应用程序键</span><a class="self-link" href="#keys-apps"></a></h3>
+   <p>应用程序按键(Application Keys)是用于启动特定应用程序的特殊按键。
+		通过将"启动(Launch)"与应用程序的名称连接起来，
+		可以定义附加的应用程序按键名称。</p>
    <table class="data-table full-width" id="key-table-apps">
     <thead>
      <tr>
@@ -1738,57 +1738,60 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchApplication1">"LaunchApplication1"</code>
       <td class="key-table-required">否
-      <td>The first generic "LaunchApplication" key. This is commonly associated with launching "My Computer", and may have a computer symbol on the key. (<code class="appcommand">APPCOMMAND_LAUNCH_APP1</code>)
+      <td>第一个通用的"LaunchApplication"键。								该按键通常与启动"我的电脑(My Computer)"有关，
+								并且可能在键帽上有一个电脑符号。(<code class="appcommand">APPCOMMAND_LAUNCH_APP1</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchApplication2">"LaunchApplication2"</code>
       <td class="key-table-required">否
-      <td>The second generic "LaunchApplication" key. This is commonly associated with launching "Calculator", and may have a calculator symbol on the key. (<code class="appcommand"><code class="appcommand">APPCOMMAND_LAUNCH_APP2</code></code>, <code class="android"><code class="android">KEYCODE_CALCULATOR</code></code>)
+      <td>第二个通用的"LaunchApplication"键。								该按键通常与启动"计算器(LaunchApplication)"有关，
+								并且可能在键帽上有一个计算器符号。
+								(<code class="appcommand"><code class="appcommand">APPCOMMAND_LAUNCH_APP2</code></code>, <code class="android"><code class="android">KEYCODE_CALCULATOR</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchCalendar">"LaunchCalendar"</code>
       <td class="key-table-required">否
-      <td>("Calendar")键。 (<code class="android">KEYCODE_CALENDAR</code>)
+      <td>日历("Calendar")键。 (<code class="android">KEYCODE_CALENDAR</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchContacts">"LaunchContacts"</code>
       <td class="key-table-required">否
-      <td>("Contacts")键。 (<code class="android">KEYCODE_CONTACTS</code>)
+      <td>联系人("Contacts")键。 (<code class="android">KEYCODE_CONTACTS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchMail">"LaunchMail"</code>
       <td class="key-table-required">否
-      <td>("Mail")键。 (<code class="appcommand">APPCOMMAND_LAUNCH_MAIL</code>)
+      <td>邮箱("Mail")键。 (<code class="appcommand">APPCOMMAND_LAUNCH_MAIL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchMediaPlayer">"LaunchMediaPlayer"</code>
       <td class="key-table-required">否
-      <td>("Media Player")键。 (<code class="appcommand">APPCOMMAND_LAUNCH_MEDIA_SELECT</code>)
+      <td>媒体播放器("Media Player")键。 								(<code class="appcommand">APPCOMMAND_LAUNCH_MEDIA_SELECT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchMusicPlayer">"LaunchMusicPlayer"</code>
       <td class="key-table-required">否
-      <td>("Music Player")键。
+      <td>音乐播放器("Music Player")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchPhone">"LaunchPhone"</code>
       <td class="key-table-required">否
-      <td>("Phone")键。
+      <td>电话("Phone")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchScreenSaver">"LaunchScreenSaver"</code>
       <td class="key-table-required">否
-      <td>("Screen Saver")键。
+      <td>屏幕保护程序("Screen Saver")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchSpreadsheet">"LaunchSpreadsheet"</code>
       <td class="key-table-required">否
-      <td>("Spreadsheet")键。
+      <td>电子表格("Spreadsheet")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchWebBrowser">"LaunchWebBrowser"</code>
       <td class="key-table-required">否
-      <td>("Web Browser")键。
+      <td>Web 浏览器("Web Browser")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchWebCam">"LaunchWebCam"</code>
       <td class="key-table-required">否
-      <td>("WebCam")键。
+      <td>网络摄像头("WebCam")键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-LaunchWordProcessor">"LaunchWordProcessor"</code>
       <td class="key-table-required">否
-      <td>("Word Processor")键。
+      <td>文字处理器("Word Processor")键。
    </table>
-   <h3 class="heading settled" data-level="3.15" id="keys-browser"><span class="secno">3.15. </span><span class="content">Browser Keys</span><a class="self-link" href="#keys-browser"></a></h3>
+   <h3 class="heading settled" data-level="3.15" id="keys-browser"><span class="secno">3.15. </span><span class="content">浏览器键</span><a class="self-link" href="#keys-browser"></a></h3>
    <table class="data-table full-width" id="key-table-browser">
     <thead>
      <tr>
@@ -1799,33 +1802,33 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserBack">"BrowserBack"</code>
       <td class="key-table-required">否
-      <td>Navigate to previous content or page in current history. (<code class="appcommand">APPCOMMAND_BROWSER_BACKWARD</code>)
+      <td>导航到当前历史记录中的上一个内容或页面。								(<code class="appcommand">APPCOMMAND_BROWSER_BACKWARD</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserFavorites">"BrowserFavorites"</code>
       <td class="key-table-required">否
-      <td>Open the list of browser favorites. (<code class="appcommand">APPCOMMAND_BROWSER_FAVORITES</code>)
+      <td>打开浏览器收藏夹列表。 								(<code class="appcommand">APPCOMMAND_BROWSER_FAVORITES</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserForward">"BrowserForward"</code>
       <td class="key-table-required">否
-      <td>Navigate to next content or page in current history. (<code class="appcommand">APPCOMMAND_BROWSER_FORWARD</code>)
+      <td>导航到当前历史记录中的下一个内容或页面。								(<code class="appcommand">APPCOMMAND_BROWSER_FORWARD</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserHome">"BrowserHome"</code>
       <td class="key-table-required">否
-      <td>Go to the user’s preferred home page. (<code class="appcommand">APPCOMMAND_BROWSER_HOME</code>)
+      <td>跳转到用户的首选(自定义)主页。								(<code class="appcommand">APPCOMMAND_BROWSER_HOME</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserRefresh">"BrowserRefresh"</code>
       <td class="key-table-required">否
-      <td>Refresh the current page or content. (<code class="appcommand">APPCOMMAND_BROWSER_REFRESH</code>)
+      <td>刷新当前页面或内容。(<code class="appcommand">APPCOMMAND_BROWSER_REFRESH</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserSearch">"BrowserSearch"</code>
       <td class="key-table-required">否
-      <td>Call up the user’s preferred search page. (<code class="appcommand">APPCOMMAND_BROWSER_SEARCH</code>)
+      <td>调出用户的首选搜索页面。								(<code class="appcommand">APPCOMMAND_BROWSER_SEARCH</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-BrowserStop">"BrowserStop"</code>
       <td class="key-table-required">否
-      <td>Stop loading the current page or content. (<code class="appcommand">APPCOMMAND_BROWSER_STOP</code>)
+      <td>停止加载当前页面或内容。								(<code class="appcommand">APPCOMMAND_BROWSER_STOP</code>) 
    </table>
-   <h3 class="heading settled" data-level="3.16" id="keys-mobile"><span class="secno">3.16. </span><span class="content">Mobile Phone Keys</span><a class="self-link" href="#keys-mobile"></a></h3>
+   <h3 class="heading settled" data-level="3.16" id="keys-mobile"><span class="secno">3.16. </span><span class="content">移动电话按键</span><a class="self-link" href="#keys-mobile"></a></h3>
    <table class="data-table full-width" id="key-table-mobile-phone">
     <thead>
      <tr>
@@ -1836,51 +1839,51 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-AppSwitch">"AppSwitch"</code>
       <td class="key-table-required">否
-      <td>Application switch 键，which provides a list of recent apps to switch between. (<code class="android">KEYCODE_APP_SWITCH</code>)
+      <td>应用程序转换(Application switch)键，								它提供了一个可在其中切换最近应用程序的列表。(<code class="android">KEYCODE_APP_SWITCH</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Call">"Call"</code>
       <td class="key-table-required">否
-      <td>(Call)键。 (<code class="android">KEYCODE_CALL</code>)
+      <td>呼叫(Call)键。 (<code class="android">KEYCODE_CALL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Camera">"Camera"</code>
       <td class="key-table-required">否
-      <td>(Camera)键。 (<code class="android">KEYCODE_CAMERA</code>)
+      <td>相机(Camera)键。 (<code class="android">KEYCODE_CAMERA</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-CameraFocus">"CameraFocus"</code>
       <td class="key-table-required">否
-      <td>(Camera focus)键。 (<code class="android">KEYCODE_FOCUS</code>)
+      <td>摄像头焦点(Camera focus)键。 (<code class="android">KEYCODE_FOCUS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-EndCall">"EndCall"</code>
       <td class="key-table-required">否
-      <td>(End Call)键。 (<code class="android">KEYCODE_ENDCALL</code>)
+      <td>结束通话(End Call)键。 (<code class="android">KEYCODE_ENDCALL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GoBack">"GoBack"</code>
       <td class="key-table-required">否
-      <td>(Back)键。 (<code class="android">KEYCODE_BACK</code>)
+      <td>返回(Back)键。 (<code class="android">KEYCODE_BACK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-GoHome">"GoHome"</code>
       <td class="key-table-required">否
-      <td>Home 键，which goes to the phone’s main screen. (<code class="android">KEYCODE_HOME</code>)
+      <td>Home 键，用于进入手机的主屏幕. (<code class="android">KEYCODE_HOME</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-HeadsetHook">"HeadsetHook"</code>
       <td class="key-table-required">否
-      <td>(Headset Hook)键。 (<code class="android">KEYCODE_HEADSETHOOK</code>)
+      <td>耳机挂钩(Headset Hook)键。 (<code class="android">KEYCODE_HEADSETHOOK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LastNumberRedial">"LastNumberRedial"</code>
       <td class="key-table-required">否
-      <td>(Last Number Redial)键。
+      <td>重拨(Last Number Redial)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Notification">"Notification"</code>
       <td class="key-table-required">否
-      <td>(Notification)键。 (<code class="android">KEYCODE_NOTIFICATION</code>)
+      <td>通知(Notification)键。 (<code class="android">KEYCODE_NOTIFICATION</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MannerMode">"MannerMode"</code>
       <td class="key-table-required">否
-      <td>Toggle between manner mode state: silent, vibrate, ring, ... (<code class="android">KEYCODE_MANNER_MODE</code>)
+      <td>切换(铃声的)模式状态: 静音、振动、响铃...								(<code class="android">KEYCODE_MANNER_MODE</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-VoiceDial">"VoiceDial"</code>
       <td class="key-table-required">否
-      <td>(Voice Dial)键。
+      <td>语音拨号(Voice Dial)键。
    </table>
    <h3 class="heading settled" data-level="3.17" id="keys-tv"><span class="secno">3.17. </span><span class="content">TV Keys</span><a class="self-link" href="#keys-tv"></a></h3>
    <table class="data-table full-width" id="key-table-tv">
@@ -2748,9 +2751,9 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-key-attribute-value③④">3.11. 多媒体数字键盘键</a>
     <li><a href="#ref-for-key-attribute-value③⑤">3.12. 音频键</a>
     <li><a href="#ref-for-key-attribute-value③⑥">3.13. 语音键</a>
-    <li><a href="#ref-for-key-attribute-value③⑦">3.14. Application Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑧">3.15. Browser Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑨">3.16. Mobile Phone Keys</a>
+    <li><a href="#ref-for-key-attribute-value③⑦">3.14. 应用程序键</a>
+    <li><a href="#ref-for-key-attribute-value③⑧">3.15. 浏览器键</a>
+    <li><a href="#ref-for-key-attribute-value③⑨">3.16. 移动电话按键</a>
     <li><a href="#ref-for-key-attribute-value④⓪">3.17. TV Keys</a>
     <li><a href="#ref-for-key-attribute-value④①">3.18. Media Controller Keys</a> <a href="#ref-for-key-attribute-value④②">(2)</a> <a href="#ref-for-key-attribute-value④③">(3)</a>
    </ul>
