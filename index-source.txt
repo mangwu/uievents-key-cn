@@ -760,139 +760,179 @@ path: stylesheet-extra.include
 			KEY_OPT SingleCandidate	单一候选功能(Single Candidate function)键。
 		END_KEY_TABLE
 
-		Keys specific to Korean keyboards:
+		韩语键盘专用键: 
 
 		BEGIN_KEY_TABLE ime-korean
-			KEY_OPT HangulMode	Hangul (Korean characters) Mode 键，to toggle between Hangul and English modes.
-			KEY_OPT HanjaMode	(Hanja (Korean characters) Mode)键。
-			KEY_OPT JunjaMode	(Junja (Korean characters) Mode)键。
+			KEY_OPT HangulMode	韩语(Hangul，Korean characters，朝鲜语字符)模式键，
+									用于在韩语和英语输入模式之间切换。
+			KEY_OPT HanjaMode	朝鲜汉字 (Korean characters) 模式键。
+			KEY_OPT JunjaMode	Junja (Korean characters) 模式键。
 		END_KEY_TABLE
 
-		Keys specific to Japanese keyboards:
+		日语键盘专用键: 
 
 		BEGIN_KEY_TABLE ime-japanese
-			KEY_OPT Eisu			(Eisu)键。 This key may close the IME, but its purpose
-									is defined by the current IME. (KEYCODE_EISU)
-			KEY_OPT Hankaku			((Half-Width) Characters)键。
-			KEY_OPT Hiragana		(Hiragana (Japanese Kana characters))键。
-			KEY_OPT HiraganaKatakana	(Hiragana/Katakana toggle)键。 (KEYCODE_KATAKANA_HIRAGANA)
-			KEY_OPT KanaMode		(Kana Mode (Kana Lock))键。 This key is used to enter
-									hiragana mode (typically from romaji mode).
-			KEY_OPT KanjiMode		(Kanji (Japanese name for ideographic characters of Chinese origin) Mode)键。
-									This key is typically used to switch to a hiragana keyboard for
-									the purpose of converting input into kanji. (KEYCODE_KANA)
-			KEY_OPT Katakana		(Katakana (Japanese Kana characters))键。
-			KEY_OPT Romaji			(Roman characters function)键。
-			KEY_OPT Zenkaku			(Zenkaku (Full-Width) Characters)键。
-			KEY_OPT ZenkakuHankaku	(Zenkaku/Hankaku (full-width/half-width) toggle)键。 (KEYCODE_ZENKAKU_HANKAKU)
+			KEY_OPT Eisu			KEYCAP{英数} (Eisu)键。 此键可以关闭输入法
+									(转为英文字母输入)，但其用途由当前输入法定义。(KEYCODE_EISU)
+			KEY_OPT Hankaku			半角字符(Hankaku，Half-Width Characters)键。
+			KEY_OPT Hiragana		平假名(Hiragana) (日语假名字符，Japanese Kana 
+									characters)键。
+			KEY_OPT HiraganaKatakana	平假名/片假名(Hiragana/Katakan)切换键。 
+									(KEYCODE_KATAKANA_HIRAGANA)
+			KEY_OPT KanaMode		假名模式(假名锁定，Kana Lock)键。 
+									此键用于进入平假名模式(通常是从罗马字模式切换来)
+			KEY_OPT KanjiMode		汉字(Kanji) (中文表意文字的日文名称)模式键。
+									此键通常用于切换到平假名键盘，
+									以便将输入转换为汉字。(KEYCODE_KANA)
+			KEY_OPT Katakana		片假名(Katakana) (日语假名字符)键。
+			KEY_OPT Romaji			罗马字符功能(Roman characters function)键。
+			KEY_OPT Zenkaku			全角字符(Zenkaku ，Full-Width Characters)键。
+			KEY_OPT ZenkakuHankaku	半/全角切换(Zenkaku/Hankaku (full-width/half-width) 
+									toggle)键。 (KEYCODE_ZENKAKU_HANKAKU)
 		END_KEY_TABLE
 
-	<h3 id="keys-function">General-Purpose Function Keys</h3>
+	<h3 id="keys-function">通用功能键</h3>
 
-		The exact number of these general purpose function keys varies on different
-		platforms, and only the first few are defined explicitly here.  Additional
-		function key names are implicitly defined by incrementing the base-10 index at
-		the end of the function key name. Thus, KEY_NOLINK{F24}
-		and KEY_NOLINK{Soft8} are all valid key values.
+		每个平台上的通用功能键(general purpose function keys)的准确数量都不相同，
+		这里只明确定义了前几个。通过在功能键名称末尾增加以10为基数的索引，
+		可以隐式地定义其他功能键名称。例如， KEY_NOLINK{F24} 和 KEY_NOLINK{Soft8} 
+		都是有效的键值。
 
 		BEGIN_KEY_TABLE function
-			KEY F1		The F1 key, a general purpose function key, as index 1.
-			KEY F2		The F2 key, a general purpose function key, as index 2.
-			KEY F3		The F3 key, a general purpose function key, as index 3.
-			KEY F4		The F4 key, a general purpose function key, as index 4.
-			KEY F5		The F5 key, a general purpose function key, as index 5.
-			KEY F6		The F6 key, a general purpose function key, as index 6.
-			KEY F7		The F7 key, a general purpose function key, as index 7.
-			KEY F8		The F8 key, a general purpose function key, as index 8.
-			KEY F9		The F9 key, a general purpose function key, as index 9.
-			KEY F10		The F10 key, a general purpose function key, as index 10.
-			KEY F11		The F11 key, a general purpose function key, as index 11.
-			KEY F12		The F12 key, a general purpose function key, as index 12.
-			KEY_OPT Soft1	General purpose virtual function key, as index 1.
-			KEY_OPT Soft2	General purpose virtual function key, as index 2.
-			KEY_OPT Soft3	General purpose virtual function key, as index 3.
-			KEY_OPT Soft4	General purpose virtual function key, as index 4.
+			KEY F1		F1 键，一个通用功能键，索引为 1
+			KEY F2		F2 键，一个通用功能键，索引为 2
+			KEY F3		F3 键，一个通用功能键，索引为 3
+			KEY F4		F4 键，一个通用功能键，索引为 4
+			KEY F5		F5 键，一个通用功能键，索引为 5
+			KEY F6		F6 键，一个通用功能键，索引为 6
+			KEY F7		F7 键，一个通用功能键，索引为 7
+			KEY F8		F8 键，一个通用功能键，索引为 8
+			KEY F9		F9 键，一个通用功能键，索引为 9
+			KEY F10		F10 键，一个通用功能键，索引为 10
+			KEY F11		F11 键，一个通用功能键，索引为 11
+			KEY F12		F12 键，一个通用功能键，索引为 12
+			KEY_OPT 	Soft1 通用虚拟功能键，索引为 1。
+			KEY_OPT 	Soft2 通用虚拟功能键，索引为 2。
+			KEY_OPT 	Soft3 通用虚拟功能键，索引为 3。
+			KEY_OPT 	Soft4 通用虚拟功能键，索引为 4。
 		END_KEY_TABLE
 
-	<h3 id="keys-multimedia">Multimedia Keys</h3>
+	<h3 id="keys-multimedia">多媒体按键</h3>
 
-		These are extra keys found on "multimedia" keyboards.
+		多媒体按键(multimedia keys)是"多媒体"键盘上的额外按键。
 
 		BEGIN_KEY_TABLE multimedia
-			KEY_OPT ChannelDown		Select next (numerically or logically) lower channel. (APPCOMMAND_MEDIA_CHANNEL_DOWN, KEYCODE_CHANNEL_DOWN)
-			KEY_OPT ChannelUp		Select next (numerically or logically) higher channel. (APPCOMMAND_MEDIA_CHANNEL_UP, KEYCODE_CHANNEL_UP)
-			KEY_OPT Close			Close the current document or message (Note: This doesn't close the application). (APPCOMMAND_CLOSE)
-			KEY_OPT MailForward		Open an editor to forward the current message. (APPCOMMAND_FORWARD_MAIL)
-			KEY_OPT MailReply		Open an editor to reply to the current message. (APPCOMMAND_REPLY_TO_MAIL)
-			KEY_OPT MailSend		Send the current message. (APPCOMMAND_SEND_MAIL)
-			KEY_OPT MediaClose		Close the current media, for example to close a CD or DVD tray. (KEYCODE_MEDIA_CLOSE)
-			KEY_OPT MediaFastForward	Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding. (APPCOMMAND_MEDIA_FAST_FORWARD, KEYCODE_MEDIA_FAST_FORWARD)
-			KEY_OPT MediaPause		Pause the currently playing media. (APPCOMMAND_MEDIA_PAUSE, KEYCODE_MEDIA_PAUSE)
-									<p class="note">Media controller devices should use this value rather than KEY{Pause} for their pause keys.</p>
-			KEY_OPT MediaPlay		Initiate or continue media playback at normal speed, if not currently playing at normal speed. (APPCOMMAND_MEDIA_PLAY, KEYCODE_MEDIA_PLAY)
-			KEY_OPT MediaPlayPause	Toggle media between play and pause states. (APPCOMMAND_MEDIA_PLAY_PAUSE, KEYCODE_MEDIA_PLAY_PAUSE)
-			KEY_OPT MediaRecord		Initiate or resume recording of currently selected media. (APPCOMMAND_MEDIA_RECORD, KEYCODE_MEDIA_RECORD)
-			KEY_OPT MediaRewind		Initiate or continue reverse playback at faster than normal speed, or increase speed if already rewinding. (APPCOMMAND_MEDIA_REWIND, KEYCODE_MEDIA_REWIND)
-			KEY_OPT MediaStop		Stop media playing, pausing, forwarding, rewinding, or recording, if not already stopped. (APPCOMMAND_MEDIA_STOP, KEYCODE_MEDIA_STOP)
-			KEY_OPT MediaTrackNext	Seek to next media or program track. (APPCOMMAND_MEDIA_NEXTTRACK, KEYCODE_MEDIA_NEXT)
-			KEY_OPT MediaTrackPrevious	Seek to previous media or program track. (APPCOMMAND_MEDIA_PREVIOUSTRACK, KEYCODE_MEDIA_PREVIOUS)
-			KEY_OPT New				Open a new document or message. (APPCOMMAND_NEW)
-			KEY_OPT Open			Open an existing document or message. (APPCOMMAND_OPEN)
-			KEY_OPT Print			Print the current document or message. (APPCOMMAND_PRINT)
-			KEY_OPT Save			Save the current document or message. (APPCOMMAND_SAVE)
-			KEY_OPT SpellCheck		Spellcheck the current document or selection. (APPCOMMAND_SPELL_CHECK)
+			KEY_OPT ChannelDown		选择下一个(数字上地或逻辑上地)较低的频道。
+									(APPCOMMAND_MEDIA_CHANNEL_DOWN, KEYCODE_CHANNEL_DOWN)
+			KEY_OPT ChannelUp			选择下一个(数字上地或逻辑上地)较高的频道。 
+									(APPCOMMAND_MEDIA_CHANNEL_UP, KEYCODE_CHANNEL_UP)
+			KEY_OPT Close					关闭当前文档或邮件(message，下面翻译都用"邮件")
+									(注意: 这不会关闭应用程序)。(APPCOMMAND_CLOSE)
+			KEY_OPT MailForward		打开编辑器以转发当前邮件。(APPCOMMAND_FORWARD_MAIL)
+			KEY_OPT MailReply		打开编辑器以回复当前邮件。(APPCOMMAND_REPLY_TO_MAIL)
+			KEY_OPT MailSend		发送当前邮件。(APPCOMMAND_SEND_MAIL)
+			KEY_OPT MediaClose		关闭当前媒体，例如关闭 CD 或 DVD 托盘。
+									(KEYCODE_MEDIA_CLOSE)
+			KEY_OPT MediaFastForward	以比正常速度更快的速度启动或继续向前播放媒体，
+									如果已经快进，则增加播放速度。
+									(APPCOMMAND_MEDIA_FAST_FORWARD, KEYCODE_MEDIA_FAST_FORWARD)
+			KEY_OPT MediaPause				暂停当前播放的媒体。
+									(APPCOMMAND_MEDIA_PAUSE, KEYCODE_MEDIA_PAUSE)
+									<p class="note">媒体控制器设备的暂停键应使用此值，而不是 
+									KEY{Pause}。</p>
+			KEY_OPT MediaPlay					如果当前未以正常速度播放，
+									则以正常速度启动或继续播放媒体。
+									(APPCOMMAND_MEDIA_PLAY, KEYCODE_MEDIA_PLAY)
+			KEY_OPT MediaPlayPause		在媒体的播放和暂停状态之间切换。
+									(APPCOMMAND_MEDIA_PLAY_PAUSE, KEYCODE_MEDIA_PLAY_PAUSE)
+			KEY_OPT MediaRecord				启动或恢复当前所选媒体的录制。
+									(APPCOMMAND_MEDIA_RECORD, KEYCODE_MEDIA_RECORD)
+			KEY_OPT MediaRewind				以比正常速度更快的速度启动或继续回退(reverse)
+									播放媒体，如果已经回退，则提高回退速度。
+									(APPCOMMAND_MEDIA_REWIND, KEYCODE_MEDIA_REWIND)
+			KEY_OPT MediaStop					停止播放、暂停、快进、回退或录制媒体
+									(如果尚未停止)。(APPCOMMAND_MEDIA_STOP, KEYCODE_MEDIA_STOP)
+			KEY_OPT MediaTrackNext		查找下一个媒体或节目(program track)。
+									(APPCOMMAND_MEDIA_NEXTTRACK, KEYCODE_MEDIA_NEXT)
+			KEY_OPT MediaTrackPrevious	查找上一个媒体或节目(program track)。
+									(APPCOMMAND_MEDIA_PREVIOUSTRACK, KEYCODE_MEDIA_PREVIOUS)
+			KEY_OPT New				打开新文档或邮件。(APPCOMMAND_NEW)
+			KEY_OPT Open			打开现有文档或邮件。(APPCOMMAND_OPEN)
+			KEY_OPT Print			打印当前文档或邮件。(APPCOMMAND_PRINT)
+			KEY_OPT Save			保存当前文档或邮件。(APPCOMMAND_SAVE)
+			KEY_OPT SpellCheck		拼写检查当前文档或所选内容。(APPCOMMAND_SPELL_CHECK)
 		END_KEY_TABLE
 
-	<h3 id="keys-multimedia-numpad">Multimedia Numpad Keys</h3>
+	<h3 id="keys-multimedia-numpad">多媒体数字键盘键</h3>
 
-		The normal KEYCAP{0} ... KEYCAP{9} numpad keys
-		are encoded as KEY_NOLINK{0} ... KEY_NOLINK{9}, but some
-		multimedia keypads have buttons numbered from KEYCAP{1} ... KEYCAP{12}.
-		In these instances, the KEYCAP{10} key is often labeled KEYCAP{10 /0}.
+		正常的 KEYCAP{0} ... KEYCAP{9} 数字键盘键被编码为 KEY_NOLINK{0} ... 
+		KEY_NOLINK{9} ，但有些多媒体键盘的按键(buttons)以 KEYCAP{1} ... KEYCAP{12} 
+		形式编号。在这些情况下， KEYCAP{10} 键的键帽通常为 KEYCAP{10 /0} 。
 
 		<p class="note">
-		Note: If supported, the KEYCAP{10} or KEYCAP{10 /0} key MUST be assigned a
-		{{KeyboardEvent/key}} value of KEY_NOLINK{0}.
+		注意: 如果设备支持，则键帽标签为 KEYCAP{10} 或 KEYCAP{10 /0} 的键 
+		<span class="zh-upper">必须</span>  分配一个 KEY_NOLINK{0} 的 
+		{{KeyboardEvent/key}} 值。
 		</p>
 
 		BEGIN_KEY_TABLE multimedia-numpad
-			KEY_OPT Key11	The KEYCAP{11} key found on media numpads that
-							have buttons from KEYCAP{1} ... KEYCAP{12}.
-			KEY_OPT Key12	The KEYCAP{12} key found on media numpads that
-							have buttons from KEYCAP{1} ... KEYCAP{12}.
+			KEY_OPT Key11	出现在媒体数字键盘上的 KEYCAP{11} 键，数字键盘上海包含有 
+							KEYCAP{1} ... KEYCAP{12} 按键(buttons)。
+			KEY_OPT 			出现在媒体数字键盘上的 KEYCAP{12} 键，数字键盘上海包含有 
+							KEYCAP{1} ... KEYCAP{12} 按键(buttons)。
 		END_KEY_TABLE
 
-	<h3 id="keys-audio">Audio Keys</h3>
+	<h3 id="keys-audio">音频键</h3>
 
-		Multimedia keys related to audio.
+		与音频相关的多媒体键。
 
 		BEGIN_KEY_TABLE audio
-			KEY_OPT AudioBalanceLeft		Adjust audio balance leftward. (VK_AUDIO_BALANCE_LEFT)
-			KEY_OPT AudioBalanceRight		Adjust audio balance rightward. (VK_AUDIO_BALANCE_RIGHT)
-			KEY_OPT AudioBassBoostDown		Decrease audio bass boost or cycle down through bass boost states. (APPCOMMAND_BASS_DOWN, VK_BASS_BOOST_DOWN)
-			KEY_OPT AudioBassBoostToggle	Toggle bass boost on/off. (APPCOMMAND_BASS_BOOST)
-			KEY_OPT AudioBassBoostUp		Increase audio bass boost or cycle up through bass boost states. (APPCOMMAND_BASS_UP, VK_BASS_BOOST_UP)
-			KEY_OPT AudioFaderFront			Adjust audio fader towards front. (VK_FADER_FRONT)
-			KEY_OPT AudioFaderRear			Adjust audio fader towards rear. (VK_FADER_REAR)
-			KEY_OPT AudioSurroundModeNext	Advance surround audio mode to next available mode. (VK_SURROUND_MODE_NEXT)
-			KEY_OPT AudioTrebleDown			Decrease treble. (APPCOMMAND_TREBLE_DOWN)
-			KEY_OPT AudioTrebleUp			Increase treble. (APPCOMMAND_TREBLE_UP)
-			KEY_OPT AudioVolumeDown			Decrease audio volume. (APPCOMMAND_VOLUME_DOWN, KEYCODE_VOLUME_DOWN)
-			KEY_OPT AudioVolumeUp			Increase audio volume. (APPCOMMAND_VOLUME_UP, KEYCODE_VOLUME_UP)
-			KEY_OPT AudioVolumeMute			Toggle between muted state and prior volume level. (APPCOMMAND_VOLUME_MUTE, KEYCODE_VOLUME_MUTE)
-			KEY_OPT MicrophoneToggle		Toggle the microphone on/off. (APPCOMMAND_MIC_ON_OFF_TOGGLE)
-			KEY_OPT MicrophoneVolumeDown	Decrease microphone volume. (APPCOMMAND_MICROPHONE_VOLUME_DOWN)
-			KEY_OPT MicrophoneVolumeUp		Increase microphone volume. (APPCOMMAND_MICROPHONE_VOLUME_UP)
-			KEY_OPT MicrophoneVolumeMute	Mute the microphone. (APPCOMMAND_MICROPHONE_VOLUME_MUTE, KEYCODE_MUTE)
+			KEY_OPT AudioBalanceLeft			向左调整音量平衡(audio balance)。
+									(VK_AUDIO_BALANCE_LEFT)
+			KEY_OPT AudioBalanceRight			向右调整音量平衡(audio balance)。 
+									(VK_AUDIO_BALANCE_RIGHT)
+			KEY_OPT AudioBassBoostDown		降低音频的低音增强(bass boost)
+									效果或在低音增强状态之间循环下降(cycle down)。
+									(APPCOMMAND_BASS_DOWN, VK_BASS_BOOST_DOWN)
+			KEY_OPT AudioBassBoostToggle	打开/关闭低音增强(bass boost)。 
+									(APPCOMMAND_BASS_BOOST)
+			KEY_OPT AudioBassBoostUp			增加音频的低音增强(bass boost)
+									效果或在低音增强状态之间循环上升(cycle up)。 
+									(APPCOMMAND_BASS_UP, VK_BASS_BOOST_UP)
+			KEY_OPT AudioFaderFront				向前调整音频音量控制器(audio fader)。
+									(VK_FADER_FRONT)
+			KEY_OPT AudioFaderRear				向后调整音频音量控制器(audio fader)。
+									(VK_FADER_REAR)
+			KEY_OPT AudioSurroundModeNext	将环绕立体声模式升级成下一个
+									(如果存在更高级的模式的话)。(VK_SURROUND_MODE_NEXT)
+			KEY_OPT AudioTrebleDown				降低高音(treble)。 (APPCOMMAND_TREBLE_DOWN)
+			KEY_OPT AudioTrebleUp			增加高音(treble)。 (APPCOMMAND_TREBLE_UP)
+			KEY_OPT AudioVolumeDown				降低音频音量(audio volume)。
+									(APPCOMMAND_VOLUME_DOWN, KEYCODE_VOLUME_DOWN)
+			KEY_OPT AudioVolumeUp					增加音频音量(audio volume)。
+									(APPCOMMAND_VOLUME_UP, KEYCODE_VOLUME_UP)
+			KEY_OPT AudioVolumeMute				在静音状态和先前音量水平(prior volume level)
+									之间进行切换。(APPCOMMAND_VOLUME_MUTE, KEYCODE_VOLUME_MUTE)
+			KEY_OPT MicrophoneToggle			打开/关闭麦克风。
+									(APPCOMMAND_MIC_ON_OFF_TOGGLE)
+			KEY_OPT MicrophoneVolumeDown	降低麦克风音量。
+									(APPCOMMAND_MICROPHONE_VOLUME_DOWN)
+			KEY_OPT MicrophoneVolumeUp		升高麦克风音量。
+									(APPCOMMAND_MICROPHONE_VOLUME_UP)
+			KEY_OPT MicrophoneVolumeMute	将麦克风静音。
+									(APPCOMMAND_MICROPHONE_VOLUME_MUTE, KEYCODE_MUTE)
 		END_KEY_TABLE
 
-	<h3 id="keys-speech">Speech Keys</h3>
+	<h3 id="keys-speech">语音键</h3>
 
-		Multimedia keys related to speech recognition.
+		与语音识别(speech recognition)相关的多媒体按键。
 
 		BEGIN_KEY_TABLE speech
-			KEY_OPT SpeechCorrectionList	Show correction list when a word is incorrectly identified. (APPCOMMAND_CORRECTION_LIST)
-			KEY_OPT SpeechInputToggle		Toggle between dictation mode and command/control mode. (APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE)
+			KEY_OPT SpeechCorrectionList	当单词被错误识别时，显示更正列表。
+									(APPCOMMAND_CORRECTION_LIST)
+			KEY_OPT SpeechInputToggle			在听写模式(dictation mode)和命令/控制模式
+									(command/control mode)之间切换。
+									(APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE)
 		END_KEY_TABLE
 
 	<h3 id="keys-apps">Application Keys</h3>

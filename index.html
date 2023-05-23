@@ -7,7 +7,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-UD" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
   <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
-  <meta content="9d82a38a9b66168fab1797c4dca61c43398a206d" name="document-revision">
+  <meta content="2546e688490c38d196554b6586cbb72f89e55724" name="document-revision">
   <link href="./override.css" rel="stylesheet">
 <style>
 
@@ -611,7 +611,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">用户界面事件键盘事件 key 属性值(UI Events KeyboardEvent key Values)</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#UD">翻译草案</a>, <time class="dt-updated" datetime="2023-05-23">2023年5月22日</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#UD">翻译草案</a>, <time class="dt-updated" datetime="2023-05-24">2023年5月22日</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
@@ -702,11 +702,11 @@ dfn > a.self-link::before      { content: "#"; }
       <li><a href="#keys-ui"><span class="secno">3.6</span> <span class="content">UI(用户界面)按键</span></a>
       <li><a href="#keys-device"><span class="secno">3.7</span> <span class="content">设备(Device)按键</span></a>
       <li><a href="#keys-composition"><span class="secno">3.8</span> <span class="content">输入法和组合(IME and Composition)键</span></a>
-      <li><a href="#keys-function"><span class="secno">3.9</span> <span class="content">General-Purpose Function Keys</span></a>
-      <li><a href="#keys-multimedia"><span class="secno">3.10</span> <span class="content">Multimedia Keys</span></a>
-      <li><a href="#keys-multimedia-numpad"><span class="secno">3.11</span> <span class="content">Multimedia Numpad Keys</span></a>
-      <li><a href="#keys-audio"><span class="secno">3.12</span> <span class="content">Audio Keys</span></a>
-      <li><a href="#keys-speech"><span class="secno">3.13</span> <span class="content">Speech Keys</span></a>
+      <li><a href="#keys-function"><span class="secno">3.9</span> <span class="content">通用功能键</span></a>
+      <li><a href="#keys-multimedia"><span class="secno">3.10</span> <span class="content">多媒体按键</span></a>
+      <li><a href="#keys-multimedia-numpad"><span class="secno">3.11</span> <span class="content">多媒体数字键盘键</span></a>
+      <li><a href="#keys-audio"><span class="secno">3.12</span> <span class="content">音频键</span></a>
+      <li><a href="#keys-speech"><span class="secno">3.13</span> <span class="content">语音键</span></a>
       <li><a href="#keys-apps"><span class="secno">3.14</span> <span class="content">Application Keys</span></a>
       <li><a href="#keys-browser"><span class="secno">3.15</span> <span class="content">Browser Keys</span></a>
       <li><a href="#keys-mobile"><span class="secno">3.16</span> <span class="content">Mobile Phone Keys</span></a>
@@ -1376,7 +1376,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="key-table-required">否
       <td>单一候选功能(Single Candidate function)键。
    </table>
-   <p>Keys specific to Korean keyboards:</p>
+   <p>韩语键盘专用键:</p>
    <table class="data-table full-width" id="key-table-ime-korean">
     <thead>
      <tr>
@@ -1387,17 +1387,17 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-HangulMode">"HangulMode"</code>
       <td class="key-table-required">否
-      <td>Hangul (Korean characters) Mode 键，to toggle between Hangul and English modes.
+      <td>韩语(Hangul，Korean characters，朝鲜语字符)模式键，									用于在韩语和英语输入模式之间切换。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-HanjaMode">"HanjaMode"</code>
       <td class="key-table-required">否
-      <td>(Hanja (Korean characters) Mode)键。
+      <td>朝鲜汉字 (Korean characters) 模式键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-JunjaMode">"JunjaMode"</code>
       <td class="key-table-required">否
-      <td>(Junja (Korean characters) Mode)键。
+      <td>Junja (Korean characters) 模式键。
    </table>
-   <p>Keys specific to Japanese keyboards:</p>
+   <p>日语键盘专用键:</p>
    <table class="data-table full-width" id="key-table-ime-japanese">
     <thead>
      <tr>
@@ -1408,50 +1408,49 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-Eisu">"Eisu"</code>
       <td class="key-table-required">否
-      <td>(Eisu)键。 This key may close the IME, but its purpose									is defined by the current IME. (<code class="android">KEYCODE_EISU</code>) 
+      <td><code class="keycap">英数</code> (Eisu)键。 此键可以关闭输入法									(转为英文字母输入)，但其用途由当前输入法定义。(<code class="android">KEYCODE_EISU</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Hankaku">"Hankaku"</code>
       <td class="key-table-required">否
-      <td>((Half-Width) Characters)键。
+      <td>半角字符(Hankaku，Half-Width Characters)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Hiragana">"Hiragana"</code>
       <td class="key-table-required">否
-      <td>(Hiragana (Japanese Kana characters))键。
+      <td>平假名(Hiragana) (日语假名字符，Japanese Kana 									characters)键。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-HiraganaKatakana">"HiraganaKatakana"</code>
       <td class="key-table-required">否
-      <td>(Hiragana/Katakana toggle)键。 (<code class="android">KEYCODE_KATAKANA_HIRAGANA</code>)
+      <td>平假名/片假名(Hiragana/Katakan)切换键。 									(<code class="android">KEYCODE_KATAKANA_HIRAGANA</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-KanaMode">"KanaMode"</code>
       <td class="key-table-required">否
-      <td>(Kana Mode (Kana Lock))键。 This key is used to enter									hiragana mode (typically from romaji mode). 
+      <td>假名模式(假名锁定，Kana Lock)键。 									此键用于进入平假名模式(通常是从罗马字模式切换来) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-KanjiMode">"KanjiMode"</code>
       <td class="key-table-required">否
-      <td>(Kanji (Japanese name for ideographic characters of Chinese origin) Mode)键。									This key is typically used to switch to a hiragana keyboard for
-									the purpose of converting input into kanji. (<code class="android">KEYCODE_KANA</code>) 
+      <td>汉字(Kanji) (中文表意文字的日文名称)模式键。									此键通常用于切换到平假名键盘，
+									以便将输入转换为汉字。(<code class="android">KEYCODE_KANA</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Katakana">"Katakana"</code>
       <td class="key-table-required">否
-      <td>(Katakana (Japanese Kana characters))键。
+      <td>片假名(Katakana) (日语假名字符)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Romaji">"Romaji"</code>
       <td class="key-table-required">否
-      <td>(Roman characters function)键。
+      <td>罗马字符功能(Roman characters function)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-Zenkaku">"Zenkaku"</code>
       <td class="key-table-required">否
-      <td>(Zenkaku (Full-Width) Characters)键。
+      <td>全角字符(Zenkaku ，Full-Width Characters)键。
      <tr>
       <td class="key-table-key"><code class="key" id="key-ZenkakuHankaku">"ZenkakuHankaku"</code>
       <td class="key-table-required">否
-      <td>(Zenkaku/Hankaku (full-width/half-width) toggle)键。 (<code class="android">KEYCODE_ZENKAKU_HANKAKU</code>)
+      <td>半/全角切换(Zenkaku/Hankaku (full-width/half-width) 									toggle)键。 (<code class="android">KEYCODE_ZENKAKU_HANKAKU</code>) 
    </table>
-   <h3 class="heading settled" data-level="3.9" id="keys-function"><span class="secno">3.9. </span><span class="content">General-Purpose Function Keys</span><a class="self-link" href="#keys-function"></a></h3>
-   <p>The exact number of these general purpose function keys varies on different
-		platforms, and only the first few are defined explicitly here.  Additional
-		function key names are implicitly defined by incrementing the base-10 index at
-		the end of the function key name. Thus, <code class="key">"F24"</code> and <code class="key">"Soft8"</code> are all valid key values.</p>
+   <h3 class="heading settled" data-level="3.9" id="keys-function"><span class="secno">3.9. </span><span class="content">通用功能键</span><a class="self-link" href="#keys-function"></a></h3>
+   <p>每个平台上的通用功能键(general purpose function keys)的准确数量都不相同，
+		这里只明确定义了前几个。通过在功能键名称末尾增加以10为基数的索引，
+		可以隐式地定义其他功能键名称。例如， <code class="key">"F24"</code> 和 <code class="key">"Soft8"</code> 都是有效的键值。</p>
    <table class="data-table full-width" id="key-table-function">
     <thead>
      <tr>
@@ -1462,70 +1461,57 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-F1">"F1"</code>
       <td class="key-table-required">是
-      <td>The F1 key, a general purpose function key, as index 1.
+      <td>F1 键，一个通用功能键，索引为 1
      <tr>
       <td class="key-table-key"><code class="key" id="key-F2">"F2"</code>
       <td class="key-table-required">是
-      <td>The F2 key, a general purpose function key, as index 2.
+      <td>F2 键，一个通用功能键，索引为 2
      <tr>
       <td class="key-table-key"><code class="key" id="key-F3">"F3"</code>
       <td class="key-table-required">是
-      <td>The F3 key, a general purpose function key, as index 3.
+      <td>F3 键，一个通用功能键，索引为 3
      <tr>
       <td class="key-table-key"><code class="key" id="key-F4">"F4"</code>
       <td class="key-table-required">是
-      <td>The F4 key, a general purpose function key, as index 4.
+      <td>F4 键，一个通用功能键，索引为 4
      <tr>
       <td class="key-table-key"><code class="key" id="key-F5">"F5"</code>
       <td class="key-table-required">是
-      <td>The F5 key, a general purpose function key, as index 5.
+      <td>F5 键，一个通用功能键，索引为 5
      <tr>
       <td class="key-table-key"><code class="key" id="key-F6">"F6"</code>
       <td class="key-table-required">是
-      <td>The F6 key, a general purpose function key, as index 6.
+      <td>F6 键，一个通用功能键，索引为 6
      <tr>
       <td class="key-table-key"><code class="key" id="key-F7">"F7"</code>
       <td class="key-table-required">是
-      <td>The F7 key, a general purpose function key, as index 7.
+      <td>F7 键，一个通用功能键，索引为 7
      <tr>
       <td class="key-table-key"><code class="key" id="key-F8">"F8"</code>
       <td class="key-table-required">是
-      <td>The F8 key, a general purpose function key, as index 8.
+      <td>F8 键，一个通用功能键，索引为 8
      <tr>
       <td class="key-table-key"><code class="key" id="key-F9">"F9"</code>
       <td class="key-table-required">是
-      <td>The F9 key, a general purpose function key, as index 9.
+      <td>F9 键，一个通用功能键，索引为 9
      <tr>
       <td class="key-table-key"><code class="key" id="key-F10">"F10"</code>
       <td class="key-table-required">是
-      <td>The F10 key, a general purpose function key, as index 10.
+      <td>F10 键，一个通用功能键，索引为 10
      <tr>
       <td class="key-table-key"><code class="key" id="key-F11">"F11"</code>
       <td class="key-table-required">是
-      <td>The F11 key, a general purpose function key, as index 11.
+      <td>F11 键，一个通用功能键，索引为 11
      <tr>
       <td class="key-table-key"><code class="key" id="key-F12">"F12"</code>
       <td class="key-table-required">是
-      <td>The F12 key, a general purpose function key, as index 12.
-     <tr>
-      <td class="key-table-key"><code class="key" id="key-Soft1">"Soft1"</code>
-      <td class="key-table-required">否
-      <td>General purpose virtual function key, as index 1.
-     <tr>
-      <td class="key-table-key"><code class="key" id="key-Soft2">"Soft2"</code>
-      <td class="key-table-required">否
-      <td>General purpose virtual function key, as index 2.
-     <tr>
-      <td class="key-table-key"><code class="key" id="key-Soft3">"Soft3"</code>
-      <td class="key-table-required">否
-      <td>General purpose virtual function key, as index 3.
-     <tr>
-      <td class="key-table-key"><code class="key" id="key-Soft4">"Soft4"</code>
-      <td class="key-table-required">否
-      <td>General purpose virtual function key, as index 4.
+      <td>F12 键，一个通用功能键，索引为 12			KEY_OPT 	Soft1 通用虚拟功能键，索引为 1。
+			KEY_OPT 	Soft2 通用虚拟功能键，索引为 2。
+			KEY_OPT 	Soft3 通用虚拟功能键，索引为 3。
+			KEY_OPT 	Soft4 通用虚拟功能键，索引为 4。 
    </table>
-   <h3 class="heading settled" data-level="3.10" id="keys-multimedia"><span class="secno">3.10. </span><span class="content">Multimedia Keys</span><a class="self-link" href="#keys-multimedia"></a></h3>
-   <p>These are extra keys found on "multimedia" keyboards.</p>
+   <h3 class="heading settled" data-level="3.10" id="keys-multimedia"><span class="secno">3.10. </span><span class="content">多媒体按键</span><a class="self-link" href="#keys-multimedia"></a></h3>
+   <p>多媒体按键(multimedia keys)是"多媒体"键盘上的额外按键。</p>
    <table class="data-table full-width" id="key-table-multimedia">
     <thead>
      <tr>
@@ -1536,96 +1522,96 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-ChannelDown">"ChannelDown"</code>
       <td class="key-table-required">否
-      <td>Select next (numerically or logically) lower channel. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_CHANNEL_DOWN</code></code>, <code class="android"><code class="android">KEYCODE_CHANNEL_DOWN</code></code>)
+      <td>选择下一个(数字上地或逻辑上地)较低的频道。									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_CHANNEL_DOWN</code></code>, <code class="android"><code class="android">KEYCODE_CHANNEL_DOWN</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ChannelUp">"ChannelUp"</code>
       <td class="key-table-required">否
-      <td>Select next (numerically or logically) higher channel. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_CHANNEL_UP</code></code>, <code class="android"><code class="android">KEYCODE_CHANNEL_UP</code></code>)
+      <td>选择下一个(数字上地或逻辑上地)较高的频道。 									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_CHANNEL_UP</code></code>, <code class="android"><code class="android">KEYCODE_CHANNEL_UP</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Close">"Close"</code>
       <td class="key-table-required">否
-      <td>Close the current document or message (Note: This doesn’t close the application). (<code class="appcommand">APPCOMMAND_CLOSE</code>)
+      <td>关闭当前文档或邮件(message，下面翻译都用"邮件")									(注意: 这不会关闭应用程序)。(<code class="appcommand">APPCOMMAND_CLOSE</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MailForward">"MailForward"</code>
       <td class="key-table-required">否
-      <td>Open an editor to forward the current message. (<code class="appcommand">APPCOMMAND_FORWARD_MAIL</code>)
+      <td>打开编辑器以转发当前邮件。(<code class="appcommand">APPCOMMAND_FORWARD_MAIL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MailReply">"MailReply"</code>
       <td class="key-table-required">否
-      <td>Open an editor to reply to the current message. (<code class="appcommand">APPCOMMAND_REPLY_TO_MAIL</code>)
+      <td>打开编辑器以回复当前邮件。(<code class="appcommand">APPCOMMAND_REPLY_TO_MAIL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MailSend">"MailSend"</code>
       <td class="key-table-required">否
-      <td>Send the current message. (<code class="appcommand">APPCOMMAND_SEND_MAIL</code>)
+      <td>发送当前邮件。(<code class="appcommand">APPCOMMAND_SEND_MAIL</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaClose">"MediaClose"</code>
       <td class="key-table-required">否
-      <td>Close the current media, for example to close a CD or DVD tray. (<code class="android">KEYCODE_MEDIA_CLOSE</code>)
+      <td>关闭当前媒体，例如关闭 CD 或 DVD 托盘。									(<code class="android">KEYCODE_MEDIA_CLOSE</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaFastForward">"MediaFastForward"</code>
       <td class="key-table-required">否
-      <td>Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_FAST_FORWARD</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_FAST_FORWARD</code></code>)
+      <td>以比正常速度更快的速度启动或继续向前播放媒体，									如果已经快进，则增加播放速度。
+									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_FAST_FORWARD</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_FAST_FORWARD</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaPause">"MediaPause"</code>
       <td class="key-table-required">否
       <td>
-       Pause the currently playing media. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PAUSE</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PAUSE</code></code>) 
-       <p class="note" role="note">Media controller devices should use this value rather than <code class="key">"<a href="#key-Pause">Pause</a>"</code> for their pause keys.</p>
+       暂停当前播放的媒体。									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PAUSE</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PAUSE</code></code>) 
+       <p class="note" role="note">媒体控制器设备的暂停键应使用此值，而不是 <code class="key">"<a href="#key-Pause">Pause</a>"</code>。</p>
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaPlay">"MediaPlay"</code>
       <td class="key-table-required">否
-      <td>Initiate or continue media playback at normal speed, if not currently playing at normal speed. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PLAY</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PLAY</code></code>)
+      <td>如果当前未以正常速度播放，									则以正常速度启动或继续播放媒体。
+									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PLAY</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PLAY</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaPlayPause">"MediaPlayPause"</code>
       <td class="key-table-required">否
-      <td>Toggle media between play and pause states. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PLAY_PAUSE</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PLAY_PAUSE</code></code>)
+      <td>在媒体的播放和暂停状态之间切换。									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PLAY_PAUSE</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PLAY_PAUSE</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaRecord">"MediaRecord"</code>
       <td class="key-table-required">否
-      <td>Initiate or resume recording of currently selected media. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_RECORD</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_RECORD</code></code>)
+      <td>启动或恢复当前所选媒体的录制。									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_RECORD</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_RECORD</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaRewind">"MediaRewind"</code>
       <td class="key-table-required">否
-      <td>Initiate or continue reverse playback at faster than normal speed, or increase speed if already rewinding. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_REWIND</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_REWIND</code></code>)
+      <td>以比正常速度更快的速度启动或继续回退(reverse)									播放媒体，如果已经回退，则提高回退速度。
+									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_REWIND</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_REWIND</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaStop">"MediaStop"</code>
       <td class="key-table-required">否
-      <td>Stop media playing, pausing, forwarding, rewinding, or recording, if not already stopped. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_STOP</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_STOP</code></code>)
+      <td>停止播放、暂停、快进、回退或录制媒体									(如果尚未停止)。(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_STOP</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_STOP</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaTrackNext">"MediaTrackNext"</code>
       <td class="key-table-required">否
-      <td>Seek to next media or program track. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_NEXTTRACK</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_NEXT</code></code>)
+      <td>查找下一个媒体或节目(program track)。									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_NEXTTRACK</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_NEXT</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaTrackPrevious">"MediaTrackPrevious"</code>
       <td class="key-table-required">否
-      <td>Seek to previous media or program track. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PREVIOUSTRACK</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PREVIOUS</code></code>)
+      <td>查找上一个媒体或节目(program track)。									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MEDIA_PREVIOUSTRACK</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_PREVIOUS</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-New">"New"</code>
       <td class="key-table-required">否
-      <td>Open a new document or message. (<code class="appcommand">APPCOMMAND_NEW</code>)
+      <td>打开新文档或邮件。(<code class="appcommand">APPCOMMAND_NEW</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Open">"Open"</code>
       <td class="key-table-required">否
-      <td>Open an existing document or message. (<code class="appcommand">APPCOMMAND_OPEN</code>)
+      <td>打开现有文档或邮件。(<code class="appcommand">APPCOMMAND_OPEN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Print">"Print"</code>
       <td class="key-table-required">否
-      <td>Print the current document or message. (<code class="appcommand">APPCOMMAND_PRINT</code>)
+      <td>打印当前文档或邮件。(<code class="appcommand">APPCOMMAND_PRINT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Save">"Save"</code>
       <td class="key-table-required">否
-      <td>Save the current document or message. (<code class="appcommand">APPCOMMAND_SAVE</code>)
+      <td>保存当前文档或邮件。(<code class="appcommand">APPCOMMAND_SAVE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-SpellCheck">"SpellCheck"</code>
       <td class="key-table-required">否
-      <td>Spellcheck the current document or selection. (<code class="appcommand">APPCOMMAND_SPELL_CHECK</code>)
+      <td>拼写检查当前文档或所选内容。(<code class="appcommand">APPCOMMAND_SPELL_CHECK</code>)
    </table>
-   <h3 class="heading settled" data-level="3.11" id="keys-multimedia-numpad"><span class="secno">3.11. </span><span class="content">Multimedia Numpad Keys</span><a class="self-link" href="#keys-multimedia-numpad"></a></h3>
-   <p>The normal <code class="keycap">0</code> ... <code class="keycap">9</code> numpad keys
-		are encoded as <code class="key">"0"</code> ... <code class="key">"9"</code>, but some
-		multimedia keypads have buttons numbered from <code class="keycap">1</code> ... <code class="keycap">12</code>.
-		In these instances, the <code class="keycap">10</code> key is often labeled <code class="keycap">10 /0</code>.</p>
-   <p class="note" role="note"> Note: If supported, the <code class="keycap">10</code> or <code class="keycap">10 /0</code> key MUST be assigned a <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①①">key</a></code> value of <code class="key">"0"</code>. </p>
+   <h3 class="heading settled" data-level="3.11" id="keys-multimedia-numpad"><span class="secno">3.11. </span><span class="content">多媒体数字键盘键</span><a class="self-link" href="#keys-multimedia-numpad"></a></h3>
+   <p>正常的 <code class="keycap">0</code> ... <code class="keycap">9</code> 数字键盘键被编码为 <code class="key">"0"</code> ... <code class="key">"9"</code> ，但有些多媒体键盘的按键(buttons)以 <code class="keycap">1</code> ... <code class="keycap">12</code> 形式编号。在这些情况下， <code class="keycap">10</code> 键的键帽通常为 <code class="keycap">10 /0</code> 。</p>
+   <p class="note" role="note"> 注意: 如果设备支持，则键帽标签为 <code class="keycap">10</code> 或 <code class="keycap">10 /0</code> 的键 <span class="zh-upper">必须</span> 分配一个 <code class="key">"0"</code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①①">key</a></code> 值。 </p>
    <table class="data-table full-width" id="key-table-multimedia-numpad">
     <thead>
      <tr>
@@ -1636,14 +1622,11 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-Key11">"Key11"</code>
       <td class="key-table-required">否
-      <td>The <code class="keycap">11</code> key found on media numpads that							have buttons from <code class="keycap">1</code> ... <code class="keycap">12</code>. 
-     <tr>
-      <td class="key-table-key"><code class="key" id="key-Key12">"Key12"</code>
-      <td class="key-table-required">否
-      <td>The <code class="keycap">12</code> key found on media numpads that							have buttons from <code class="keycap">1</code> ... <code class="keycap">12</code>. 
+      <td>出现在媒体数字键盘上的 <code class="keycap">11</code> 键，数字键盘上海包含有 <code class="keycap">1</code> ... <code class="keycap">12</code> 按键(buttons)。
+			KEY_OPT 			出现在媒体数字键盘上的 <code class="keycap">12</code> 键，数字键盘上海包含有 <code class="keycap">1</code> ... <code class="keycap">12</code> 按键(buttons)。 
    </table>
-   <h3 class="heading settled" data-level="3.12" id="keys-audio"><span class="secno">3.12. </span><span class="content">Audio Keys</span><a class="self-link" href="#keys-audio"></a></h3>
-   <p>Multimedia keys related to audio.</p>
+   <h3 class="heading settled" data-level="3.12" id="keys-audio"><span class="secno">3.12. </span><span class="content">音频键</span><a class="self-link" href="#keys-audio"></a></h3>
+   <p>与音频相关的多媒体键。</p>
    <table class="data-table full-width" id="key-table-audio">
     <thead>
      <tr>
@@ -1654,74 +1637,76 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioBalanceLeft">"AudioBalanceLeft"</code>
       <td class="key-table-required">否
-      <td>Adjust audio balance leftward. (<code class="vk">VK_AUDIO_BALANCE_LEFT</code>)
+      <td>向左调整音量平衡(audio balance)。									(<code class="vk">VK_AUDIO_BALANCE_LEFT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioBalanceRight">"AudioBalanceRight"</code>
       <td class="key-table-required">否
-      <td>Adjust audio balance rightward. (<code class="vk">VK_AUDIO_BALANCE_RIGHT</code>)
+      <td>向右调整音量平衡(audio balance)。 									(<code class="vk">VK_AUDIO_BALANCE_RIGHT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioBassBoostDown">"AudioBassBoostDown"</code>
       <td class="key-table-required">否
-      <td>Decrease audio bass boost or cycle down through bass boost states. (<code class="appcommand"><code class="appcommand">APPCOMMAND_BASS_DOWN</code></code>, <code class="vk"><code class="vk">VK_BASS_BOOST_DOWN</code></code>)
+      <td>降低音频的低音增强(bass boost)									效果或在低音增强状态之间循环下降(cycle down)。
+									(<code class="appcommand"><code class="appcommand">APPCOMMAND_BASS_DOWN</code></code>, <code class="vk"><code class="vk">VK_BASS_BOOST_DOWN</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioBassBoostToggle">"AudioBassBoostToggle"</code>
       <td class="key-table-required">否
-      <td>Toggle bass boost on/off. (<code class="appcommand">APPCOMMAND_BASS_BOOST</code>)
+      <td>打开/关闭低音增强(bass boost)。 									(<code class="appcommand">APPCOMMAND_BASS_BOOST</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioBassBoostUp">"AudioBassBoostUp"</code>
       <td class="key-table-required">否
-      <td>Increase audio bass boost or cycle up through bass boost states. (<code class="appcommand"><code class="appcommand">APPCOMMAND_BASS_UP</code></code>, <code class="vk"><code class="vk">VK_BASS_BOOST_UP</code></code>)
+      <td>增加音频的低音增强(bass boost)									效果或在低音增强状态之间循环上升(cycle up)。 
+									(<code class="appcommand"><code class="appcommand">APPCOMMAND_BASS_UP</code></code>, <code class="vk"><code class="vk">VK_BASS_BOOST_UP</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioFaderFront">"AudioFaderFront"</code>
       <td class="key-table-required">否
-      <td>Adjust audio fader towards front. (<code class="vk">VK_FADER_FRONT</code>)
+      <td>向前调整音频音量控制器(audio fader)。									(<code class="vk">VK_FADER_FRONT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioFaderRear">"AudioFaderRear"</code>
       <td class="key-table-required">否
-      <td>Adjust audio fader towards rear. (<code class="vk">VK_FADER_REAR</code>)
+      <td>向后调整音频音量控制器(audio fader)。									(<code class="vk">VK_FADER_REAR</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioSurroundModeNext">"AudioSurroundModeNext"</code>
       <td class="key-table-required">否
-      <td>Advance surround audio mode to next available mode. (<code class="vk">VK_SURROUND_MODE_NEXT</code>)
+      <td>将环绕立体声模式升级成下一个									(如果存在更高级的模式的话)。(<code class="vk">VK_SURROUND_MODE_NEXT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioTrebleDown">"AudioTrebleDown"</code>
       <td class="key-table-required">否
-      <td>Decrease treble. (<code class="appcommand">APPCOMMAND_TREBLE_DOWN</code>)
+      <td>降低高音(treble)。 (<code class="appcommand">APPCOMMAND_TREBLE_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioTrebleUp">"AudioTrebleUp"</code>
       <td class="key-table-required">否
-      <td>Increase treble. (<code class="appcommand">APPCOMMAND_TREBLE_UP</code>)
+      <td>增加高音(treble)。 (<code class="appcommand">APPCOMMAND_TREBLE_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioVolumeDown">"AudioVolumeDown"</code>
       <td class="key-table-required">否
-      <td>Decrease audio volume. (<code class="appcommand"><code class="appcommand">APPCOMMAND_VOLUME_DOWN</code></code>, <code class="android"><code class="android">KEYCODE_VOLUME_DOWN</code></code>)
+      <td>降低音频音量(audio volume)。									(<code class="appcommand"><code class="appcommand">APPCOMMAND_VOLUME_DOWN</code></code>, <code class="android"><code class="android">KEYCODE_VOLUME_DOWN</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioVolumeUp">"AudioVolumeUp"</code>
       <td class="key-table-required">否
-      <td>Increase audio volume. (<code class="appcommand"><code class="appcommand">APPCOMMAND_VOLUME_UP</code></code>, <code class="android"><code class="android">KEYCODE_VOLUME_UP</code></code>)
+      <td>增加音频音量(audio volume)。									(<code class="appcommand"><code class="appcommand">APPCOMMAND_VOLUME_UP</code></code>, <code class="android"><code class="android">KEYCODE_VOLUME_UP</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AudioVolumeMute">"AudioVolumeMute"</code>
       <td class="key-table-required">否
-      <td>Toggle between muted state and prior volume level. (<code class="appcommand"><code class="appcommand">APPCOMMAND_VOLUME_MUTE</code></code>, <code class="android"><code class="android">KEYCODE_VOLUME_MUTE</code></code>)
+      <td>在静音状态和先前音量水平(prior volume level)									之间进行切换。(<code class="appcommand"><code class="appcommand">APPCOMMAND_VOLUME_MUTE</code></code>, <code class="android"><code class="android">KEYCODE_VOLUME_MUTE</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MicrophoneToggle">"MicrophoneToggle"</code>
       <td class="key-table-required">否
-      <td>Toggle the microphone on/off. (<code class="appcommand">APPCOMMAND_MIC_ON_OFF_TOGGLE</code>)
+      <td>打开/关闭麦克风。									(<code class="appcommand">APPCOMMAND_MIC_ON_OFF_TOGGLE</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MicrophoneVolumeDown">"MicrophoneVolumeDown"</code>
       <td class="key-table-required">否
-      <td>Decrease microphone volume. (<code class="appcommand">APPCOMMAND_MICROPHONE_VOLUME_DOWN</code>)
+      <td>降低麦克风音量。									(<code class="appcommand">APPCOMMAND_MICROPHONE_VOLUME_DOWN</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MicrophoneVolumeUp">"MicrophoneVolumeUp"</code>
       <td class="key-table-required">否
-      <td>Increase microphone volume. (<code class="appcommand">APPCOMMAND_MICROPHONE_VOLUME_UP</code>)
+      <td>升高麦克风音量。									(<code class="appcommand">APPCOMMAND_MICROPHONE_VOLUME_UP</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MicrophoneVolumeMute">"MicrophoneVolumeMute"</code>
       <td class="key-table-required">否
-      <td>Mute the microphone. (<code class="appcommand"><code class="appcommand">APPCOMMAND_MICROPHONE_VOLUME_MUTE</code></code>, <code class="android"><code class="android">KEYCODE_MUTE</code></code>)
+      <td>将麦克风静音。									(<code class="appcommand"><code class="appcommand">APPCOMMAND_MICROPHONE_VOLUME_MUTE</code></code>, <code class="android"><code class="android">KEYCODE_MUTE</code></code>) 
    </table>
-   <h3 class="heading settled" data-level="3.13" id="keys-speech"><span class="secno">3.13. </span><span class="content">Speech Keys</span><a class="self-link" href="#keys-speech"></a></h3>
-   <p>Multimedia keys related to speech recognition.</p>
+   <h3 class="heading settled" data-level="3.13" id="keys-speech"><span class="secno">3.13. </span><span class="content">语音键</span><a class="self-link" href="#keys-speech"></a></h3>
+   <p>与语音识别(speech recognition)相关的多媒体按键。</p>
    <table class="data-table full-width" id="key-table-speech">
     <thead>
      <tr>
@@ -1732,11 +1717,12 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-SpeechCorrectionList">"SpeechCorrectionList"</code>
       <td class="key-table-required">否
-      <td>Show correction list when a word is incorrectly identified. (<code class="appcommand">APPCOMMAND_CORRECTION_LIST</code>)
+      <td>当单词被错误识别时，显示更正列表。									(<code class="appcommand">APPCOMMAND_CORRECTION_LIST</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-SpeechInputToggle">"SpeechInputToggle"</code>
       <td class="key-table-required">否
-      <td>Toggle between dictation mode and command/control mode. (<code class="appcommand">APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE</code>)
+      <td>在听写模式(dictation mode)和命令/控制模式									(command/control mode)之间切换。
+									(<code class="appcommand">APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE</code>) 
    </table>
    <h3 class="heading settled" data-level="3.14" id="keys-apps"><span class="secno">3.14. </span><span class="content">Application Keys</span><a class="self-link" href="#keys-apps"></a></h3>
    <p>The Application Keys are special keys that are assigned to launch a particular application.
@@ -2610,7 +2596,7 @@ something specific to the values defined in this document</p>
 		
 		选择一个适合的键属性值</a>
     <li><a href="#ref-for-dom-keyboardevent-key⑧">3. 命名 key 属性值</a> <a href="#ref-for-dom-keyboardevent-key⑨">(2)</a> <a href="#ref-for-dom-keyboardevent-key①⓪">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①①">3.11. Multimedia Numpad Keys</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①①">3.11. 多媒体数字键盘键</a>
     <li><a href="#ref-for-dom-keyboardevent-key①②">4. Accessibility</a> <a href="#ref-for-dom-keyboardevent-key①③">(2)</a>
     <li><a href="#ref-for-dom-keyboardevent-key①④">6. Security Considerations</a> <a href="#ref-for-dom-keyboardevent-key①⑤">(2)</a>
     <li><a href="#ref-for-dom-keyboardevent-key①⑥">7. Privacy Considerations</a> <a href="#ref-for-dom-keyboardevent-key①⑦">(2)</a> <a href="#ref-for-dom-keyboardevent-key①⑧">(3)</a>
@@ -2757,11 +2743,11 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-key-attribute-value②⑦">3.6. UI(用户界面)按键</a>
     <li><a href="#ref-for-key-attribute-value②⑧">3.7. 设备(Device)按键</a>
     <li><a href="#ref-for-key-attribute-value②⑨">3.8. 输入法和组合(IME and Composition)键</a> <a href="#ref-for-key-attribute-value③⓪">(2)</a> <a href="#ref-for-key-attribute-value③①">(3)</a>
-    <li><a href="#ref-for-key-attribute-value③②">3.9. General-Purpose Function Keys</a>
-    <li><a href="#ref-for-key-attribute-value③③">3.10. Multimedia Keys</a>
-    <li><a href="#ref-for-key-attribute-value③④">3.11. Multimedia Numpad Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑤">3.12. Audio Keys</a>
-    <li><a href="#ref-for-key-attribute-value③⑥">3.13. Speech Keys</a>
+    <li><a href="#ref-for-key-attribute-value③②">3.9. 通用功能键</a>
+    <li><a href="#ref-for-key-attribute-value③③">3.10. 多媒体按键</a>
+    <li><a href="#ref-for-key-attribute-value③④">3.11. 多媒体数字键盘键</a>
+    <li><a href="#ref-for-key-attribute-value③⑤">3.12. 音频键</a>
+    <li><a href="#ref-for-key-attribute-value③⑥">3.13. 语音键</a>
     <li><a href="#ref-for-key-attribute-value③⑦">3.14. Application Keys</a>
     <li><a href="#ref-for-key-attribute-value③⑧">3.15. Browser Keys</a>
     <li><a href="#ref-for-key-attribute-value③⑨">3.16. Mobile Phone Keys</a>
