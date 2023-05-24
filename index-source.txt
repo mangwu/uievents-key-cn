@@ -534,6 +534,19 @@ path: stylesheet-extra.include
 	以便可以检测到这些漏洞(bugs)。
 	</p>
 
+	<h3 id="tranlate-supply" 
+	class="no-ref no-num heading settled">3.0. 翻译说明</h3>
+
+		按键的 <code>key</code> 属性值集合不像按键码(code)值，
+		它不与物理按键一一对应，修饰键可能改变这些按键的键值，要对应的设备繁多，
+		一个按键可能拥有多个键值，所以在翻译时难免理解不清楚，
+		特别是有关多媒体，媒体控制器，电视按键的键值部分。
+		而且本规定定义的很多键值来源于其它电子设备技术规范，
+		这进一步增加了它的翻译难度，
+		故而在后半部分的许多按键的典型用途列中使用机器翻译，
+		但是 <strong>会在键值名称后加上原始的英文按键名称</strong> ，例如，
+		"模拟地面流传(Analog Terrestrial)"，"切换到部件输入(component input) #1"等。
+
 	<h3 id="keys-special">特殊按键</h3>
 
 		如果遇到一个无法识别的按键，实现必须 <span class="zh-upper">必须</span> 使用

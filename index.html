@@ -7,7 +7,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-UD" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
   <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
-  <meta content="ef11bca285ab49f7372b36d8fdb56f18d8d76b2e" name="document-revision">
+  <meta content="1947a1ba2e3fc23ce141c1a80ab8e3349c7b4fe1" name="document-revision">
   <link href="./override.css" rel="stylesheet">
 <style>
 
@@ -694,6 +694,7 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#named-key-attribute-values"><span class="secno">3</span> <span class="content">命名 <code class="idl"><span>key</span></code> 属性值</span></a>
      <ol class="toc">
+      <li><a href="#tranlate-supply"><span class="secno"></span> </a>
       <li><a href="#keys-special"><span class="secno">3.1</span> <span class="content">特殊按键</span></a>
       <li><a href="#keys-modifier"><span class="secno">3.2</span> <span class="content">修饰键</span></a>
       <li><a href="#keys-whitespace"><span class="secno">3.3</span> <span class="content">空格键</span></a>
@@ -942,6 +943,16 @@ dfn > a.self-link::before      { content: "#"; }
    <p class="note" role="note"> 注意：虽然已经尽一切努力使该值列表尽可能完整，但随着新输入设备的引入，
 	需要定期定义新值。与其允许用户代理定义自己的 <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑦">命名键属性值</a> (这些属性值很难在多个用户代理机构之间统一)， <span class="zh-upper">应当</span> 提供一种归档方法来更新这个规范， 
 	以便可以检测到这些漏洞(bugs)。 </p>
+   <h3 class="no-ref no-num heading settled" id="tranlate-supply">3.0. 翻译说明<a class="self-link" href="#tranlate-supply"></a></h3>
+   <p>按键的 <code>key</code> 属性值集合不像按键码(code)值，
+		它不与物理按键一一对应，修饰键可能改变这些按键的键值，要对应的设备繁多，
+		一个按键可能拥有多个键值，所以在翻译时难免理解不清楚，
+		特别是有关多媒体，媒体控制器，电视按键的键值部分。
+		而且本规定定义的很多键值来源于其它电子设备技术规范，
+		这进一步增加了它的翻译难度，
+		故而在后半部分的许多按键的典型用途列中使用机器翻译，
+		但是 <strong>会在键值名称后加上原始的英文按键名称</strong> ，例如，
+		"模拟地面流传(Analog Terrestrial)"，"切换到部件输入(component input) #1"等。</p>
    <h3 class="heading settled" data-level="3.1" id="keys-special"><span class="secno">3.1. </span><span class="content">特殊按键</span><a class="self-link" href="#keys-special"></a></h3>
    <p>如果遇到一个无法识别的按键，实现必须 <span class="zh-upper">必须</span> 使用 <code class="key">"<a href="#key-Unidentified">Unidentified</a>"</code> 作为 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑨">键属性值</a> 。</p>
    <table class="data-table full-width" id="key-table-general">
