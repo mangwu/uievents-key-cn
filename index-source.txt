@@ -537,7 +537,8 @@ path: stylesheet-extra.include
 		<p class="note">
 		当实现无法确定 [=键属性值=] 时，符合本规范的实现 
 		<span class="zh-upper">必须</span> 只能使用 KEY{Unidentified} 作为键属性值。
-		但仅使用(Exposing)该值 <span class="zh-upper">不得</span> 表明实现符合本规范。
+		但仅使用(Exposing)该值 <span class="zh-upper">不得</span> 
+		表明实现符合本规范。
 		</p>
 
 	<h3 id="keys-modifier">修饰键</h3>
@@ -550,7 +551,7 @@ path: stylesheet-extra.include
 			KEY AltGraph		转换字形(Alternate Graphics， KEYCAP{AltGr} 或 
 								KEYCAP{AltGraph} )键。此键用于启用 ISO 3 级上档(shift)修饰符功能
 								(标准 KEYCAP{Shift} 键是级别 2 的修饰键)。参见 [[ISO9995-1]] 。
-			KEY CapsLock		KEYCAP{Caps Lock} (大写锁定)键。切换(Toggle)
+			KEY CapsLock		KEYCAP{Caps Lock} (大写锁定)键。触发(Toggle)
 								大写字符锁定功能以解译(interpreting)后续键盘输入事件。
 			KEY Control			KEYCAP{Control} 或 KEYCAP{Ctrl} 键，
 								此键启用控制修饰符功能，用于解译(interpreting)
@@ -566,7 +567,7 @@ path: stylesheet-extra.include
 			KEY Meta			KEYCAP{Meta} 键，此键启用变换修饰符功能，以解译
 								(interpreting)并行或连续的键盘输入。此键值用于 <q>Windows 
 								徽标</q> 键和苹果的 KEYCAP{Command} 或 KEYCAP{&#x2318;} 键。
-			KEY NumLock			KEYCAP{NumLock} 或数字锁定(Number Lock)键，用于切换 
+			KEY NumLock			KEYCAP{NumLock} 或数字锁定(Number Lock)键，用于触发 
 								[=小键盘=] 的功能模式，以解译(interpreting)连续的键盘输入。
 			KEY ScrollLock		KEYCAP{Scroll Lock} (滚动锁定)键，
 								用于在滚动和光标移动模式之间切换。
@@ -662,7 +663,7 @@ path: stylesheet-extra.include
 								例如关闭对话框或退出全屏模式。
 			KEY_OPT Execute		执行(Execute)键。
 			KEY_OPT Find			打开"查找(Find)"对话框。(APPCOMMAND_FIND)
-			KEY Help					打开帮助对话框或切换帮助信息的显示方式(display)。
+			KEY Help					打开帮助对话框或切换帮助信息的显示(display)。
 								(APPCOMMAND_HELP, KEYCODE_HELP)
 			KEY Pause					暂停当前状态或应用程序(视情况而定)。
 								<p class="note">
@@ -746,7 +747,7 @@ path: stylesheet-extra.include
 			KEY_OPT GroupNext		切换到下一个字符组。(ISO/IEC 9995)
 			KEY_OPT GroupPrevious	切换到上一个字符组。(ISO/IEC 9995)
 			KEY_OPT ModeChange		模式切换(Mode Change)键，以在 [=IMEs=] 
-									不同的输入模式之间切换或循环切换。
+									不同的输入模式之间循环切换。
 			KEY_OPT NextCandidate	下一个候选功能(Next Candidate function)键。
 			KEY_OPT NonConvert		KEYCAP{無変換} (NonConvert ，即"不变换") 键，
 									用于接收当前输入法下的在 [=IMEs=] 中不转换(without conversion)
@@ -787,8 +788,8 @@ path: stylesheet-extra.include
 			KEY_OPT Katakana		片假名(Katakana) (日语假名字符)键。
 			KEY_OPT Romaji			罗马字符功能(Roman characters function)键。
 			KEY_OPT Zenkaku			全角字符(Zenkaku ，Full-Width Characters)键。
-			KEY_OPT ZenkakuHankaku	半/全角切换(Zenkaku/Hankaku (full-width/half-width) 
-									toggle)键。 (KEYCODE_ZENKAKU_HANKAKU)
+			KEY_OPT ZenkakuHankaku	半/全角切换(Zenkaku/Hankaku 
+									(full-width/half-width) toggle)键。 (KEYCODE_ZENKAKU_HANKAKU)
 		END_KEY_TABLE
 
 	<h3 id="keys-function">通用功能键</h3>
@@ -985,7 +986,8 @@ path: stylesheet-extra.include
 
 		BEGIN_KEY_TABLE mobile-phone
 			KEY_OPT AppSwitch		应用程序转换(Application switch)键，
-								它提供了一个可在其中切换最近应用程序的列表。(KEYCODE_APP_SWITCH)
+								它提供了一个可在其中进行切换的最近应用程序的列表。
+								(KEYCODE_APP_SWITCH)
 			KEY_OPT Call				呼叫(Call)键。 (KEYCODE_CALL)
 			KEY_OPT Camera			相机(Camera)键。 (KEYCODE_CAMERA)
 			KEY_OPT CameraFocus	摄像头焦点(Camera focus)键。 (KEYCODE_FOCUS)
@@ -1000,158 +1002,247 @@ path: stylesheet-extra.include
 			KEY_OPT VoiceDial		语音拨号(Voice Dial)键。
 		END_KEY_TABLE
 
-	<h3 id="keys-tv">TV Keys</h3>
+	<h3 id="keys-tv">电视(TV)按键</h3>
 
 		BEGIN_KEY_TABLE tv
-			KEY_OPT TV					Switch to viewing TV. (KEYCODE_TV)
-			KEY_OPT TV3DMode			TV 3D Mode. (KEYCODE_3D_MODE)
-			KEY_OPT TVAntennaCable		Toggle between antenna and cable input. (KEYCODE_TV_ANTENNA_CABLE)
-			KEY_OPT TVAudioDescription			Audio description. (KEYCODE_TV_AUDIO_DESCRIPTION)
-			KEY_OPT TVAudioDescriptionMixDown	Audio description mixing volume down. (KEYCODE_TV_AUDIO_DESCRIPTION_MIX_DOWN)
-			KEY_OPT TVAudioDescriptionMixUp		Audio description mixing volume up. (KEYCODE_TV_AUDIO_DESCRIPTION_MIX_UP)
-			KEY_OPT TVContentsMenu		Contents menu. (KEYCODE_TV_CONTENTS_MENU)
-			KEY_OPT TVDataService		Contents menu. (KEYCODE_TV_DATA_SERVICE)
-			KEY_OPT TVInput				Switch the input mode on an external TV. (KEYCODE_TV_INPUT)
-			KEY_OPT TVInputComponent1	Switch to component input #1. (KEYCODE_TV_INPUT_COMPONENT_1)
-			KEY_OPT TVInputComponent2	Switch to component input #2. (KEYCODE_TV_INPUT_COMPONENT_2)
-			KEY_OPT TVInputComposite1	Switch to composite input #1. (KEYCODE_TV_INPUT_COMPOSITE_1)
-			KEY_OPT TVInputComposite2	Switch to composite input #2. (KEYCODE_TV_INPUT_COMPOSITE_2)
-			KEY_OPT TVInputHDMI1		Switch to HDMI input #1. (KEYCODE_TV_INPUT_HDMI_1)
-			KEY_OPT TVInputHDMI2		Switch to HDMI input #2. (KEYCODE_TV_INPUT_HDMI_2)
-			KEY_OPT TVInputHDMI3		Switch to HDMI input #3. (KEYCODE_TV_INPUT_HDMI_3)
-			KEY_OPT TVInputHDMI4		Switch to HDMI input #4. (KEYCODE_TV_INPUT_HDMI_4)
-			KEY_OPT TVInputVGA1			Switch to VGA input #1. (KEYCODE_TV_INPUT_VGA_1)
-			KEY_OPT TVMediaContext		Media context menu. (KEYCODE_TV_MEDIA_CONTEXT_MENU)
-			KEY_OPT TVNetwork			Toggle network. (KEYCODE_TV_NETWORK)
-			KEY_OPT TVNumberEntry		Number entry. (KEYCODE_TV_NUMBER_ENTRY)
-			KEY_OPT TVPower				Toggle the power on an external TV. (KEYCODE_TV_POWER)
-			KEY_OPT TVRadioService		Radio. (KEYCODE_TV_RADIO_SERVICE)
-			KEY_OPT TVSatellite			Satellite. (KEYCODE_TV_SATELLITE)
-			KEY_OPT TVSatelliteBS		Broadcast Satellite. (KEYCODE_TV_SATELLITE_BS)
-			KEY_OPT TVSatelliteCS		Communication Satellite. (KEYCODE_TV_SATELLITE_CS)
-			KEY_OPT TVSatelliteToggle		Toggle between available satellites. (KEYCODE_TV_SATELLITE_SERVICE)
-			KEY_OPT TVTerrestrialAnalog		Analog Terrestrial. (KEYCODE_TV_TERRESTRIAL_ANALOG)
-			KEY_OPT TVTerrestrialDigital	Digital Terrestrial. (KEYCODE_TV_TERRESTRIAL_DIGITAL)
-			KEY_OPT TVTimer					Timer programming. (KEYCODE_TV_TIMER_PROGRAMMING)
+			KEY_OPT TV												观看电视开关。(KEYCODE_TV)
+			KEY_OPT TV3DMode									电视 3D 模式。 (KEYCODE_3D_MODE)
+			KEY_OPT TVAntennaCable						在天线和电缆输入之间切换(接收源)。 
+								(KEYCODE_TV_ANTENNA_CABLE)
+			KEY_OPT TVAudioDescription				音频描述。(KEYCODE_TV_AUDIO_DESCRIPTION)
+			KEY_OPT TVAudioDescriptionMixDown	音频描述降低音量。 
+								(KEYCODE_TV_AUDIO_DESCRIPTION_MIX_DOWN)
+			KEY_OPT TVAudioDescriptionMixUp		音频描述提高音量。 
+								(KEYCODE_TV_AUDIO_DESCRIPTION_MIX_UP)
+			KEY_OPT TVContentsMenu						内容菜单。 (KEYCODE_TV_CONTENTS_MENU)
+			KEY_OPT TVDataService							内容菜单. (KEYCODE_TV_DATA_SERVICE)
+			KEY_OPT TVInput										在外部电视(external TV)上切换输入模式。 
+								(KEYCODE_TV_INPUT)
+			KEY_OPT TVInputComponent1					切换到部件输入(component input) #1。
+								(KEYCODE_TV_INPUT_COMPONENT_1)
+			KEY_OPT TVInputComponent2					切换到部件输入(component input) #2。
+								(KEYCODE_TV_INPUT_COMPONENT_2)
+			KEY_OPT TVInputComposite1					切换到复合输入(composite input) #1。
+								(KEYCODE_TV_INPUT_COMPOSITE_1)
+			KEY_OPT TVInputComposite2					切换到复合输入(composite input) #2。
+								(KEYCODE_TV_INPUT_COMPOSITE_2)
+			KEY_OPT TVInputHDMI1							切换到 HDMI 输入 #1。
+								(KEYCODE_TV_INPUT_HDMI_1)
+			KEY_OPT TVInputHDMI2							切换到 HDMI 输入 #2。 
+								(KEYCODE_TV_INPUT_HDMI_2)
+			KEY_OPT TVInputHDMI3							切换到 HDMI 输入 #3。 
+								(KEYCODE_TV_INPUT_HDMI_3)
+			KEY_OPT TVInputHDMI4							切换到 HDMI 输入 #4。 
+								(KEYCODE_TV_INPUT_HDMI_4)
+			KEY_OPT TVInputVGA1								切换到 VGA 输入 #1。
+								(KEYCODE_TV_INPUT_VGA_1)
+			KEY_OPT TVMediaContext						媒体上下文菜单。
+								(KEYCODE_TV_MEDIA_CONTEXT_MENU)
+			KEY_OPT TVNetwork									切换网络。 (KEYCODE_TV_NETWORK)
+			KEY_OPT TVNumberEntry							数字输入。 (KEYCODE_TV_NUMBER_ENTRY)
+			KEY_OPT TVPower										外部电视上的电源开关。 
+								(KEYCODE_TV_POWER)
+			KEY_OPT TVRadioService						音频。 (KEYCODE_TV_RADIO_SERVICE)
+			KEY_OPT TVSatellite								卫星。 (KEYCODE_TV_SATELLITE)
+			KEY_OPT TVSatelliteBS							广播卫星。 (KEYCODE_TV_SATELLITE_BS)
+			KEY_OPT TVSatelliteCS							通信卫星。 (KEYCODE_TV_SATELLITE_CS)
+			KEY_OPT TVSatelliteToggle					在可用卫星之间切换。
+								(KEYCODE_TV_SATELLITE_SERVICE)
+			KEY_OPT TVTerrestrialAnalog				模拟地面流传(Analog Terrestrial)。 
+								(KEYCODE_TV_TERRESTRIAL_ANALOG)
+			KEY_OPT TVTerrestrialDigital			数字地面流传(Digital Terrestrial)。
+								(KEYCODE_TV_TERRESTRIAL_DIGITAL)
+			KEY_OPT TVTimer										定时器编程。
+								(KEYCODE_TV_TIMER_PROGRAMMING)
 		END_KEY_TABLE
 
-	<h3 id="keys-media-controller">Media Controller Keys</h3>
+	<h3 id="keys-media-controller">媒体控制器按键</h3>
 
-		The [=键属性值=] for media controllers (e.g. remote controls for
-		television, audio systems, and set-top boxes) are derived in part from
-		the consumer electronics technical specifications:
+		媒体控制器(media controllers)的 [=键属性值=] (例如电视、
+		音频系统和机顶盒的遥控器)部分源自消费者电子技术规范:
 
-		*	DTV Application Software Environment [[DASE]]
-		*	Open Cable Application Platform 1.1.3 [[OCAP]]
-		*	ANSI/CTA-2014-B, Web-based Protocol and Framework for Remote User
-			Interface on UPnP Networks and the Internet [[WEB4CE]]
-		*	Android KeyEvent KEYCODEs [[AndroidKeycode]]
+		*	数字电视应用软件环境 [[DASE]]
+		*	开放式电缆应用平台 1.1.3 [[OCAP]]
+		*	ANSI/CTA-2014-B，基于 Web 的关于 UPnP 网络和互联网的远程用户界面协议和框架
+			[[WEB4CE]]
+		*	安卓键事件键码(Android KeyEvent KEYCODEs) [[AndroidKeycode]]
 
 		BEGIN_KEY_TABLE media-controller
-			KEY_OPT AVRInput			Switch the input mode on an external AVR (audio/video receiver). (KEYCODE_AVR_INPUT)
-			KEY_OPT AVRPower			Toggle the power on an external AVR (audio/video receiver). (KEYCODE_AVR_POWER)
-			KEY_OPT ColorF0Red			General purpose color-coded media function key, as index 0 (red). (VK_COLORED_KEY_0, KEYCODE_PROG_RED)
-			KEY_OPT ColorF1Green		General purpose color-coded media function key, as index 1 (green). (VK_COLORED_KEY_1, KEYCODE_PROG_GREEN)
-			KEY_OPT ColorF2Yellow		General purpose color-coded media function key, as index 2 (yellow). (VK_COLORED_KEY_2, KEYCODE_PROG_YELLOW)
-			KEY_OPT ColorF3Blue			General purpose color-coded media function key, as index 3 (blue). (VK_COLORED_KEY_3, KEYCODE_PROG_BLUE)
-			KEY_OPT ColorF4Grey			General purpose color-coded media function key, as index 4 (grey). (VK_COLORED_KEY_4)
-			KEY_OPT ColorF5Brown		General purpose color-coded media function key, as index 5 (brown). (VK_COLORED_KEY_5)
-			KEY_OPT ClosedCaptionToggle	Toggle the display of Closed Captions. (VK_CC, KEYCODE_CAPTIONS)
-			KEY_OPT Dimmer				Adjust brightness of device, by toggling between or cycling through states. (VK_DIMMER)
-			KEY_OPT DisplaySwap			Swap video sources. (VK_DISPLAY_SWAP)
-			KEY_OPT DVR					Select Digital Video Rrecorder. (KEYCODE_DVR)
-			KEY_OPT Exit				Exit the current application. (VK_EXIT)
-			KEY_OPT FavoriteClear0		Clear program or content stored as favorite 0. (VK_CLEAR_FAVORITE_0)
-			KEY_OPT FavoriteClear1		Clear program or content stored as favorite 1. (VK_CLEAR_FAVORITE_1)
-			KEY_OPT FavoriteClear2		Clear program or content stored as favorite 2. (VK_CLEAR_FAVORITE_2)
-			KEY_OPT FavoriteClear3		Clear program or content stored as favorite 3. (VK_CLEAR_FAVORITE_3)
-			KEY_OPT FavoriteRecall0		Select (recall) program or content stored as favorite 0. (VK_RECALL_FAVORITE_0)
-			KEY_OPT FavoriteRecall1		Select (recall) program or content stored as favorite 1. (VK_RECALL_FAVORITE_1)
-			KEY_OPT FavoriteRecall2		Select (recall) program or content stored as favorite 2. (VK_RECALL_FAVORITE_2)
-			KEY_OPT FavoriteRecall3		Select (recall) program or content stored as favorite 3. (VK_RECALL_FAVORITE_3)
-			KEY_OPT FavoriteStore0		Store current program or content as favorite 0. (VK_STORE_FAVORITE_0)
-			KEY_OPT FavoriteStore1		Store current program or content as favorite 1. (VK_STORE_FAVORITE_1)
-			KEY_OPT FavoriteStore2		Store current program or content as favorite 2. (VK_STORE_FAVORITE_2)
-			KEY_OPT FavoriteStore3		Store current program or content as favorite 3. (VK_STORE_FAVORITE_3)
-			KEY_OPT Guide				Toggle display of program or content guide. (VK_GUIDE, KEYCODE_GUIDE)
-			KEY_OPT GuideNextDay		If guide is active and displayed, then display next day's content. (VK_NEXT_DAY)
-			KEY_OPT GuidePreviousDay	If guide is active and displayed, then display previous day's content. (VK_PREV_DAY)
-			KEY_OPT Info				Toggle display of information about currently selected context or media. (VK_INFO, KEYCODE_INFO)
-			KEY_OPT InstantReplay		Toggle instant replay. (VK_INSTANT_REPLAY)
-			KEY_OPT Link				Launch linked content, if available and appropriate. (VK_LINK)
-			KEY_OPT ListProgram			List the current program. (VK_LIST)
-			KEY_OPT LiveContent			Toggle display listing of currently available live content or programs. (VK_LIVE)
-			KEY_OPT Lock				Lock or unlock current content or program. (VK_LOCK)
-			KEY_OPT MediaApps			Show a list of media applications: audio/video players and image viewers. (VK_APPS)
-									<p class="note">Do not confuse this key value with the Windows' VK_APPS / VK_CONTEXT_MENU key, which is encoded as KEY{ContextMenu}.</p>
-			KEY_OPT MediaAudioTrack		Audio track key. (KEYCODE_MEDIA_AUDIO_TRACK)
-			KEY_OPT MediaLast			Select previously selected channel or media. (VK_LAST, KEYCODE_LAST_CHANNEL)
-			KEY_OPT MediaSkipBackward	Skip backward to next content or program. (KEYCODE_MEDIA_SKIP_BACKWARD)
-			KEY_OPT MediaSkipForward	Skip forward to next content or program. (VK_SKIP, KEYCODE_MEDIA_SKIP_FORWARD)
-			KEY_OPT MediaStepBackward	Step backward to next content or program. (KEYCODE_MEDIA_STEP_BACKWARD)
-			KEY_OPT MediaStepForward	Step forward to next content or program. (KEYCODE_MEDIA_STEP_FORWARD)
-			KEY_OPT MediaTopMenu		Media top menu. (KEYCODE_MEDIA_TOP_MENU)
-			KEY_OPT NavigateIn			Navigate in. (KEYCODE_NAVIGATE_IN)
-			KEY_OPT NavigateNext		Navigate to next key. (KEYCODE_NAVIGATE_NEXT)
-			KEY_OPT NavigateOut			Navigate out. (KEYCODE_NAVIGATE_OUT)
-			KEY_OPT NavigatePrevious	Navigate to previous key. (KEYCODE_NAVIGATE_PREVIOUS)
-			KEY_OPT NextFavoriteChannel	Cycle to next favorite channel (in favorites list). (VK_NEXT_FAVORITE_CHANNEL)
-			KEY_OPT NextUserProfile		Cycle to next user profile (if there are multiple user profiles). (VK_USER)
-			KEY_OPT OnDemand			Access on-demand content or programs. (VK_ON_DEMAND)
-			KEY_OPT Pairing				Pairing key to pair devices. (KEYCODE_PAIRING)
-			KEY_OPT PinPDown			Move picture-in-picture window down. (VK_PINP_DOWN)
-			KEY_OPT PinPMove			Move picture-in-picture window. (VK_PINP_MOVE)
-			KEY_OPT PinPToggle			Toggle display of picture-in-picture window. (VK_PINP_TOGGLE)
-			KEY_OPT PinPUp				Move picture-in-picture window up. (VK_PINP_UP)
-			KEY_OPT PlaySpeedDown		Decrease media playback speed. (VK_PLAY_SPEED_DOWN)
-			KEY_OPT PlaySpeedReset		Reset playback to normal speed. (VK_PLAY_SPEED_RESET)
-			KEY_OPT PlaySpeedUp			Increase media playback speed. (VK_PLAY_SPEED_UP)
-			KEY_OPT RandomToggle		Toggle random media or content shuffle mode. (VK_RANDOM_TOGGLE)
-			KEY_OPT RcLowBattery		Not a physical key, but this key code is sent when the remote control battery is low. (VK_RC_LOW_BATTERY)
-			KEY_OPT RecordSpeedNext		Toggle or cycle between media recording speeds. (VK_RECORD_SPEED_NEXT)
-			KEY_OPT RfBypass			Toggle RF (radio frequency) input bypass mode (pass RF input directly to the RF output). (VK_RF_BYPASS)
-			KEY_OPT ScanChannelsToggle	Toggle scan channels mode. (VK_SCAN_CHANNELS_TOGGLE)
-			KEY_OPT ScreenModeNext		Advance display screen mode to next available mode. (VK_SCREEN_MODE_NEXT)
-			KEY_OPT Settings			Toggle display of device settings screen. (VK_SETTINGS, KEYCODE_SETTINGS)
-			KEY_OPT SplitScreenToggle	Toggle split screen mode. (VK_SPLIT_SCREEN_TOGGLE)
-			KEY_OPT STBInput			Switch the input mode on an external STB (set top box). (KEYCODE_STB_INPUT)
-			KEY_OPT STBPower			Toggle the power on an external STB (set top box). (KEYCODE_STB_POWER)
-			KEY_OPT Subtitle			Toggle display of subtitles, if available. (VK_SUBTITLE)
-			KEY_OPT Teletext			Toggle display of teletext, if available (VK_TELETEXT, KEYCODE_TV_TELETEXT).
-			KEY_OPT VideoModeNext		Advance video mode to next available mode. (VK_VIDEO_MODE_NEXT)
-			KEY_OPT Wink				Cause device to identify itself in some manner, e.g., audibly or visibly. (VK_WINK)
-			KEY_OPT ZoomToggle			Toggle between full-screen and scaled content, or alter magnification level. (VK_ZOOM, KEYCODE_TV_ZOOM_MODE)
+			KEY_OPT AVRInput						在外部 AVR （音频/视频接收器）上切换输入模式。 
+									(KEYCODE_AVR_INPUT)
+			KEY_OPT AVRPower						外部 AVR（音频/视频接收器）的电源开关。
+									(KEYCODE_AVR_POWER)
+			KEY_OPT ColorF0Red					通用彩色编码媒体功能键，索引为 0 (红)。
+									(VK_COLORED_KEY_0, KEYCODE_PROG_RED)
+			KEY_OPT ColorF1Green				通用彩色编码媒体功能键，索引为 1 (绿)。 
+									(VK_COLORED_KEY_1, KEYCODE_PROG_GREEN)
+			KEY_OPT ColorF2Yellow				通用彩色编码媒体功能键，索引为 2 (黄)。
+									(VK_COLORED_KEY_2, KEYCODE_PROG_YELLOW)
+			KEY_OPT ColorF3Blue					通用彩色编码媒体功能键，索引为 3 (蓝)。 
+									(VK_COLORED_KEY_3, KEYCODE_PROG_BLUE)
+			KEY_OPT ColorF4Grey					通用彩色编码媒体功能键，索引为 4 (灰)。
+									(VK_COLORED_KEY_4)
+			KEY_OPT ColorF5Brown				通用彩色编码媒体功能键，索引为 5 (棕)。 
+									(VK_COLORED_KEY_5)
+			KEY_OPT ClosedCaptionToggle	触发闭路字幕(Colose Captions)的显示。
+									(VK_CC, KEYCODE_CAPTIONS)
+			KEY_OPT Dimmer							通过在状态之间循环切换来调整设备的亮度。 
+									(VK_DIMMER)
+			KEY_OPT DisplaySwap					交换视频源。(VK_DISPLAY_SWAP)
+			KEY_OPT DVR									选择数字视频录像机。 (KEYCODE_DVR)
+			KEY_OPT Exit								退出当前应用程序。 (VK_EXIT)
+			KEY_OPT FavoriteClear0			清除存储为收藏夹第 0 项的节目或内容。
+									(VK_CLEAR_FAVORITE_0)
+			KEY_OPT FavoriteClear1			清除存储为收藏夹第 1 项的节目或内容。
+									(VK_CLEAR_FAVORITE_1)
+			KEY_OPT FavoriteClear2			清除存储为收藏夹第 2 项的节目或内容。
+									(VK_CLEAR_FAVORITE_2)
+			KEY_OPT FavoriteClear3			清除存储为收藏夹第 3 项的节目或内容。
+									(VK_CLEAR_FAVORITE_3)
+			KEY_OPT FavoriteRecall0			选择（调用）存储为收藏夹第 0 项的节目或内容。
+									(VK_RECALL_FAVORITE_0)
+			KEY_OPT FavoriteRecall1			选择（调用）存储为收藏夹第 1 项的节目或内容。 
+									(VK_RECALL_FAVORITE_1)
+			KEY_OPT FavoriteRecall2			选择（调用）存储为收藏夹第 2 项的节目或内容。 
+									(VK_RECALL_FAVORITE_2)
+			KEY_OPT FavoriteRecall3			选择（调用）存储为收藏夹第 3 项的节目或内容。 
+									(VK_RECALL_FAVORITE_3)
+			KEY_OPT FavoriteStore0			将当前节目或内容存储为收藏夹第 0 项。 
+									(VK_STORE_FAVORITE_0)
+			KEY_OPT FavoriteStore1			将当前节目或内容存储为收藏夹第 1 项。 
+									(VK_STORE_FAVORITE_1)
+			KEY_OPT FavoriteStore2			将当前节目或内容存储为收藏夹第 2 项。 
+									(VK_STORE_FAVORITE_2)
+			KEY_OPT FavoriteStore3			将当前节目或内容存储为收藏夹第 3 项。 
+									(VK_STORE_FAVORITE_3)
+			KEY_OPT Guide								触发节目或内容指南的显示。
+									(VK_GUIDE, KEYCODE_GUIDE)
+			KEY_OPT GuideNextDay				如果指南处于活动状态并已显示，
+									则显示第二天的内容。(VK_NEXT_DAY)
+			KEY_OPT GuidePreviousDay		如果指南处于活动状态并已显示，
+									则显示前一天的内容。(VK_PREV_DAY)
+			KEY_OPT Info								触发当前所选上下文或媒体信息的显示。
+									(VK_INFO, KEYCODE_INFO)
+			KEY_OPT InstantReplay				触发即时重播(instant replay)。 
+									(VK_INSTANT_REPLAY)
+			KEY_OPT Link								启动链接内容（如果可用且适当）。 (VK_LINK)
+			KEY_OPT ListProgram					列出当前节目。(VK_LIST)
+			KEY_OPT LiveContent					触发当前可看的实时内容或节目的列表显示。 
+									(VK_LIVE)
+			KEY_OPT Lock								锁定或解锁当前内容或节目。(VK_LOCK)
+			KEY_OPT MediaApps						显示媒体应用程序列表: 音频/
+									视频播放器和图像查看器。(VK_APPS) <p class="note">
+									不要将此键值与 Windows 的 VK_APPS / VK_CONTEXT_MENU 键混淆，
+									后者编码为 KEY{ContextMenu} 。</p>
+			KEY_OPT MediaAudioTrack			音轨键。(KEYCODE_MEDIA_AUDIO_TRACK)
+			KEY_OPT MediaLast						选择以前选择的频道或媒体。
+									(VK_LAST, KEYCODE_LAST_CHANNEL)
+			KEY_OPT MediaSkipBackward		向后跳过(skip)下一个内容或节目。 
+									(KEYCODE_MEDIA_SKIP_BACKWARD)
+			KEY_OPT MediaSkipForward		向前跳过(skip)下一个内容或节目。 
+									(VK_SKIP, KEYCODE_MEDIA_SKIP_FORWARD)
+			KEY_OPT MediaStepBackward		后退到下一个内容或节目。
+									(KEYCODE_MEDIA_STEP_BACKWARD)
+			KEY_OPT MediaStepForward		前进到下一个内容或节目。
+									(KEYCODE_MEDIA_STEP_FORWARD)
+			KEY_OPT MediaTopMenu				媒体顶部菜单。 (KEYCODE_MEDIA_TOP_MENU)
+			KEY_OPT NavigateIn					导航——进入。 (KEYCODE_NAVIGATE_IN)
+			KEY_OPT NavigateNext				导航到下一个键。 (KEYCODE_NAVIGATE_NEXT)
+			KEY_OPT NavigateOut					导航——出去。 (KEYCODE_NAVIGATE_OUT)
+			KEY_OPT NavigatePrevious		导航到上一个键。 (KEYCODE_NAVIGATE_PREVIOUS)
+			KEY_OPT NextFavoriteChannel	循环到下一个收藏夹频道（在收藏夹列表中）。 
+									(VK_NEXT_FAVORITE_CHANNEL)
+			KEY_OPT NextUserProfile			循环到下一个用户主页（如果有多个用户主页）。
+									(VK_USER)
+			KEY_OPT OnDemand						访问点播内容或节目。 (VK_ON_DEMAND)
+			KEY_OPT Pairing							将按键与设备配对。 (KEYCODE_PAIRING)
+			KEY_OPT PinPDown						移下画中画(picture-in-picture)窗口。
+									(VK_PINP_DOWN)
+			KEY_OPT PinPMove						移动画中画(picture-in-picture)窗口。
+									(VK_PINP_MOVE)
+			KEY_OPT PinPToggle					触发画中画(picture-in-picture)窗口的显示。
+									(VK_PINP_TOGGLE)
+			KEY_OPT PinPUp							移上画中画(picture-in-picture)窗口。
+									(VK_PINP_UP)
+			KEY_OPT PlaySpeedDown				降低媒体播放速度。(VK_PLAY_SPEED_DOWN)
+			KEY_OPT PlaySpeedReset			将播放速度重置为正常速度。
+									(VK_PLAY_SPEED_RESET)
+			KEY_OPT PlaySpeedUp					提高媒体播放速度。(VK_PLAY_SPEED_UP)
+			KEY_OPT RandomToggle				切换到随机媒体或内容混洗模式。
+									(VK_RANDOM_TOGGLE)
+			KEY_OPT RcLowBattery				不是物理按键，
+									但此键码是在遥控器电池电量不足时发送的。(VK_RC_LOW_BATTERY)
+			KEY_OPT RecordSpeedNext			在媒体录制速度之间循环切换。
+									(VK_RECORD_SPEED_NEXT)
+			KEY_OPT RfBypass						触发 RF （射频）输入旁路模式（将 RF 
+									输入直接传递到 RF 输出）。 (VK_RF_BYPASS)
+			KEY_OPT ScanChannelsToggle	切换到扫描通道模式。 (VK_SCAN_CHANNELS_TOGGLE)
+			KEY_OPT ScreenModeNext			将显示屏模式前进到下一个可用模式。
+									(VK_SCREEN_MODE_NEXT)
+			KEY_OPT Settings						触发设备设置屏幕的显示。 (VK_SETTINGS, 
+									KEYCODE_SETTINGS)
+			KEY_OPT SplitScreenToggle		切换到分屏模式。 (VK_SPLIT_SCREEN_TOGGLE)
+			KEY_OPT STBInput						在外部 STB （机顶盒）上切换输入模式。
+									(KEYCODE_STB_INPUT)
+			KEY_OPT STBPower						外部 STB（机顶盒）的电源开关。
+									(KEYCODE_STB_POWER)
+			KEY_OPT Subtitle						触发字幕的显示（如果可用）。(VK_SUBTITLE)
+			KEY_OPT Teletext						触发图文电视的显示（如果可用）。(VK_TELETEXT, 
+									KEYCODE_TV_TELETEXT)
+			KEY_OPT VideoModeNext				将视频模式前进到下一个可用模式。 
+									(VK_VIDEO_MODE_NEXT)
+			KEY_OPT Wink								使设备以某种方式识别自身，例如，听觉或视觉。 
+									(VK_WINK)
+			KEY_OPT ZoomToggle					在全屏和缩放内容之间切换，或更改缩放级别
+									(magnification level)。(VK_ZOOM, KEYCODE_TV_ZOOM_MODE)
 		END_KEY_TABLE
 
-		Some of the keys defined in the media controller standards already have
-		appropriate keys defined in other sections of this specification. These
-		following table summarizes the key values that MUST be used if these keys are
-		supported:
+		媒体控制器标准中定义的一些按键已经在本规范的其他部分中定义了合适的按键。
+		下表总结了这些键被支持的情况下 <span class="zh-upper">必须</span> 
+		使用的键值: 
 
 		BEGIN_KEY_TABLE media-controller-dup
-			KEY_DUP_OPT AudioVolumeDown		Decrease audio volume. (VK_VOLUME_DOWN)
-			KEY_DUP_OPT AudioVolumeUp		Increase audio volume. (VK_VOLUME_UP)
-			KEY_DUP_OPT AudioVolumeMute		Toggle between muted state and prior volume level. (VK_VOLUME_MUTE)
-			KEY_DUP_OPT BrowserBack			Navigate to previous content or page in current history. (VK_BACK)
-			KEY_DUP_OPT BrowserForward		Navigate to next content or page in current history. (VK_FORWARD)
-			KEY_DUP_OPT ChannelDown			Select next (numerically or logically) lower channel. (VK_CHANNEL_DOWN)
-			KEY_DUP_OPT ChannelUp			Select next (numerically or logically) higher channel. (VK_CHANNEL_UP)
-			KEY_DUP ContextMenu				Toggle display of the on-screen menu. (VK_MENU)
-			KEY_DUP_OPT Eject				Toggle removable media to eject (open) and insert (close) state. (VK_EJECT_TOGGLE)
-			KEY_DUP End						End 键，used with keyboard entry to go to the end of content. (VK_GO_TO_END)
-			KEY_DUP Enter					Enter 键，to activate current selection or accept current input. (VK_SELECT)
-			KEY_DUP Home					Home 键，used with keyboard entry, to go to start of content. (VK_GO_TO_START)
-			KEY_DUP_OPT MediaFastForward	Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding. (VK_FAST_FWD)
-			KEY_DUP_OPT MediaPlay			Initiate or continue media playback at normal speed, if not currently playing at normal speed. (VK_PLAY)
-			KEY_DUP_OPT MediaPlayPause		Toggle media between play and pause states. (VK_PLAY_PAUSE)
-			KEY_DUP_OPT MediaRecord			Initiate or resume recording of currently selected media. (VK_RECORD)
-			KEY_DUP_OPT MediaRewind			Initiate or continue reverse playback at faster than normal speed, or increase speed if already rewinding. (VK_REWIND)
-			KEY_DUP_OPT MediaStop			Stop media playing, pausing, forwarding, rewinding, or recording, if not already stopped. (VK_STOP)
-			KEY_DUP_OPT MediaNextTrack		Seek to next media or program track. (VK_TRACK_NEXT)
-			KEY_DUP_OPT MediaPause			Pause the currently playing media. (VK_PAUSE)
-			KEY_DUP_OPT MediaPreviousTrack	Seek to previous media or program track. (VK_TRACK_PREV)
-			KEY_DUP_OPT Power				Toggle power state. (VK_POWER)
-			KEY_DUP Unidentified			This key value is used when an implementations is unable to identify another key value, due to either hardware, platform, or software constraints. (VK_UNDEFINED)
+			KEY_DUP_OPT AudioVolumeDown			降低音频音量。(VK_VOLUME_DOWN)
+			KEY_DUP_OPT AudioVolumeUp				增加音频音量。(VK_VOLUME_UP)
+			KEY_DUP_OPT AudioVolumeMute			在静音状态和先前音量水平(prior volume 
+									level) 之间进行切换。 (VK_VOLUME_MUTE)
+			KEY_DUP_OPT BrowserBack					导航到当前历史记录中的上一个内容或页面。 
+									(VK_BACK)
+			KEY_DUP_OPT BrowserForward			导航到当前历史记录中的下一个内容或页面。 
+									(VK_FORWARD)
+			KEY_DUP_OPT ChannelDown					选择下一个(数字上地或逻辑上地)较低的频道。
+									(VK_CHANNEL_DOWN)
+			KEY_DUP_OPT ChannelUp						选择下一个(数字上地或逻辑上地)较高的频道。 
+									(VK_CHANNEL_UP)
+			KEY_DUP ContextMenu							触发屏幕菜单的显示。 (VK_MENU)
+			KEY_DUP_OPT Eject								将可移动媒介(removable media)切换到弹出 
+									(打开)和插入(关闭)状态。(VK_EJECT_TOGGLE)
+			KEY_DUP End											结束(End)键，配合键盘输入使用，
+									用于跳转到输入内容的末尾。 (VK_GO_TO_END)
+			KEY_DUP Enter										Enter 键，用于激活当前选择或接受当前输入。
+									(VK_SELECT)
+			KEY_DUP Home										Home 键，配合键盘输入使用，
+									用于跳转到输入内容的开头。 (VK_GO_TO_START)
+			KEY_DUP_OPT MediaFastForward		以比正常速度更快的速度启动或
+									继续向前播放媒体，如果已经快进，则增加播放速度。 (VK_FAST_FWD)
+			KEY_DUP_OPT MediaPlay						如果当前未以正常速度播放， 
+									则以正常速度启动或继续播放媒体。 (VK_PLAY)
+			KEY_DUP_OPT MediaPlayPause			在媒体的播放和暂停状态之间切换。 
+									(VK_PLAY_PAUSE)
+			KEY_DUP_OPT MediaRecord					启动或恢复当前所选媒体的录制。(VK_RECORD)
+			KEY_DUP_OPT MediaRewind					以比正常速度更快的速度启动或继续回退
+									(reverse) 播放媒体，如果已经回退，则提高回退速度。 (VK_REWIND)
+			KEY_DUP_OPT MediaStop						停止播放、暂停、快进、回退或录制媒体
+									(如果尚未停止)。 (VK_STOP)
+			KEY_DUP_OPT MediaNextTrack			查找下一个媒体或节目(program track)。 
+									(VK_TRACK_NEXT)
+			KEY_DUP_OPT MediaPause					暂停当前播放的媒体。 (VK_PAUSE)
+			KEY_DUP_OPT MediaPreviousTrack	查找上一个媒体或节目(program track)。 
+									(VK_TRACK_PREV)
+			KEY_DUP_OPT Power								切换电源状态(电源开关)。 (VK_POWER)
+			KEY_DUP Unidentified						当一个实现由于硬件、
+									平台或软件限制而无法识别另一个键值时 ，会使用此键值。
+									(VK_UNDEFINED)
 		END_KEY_TABLE
 
 <h2 id="accessibility">Accessibility</h2>

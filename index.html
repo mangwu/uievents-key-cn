@@ -7,7 +7,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-UD" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
   <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
-  <meta content="aa43ebb580928e84dd9d56c31919114afa909c37" name="document-revision">
+  <meta content="962e5c233055b79611693741a60da58c44f17241" name="document-revision">
   <link href="./override.css" rel="stylesheet">
 <style>
 
@@ -710,8 +710,8 @@ dfn > a.self-link::before      { content: "#"; }
       <li><a href="#keys-apps"><span class="secno">3.14</span> <span class="content">应用程序键</span></a>
       <li><a href="#keys-browser"><span class="secno">3.15</span> <span class="content">浏览器键</span></a>
       <li><a href="#keys-mobile"><span class="secno">3.16</span> <span class="content">移动电话按键</span></a>
-      <li><a href="#keys-tv"><span class="secno">3.17</span> <span class="content">TV Keys</span></a>
-      <li><a href="#keys-media-controller"><span class="secno">3.18</span> <span class="content">Media Controller Keys</span></a>
+      <li><a href="#keys-tv"><span class="secno">3.17</span> <span class="content">电视(TV)按键</span></a>
+      <li><a href="#keys-media-controller"><span class="secno">3.18</span> <span class="content">媒体控制器按键</span></a>
      </ol>
     <li><a href="#accessibility"><span class="secno">4</span> <span class="content">Accessibility</span></a>
     <li><a href="#i18n"><span class="secno">5</span> <span class="content">I18n</span></a>
@@ -976,7 +976,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-CapsLock">"CapsLock"</code>
       <td class="key-table-required">是
-      <td><code class="keycap">Caps Lock</code> (大写锁定)键。切换(Toggle)								大写字符锁定功能以解译(interpreting)后续键盘输入事件。 
+      <td><code class="keycap">Caps Lock</code> (大写锁定)键。触发(Toggle)								大写字符锁定功能以解译(interpreting)后续键盘输入事件。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Control">"Control"</code>
       <td class="key-table-required">是
@@ -999,7 +999,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-NumLock">"NumLock"</code>
       <td class="key-table-required">是
-      <td><code class="keycap">NumLock</code> 或数字锁定(Number Lock)键，用于切换 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#keypad" id="ref-for-keypad②">小键盘</a> 的功能模式，以解译(interpreting)连续的键盘输入。 
+      <td><code class="keycap">NumLock</code> 或数字锁定(Number Lock)键，用于触发 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#keypad" id="ref-for-keypad②">小键盘</a> 的功能模式，以解译(interpreting)连续的键盘输入。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ScrollLock">"ScrollLock"</code>
       <td class="key-table-required">是
@@ -1202,7 +1202,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-Help">"Help"</code>
       <td class="key-table-required">是
-      <td>打开帮助对话框或切换帮助信息的显示方式(display)。								(<code class="appcommand"><code class="appcommand">APPCOMMAND_HELP</code></code>, <code class="android"><code class="android">KEYCODE_HELP</code></code>) 
+      <td>打开帮助对话框或切换帮助信息的显示(display)。								(<code class="appcommand"><code class="appcommand">APPCOMMAND_HELP</code></code>, <code class="android"><code class="android">KEYCODE_HELP</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Pause">"Pause"</code>
       <td class="key-table-required">是
@@ -1351,7 +1351,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-ModeChange">"ModeChange"</code>
       <td class="key-table-required">否
-      <td>模式切换(Mode Change)键，以在 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#ime" id="ref-for-ime②">IMEs</a> 不同的输入模式之间切换或循环切换。 
+      <td>模式切换(Mode Change)键，以在 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#ime" id="ref-for-ime②">IMEs</a> 不同的输入模式之间循环切换。 
      <tr>
       <td class="key-table-key"><code class="key" id="key-NextCandidate">"NextCandidate"</code>
       <td class="key-table-required">否
@@ -1445,7 +1445,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-ZenkakuHankaku">"ZenkakuHankaku"</code>
       <td class="key-table-required">否
-      <td>半/全角切换(Zenkaku/Hankaku (full-width/half-width) 									toggle)键。 (<code class="android">KEYCODE_ZENKAKU_HANKAKU</code>) 
+      <td>半/全角切换(Zenkaku/Hankaku 									(full-width/half-width) toggle)键。 (<code class="android">KEYCODE_ZENKAKU_HANKAKU</code>) 
    </table>
    <h3 class="heading settled" data-level="3.9" id="keys-function"><span class="secno">3.9. </span><span class="content">通用功能键</span><a class="self-link" href="#keys-function"></a></h3>
    <p>每个平台上的通用功能键(general purpose function keys)的准确数量都不相同，
@@ -1839,7 +1839,8 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-AppSwitch">"AppSwitch"</code>
       <td class="key-table-required">否
-      <td>应用程序转换(Application switch)键，								它提供了一个可在其中切换最近应用程序的列表。(<code class="android">KEYCODE_APP_SWITCH</code>) 
+      <td>应用程序转换(Application switch)键，								它提供了一个可在其中进行切换的最近应用程序的列表。
+								(<code class="android">KEYCODE_APP_SWITCH</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Call">"Call"</code>
       <td class="key-table-required">否
@@ -1885,7 +1886,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="key-table-required">否
       <td>语音拨号(Voice Dial)键。
    </table>
-   <h3 class="heading settled" data-level="3.17" id="keys-tv"><span class="secno">3.17. </span><span class="content">TV Keys</span><a class="self-link" href="#keys-tv"></a></h3>
+   <h3 class="heading settled" data-level="3.17" id="keys-tv"><span class="secno">3.17. </span><span class="content">电视(TV)按键</span><a class="self-link" href="#keys-tv"></a></h3>
    <table class="data-table full-width" id="key-table-tv">
     <thead>
      <tr>
@@ -1896,138 +1897,136 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td class="key-table-key"><code class="key" id="key-TV">"TV"</code>
       <td class="key-table-required">否
-      <td>Switch to viewing TV. (<code class="android">KEYCODE_TV</code>)
+      <td>观看电视开关。(<code class="android">KEYCODE_TV</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TV3DMode">"TV3DMode"</code>
       <td class="key-table-required">否
-      <td>TV 3D Mode. (<code class="android">KEYCODE_3D_MODE</code>)
+      <td>电视 3D 模式。 (<code class="android">KEYCODE_3D_MODE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVAntennaCable">"TVAntennaCable"</code>
       <td class="key-table-required">否
-      <td>Toggle between antenna and cable input. (<code class="android">KEYCODE_TV_ANTENNA_CABLE</code>)
+      <td>在天线和电缆输入之间切换(接收源)。 								(<code class="android">KEYCODE_TV_ANTENNA_CABLE</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVAudioDescription">"TVAudioDescription"</code>
       <td class="key-table-required">否
-      <td>Audio description. (<code class="android">KEYCODE_TV_AUDIO_DESCRIPTION</code>)
+      <td>音频描述。(<code class="android">KEYCODE_TV_AUDIO_DESCRIPTION</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVAudioDescriptionMixDown">"TVAudioDescriptionMixDown"</code>
       <td class="key-table-required">否
-      <td>Audio description mixing volume down. (<code class="android">KEYCODE_TV_AUDIO_DESCRIPTION_MIX_DOWN</code>)
+      <td>音频描述降低音量。 								(<code class="android">KEYCODE_TV_AUDIO_DESCRIPTION_MIX_DOWN</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVAudioDescriptionMixUp">"TVAudioDescriptionMixUp"</code>
       <td class="key-table-required">否
-      <td>Audio description mixing volume up. (<code class="android">KEYCODE_TV_AUDIO_DESCRIPTION_MIX_UP</code>)
+      <td>音频描述提高音量。 								(<code class="android">KEYCODE_TV_AUDIO_DESCRIPTION_MIX_UP</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVContentsMenu">"TVContentsMenu"</code>
       <td class="key-table-required">否
-      <td>Contents menu. (<code class="android">KEYCODE_TV_CONTENTS_MENU</code>)
+      <td>内容菜单。 (<code class="android">KEYCODE_TV_CONTENTS_MENU</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVDataService">"TVDataService"</code>
       <td class="key-table-required">否
-      <td>Contents menu. (<code class="android">KEYCODE_TV_DATA_SERVICE</code>)
+      <td>内容菜单. (<code class="android">KEYCODE_TV_DATA_SERVICE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInput">"TVInput"</code>
       <td class="key-table-required">否
-      <td>Switch the input mode on an external TV. (<code class="android">KEYCODE_TV_INPUT</code>)
+      <td>在外部电视(external TV)上切换输入模式。 								(<code class="android">KEYCODE_TV_INPUT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputComponent1">"TVInputComponent1"</code>
       <td class="key-table-required">否
-      <td>Switch to component input #1. (<code class="android">KEYCODE_TV_INPUT_COMPONENT_1</code>)
+      <td>切换到部件输入(component input) #1。								(<code class="android">KEYCODE_TV_INPUT_COMPONENT_1</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputComponent2">"TVInputComponent2"</code>
       <td class="key-table-required">否
-      <td>Switch to component input #2. (<code class="android">KEYCODE_TV_INPUT_COMPONENT_2</code>)
+      <td>切换到部件输入(component input) #2。								(<code class="android">KEYCODE_TV_INPUT_COMPONENT_2</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputComposite1">"TVInputComposite1"</code>
       <td class="key-table-required">否
-      <td>Switch to composite input #1. (<code class="android">KEYCODE_TV_INPUT_COMPOSITE_1</code>)
+      <td>切换到复合输入(composite input) #1。								(<code class="android">KEYCODE_TV_INPUT_COMPOSITE_1</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputComposite2">"TVInputComposite2"</code>
       <td class="key-table-required">否
-      <td>Switch to composite input #2. (<code class="android">KEYCODE_TV_INPUT_COMPOSITE_2</code>)
+      <td>切换到复合输入(composite input) #2。								(<code class="android">KEYCODE_TV_INPUT_COMPOSITE_2</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputHDMI1">"TVInputHDMI1"</code>
       <td class="key-table-required">否
-      <td>Switch to HDMI input #1. (<code class="android">KEYCODE_TV_INPUT_HDMI_1</code>)
+      <td>切换到 HDMI 输入 #1。								(<code class="android">KEYCODE_TV_INPUT_HDMI_1</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputHDMI2">"TVInputHDMI2"</code>
       <td class="key-table-required">否
-      <td>Switch to HDMI input #2. (<code class="android">KEYCODE_TV_INPUT_HDMI_2</code>)
+      <td>切换到 HDMI 输入 #2。 								(<code class="android">KEYCODE_TV_INPUT_HDMI_2</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputHDMI3">"TVInputHDMI3"</code>
       <td class="key-table-required">否
-      <td>Switch to HDMI input #3. (<code class="android">KEYCODE_TV_INPUT_HDMI_3</code>)
+      <td>切换到 HDMI 输入 #3。 								(<code class="android">KEYCODE_TV_INPUT_HDMI_3</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputHDMI4">"TVInputHDMI4"</code>
       <td class="key-table-required">否
-      <td>Switch to HDMI input #4. (<code class="android">KEYCODE_TV_INPUT_HDMI_4</code>)
+      <td>切换到 HDMI 输入 #4。 								(<code class="android">KEYCODE_TV_INPUT_HDMI_4</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVInputVGA1">"TVInputVGA1"</code>
       <td class="key-table-required">否
-      <td>Switch to VGA input #1. (<code class="android">KEYCODE_TV_INPUT_VGA_1</code>)
+      <td>切换到 VGA 输入 #1。								(<code class="android">KEYCODE_TV_INPUT_VGA_1</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVMediaContext">"TVMediaContext"</code>
       <td class="key-table-required">否
-      <td>Media context menu. (<code class="android">KEYCODE_TV_MEDIA_CONTEXT_MENU</code>)
+      <td>媒体上下文菜单。								(<code class="android">KEYCODE_TV_MEDIA_CONTEXT_MENU</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVNetwork">"TVNetwork"</code>
       <td class="key-table-required">否
-      <td>Toggle network. (<code class="android">KEYCODE_TV_NETWORK</code>)
+      <td>切换网络。 (<code class="android">KEYCODE_TV_NETWORK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVNumberEntry">"TVNumberEntry"</code>
       <td class="key-table-required">否
-      <td>Number entry. (<code class="android">KEYCODE_TV_NUMBER_ENTRY</code>)
+      <td>数字输入。 (<code class="android">KEYCODE_TV_NUMBER_ENTRY</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVPower">"TVPower"</code>
       <td class="key-table-required">否
-      <td>Toggle the power on an external TV. (<code class="android">KEYCODE_TV_POWER</code>)
+      <td>外部电视上的电源开关。 								(<code class="android">KEYCODE_TV_POWER</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVRadioService">"TVRadioService"</code>
       <td class="key-table-required">否
-      <td>Radio. (<code class="android">KEYCODE_TV_RADIO_SERVICE</code>)
+      <td>音频。 (<code class="android">KEYCODE_TV_RADIO_SERVICE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVSatellite">"TVSatellite"</code>
       <td class="key-table-required">否
-      <td>Satellite. (<code class="android">KEYCODE_TV_SATELLITE</code>)
+      <td>卫星。 (<code class="android">KEYCODE_TV_SATELLITE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVSatelliteBS">"TVSatelliteBS"</code>
       <td class="key-table-required">否
-      <td>Broadcast Satellite. (<code class="android">KEYCODE_TV_SATELLITE_BS</code>)
+      <td>广播卫星。 (<code class="android">KEYCODE_TV_SATELLITE_BS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVSatelliteCS">"TVSatelliteCS"</code>
       <td class="key-table-required">否
-      <td>Communication Satellite. (<code class="android">KEYCODE_TV_SATELLITE_CS</code>)
+      <td>通信卫星。 (<code class="android">KEYCODE_TV_SATELLITE_CS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVSatelliteToggle">"TVSatelliteToggle"</code>
       <td class="key-table-required">否
-      <td>Toggle between available satellites. (<code class="android">KEYCODE_TV_SATELLITE_SERVICE</code>)
+      <td>在可用卫星之间切换。								(<code class="android">KEYCODE_TV_SATELLITE_SERVICE</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVTerrestrialAnalog">"TVTerrestrialAnalog"</code>
       <td class="key-table-required">否
-      <td>Analog Terrestrial. (<code class="android">KEYCODE_TV_TERRESTRIAL_ANALOG</code>)
+      <td>模拟地面流传(Analog Terrestrial)。 								(<code class="android">KEYCODE_TV_TERRESTRIAL_ANALOG</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVTerrestrialDigital">"TVTerrestrialDigital"</code>
       <td class="key-table-required">否
-      <td>Digital Terrestrial. (<code class="android">KEYCODE_TV_TERRESTRIAL_DIGITAL</code>)
+      <td>数字地面流传(Digital Terrestrial)。								(<code class="android">KEYCODE_TV_TERRESTRIAL_DIGITAL</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-TVTimer">"TVTimer"</code>
       <td class="key-table-required">否
-      <td>Timer programming. (<code class="android">KEYCODE_TV_TIMER_PROGRAMMING</code>)
+      <td>定时器编程。								(<code class="android">KEYCODE_TV_TIMER_PROGRAMMING</code>) 
    </table>
-   <h3 class="heading settled" data-level="3.18" id="keys-media-controller"><span class="secno">3.18. </span><span class="content">Media Controller Keys</span><a class="self-link" href="#keys-media-controller"></a></h3>
-   <p>The <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④①">键属性值</a> for media controllers (e.g. remote controls for
-		television, audio systems, and set-top boxes) are derived in part from
-		the consumer electronics technical specifications:</p>
+   <h3 class="heading settled" data-level="3.18" id="keys-media-controller"><span class="secno">3.18. </span><span class="content">媒体控制器按键</span><a class="self-link" href="#keys-media-controller"></a></h3>
+   <p>媒体控制器(media controllers)的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value④①">键属性值</a> (例如电视、
+		音频系统和机顶盒的遥控器)部分源自消费者电子技术规范:</p>
    <ul>
     <li data-md>
-     <p>DTV Application Software Environment <a data-link-type="biblio" href="#biblio-dase" title="ATSC A/100-2, DTV Application Software Environment Level 1 (DASE-1) Part 2: Declarative Applications and Environment">[DASE]</a></p>
+     <p>数字电视应用软件环境 <a data-link-type="biblio" href="#biblio-dase" title="ATSC A/100-2, DTV Application Software Environment Level 1 (DASE-1) Part 2: Declarative Applications and Environment">[DASE]</a></p>
     <li data-md>
-     <p>Open Cable Application Platform 1.1.3 <a data-link-type="biblio" href="#biblio-ocap" title="Open Cable Application Platform 1.1.3">[OCAP]</a></p>
+     <p>开放式电缆应用平台 1.1.3 <a data-link-type="biblio" href="#biblio-ocap" title="Open Cable Application Platform 1.1.3">[OCAP]</a></p>
     <li data-md>
-     <p>ANSI/CTA-2014-B, Web-based Protocol and Framework for Remote User
-Interface on UPnP Networks and the Internet <a data-link-type="biblio" href="#biblio-web4ce" title="ANSI/CTA-2014-B, Web-based Protocol and Framework for Remote User Interface on UPnP Networks and the Internet (Web4CE)">[WEB4CE]</a></p>
+     <p>ANSI/CTA-2014-B，基于 Web 的关于 UPnP 网络和互联网的远程用户界面协议和框架 <a data-link-type="biblio" href="#biblio-web4ce" title="ANSI/CTA-2014-B, Web-based Protocol and Framework for Remote User Interface on UPnP Networks and the Internet (Web4CE)">[WEB4CE]</a></p>
     <li data-md>
-     <p>Android KeyEvent KEYCODEs <a data-link-type="biblio" href="#biblio-androidkeycode" title="Android KeyEvent">[AndroidKeycode]</a></p>
+     <p>安卓键事件键码(Android KeyEvent KEYCODEs) <a data-link-type="biblio" href="#biblio-androidkeycode" title="Android KeyEvent">[AndroidKeycode]</a></p>
    </ul>
    <table class="data-table full-width" id="key-table-media-controller">
     <thead>
@@ -2039,298 +2038,297 @@ Interface on UPnP Networks and the Internet <a data-link-type="biblio" href="#bi
      <tr>
       <td class="key-table-key"><code class="key" id="key-AVRInput">"AVRInput"</code>
       <td class="key-table-required">否
-      <td>Switch the input mode on an external AVR (audio/video receiver). (<code class="android">KEYCODE_AVR_INPUT</code>)
+      <td>在外部 AVR （音频/视频接收器）上切换输入模式。 									(<code class="android">KEYCODE_AVR_INPUT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-AVRPower">"AVRPower"</code>
       <td class="key-table-required">否
-      <td>Toggle the power on an external AVR (audio/video receiver). (<code class="android">KEYCODE_AVR_POWER</code>)
+      <td>外部 AVR（音频/视频接收器）的电源开关。									(<code class="android">KEYCODE_AVR_POWER</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF0Red">"ColorF0Red"</code>
       <td class="key-table-required">否
-      <td>General purpose color-coded media function key, as index 0 (red). (<code class="vk"><code class="vk">VK_COLORED_KEY_0</code></code>, <code class="android"><code class="android">KEYCODE_PROG_RED</code></code>)
+      <td>通用彩色编码媒体功能键，索引为 0 (红)。									(<code class="vk"><code class="vk">VK_COLORED_KEY_0</code></code>, <code class="android"><code class="android">KEYCODE_PROG_RED</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF1Green">"ColorF1Green"</code>
       <td class="key-table-required">否
-      <td>General purpose color-coded media function key, as index 1 (green). (<code class="vk"><code class="vk">VK_COLORED_KEY_1</code></code>, <code class="android"><code class="android">KEYCODE_PROG_GREEN</code></code>)
+      <td>通用彩色编码媒体功能键，索引为 1 (绿)。 									(<code class="vk"><code class="vk">VK_COLORED_KEY_1</code></code>, <code class="android"><code class="android">KEYCODE_PROG_GREEN</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF2Yellow">"ColorF2Yellow"</code>
       <td class="key-table-required">否
-      <td>General purpose color-coded media function key, as index 2 (yellow). (<code class="vk"><code class="vk">VK_COLORED_KEY_2</code></code>, <code class="android"><code class="android">KEYCODE_PROG_YELLOW</code></code>)
+      <td>通用彩色编码媒体功能键，索引为 2 (黄)。									(<code class="vk"><code class="vk">VK_COLORED_KEY_2</code></code>, <code class="android"><code class="android">KEYCODE_PROG_YELLOW</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF3Blue">"ColorF3Blue"</code>
       <td class="key-table-required">否
-      <td>General purpose color-coded media function key, as index 3 (blue). (<code class="vk"><code class="vk">VK_COLORED_KEY_3</code></code>, <code class="android"><code class="android">KEYCODE_PROG_BLUE</code></code>)
+      <td>通用彩色编码媒体功能键，索引为 3 (蓝)。 									(<code class="vk"><code class="vk">VK_COLORED_KEY_3</code></code>, <code class="android"><code class="android">KEYCODE_PROG_BLUE</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF4Grey">"ColorF4Grey"</code>
       <td class="key-table-required">否
-      <td>General purpose color-coded media function key, as index 4 (grey). (<code class="vk">VK_COLORED_KEY_4</code>)
+      <td>通用彩色编码媒体功能键，索引为 4 (灰)。									(<code class="vk">VK_COLORED_KEY_4</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ColorF5Brown">"ColorF5Brown"</code>
       <td class="key-table-required">否
-      <td>General purpose color-coded media function key, as index 5 (brown). (<code class="vk">VK_COLORED_KEY_5</code>)
+      <td>通用彩色编码媒体功能键，索引为 5 (棕)。 									(<code class="vk">VK_COLORED_KEY_5</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ClosedCaptionToggle">"ClosedCaptionToggle"</code>
       <td class="key-table-required">否
-      <td>Toggle the display of Closed Captions. (<code class="vk"><code class="vk">VK_CC</code></code>, <code class="android"><code class="android">KEYCODE_CAPTIONS</code></code>)
+      <td>触发闭路字幕(Colose Captions)的显示。									(<code class="vk"><code class="vk">VK_CC</code></code>, <code class="android"><code class="android">KEYCODE_CAPTIONS</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Dimmer">"Dimmer"</code>
       <td class="key-table-required">否
-      <td>Adjust brightness of device, by toggling between or cycling through states. (<code class="vk">VK_DIMMER</code>)
+      <td>通过在状态之间循环切换来调整设备的亮度。 									(<code class="vk">VK_DIMMER</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-DisplaySwap">"DisplaySwap"</code>
       <td class="key-table-required">否
-      <td>Swap video sources. (<code class="vk">VK_DISPLAY_SWAP</code>)
+      <td>交换视频源。(<code class="vk">VK_DISPLAY_SWAP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-DVR">"DVR"</code>
       <td class="key-table-required">否
-      <td>Select Digital Video Rrecorder. (<code class="android">KEYCODE_DVR</code>)
+      <td>选择数字视频录像机。 (<code class="android">KEYCODE_DVR</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Exit">"Exit"</code>
       <td class="key-table-required">否
-      <td>Exit the current application. (<code class="vk">VK_EXIT</code>)
+      <td>退出当前应用程序。 (<code class="vk">VK_EXIT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteClear0">"FavoriteClear0"</code>
       <td class="key-table-required">否
-      <td>Clear program or content stored as favorite 0. (<code class="vk">VK_CLEAR_FAVORITE_0</code>)
+      <td>清除存储为收藏夹第 0 项的节目或内容。									(<code class="vk">VK_CLEAR_FAVORITE_0</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteClear1">"FavoriteClear1"</code>
       <td class="key-table-required">否
-      <td>Clear program or content stored as favorite 1. (<code class="vk">VK_CLEAR_FAVORITE_1</code>)
+      <td>清除存储为收藏夹第 1 项的节目或内容。									(<code class="vk">VK_CLEAR_FAVORITE_1</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteClear2">"FavoriteClear2"</code>
       <td class="key-table-required">否
-      <td>Clear program or content stored as favorite 2. (<code class="vk">VK_CLEAR_FAVORITE_2</code>)
+      <td>清除存储为收藏夹第 2 项的节目或内容。									(<code class="vk">VK_CLEAR_FAVORITE_2</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteClear3">"FavoriteClear3"</code>
       <td class="key-table-required">否
-      <td>Clear program or content stored as favorite 3. (<code class="vk">VK_CLEAR_FAVORITE_3</code>)
+      <td>清除存储为收藏夹第 3 项的节目或内容。									(<code class="vk">VK_CLEAR_FAVORITE_3</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteRecall0">"FavoriteRecall0"</code>
       <td class="key-table-required">否
-      <td>Select (recall) program or content stored as favorite 0. (<code class="vk">VK_RECALL_FAVORITE_0</code>)
+      <td>选择（调用）存储为收藏夹第 0 项的节目或内容。									(<code class="vk">VK_RECALL_FAVORITE_0</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteRecall1">"FavoriteRecall1"</code>
       <td class="key-table-required">否
-      <td>Select (recall) program or content stored as favorite 1. (<code class="vk">VK_RECALL_FAVORITE_1</code>)
+      <td>选择（调用）存储为收藏夹第 1 项的节目或内容。 									(<code class="vk">VK_RECALL_FAVORITE_1</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteRecall2">"FavoriteRecall2"</code>
       <td class="key-table-required">否
-      <td>Select (recall) program or content stored as favorite 2. (<code class="vk">VK_RECALL_FAVORITE_2</code>)
+      <td>选择（调用）存储为收藏夹第 2 项的节目或内容。 									(<code class="vk">VK_RECALL_FAVORITE_2</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteRecall3">"FavoriteRecall3"</code>
       <td class="key-table-required">否
-      <td>Select (recall) program or content stored as favorite 3. (<code class="vk">VK_RECALL_FAVORITE_3</code>)
+      <td>选择（调用）存储为收藏夹第 3 项的节目或内容。 									(<code class="vk">VK_RECALL_FAVORITE_3</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteStore0">"FavoriteStore0"</code>
       <td class="key-table-required">否
-      <td>Store current program or content as favorite 0. (<code class="vk">VK_STORE_FAVORITE_0</code>)
+      <td>将当前节目或内容存储为收藏夹第 0 项。 									(<code class="vk">VK_STORE_FAVORITE_0</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteStore1">"FavoriteStore1"</code>
       <td class="key-table-required">否
-      <td>Store current program or content as favorite 1. (<code class="vk">VK_STORE_FAVORITE_1</code>)
+      <td>将当前节目或内容存储为收藏夹第 1 项。 									(<code class="vk">VK_STORE_FAVORITE_1</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteStore2">"FavoriteStore2"</code>
       <td class="key-table-required">否
-      <td>Store current program or content as favorite 2. (<code class="vk">VK_STORE_FAVORITE_2</code>)
+      <td>将当前节目或内容存储为收藏夹第 2 项。 									(<code class="vk">VK_STORE_FAVORITE_2</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-FavoriteStore3">"FavoriteStore3"</code>
       <td class="key-table-required">否
-      <td>Store current program or content as favorite 3. (<code class="vk">VK_STORE_FAVORITE_3</code>)
+      <td>将当前节目或内容存储为收藏夹第 3 项。 									(<code class="vk">VK_STORE_FAVORITE_3</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Guide">"Guide"</code>
       <td class="key-table-required">否
-      <td>Toggle display of program or content guide. (<code class="vk"><code class="vk">VK_GUIDE</code></code>, <code class="android"><code class="android">KEYCODE_GUIDE</code></code>)
+      <td>触发节目或内容指南的显示。									(<code class="vk"><code class="vk">VK_GUIDE</code></code>, <code class="android"><code class="android">KEYCODE_GUIDE</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-GuideNextDay">"GuideNextDay"</code>
       <td class="key-table-required">否
-      <td>If guide is active and displayed, then display next day’s content. (<code class="vk">VK_NEXT_DAY</code>)
+      <td>如果指南处于活动状态并已显示，									则显示第二天的内容。(<code class="vk">VK_NEXT_DAY</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-GuidePreviousDay">"GuidePreviousDay"</code>
       <td class="key-table-required">否
-      <td>If guide is active and displayed, then display previous day’s content. (<code class="vk">VK_PREV_DAY</code>)
+      <td>如果指南处于活动状态并已显示，									则显示前一天的内容。(<code class="vk">VK_PREV_DAY</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Info">"Info"</code>
       <td class="key-table-required">否
-      <td>Toggle display of information about currently selected context or media. (<code class="vk"><code class="vk">VK_INFO</code></code>, <code class="android"><code class="android">KEYCODE_INFO</code></code>)
+      <td>触发当前所选上下文或媒体信息的显示。									(<code class="vk"><code class="vk">VK_INFO</code></code>, <code class="android"><code class="android">KEYCODE_INFO</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-InstantReplay">"InstantReplay"</code>
       <td class="key-table-required">否
-      <td>Toggle instant replay. (<code class="vk">VK_INSTANT_REPLAY</code>)
+      <td>触发即时重播(instant replay)。 									(<code class="vk">VK_INSTANT_REPLAY</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Link">"Link"</code>
       <td class="key-table-required">否
-      <td>Launch linked content, if available and appropriate. (<code class="vk">VK_LINK</code>)
+      <td>启动链接内容（如果可用且适当）。 (<code class="vk">VK_LINK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ListProgram">"ListProgram"</code>
       <td class="key-table-required">否
-      <td>List the current program. (<code class="vk">VK_LIST</code>)
+      <td>列出当前节目。(<code class="vk">VK_LIST</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-LiveContent">"LiveContent"</code>
       <td class="key-table-required">否
-      <td>Toggle display listing of currently available live content or programs. (<code class="vk">VK_LIVE</code>)
+      <td>触发当前可看的实时内容或节目的列表显示。 									(<code class="vk">VK_LIVE</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Lock">"Lock"</code>
       <td class="key-table-required">否
-      <td>Lock or unlock current content or program. (<code class="vk">VK_LOCK</code>)
+      <td>锁定或解锁当前内容或节目。(<code class="vk">VK_LOCK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaApps">"MediaApps"</code>
       <td class="key-table-required">否
       <td>
-       Show a list of media applications: audio/video players and image viewers. (<code class="vk">VK_APPS</code>) 
-       <p class="note" role="note">Do not confuse this key value with the Windows' <code class="vk"><code class="vk">VK_APPS</code></code> / <code class="vk"><code class="vk">VK_CONTEXT_MENU</code></code> key, which is encoded as <code class="key">"<a href="#key-ContextMenu">ContextMenu</a>"</code>.</p>
+       显示媒体应用程序列表: 音频/									视频播放器和图像查看器。(<code class="vk">VK_APPS</code>) 
+       <p class="note" role="note"> 不要将此键值与 Windows 的 <code class="vk">VK_APPS</code> / <code class="vk">VK_CONTEXT_MENU</code> 键混淆，
+									后者编码为 <code class="key">"<a href="#key-ContextMenu">ContextMenu</a>"</code> 。</p>
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaAudioTrack">"MediaAudioTrack"</code>
       <td class="key-table-required">否
-      <td>Audio track key. (<code class="android">KEYCODE_MEDIA_AUDIO_TRACK</code>)
+      <td>音轨键。(<code class="android">KEYCODE_MEDIA_AUDIO_TRACK</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaLast">"MediaLast"</code>
       <td class="key-table-required">否
-      <td>Select previously selected channel or media. (<code class="vk"><code class="vk">VK_LAST</code></code>, <code class="android"><code class="android">KEYCODE_LAST_CHANNEL</code></code>)
+      <td>选择以前选择的频道或媒体。									(<code class="vk"><code class="vk">VK_LAST</code></code>, <code class="android"><code class="android">KEYCODE_LAST_CHANNEL</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaSkipBackward">"MediaSkipBackward"</code>
       <td class="key-table-required">否
-      <td>Skip backward to next content or program. (<code class="android">KEYCODE_MEDIA_SKIP_BACKWARD</code>)
+      <td>向后跳过(skip)下一个内容或节目。 									(<code class="android">KEYCODE_MEDIA_SKIP_BACKWARD</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaSkipForward">"MediaSkipForward"</code>
       <td class="key-table-required">否
-      <td>Skip forward to next content or program. (<code class="vk"><code class="vk">VK_SKIP</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_SKIP_FORWARD</code></code>)
+      <td>向前跳过(skip)下一个内容或节目。 									(<code class="vk"><code class="vk">VK_SKIP</code></code>, <code class="android"><code class="android">KEYCODE_MEDIA_SKIP_FORWARD</code></code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaStepBackward">"MediaStepBackward"</code>
       <td class="key-table-required">否
-      <td>Step backward to next content or program. (<code class="android">KEYCODE_MEDIA_STEP_BACKWARD</code>)
+      <td>后退到下一个内容或节目。									(<code class="android">KEYCODE_MEDIA_STEP_BACKWARD</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaStepForward">"MediaStepForward"</code>
       <td class="key-table-required">否
-      <td>Step forward to next content or program. (<code class="android">KEYCODE_MEDIA_STEP_FORWARD</code>)
+      <td>前进到下一个内容或节目。									(<code class="android">KEYCODE_MEDIA_STEP_FORWARD</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-MediaTopMenu">"MediaTopMenu"</code>
       <td class="key-table-required">否
-      <td>Media top menu. (<code class="android">KEYCODE_MEDIA_TOP_MENU</code>)
+      <td>媒体顶部菜单。 (<code class="android">KEYCODE_MEDIA_TOP_MENU</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NavigateIn">"NavigateIn"</code>
       <td class="key-table-required">否
-      <td>Navigate in. (<code class="android">KEYCODE_NAVIGATE_IN</code>)
+      <td>导航——进入。 (<code class="android">KEYCODE_NAVIGATE_IN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NavigateNext">"NavigateNext"</code>
       <td class="key-table-required">否
-      <td>Navigate to next key. (<code class="android">KEYCODE_NAVIGATE_NEXT</code>)
+      <td>导航到下一个键。 (<code class="android">KEYCODE_NAVIGATE_NEXT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NavigateOut">"NavigateOut"</code>
       <td class="key-table-required">否
-      <td>Navigate out. (<code class="android">KEYCODE_NAVIGATE_OUT</code>)
+      <td>导航——出去。 (<code class="android">KEYCODE_NAVIGATE_OUT</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NavigatePrevious">"NavigatePrevious"</code>
       <td class="key-table-required">否
-      <td>Navigate to previous key. (<code class="android">KEYCODE_NAVIGATE_PREVIOUS</code>)
+      <td>导航到上一个键。 (<code class="android">KEYCODE_NAVIGATE_PREVIOUS</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-NextFavoriteChannel">"NextFavoriteChannel"</code>
       <td class="key-table-required">否
-      <td>Cycle to next favorite channel (in favorites list). (<code class="vk">VK_NEXT_FAVORITE_CHANNEL</code>)
+      <td>循环到下一个收藏夹频道（在收藏夹列表中）。 									(<code class="vk">VK_NEXT_FAVORITE_CHANNEL</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-NextUserProfile">"NextUserProfile"</code>
       <td class="key-table-required">否
-      <td>Cycle to next user profile (if there are multiple user profiles). (<code class="vk">VK_USER</code>)
+      <td>循环到下一个用户主页（如果有多个用户主页）。									(<code class="vk">VK_USER</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-OnDemand">"OnDemand"</code>
       <td class="key-table-required">否
-      <td>Access on-demand content or programs. (<code class="vk">VK_ON_DEMAND</code>)
+      <td>访问点播内容或节目。 (<code class="vk">VK_ON_DEMAND</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Pairing">"Pairing"</code>
       <td class="key-table-required">否
-      <td>Pairing key to pair devices. (<code class="android">KEYCODE_PAIRING</code>)
+      <td>将按键与设备配对。 (<code class="android">KEYCODE_PAIRING</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-PinPDown">"PinPDown"</code>
       <td class="key-table-required">否
-      <td>Move picture-in-picture window down. (<code class="vk">VK_PINP_DOWN</code>)
+      <td>移下画中画(picture-in-picture)窗口。									(<code class="vk">VK_PINP_DOWN</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-PinPMove">"PinPMove"</code>
       <td class="key-table-required">否
-      <td>Move picture-in-picture window. (<code class="vk">VK_PINP_MOVE</code>)
+      <td>移动画中画(picture-in-picture)窗口。									(<code class="vk">VK_PINP_MOVE</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-PinPToggle">"PinPToggle"</code>
       <td class="key-table-required">否
-      <td>Toggle display of picture-in-picture window. (<code class="vk">VK_PINP_TOGGLE</code>)
+      <td>触发画中画(picture-in-picture)窗口的显示。									(<code class="vk">VK_PINP_TOGGLE</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-PinPUp">"PinPUp"</code>
       <td class="key-table-required">否
-      <td>Move picture-in-picture window up. (<code class="vk">VK_PINP_UP</code>)
+      <td>移上画中画(picture-in-picture)窗口。									(<code class="vk">VK_PINP_UP</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-PlaySpeedDown">"PlaySpeedDown"</code>
       <td class="key-table-required">否
-      <td>Decrease media playback speed. (<code class="vk">VK_PLAY_SPEED_DOWN</code>)
+      <td>降低媒体播放速度。(<code class="vk">VK_PLAY_SPEED_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-PlaySpeedReset">"PlaySpeedReset"</code>
       <td class="key-table-required">否
-      <td>Reset playback to normal speed. (<code class="vk">VK_PLAY_SPEED_RESET</code>)
+      <td>将播放速度重置为正常速度。									(<code class="vk">VK_PLAY_SPEED_RESET</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-PlaySpeedUp">"PlaySpeedUp"</code>
       <td class="key-table-required">否
-      <td>Increase media playback speed. (<code class="vk">VK_PLAY_SPEED_UP</code>)
+      <td>提高媒体播放速度。(<code class="vk">VK_PLAY_SPEED_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-RandomToggle">"RandomToggle"</code>
       <td class="key-table-required">否
-      <td>Toggle random media or content shuffle mode. (<code class="vk">VK_RANDOM_TOGGLE</code>)
+      <td>切换到随机媒体或内容混洗模式。									(<code class="vk">VK_RANDOM_TOGGLE</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-RcLowBattery">"RcLowBattery"</code>
       <td class="key-table-required">否
-      <td>Not a physical key, but this key code is sent when the remote control battery is low. (<code class="vk">VK_RC_LOW_BATTERY</code>)
+      <td>不是物理按键，									但此键码是在遥控器电池电量不足时发送的。(<code class="vk">VK_RC_LOW_BATTERY</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-RecordSpeedNext">"RecordSpeedNext"</code>
       <td class="key-table-required">否
-      <td>Toggle or cycle between media recording speeds. (<code class="vk">VK_RECORD_SPEED_NEXT</code>)
+      <td>在媒体录制速度之间循环切换。									(<code class="vk">VK_RECORD_SPEED_NEXT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-RfBypass">"RfBypass"</code>
       <td class="key-table-required">否
-      <td>Toggle RF (radio frequency) input bypass mode (pass RF input directly to the RF output). (<code class="vk">VK_RF_BYPASS</code>)
+      <td>触发 RF （射频）输入旁路模式（将 RF 									输入直接传递到 RF 输出）。 (<code class="vk">VK_RF_BYPASS</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ScanChannelsToggle">"ScanChannelsToggle"</code>
       <td class="key-table-required">否
-      <td>Toggle scan channels mode. (<code class="vk">VK_SCAN_CHANNELS_TOGGLE</code>)
+      <td>切换到扫描通道模式。 (<code class="vk">VK_SCAN_CHANNELS_TOGGLE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-ScreenModeNext">"ScreenModeNext"</code>
       <td class="key-table-required">否
-      <td>Advance display screen mode to next available mode. (<code class="vk">VK_SCREEN_MODE_NEXT</code>)
+      <td>将显示屏模式前进到下一个可用模式。									(<code class="vk">VK_SCREEN_MODE_NEXT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Settings">"Settings"</code>
       <td class="key-table-required">否
-      <td>Toggle display of device settings screen. (<code class="vk"><code class="vk">VK_SETTINGS</code></code>, <code class="android"><code class="android">KEYCODE_SETTINGS</code></code>)
+      <td>触发设备设置屏幕的显示。 (<code class="vk">VK_SETTINGS</code>, <code class="android">KEYCODE_SETTINGS</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-SplitScreenToggle">"SplitScreenToggle"</code>
       <td class="key-table-required">否
-      <td>Toggle split screen mode. (<code class="vk">VK_SPLIT_SCREEN_TOGGLE</code>)
+      <td>切换到分屏模式。 (<code class="vk">VK_SPLIT_SCREEN_TOGGLE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-STBInput">"STBInput"</code>
       <td class="key-table-required">否
-      <td>Switch the input mode on an external STB (set top box). (<code class="android">KEYCODE_STB_INPUT</code>)
+      <td>在外部 STB （机顶盒）上切换输入模式。									(<code class="android">KEYCODE_STB_INPUT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-STBPower">"STBPower"</code>
       <td class="key-table-required">否
-      <td>Toggle the power on an external STB (set top box). (<code class="android">KEYCODE_STB_POWER</code>)
+      <td>外部 STB（机顶盒）的电源开关。									(<code class="android">KEYCODE_STB_POWER</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Subtitle">"Subtitle"</code>
       <td class="key-table-required">否
-      <td>Toggle display of subtitles, if available. (<code class="vk">VK_SUBTITLE</code>)
+      <td>触发字幕的显示（如果可用）。(<code class="vk">VK_SUBTITLE</code>)
      <tr>
       <td class="key-table-key"><code class="key" id="key-Teletext">"Teletext"</code>
       <td class="key-table-required">否
-      <td>Toggle display of teletext, if available (<code class="vk"><code class="vk">VK_TELETEXT</code></code>, <code class="android"><code class="android">KEYCODE_TV_TELETEXT</code></code>).
+      <td>触发图文电视的显示（如果可用）。(<code class="vk">VK_TELETEXT</code>, <code class="android">KEYCODE_TV_TELETEXT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-VideoModeNext">"VideoModeNext"</code>
       <td class="key-table-required">否
-      <td>Advance video mode to next available mode. (<code class="vk">VK_VIDEO_MODE_NEXT</code>)
+      <td>将视频模式前进到下一个可用模式。 									(<code class="vk">VK_VIDEO_MODE_NEXT</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-Wink">"Wink"</code>
       <td class="key-table-required">否
-      <td>Cause device to identify itself in some manner, e.g., audibly or visibly. (<code class="vk">VK_WINK</code>)
+      <td>使设备以某种方式识别自身，例如，听觉或视觉。 									(<code class="vk">VK_WINK</code>) 
      <tr>
       <td class="key-table-key"><code class="key" id="key-ZoomToggle">"ZoomToggle"</code>
       <td class="key-table-required">否
-      <td>Toggle between full-screen and scaled content, or alter magnification level. (<code class="vk"><code class="vk">VK_ZOOM</code></code>, <code class="android"><code class="android">KEYCODE_TV_ZOOM_MODE</code></code>)
+      <td>在全屏和缩放内容之间切换，或更改缩放级别									(magnification level)。(<code class="vk"><code class="vk">VK_ZOOM</code></code>, <code class="android"><code class="android">KEYCODE_TV_ZOOM_MODE</code></code>) 
    </table>
-   <p>Some of the keys defined in the media controller standards already have
-		appropriate keys defined in other sections of this specification. These
-		following table summarizes the key values that MUST be used if these keys are
-		supported:</p>
+   <p>媒体控制器标准中定义的一些按键已经在本规范的其他部分中定义了合适的按键。
+		下表总结了这些键被支持的情况下 <span class="zh-upper">必须</span> 使用的键值:</p>
    <table class="data-table full-width" id="key-table-media-controller-dup">
     <thead>
      <tr>
@@ -2341,95 +2339,96 @@ Interface on UPnP Networks and the Internet <a data-link-type="biblio" href="#bi
      <tr>
       <td class="key-table-key"><code class="key">"AudioVolumeDown"</code>
       <td class="key-table-required">否
-      <td>Decrease audio volume. (<code class="vk">VK_VOLUME_DOWN</code>)
+      <td>降低音频音量。(<code class="vk">VK_VOLUME_DOWN</code>)
      <tr>
       <td class="key-table-key"><code class="key">"AudioVolumeUp"</code>
       <td class="key-table-required">否
-      <td>Increase audio volume. (<code class="vk">VK_VOLUME_UP</code>)
+      <td>增加音频音量。(<code class="vk">VK_VOLUME_UP</code>)
      <tr>
       <td class="key-table-key"><code class="key">"AudioVolumeMute"</code>
       <td class="key-table-required">否
-      <td>Toggle between muted state and prior volume level. (<code class="vk">VK_VOLUME_MUTE</code>)
+      <td>在静音状态和先前音量水平(prior volume 									level) 之间进行切换。 (<code class="vk">VK_VOLUME_MUTE</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"BrowserBack"</code>
       <td class="key-table-required">否
-      <td>Navigate to previous content or page in current history. (<code class="vk">VK_BACK</code>)
+      <td>导航到当前历史记录中的上一个内容或页面。 									(<code class="vk">VK_BACK</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"BrowserForward"</code>
       <td class="key-table-required">否
-      <td>Navigate to next content or page in current history. (<code class="vk">VK_FORWARD</code>)
+      <td>导航到当前历史记录中的下一个内容或页面。 									(<code class="vk">VK_FORWARD</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"ChannelDown"</code>
       <td class="key-table-required">否
-      <td>Select next (numerically or logically) lower channel. (<code class="vk">VK_CHANNEL_DOWN</code>)
+      <td>选择下一个(数字上地或逻辑上地)较低的频道。									(<code class="vk">VK_CHANNEL_DOWN</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"ChannelUp"</code>
       <td class="key-table-required">否
-      <td>Select next (numerically or logically) higher channel. (<code class="vk">VK_CHANNEL_UP</code>)
+      <td>选择下一个(数字上地或逻辑上地)较高的频道。 									(<code class="vk">VK_CHANNEL_UP</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"ContextMenu"</code>
       <td class="key-table-required">是
-      <td>Toggle display of the on-screen menu. (<code class="vk">VK_MENU</code>)
+      <td>触发屏幕菜单的显示。 (<code class="vk">VK_MENU</code>)
      <tr>
       <td class="key-table-key"><code class="key">"Eject"</code>
       <td class="key-table-required">否
-      <td>Toggle removable media to eject (open) and insert (close) state. (<code class="vk">VK_EJECT_TOGGLE</code>)
+      <td>将可移动媒介(removable media)切换到弹出 									(打开)和插入(关闭)状态。(<code class="vk">VK_EJECT_TOGGLE</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"End"</code>
       <td class="key-table-required">是
-      <td>End 键，used with keyboard entry to go to the end of content. (<code class="vk">VK_GO_TO_END</code>)
+      <td>结束(End)键，配合键盘输入使用，									用于跳转到输入内容的末尾。 (<code class="vk">VK_GO_TO_END</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"Enter"</code>
       <td class="key-table-required">是
-      <td>Enter 键，to activate current selection or accept current input. (<code class="vk">VK_SELECT</code>)
+      <td>Enter 键，用于激活当前选择或接受当前输入。									(<code class="vk">VK_SELECT</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"Home"</code>
       <td class="key-table-required">是
-      <td>Home 键，used with keyboard entry, to go to start of content. (<code class="vk">VK_GO_TO_START</code>)
+      <td>Home 键，配合键盘输入使用，									用于跳转到输入内容的开头。 (<code class="vk">VK_GO_TO_START</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"MediaFastForward"</code>
       <td class="key-table-required">否
-      <td>Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding. (<code class="vk">VK_FAST_FWD</code>)
+      <td>以比正常速度更快的速度启动或									继续向前播放媒体，如果已经快进，则增加播放速度。 (<code class="vk">VK_FAST_FWD</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"MediaPlay"</code>
       <td class="key-table-required">否
-      <td>Initiate or continue media playback at normal speed, if not currently playing at normal speed. (<code class="vk">VK_PLAY</code>)
+      <td>如果当前未以正常速度播放， 									则以正常速度启动或继续播放媒体。 (<code class="vk">VK_PLAY</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"MediaPlayPause"</code>
       <td class="key-table-required">否
-      <td>Toggle media between play and pause states. (<code class="vk">VK_PLAY_PAUSE</code>)
+      <td>在媒体的播放和暂停状态之间切换。 									(<code class="vk">VK_PLAY_PAUSE</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"MediaRecord"</code>
       <td class="key-table-required">否
-      <td>Initiate or resume recording of currently selected media. (<code class="vk">VK_RECORD</code>)
+      <td>启动或恢复当前所选媒体的录制。(<code class="vk">VK_RECORD</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaRewind"</code>
       <td class="key-table-required">否
-      <td>Initiate or continue reverse playback at faster than normal speed, or increase speed if already rewinding. (<code class="vk">VK_REWIND</code>)
+      <td>以比正常速度更快的速度启动或继续回退									(reverse) 播放媒体，如果已经回退，则提高回退速度。 (<code class="vk">VK_REWIND</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"MediaStop"</code>
       <td class="key-table-required">否
-      <td>Stop media playing, pausing, forwarding, rewinding, or recording, if not already stopped. (<code class="vk">VK_STOP</code>)
+      <td>停止播放、暂停、快进、回退或录制媒体									(如果尚未停止)。 (<code class="vk">VK_STOP</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"MediaNextTrack"</code>
       <td class="key-table-required">否
-      <td>Seek to next media or program track. (<code class="vk">VK_TRACK_NEXT</code>)
+      <td>查找下一个媒体或节目(program track)。 									(<code class="vk">VK_TRACK_NEXT</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"MediaPause"</code>
       <td class="key-table-required">否
-      <td>Pause the currently playing media. (<code class="vk">VK_PAUSE</code>)
+      <td>暂停当前播放的媒体。 (<code class="vk">VK_PAUSE</code>)
      <tr>
       <td class="key-table-key"><code class="key">"MediaPreviousTrack"</code>
       <td class="key-table-required">否
-      <td>Seek to previous media or program track. (<code class="vk">VK_TRACK_PREV</code>)
+      <td>查找上一个媒体或节目(program track)。 									(<code class="vk">VK_TRACK_PREV</code>) 
      <tr>
       <td class="key-table-key"><code class="key">"Power"</code>
       <td class="key-table-required">否
-      <td>Toggle power state. (<code class="vk">VK_POWER</code>)
+      <td>切换电源状态(电源开关)。 (<code class="vk">VK_POWER</code>)
      <tr>
       <td class="key-table-key"><code class="key">"Unidentified"</code>
       <td class="key-table-required">是
-      <td>This key value is used when an implementations is unable to identify another key value, due to either hardware, platform, or software constraints. (<code class="vk">VK_UNDEFINED</code>)
+      <td>当一个实现由于硬件、									平台或软件限制而无法识别另一个键值时 ，会使用此键值。
+									(<code class="vk">VK_UNDEFINED</code>) 
    </table>
    <h2 class="heading settled" data-level="4" id="accessibility"><span class="secno">4. </span><span class="content">Accessibility</span><a class="self-link" href="#accessibility"></a></h2>
    <p>This specification simply defines a set of values that are valid for use in the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①②">key</a></code> attribute. Thus, it does not introduce any features that have
@@ -2754,8 +2753,8 @@ something specific to the values defined in this document</p>
     <li><a href="#ref-for-key-attribute-value③⑦">3.14. 应用程序键</a>
     <li><a href="#ref-for-key-attribute-value③⑧">3.15. 浏览器键</a>
     <li><a href="#ref-for-key-attribute-value③⑨">3.16. 移动电话按键</a>
-    <li><a href="#ref-for-key-attribute-value④⓪">3.17. TV Keys</a>
-    <li><a href="#ref-for-key-attribute-value④①">3.18. Media Controller Keys</a> <a href="#ref-for-key-attribute-value④②">(2)</a> <a href="#ref-for-key-attribute-value④③">(3)</a>
+    <li><a href="#ref-for-key-attribute-value④⓪">3.17. 电视(TV)按键</a>
+    <li><a href="#ref-for-key-attribute-value④①">3.18. 媒体控制器按键</a> <a href="#ref-for-key-attribute-value④②">(2)</a> <a href="#ref-for-key-attribute-value④③">(3)</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-key-string" class="dfn-panel" data-for="key-string" id="infopanel-for-key-string">
