@@ -7,7 +7,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-UD" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
   <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
-  <meta content="962e5c233055b79611693741a60da58c44f17241" name="document-revision">
+  <meta content="ef11bca285ab49f7372b36d8fdb56f18d8d76b2e" name="document-revision">
   <link href="./override.css" rel="stylesheet">
 <style>
 
@@ -713,11 +713,11 @@ dfn > a.self-link::before      { content: "#"; }
       <li><a href="#keys-tv"><span class="secno">3.17</span> <span class="content">电视(TV)按键</span></a>
       <li><a href="#keys-media-controller"><span class="secno">3.18</span> <span class="content">媒体控制器按键</span></a>
      </ol>
-    <li><a href="#accessibility"><span class="secno">4</span> <span class="content">Accessibility</span></a>
-    <li><a href="#i18n"><span class="secno">5</span> <span class="content">I18n</span></a>
-    <li><a href="#security"><span class="secno">6</span> <span class="content">Security Considerations</span></a>
-    <li><a href="#privacy"><span class="secno">7</span> <span class="content">Privacy Considerations</span></a>
-    <li><a href="#acknowledgements-contributors"><span class="secno">8</span> <span class="content">Acknowledgements</span></a>
+    <li><a href="#accessibility"><span class="secno">4</span> <span class="content">无障碍</span></a>
+    <li><a href="#i18n"><span class="secno">5</span> <span class="content">国际化(i18n)</span></a>
+    <li><a href="#security"><span class="secno">6</span> <span class="content">安全注意事项</span></a>
+    <li><a href="#privacy"><span class="secno">7</span> <span class="content">隐私注意事项</span></a>
+    <li><a href="#acknowledgements-contributors"><span class="secno">8</span> <span class="content">致谢</span></a>
     <li>
      <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
      <ol class="toc">
@@ -759,9 +759,12 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>有效的 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-code-cn/#key-code-attribute-values" id="ref-for-key-code-attribute-values">按键码属性值</a> ，即 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent④">KeyboardEvent</a></code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②">code</a></code> 属性值显示为: <code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-ArrowDown">ArrowDown</a>"</code>，<code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-Equal">Equal</a>"</code> 或 <code class="code">"<a href="https://mangwu.github.io/uievents-code-cn/#code-KeyQ">KeyQ</a>"</code>。</p>
    </ul>
-   <p class="note custom-note" role="note"> 在 <a href="https://mangwu.github.io/uievents-cn/#style-conventions"> UIEvents</a> 规范本体的格式规约中，也对键帽，字符，代码点和键，
-		键值的属性值进行了说明，但是渲染显示不一样，本规范中的渲染会更显眼。 </p>
-   <h2 class="heading settled" data-level="2" id="key-attr-values"><span class="secno">2. </span><span class="content">键盘事件 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑤">key</a></code> 属性值</span><a class="self-link" href="#key-attr-values"></a></h2>
+   <p class="note custom-note" role="note"> 在 <a href="https://mangwu.github.io/uievents-cn/#style-conventions"> UIEvents</a> 规范本体的格式规约中，也对键帽，字符，码点和键(key)，
+		码(code)的属性值进行了说明，但是渲染显示不一样，本规范中的渲染会更显眼。 </p>
+   <div class="note custom-note" data-content="&quot;键值&quot;" role="note"> 关于 <strong>"键值"</strong> 的说明: 
+		键盘事件上包含两个与按下的物理按键有关的属性，一个是 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑤">key</a></code> 而一个是 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③">code</a></code> ，在 <a data-link-type="biblio" href="#biblio-uievents-key" title="UI Events KeyboardEvent key Values">[UIEvents-key]</a> 中也经常出现 
+		"键值"的说法，也就是按键的值，现在需要明确一点: <strong>"键值"表示的是 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑥">key</a></code> 的属性值</strong> ，在 <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> 系列规范中都是如此。如果在翻译时要指代 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code④">code</a></code> ，会说明成 <code>code</code> 值，键码值，按键码属性值等。 </div>
+   <h2 class="heading settled" data-level="2" id="key-attr-values"><span class="secno">2. </span><span class="content">键盘事件 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑦">key</a></code> 属性值</span><a class="self-link" href="#key-attr-values"></a></h2>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="key-attribute-value">键属性值</dfn> 被定义为包含如下内容的一个 <code>DOMString</code> :</p>
    <ul>
     <li data-md>
@@ -870,12 +873,12 @@ dfn > a.self-link::before      { content: "#"; }
    </ul>
    <div class="note custom-note" role="note"> 这里的 "Cc" 就是 "'Other, Control" Unicode 字符类别的类别码，
 			查看键字符串的 <a href="#key-string-note">非标准注释</a> 以获取更多信息。 </div>
-   <h3 class="heading settled" data-level="2.2" id="selecting-key-attribute-values"><span class="secno">2.2. </span><span class="content">选择 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑥">key</a></code> 属性值</span><a class="self-link" href="#selecting-key-attribute-values"></a></h3>
+   <h3 class="heading settled" data-level="2.2" id="selecting-key-attribute-values"><span class="secno">2.2. </span><span class="content">选择 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑧">key</a></code> 属性值</span><a class="self-link" href="#selecting-key-attribute-values"></a></h3>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="glyph-modifier-key">字形修饰键</dfn> (glyph modifier key)
 		是其中的任何一个修饰符键: <code class="keycap">Shift</code>, <code class="keycap">CapsLock</code> 或 <code class="keycap">AltGr</code>。</p>
    <div class="algorithm" data-algorithm="clipboard-read">
     <h4 class="heading settled" data-level="2.2.1" id="h-clipboard-read"><span class="secno">2.2.1. </span><span class="content"> <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="选择一个适合的键属性值" data-noexport id="select-an-appropriate-key-attribute-value"> 选择一个适合的键属性值</dfn></span><a class="self-link" href="#h-clipboard-read"></a></h4>
-     要 <a data-link-type="dfn" href="#select-an-appropriate-key-attribute-value" id="ref-for-select-an-appropriate-key-attribute-value">选择一个适合的键属性值</a> 以保存在 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑥">KeyboardEvent</a></code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑦">key</a></code> 属性中，请运行以下步骤: 
+     要 <a data-link-type="dfn" href="#select-an-appropriate-key-attribute-value" id="ref-for-select-an-appropriate-key-attribute-value">选择一个适合的键属性值</a> 以保存在 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑥">KeyboardEvent</a></code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑨">key</a></code> 属性中，请运行以下步骤: 
     <ol>
      <li data-md>
       <p>声明一个 DOMString 类型的 <var>key</var> 变量，初始化为 <code class="key">"<a href="#key-Unidentified">Unidentified</a>"</code> 。</p>
@@ -925,16 +928,16 @@ dfn > a.self-link::before      { content: "#"; }
 				这个按键有一个作为 <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑤">命名键属性值</a> 的记录，即 <code class="key">"<a href="#key-HangulMode">HangulMode</a>"</code> ，
 				因此应将其用作 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑦">键属性值</a> 。 </p>
    </div>
-   <h2 class="heading settled" data-level="3" id="named-key-attribute-values"><span class="secno">3. </span><span class="content">命名 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑧">key</a></code> 属性值</span><a class="self-link" href="#named-key-attribute-values"></a></h2>
+   <h2 class="heading settled" data-level="3" id="named-key-attribute-values"><span class="secno">3. </span><span class="content">命名 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⓪">key</a></code> 属性值</span><a class="self-link" href="#named-key-attribute-values"></a></h2>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="named-key-attribute-value">命名键属性值</dfn> (named key attribute value) 是在本规范的本节中的任何一个表的 <a data-link-type="dfn" href="#key-attribute-value" id="ref-for-key-attribute-value①⑧">键属性值</a> 列中给定的任何值。</p>
    <p>定义在这里的 <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑥">命名键属性值</a> 是部分基于 Java 平台(标准版6 API规范 <a data-link-type="biblio" href="#biblio-keyeventjava" title="Java™ Platform, Standard Edition 6 API Specification, Class java.awt.events.KeyEvent">[KeyEventJava]</a> )的 <code>java.awt.event.KeyEvent</code> 接口、和 
 	Microsoft.NET Framework 4.0 Class Library <a data-link-type="biblio" href="#biblio-keysnet" title=".NET Framework 4.5 Class Library, Keys Enumeration">[KeysNet]</a> 中的按键枚举
 	(<code>System.Windows.Forms.Keys</code>) 的键码集(keycodes)。
 	本规范中的其他信息来自 Microsoft 的 WM_APPCOMMAND messages <a data-link-type="biblio" href="#biblio-wmappcommand" title="MSDN WM_APPCOMMAND message">[WmAppCommand]</a> ，
 	以及本文档中提到的其他更专业的规范。</p>
-   <p><code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑦">KeyboardEvent</a></code> 接口的一个符合规范的实现 <span class="zh-upper">必须</span> 支持在 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑨">key</a></code> 属性中使用的这组值，
+   <p><code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑦">KeyboardEvent</a></code> 接口的一个符合规范的实现 <span class="zh-upper">必须</span> 支持在 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①①">key</a></code> 属性中使用的这组值，
 	但是并非所有值都可以在所有平台或设备上使用。</p>
-   <p>本规范的未来版本可能将新增的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⓪">key</a></code> 值包含此处，
+   <p>本规范的未来版本可能将新增的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①②">key</a></code> 值包含此处，
 	这些键值是那些自本规范发布以来(在实现中)又变得很常见的键值。</p>
    <p class="note" role="note"> 注意：虽然已经尽一切努力使该值列表尽可能完整，但随着新输入设备的引入，
 	需要定期定义新值。与其允许用户代理定义自己的 <a data-link-type="dfn" href="#named-key-attribute-value" id="ref-for-named-key-attribute-value⑦">命名键属性值</a> (这些属性值很难在多个用户代理机构之间统一)， <span class="zh-upper">应当</span> 提供一种归档方法来更新这个规范， 
@@ -1611,7 +1614,7 @@ dfn > a.self-link::before      { content: "#"; }
    </table>
    <h3 class="heading settled" data-level="3.11" id="keys-multimedia-numpad"><span class="secno">3.11. </span><span class="content">多媒体数字键盘键</span><a class="self-link" href="#keys-multimedia-numpad"></a></h3>
    <p>正常的 <code class="keycap">0</code> ... <code class="keycap">9</code> 数字键盘键被编码为 <code class="key">"0"</code> ... <code class="key">"9"</code> ，但有些多媒体键盘的按键(buttons)以 <code class="keycap">1</code> ... <code class="keycap">12</code> 形式编号。在这些情况下， <code class="keycap">10</code> 键的键帽通常为 <code class="keycap">10 /0</code> 。</p>
-   <p class="note" role="note"> 注意: 如果设备支持，则键帽标签为 <code class="keycap">10</code> 或 <code class="keycap">10 /0</code> 的键 <span class="zh-upper">必须</span> 分配一个 <code class="key">"0"</code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①①">key</a></code> 值。 </p>
+   <p class="note" role="note"> 注意: 如果设备支持，则键帽标签为 <code class="keycap">10</code> 或 <code class="keycap">10 /0</code> 的键 <span class="zh-upper">必须</span> 分配一个 <code class="key">"0"</code> 的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①③">key</a></code> 值。 </p>
    <table class="data-table full-width" id="key-table-multimedia-numpad">
     <thead>
      <tr>
@@ -2430,60 +2433,62 @@ dfn > a.self-link::before      { content: "#"; }
       <td>当一个实现由于硬件、									平台或软件限制而无法识别另一个键值时 ，会使用此键值。
 									(<code class="vk">VK_UNDEFINED</code>) 
    </table>
-   <h2 class="heading settled" data-level="4" id="accessibility"><span class="secno">4. </span><span class="content">Accessibility</span><a class="self-link" href="#accessibility"></a></h2>
-   <p>This specification simply defines a set of values that are valid for use in the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①②">key</a></code> attribute. Thus, it does not introduce any features that have
-	accessibility concerns.</p>
-   <p>The <a href="https://w3c.github.io/apa/fast/checklist.html">FAST checklist</a> has been completed and nothing is applicable to this specification.</p>
-   <p>A note related to the FAST checklist item: "If technology provides internationalization support".
-	This specification inherently defines <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①③">key</a></code> values that support international hardware, e.g.,
-	keyboards for different languages or layouts. It also defines many special keys which are given
-	human-readable names (like "Shift", "Control", "Home" or "ArrowLeft").</p>
-   <p>These special key values are defined as human-readable strings so that code to detect special keys
-	can be easier to understand. While these values are not intended to be exposed directly to users,
-	there is nothing preventing that. Apps that choose to expose these values would need to determine
-	whether or not it is appropriate to translate these strings for presentation (e.g.: presenting
-	"Backspace" as "Suppr. arrière" for French users).</p>
-   <h2 class="heading settled" data-level="5" id="i18n"><span class="secno">5. </span><span class="content">I18n</span><a class="self-link" href="#i18n"></a></h2>
-   <p>The <a href="https://www.w3.org/International/i18n-drafts/techniques/shortchecklist">short I18n checklist</a> has been completed and none of the items apply.</p>
-   <h2 class="heading settled" data-level="6" id="security"><span class="secno">6. </span><span class="content">Security Considerations</span><a class="self-link" href="#security"></a></h2>
-   <p>The <a href="https://www.w3.org/TR/security-privacy-questionnaire/">Security and Privacy Self-Review Questionairre</a> has been completed with the following notes:</p>
+   <h2 class="heading settled" data-level="4" id="accessibility"><span class="secno">4. </span><span class="content">无障碍</span><a class="self-link" href="#accessibility"></a></h2>
+   <p>这个规范简单地定义了一组可在 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①④">key</a></code> 属性中使用的有效值。
+	因此，它没有引入任何具有无障碍问题的特性(feature)。</p>
+   <p><a href="https://w3c.github.io/apa/fast/checklist.html">FAST 清单</a> 已完成，
+	本规范不适用其中任何内容。</p>
+   <div class="note custom-note" role="note"> FAST: Framework for Accessibility in the Specification of Technologies，
+	技术文档的无障碍框架。<q>FAST的目标是描述网络技术应提供的特性，
+	以确保能够创建残疾用户可以访问的内容。完整的框架引入了对用户需求的分析，
+	描述了技术、内容创作和用户代理如何协同工作以满足这些需求，
+	并为技术开发人员提供了全面的指导。本清单(checklist)从高层次上提取这些信息，
+	以帮助技术进行自我审查。
+	规范开发人员可以利用本清单(checklist)
+	来帮助自己: 确保技术能够解决无障碍倡导者在横向审查期间可能提出的特性。</q> —— <abbr title="Framework for Accessibility in the Specification of Technologies"> FAST</abbr> Checklist。 </div>
+   <p>FAST 清单的一个条目是: "如果技术提供国际化支持"。此条目与本规范相关:
+	本规范本质上为键盘定义了 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑤">key</a></code> 值，这个 <code>key</code> 值支持国际硬件，例如用于不同语言或布局的键盘。同时，本规范也定义了许多人类可读
+	(human-readable)的键名称(如"Shift"、"Control"、"Home"或"ArrowLeft")。</p>
+   <p>一些特殊按键的键值被定义为人类可读(human-readable)的字符串，
+	以便检测特殊键的代码更容易理解。虽然这些值并不打算直接暴露给用户
+	(没有在键帽上显示)，但想要公开这些值无可厚非。
+	选择公开这些值的应用程序需要确定: 为了显示而翻译这些字符串是否合适
+	(例如: 为法国用户将"Backspace"显示为"Suppr.arrière")。</p>
+   <h2 class="heading settled" data-level="5" id="i18n"><span class="secno">5. </span><span class="content">国际化(i18n)</span><a class="self-link" href="#i18n"></a></h2>
+   <p><a href="https://www.w3.org/International/i18n-drafts/techniques/shortchecklist"> 简版的 I18n 清单</a> 已完成，本规范不适用其中任何内容。</p>
+   <h2 class="heading settled" data-level="6" id="security"><span class="secno">6. </span><span class="content">安全注意事项</span><a class="self-link" href="#security"></a></h2>
+   <p><a href="https://www.w3.org/TR/security-privacy-questionnaire/"> 安全和隐私的自我审查问卷</a> 已完成，以下是对其中一些有关本规范条目的备注:</p>
    <ul>
     <li data-md>
-     <p><em>2.1 What information might this feature expose to Web sites or other parties, and for what purposes is that exposure necessary?</em>:
-This spec defines a set of valid values for the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①④">key</a></code> attribute of the various
-key events. This is necessary so that users can type text.</p>
+     <p><em><a href="https://www.w3.org/TR/security-privacy-questionnaire/#purpose"> 2.1 此特性可能会向网站或其他方公开哪些信息，出于什么目的需要公开?</a></em> :
+本规范为各种按键事件的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑥">key</a></code> 属性定义了一组有效值。
+这提供了一种方式让用户可以键入文本，非常有必要。</p>
     <li data-md>
-     <p><em>2.17 How does your feature handle non-"fully active" documents?</em>:
-This attribute is only associated with key events, and events are not sent if the document is
-not fully active.</p>
+     <p><em> <a href="https://www.w3.org/TR/security-privacy-questionnaire/#non-fully-active"> 2.17 您的功能是如何处理非"完全活动(fully active)"文档的?</a></em>:
+此属性仅与按键事件关联，如果文档未完全激活，则不会派发事件。</p>
    </ul>
-   <p>Security concerns associated with the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑤">key</a></code> attribute are addressed in the <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> specification.</p>
-   <h2 class="heading settled" data-level="7" id="privacy"><span class="secno">7. </span><span class="content">Privacy Considerations</span><a class="self-link" href="#privacy"></a></h2>
-   <p>The <a href="https://www.w3.org/TR/security-privacy-questionnaire/">Security and Privacy Self-Review Questionairre</a> has been completed with the following notes:</p>
+   <p><a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> 规范中解决了与 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑦">key</a></code> 属性相关的安全问题。</p>
+   <h2 class="heading settled" data-level="7" id="privacy"><span class="secno">7. </span><span class="content">隐私注意事项</span><a class="self-link" href="#privacy"></a></h2>
+   <p><a href="https://www.w3.org/TR/security-privacy-questionnaire/"> 安全和隐私的自我审查问卷</a> 已完成，以下是对其中一些有关本规范条目的备注:</p>
    <ul>
     <li data-md>
-     <p><em>2.6 Do the features in your specification expose information about the underlying platform to origins?</em>:
-The <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑥">key</a></code> attribute contains the value of the key that is pressed by the user.
-This could be used to infer that a user is using a keyboard with a particular locale (or IME)
-enabled.</p>
+     <p><em><a href="https://www.w3.org/TR/security-privacy-questionnaire/#underlying-platform-data"> 2.6 规范中的特性是否向源(origins)公开了有关底层平台的信息?</a></em>: <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑧">key</a></code> 属性包含用户按下的键的的值。
+这可以用来推断用户正在使用的启用了特定语言环境（或 <a data-link-type="dfn" href="https://mangwu.github.io/uievents-cn/#ime" id="ref-for-ime④">IME</a> ）的键盘。</p>
     <li data-md>
-     <p><em>3.5 Legitimate Misuse</em>:
-A site could capture all keypresses and build a map of the values generated by the keyboard. If the
-user types enough values (and doesn’t change keyboard), then the site could try to match those values
-against a database of known keyboard layouts to guess the user’s current keyboard layout. However,
-that’s a concern for the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑦">key</a></code> attribute itself (defined in the <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> specification) rather than
-something specific to the values defined in this document</p>
+     <p><em><a href="https://www.w3.org/TR/security-privacy-questionnaire/#legitimate-misuse"> 3.5 合法滥用(Legitimate Misuse)</a></em>: 一个站点可以捕获所有按键响应，
+并构建键盘生成的按键值的映射。如果用户键入了足够的按键值(并且没有更改键盘)，
+那么网站可以尝试将这些值与已知键盘布局的数据库进行匹配，
+以猜测用户当前的键盘布局。然而，这是对 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑨">key</a></code> 属性本身
+(在 <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> 规范中定义)的关注，而不是对本文档中定义的值的关注。</p>
    </ul>
-   <p>Privacy concerns associated with the <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑧">key</a></code> attribute are addressed in the <a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> specification.</p>
-   <h2 class="heading settled" data-level="8" id="acknowledgements-contributors"><span class="secno">8. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements-contributors"></a></h2>
-   <p>Over the years, many people contributed to the DOM <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑧">KeyboardEvent</a></code> specifications, including many participants of the DOM Working Group and the
-	WebApps Working Group. The current set of <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①⑨">key</a></code> values is
-	the result of iterating over many proposals and variations during that time.
-	We especially thank the following participants for their contributions:</p>
-   <p>Gary Kacmarcik (Google),
+   <p><a data-link-type="biblio" href="#biblio-uievents" title="UI Events">[UIEvents]</a> 规范中解决了与 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key②⓪">key</a></code> 属性相关的隐私问题。</p>
+   <h2 class="heading settled" data-level="8" id="acknowledgements-contributors"><span class="secno">8. </span><span class="content">致谢</span><a class="self-link" href="#acknowledgements-contributors"></a></h2>
+   <p>多年来，许多人为 DOM <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑧">KeyboardEvent</a></code> 规范做出了贡献，
+	其中包括 DOM 工作组和 WebApps 工作组的许多参与者。当前的 <code class="idl"><a data-link-type="idl" href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key②①">key</a></code> 值集是在此期间迭代许多提议和变体的结果。我们特别感谢以下参与者的贡献:</p>
+   <p>Gary Kacmarcik (Google)，
 	Masayuki Nakano (Mozilla)
-	and
-	Travis Leithead (Microsoft).</p>
+	和
+	Travis Leithead (Microsoft)。</p>
   </main>
   <div data-fill-with="conformance">
    <h2 class="no-ref no-num heading settled" id="w3c-conformance"><span class="content">Conformance</span><a class="self-link" href="#w3c-conformance"></a></h2>
@@ -2555,14 +2560,14 @@ something specific to the values defined in this document</p>
 		
 		选择一个适合的键属性值</a>
     <li><a href="#ref-for-interface-keyboardevent⑦">3. 命名 key 属性值</a>
-    <li><a href="#ref-for-interface-keyboardevent⑧">8. Acknowledgements</a>
+    <li><a href="#ref-for-interface-keyboardevent⑧">8. 致谢</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-25c7a6d3bc26c87047f8b36ab22f873e" class="dfn-panel" data-for="25c7a6d3bc26c87047f8b36ab22f873e" id="infopanel-for-25c7a6d3bc26c87047f8b36ab22f873e">
    <span id="infopaneltitle-for-25c7a6d3bc26c87047f8b36ab22f873e" style="display:none">Info about the 'code' external reference.</span><a href="https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code">https://mangwu.github.io/uievents-cn/#dom-keyboardevent-code</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-dom-keyboardevent-code">1. 简介</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①">1.1. 格式规约</a> <a href="#ref-for-dom-keyboardevent-code②">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code①">1.1. 格式规约</a> <a href="#ref-for-dom-keyboardevent-code②">(2)</a> <a href="#ref-for-dom-keyboardevent-code③">(3)</a> <a href="#ref-for-dom-keyboardevent-code④">(4)</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-49e3aafb31794aeae0585a62fde001c8" class="dfn-panel" data-for="49e3aafb31794aeae0585a62fde001c8" id="infopanel-for-49e3aafb31794aeae0585a62fde001c8">
@@ -2591,18 +2596,18 @@ something specific to the values defined in this document</p>
    <ul>
     <li><a href="#ref-for-dom-keyboardevent-key">Unnumbered Section</a>
     <li><a href="#ref-for-dom-keyboardevent-key①">1. 简介</a> <a href="#ref-for-dom-keyboardevent-key②">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key③">1.1. 格式规约</a> <a href="#ref-for-dom-keyboardevent-key④">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑤">2. 键盘事件 key 属性值</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑥">2.2. 选择 key 属性值</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑦">2.2.1. 
+    <li><a href="#ref-for-dom-keyboardevent-key③">1.1. 格式规约</a> <a href="#ref-for-dom-keyboardevent-key④">(2)</a> <a href="#ref-for-dom-keyboardevent-key⑤">(3)</a> <a href="#ref-for-dom-keyboardevent-key⑥">(4)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key⑦">2. 键盘事件 key 属性值</a>
+    <li><a href="#ref-for-dom-keyboardevent-key⑧">2.2. 选择 key 属性值</a>
+    <li><a href="#ref-for-dom-keyboardevent-key⑨">2.2.1. 
 		
 		选择一个适合的键属性值</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑧">3. 命名 key 属性值</a> <a href="#ref-for-dom-keyboardevent-key⑨">(2)</a> <a href="#ref-for-dom-keyboardevent-key①⓪">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①①">3.11. 多媒体数字键盘键</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①②">4. Accessibility</a> <a href="#ref-for-dom-keyboardevent-key①③">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①④">6. Security Considerations</a> <a href="#ref-for-dom-keyboardevent-key①⑤">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①⑥">7. Privacy Considerations</a> <a href="#ref-for-dom-keyboardevent-key①⑦">(2)</a> <a href="#ref-for-dom-keyboardevent-key①⑧">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①⑨">8. Acknowledgements</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①⓪">3. 命名 key 属性值</a> <a href="#ref-for-dom-keyboardevent-key①①">(2)</a> <a href="#ref-for-dom-keyboardevent-key①②">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①③">3.11. 多媒体数字键盘键</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①④">4. 无障碍</a> <a href="#ref-for-dom-keyboardevent-key①⑤">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①⑥">6. 安全注意事项</a> <a href="#ref-for-dom-keyboardevent-key①⑦">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key①⑧">7. 隐私注意事项</a> <a href="#ref-for-dom-keyboardevent-key①⑨">(2)</a> <a href="#ref-for-dom-keyboardevent-key②⓪">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-key②①">8. 致谢</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-1861c8d3eb50338c70f9bd4cf62d73fc" class="dfn-panel" data-for="1861c8d3eb50338c70f9bd4cf62d73fc" id="infopanel-for-1861c8d3eb50338c70f9bd4cf62d73fc">
@@ -2621,6 +2626,7 @@ something specific to the values defined in this document</p>
    <span id="infopaneltitle-for-c6ced23147032607debba8f8bb06289f" style="display:none">Info about the 'ime' external reference.</span><a href="https://mangwu.github.io/uievents-cn/#ime">https://mangwu.github.io/uievents-cn/#ime</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-ime">3.8. 输入法和组合(IME and Composition)键</a> <a href="#ref-for-ime①">(2)</a> <a href="#ref-for-ime②">(3)</a> <a href="#ref-for-ime③">(4)</a>
+    <li><a href="#ref-for-ime④">7. 隐私注意事项</a>
    </ul>
   </aside>
   <aside aria-labelledby="infopaneltitle-for-592c2c640d119b848e57ce039ac95f2c" class="dfn-panel" data-for="592c2c640d119b848e57ce039ac95f2c" id="infopanel-for-592c2c640d119b848e57ce039ac95f2c">
@@ -2721,6 +2727,8 @@ something specific to the values defined in this document</p>
    <dd><a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.keys.aspx"><cite>.NET Framework 4.5 Class Library, Keys Enumeration</cite></a>. URL: <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.keys.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.keys.aspx</a>
    <dt id="biblio-ocap">[OCAP]
    <dd><a href="https://apps.cablelabs.com/specification/opencable-application-platform-ocap/"><cite>Open Cable Application Platform 1.1.3</cite></a>. 03 June 2010. URL: <a href="https://apps.cablelabs.com/specification/opencable-application-platform-ocap/">https://apps.cablelabs.com/specification/opencable-application-platform-ocap/</a>
+   <dt id="biblio-uievents-key">[UIEvents-key]
+   <dd>Gary Kacmarcik; Travis Leithead. <a href="https://w3c.github.io/uievents-key/"><cite>UI Events KeyboardEvent key Values</cite></a>. URL: <a href="https://w3c.github.io/uievents-key/">https://w3c.github.io/uievents-key/</a>
    <dt id="biblio-web4ce">[WEB4CE]
    <dd><a href="https://standards.cta.tech/apps/group_public/project/details.php?project_id=220"><cite>ANSI/CTA-2014-B, Web-based Protocol and Framework for Remote User Interface on UPnP Networks and the Internet (Web4CE)</cite></a>. January 2011. URL: <a href="https://standards.cta.tech/apps/group_public/project/details.php?project_id=220">https://standards.cta.tech/apps/group_public/project/details.php?project_id=220</a>
    <dt id="biblio-wmappcommand">[WmAppCommand]

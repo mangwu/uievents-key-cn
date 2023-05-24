@@ -220,9 +220,19 @@ path: stylesheet-extra.include
 		
 		<p class="note custom-note">
 		在 <a href="https://mangwu.github.io/uievents-cn/#style-conventions">
-		UIEvents</a> 规范本体的格式规约中，也对键帽，字符，代码点和键，
-		键值的属性值进行了说明，但是渲染显示不一样，本规范中的渲染会更显眼。
+		UIEvents</a> 规范本体的格式规约中，也对键帽，字符，码点和键(key)，
+		码(code)的属性值进行了说明，但是渲染显示不一样，本规范中的渲染会更显眼。
 		</p>
+
+		<div class="note custom-note" data-content='"键值"'>
+		关于 <strong>"键值"</strong> 的说明: 
+		键盘事件上包含两个与按下的物理按键有关的属性，一个是 {{KeyboardEvent/key}} 
+		而一个是  {{KeyboardEvent/code}} ，在 [[UIEvents-key]] 中也经常出现 
+		"键值"的说法，也就是按键的值，现在需要明确一点: <strong>"键值"表示的是 
+		{{KeyboardEvent/key}} 的属性值</strong> ，在 [[UIEvents]] 
+		系列规范中都是如此。如果在翻译时要指代 {{KeyboardEvent/code}} ，会说明成 
+		<code>code</code> 值，键码值，按键码属性值等。
+		</div>
 
 <h2 id="key-attr-values">键盘事件 {{KeyboardEvent/key}} 属性值</h2>
 
@@ -1245,75 +1255,91 @@ path: stylesheet-extra.include
 									(VK_UNDEFINED)
 		END_KEY_TABLE
 
-<h2 id="accessibility">Accessibility</h2>
+<h2 id="accessibility">无障碍</h2>
 
-	This specification simply defines a set of values that are valid for use in the
-	{{KeyboardEvent/key}} attribute. Thus, it does not introduce any features that have
-	accessibility concerns.
+	这个规范简单地定义了一组可在 {{KeyboardEvent/key}} 属性中使用的有效值。 
+	因此，它没有引入任何具有无障碍问题的特性(feature)。
 	
-	The <a href="https://w3c.github.io/apa/fast/checklist.html">FAST checklist</a> has been completed and nothing is applicable to this specification.
+	<a href="https://w3c.github.io/apa/fast/checklist.html">FAST 清单</a> 已完成，
+	本规范不适用其中任何内容。
+
+	<div class="note custom-note">
+	FAST: Framework for Accessibility in the Specification of Technologies，
+	技术文档的无障碍框架。<q>FAST的目标是描述网络技术应提供的特性，
+	以确保能够创建残疾用户可以访问的内容。完整的框架引入了对用户需求的分析，
+	描述了技术、内容创作和用户代理如何协同工作以满足这些需求，
+	并为技术开发人员提供了全面的指导。本清单(checklist)从高层次上提取这些信息，
+	以帮助技术进行自我审查。
+	规范开发人员可以利用本清单(checklist)
+	来帮助自己: 确保技术能够解决无障碍倡导者在横向审查期间可能提出的特性。</q>
+	—— <abbr 
+	title="Framework for Accessibility in the Specification of Technologies">
+	FAST</abbr> Checklist。
+	</div>
+
+	FAST 清单的一个条目是: "如果技术提供国际化支持"。此条目与本规范相关: 
+	本规范本质上为键盘定义了 {{KeyboardEvent/key}} 值，这个 <code>key</code> 
+	值支持国际硬件，例如用于不同语言或布局的键盘。同时，本规范也定义了许多人类可读
+	(human-readable)的键名称(如"Shift"、"Control"、"Home"或"ArrowLeft")。
 	
-	A note related to the FAST checklist item: "If technology provides internationalization support".
-	This specification inherently defines {{KeyboardEvent/key}} values that support international hardware, e.g.,
-	keyboards for different languages or layouts. It also defines many special keys which are given
-	human-readable names (like "Shift", "Control", "Home" or "ArrowLeft").
+	一些特殊按键的键值被定义为人类可读(human-readable)的字符串，
+	以便检测特殊键的代码更容易理解。虽然这些值并不打算直接暴露给用户
+	(没有在键帽上显示)，但想要公开这些值无可厚非。
+	选择公开这些值的应用程序需要确定: 为了显示而翻译这些字符串是否合适
+	(例如: 为法国用户将"Backspace"显示为"Suppr.arrière")。
+
+<h2 id="i18n">国际化(i18n)</h2>
+
+	<a 
+	href="https://www.w3.org/International/i18n-drafts/techniques/shortchecklist">
+	简版的 I18n 清单</a> 已完成，本规范不适用其中任何内容。
+
+<h2 id="security">安全注意事项</h2>
+
+	<a href="https://www.w3.org/TR/security-privacy-questionnaire/">
+	安全和隐私的自我审查问卷</a> 已完成，以下是对其中一些有关本规范条目的备注:
 	
-	These special key values are defined as human-readable strings so that code to detect special keys
-	can be easier to understand. While these values are not intended to be exposed directly to users,
-	there is nothing preventing that. Apps that choose to expose these values would need to determine
-	whether or not it is appropriate to translate these strings for presentation (e.g.: presenting
-	"Backspace" as "Suppr. arrière" for French users).
+	* <em><a href="https://www.w3.org/TR/security-privacy-questionnaire/#purpose">
+		2.1 此特性可能会向网站或其他方公开哪些信息，出于什么目的需要公开?</a></em> :
+		本规范为各种按键事件的 {{KeyboardEvent/key}} 属性定义了一组有效值。
+		这提供了一种方式让用户可以键入文本，非常有必要。
 
-<h2 id="i18n">I18n</h2>
+	* <em>
+		<a 
+		href=
+		"https://www.w3.org/TR/security-privacy-questionnaire/#non-fully-active">
+		2.17 您的功能是如何处理非"完全活动(fully active)"文档的?</a></em>:
+		此属性仅与按键事件关联，如果文档未完全激活，则不会派发事件。
 
-	The <a href="https://www.w3.org/International/i18n-drafts/techniques/shortchecklist">short I18n checklist</a>
-	has been completed and none of the items apply.
-
-<h2 id="security">Security Considerations</h2>
-
-	The <a href="https://www.w3.org/TR/security-privacy-questionnaire/">Security and Privacy Self-Review Questionairre</a>
-	has been completed with the following notes:
+	[[UIEvents]] 规范中解决了与 {{KeyboardEvent/key}} 属性相关的安全问题。
 	
-	* <em>2.1 What information might this feature expose to Web sites or other parties, and for what purposes is that exposure necessary?</em>:
-		This spec defines a set of valid values for the {{KeyboardEvent/key}} attribute of the various
-		key events. This is necessary so that users can type text.
+<h2 id="privacy">隐私注意事项</h2>
 
-	* <em>2.17 How does your feature handle non-"fully active" documents?</em>:
-		This attribute is only associated with key events, and events are not sent if the document is
-		not fully active.
-
-	Security concerns associated with the {{KeyboardEvent/key}} attribute are addressed in the [[UIEvents]]
-	specification.
+	<a href="https://www.w3.org/TR/security-privacy-questionnaire/">
+	安全和隐私的自我审查问卷</a> 已完成，以下是对其中一些有关本规范条目的备注:
 	
-<h2 id="privacy">Privacy Considerations</h2>
+	* <em><a href="https://www.w3.org/TR/security-privacy-questionnaire/#underlying-platform-data">
+		2.6 规范中的特性是否向源(origins)公开了有关底层平台的信息?</a></em>:
+		{{KeyboardEvent/key}} 属性包含用户按下的键的的值。
+		这可以用来推断用户正在使用的启用了特定语言环境（或 [=IME=] ）的键盘。
 
-	The <a href="https://www.w3.org/TR/security-privacy-questionnaire/">Security and Privacy Self-Review Questionairre</a>
-	has been completed with the following notes:
+	* <em><a href=
+		"https://www.w3.org/TR/security-privacy-questionnaire/#legitimate-misuse">
+		3.5 合法滥用(Legitimate Misuse)</a></em>: 一个站点可以捕获所有按键响应，
+		并构建键盘生成的按键值的映射。如果用户键入了足够的按键值(并且没有更改键盘)，
+		那么网站可以尝试将这些值与已知键盘布局的数据库进行匹配，
+		以猜测用户当前的键盘布局。然而，这是对 {{KeyboardEvent/key}} 属性本身
+		(在 [[UIEvents]] 规范中定义)的关注，而不是对本文档中定义的值的关注。
+
+	[[UIEvents]] 规范中解决了与 {{KeyboardEvent/key}} 属性相关的隐私问题。
 	
-	* <em>2.6 Do the features in your specification expose information about the underlying platform to origins?</em>:
-		The {{KeyboardEvent/key}} attribute contains the value of the key that is pressed by the user.
-		This could be used to infer that a user is using a keyboard with a particular locale (or IME)
-		enabled.
+<h2 id="acknowledgements-contributors">致谢</h2>
 
-	* <em>3.5 Legitimate Misuse</em>:
-		A site could capture all keypresses and build a map of the values generated by the keyboard. If the
-		user types enough values (and doesn't change keyboard), then the site could try to match those values
-		against a database of known keyboard layouts to guess the user's current keyboard layout. However,
-		that's a concern for the {{KeyboardEvent/key}} attribute itself (defined in the [[UIEvents]] specification) rather than
-		something specific to the values defined in this document
+	多年来，许多人为 DOM {{KeyboardEvent}} 规范做出了贡献，
+	其中包括 DOM 工作组和 WebApps 工作组的许多参与者。当前的 {{KeyboardEvent/key}}
+	值集是在此期间迭代许多提议和变体的结果。我们特别感谢以下参与者的贡献:
 
-	Privacy concerns associated with the {{KeyboardEvent/key}} attribute are addressed in the [[UIEvents]]
-	specification.
-	
-<h2 id="acknowledgements-contributors">Acknowledgements</h2>
-
-	Over the years, many people contributed to the DOM {{KeyboardEvent}}
-	specifications, including many participants of the DOM Working Group and the
-	WebApps Working Group. The current set of {{KeyboardEvent/key}} values is
-	the result of iterating over many proposals and variations during that time.
-	We especially thank the following participants for their contributions:
-
-	Gary Kacmarcik (Google),
+	Gary Kacmarcik (Google)，
 	Masayuki Nakano (Mozilla)
-	and
-	Travis Leithead (Microsoft).
+	和
+	Travis Leithead (Microsoft)。
