@@ -1091,9 +1091,9 @@ path: stylesheet-extra.include
 		*	安卓键事件键码(Android KeyEvent KEYCODEs) [[AndroidKeycode]]
 
 		BEGIN_KEY_TABLE media-controller
-			KEY_OPT AVRInput						在外部 AVR （音频/视频接收器）上切换输入模式。 
+			KEY_OPT AVRInput						在外部 AVR (音频/视频接收器)上切换输入模式。 
 									(KEYCODE_AVR_INPUT)
-			KEY_OPT AVRPower						外部 AVR（音频/视频接收器）的电源开关。
+			KEY_OPT AVRPower						外部 AVR (音频/视频接收器)的电源开关。
 									(KEYCODE_AVR_POWER)
 			KEY_OPT ColorF0Red					通用彩色编码媒体功能键，索引为 0 (红)。
 									(VK_COLORED_KEY_0, KEYCODE_PROG_RED)
@@ -1122,13 +1122,13 @@ path: stylesheet-extra.include
 									(VK_CLEAR_FAVORITE_2)
 			KEY_OPT FavoriteClear3			清除存储为收藏夹第 3 项的节目或内容。
 									(VK_CLEAR_FAVORITE_3)
-			KEY_OPT FavoriteRecall0			选择（调用）存储为收藏夹第 0 项的节目或内容。
+			KEY_OPT FavoriteRecall0			选择(调用)存储为收藏夹第 0 项的节目或内容。
 									(VK_RECALL_FAVORITE_0)
-			KEY_OPT FavoriteRecall1			选择（调用）存储为收藏夹第 1 项的节目或内容。 
+			KEY_OPT FavoriteRecall1			选择(调用)存储为收藏夹第 1 项的节目或内容。 
 									(VK_RECALL_FAVORITE_1)
-			KEY_OPT FavoriteRecall2			选择（调用）存储为收藏夹第 2 项的节目或内容。 
+			KEY_OPT FavoriteRecall2			选择(调用)存储为收藏夹第 2 项的节目或内容。 
 									(VK_RECALL_FAVORITE_2)
-			KEY_OPT FavoriteRecall3			选择（调用）存储为收藏夹第 3 项的节目或内容。 
+			KEY_OPT FavoriteRecall3			选择(调用)存储为收藏夹第 3 项的节目或内容。 
 									(VK_RECALL_FAVORITE_3)
 			KEY_OPT FavoriteStore0			将当前节目或内容存储为收藏夹第 0 项。 
 									(VK_STORE_FAVORITE_0)
@@ -1148,7 +1148,7 @@ path: stylesheet-extra.include
 									(VK_INFO, KEYCODE_INFO)
 			KEY_OPT InstantReplay				触发即时重播(instant replay)。 
 									(VK_INSTANT_REPLAY)
-			KEY_OPT Link								启动链接内容（如果可用且适当）。 (VK_LINK)
+			KEY_OPT Link								启动链接内容(如果可用且适当)。 (VK_LINK)
 			KEY_OPT ListProgram					列出当前节目。(VK_LIST)
 			KEY_OPT LiveContent					触发当前可看的实时内容或节目的列表显示。 
 									(VK_LIVE)
@@ -1173,9 +1173,9 @@ path: stylesheet-extra.include
 			KEY_OPT NavigateNext				导航到下一个键。 (KEYCODE_NAVIGATE_NEXT)
 			KEY_OPT NavigateOut					导航——出去。 (KEYCODE_NAVIGATE_OUT)
 			KEY_OPT NavigatePrevious		导航到上一个键。 (KEYCODE_NAVIGATE_PREVIOUS)
-			KEY_OPT NextFavoriteChannel	循环到下一个收藏夹频道（在收藏夹列表中）。 
+			KEY_OPT NextFavoriteChannel	循环到下一个收藏夹频道(在收藏夹列表中)。 
 									(VK_NEXT_FAVORITE_CHANNEL)
-			KEY_OPT NextUserProfile			循环到下一个用户主页（如果有多个用户主页）。
+			KEY_OPT NextUserProfile			循环到下一个用户主页(如果有多个用户主页)。
 									(VK_USER)
 			KEY_OPT OnDemand						访问点播内容或节目。 (VK_ON_DEMAND)
 			KEY_OPT Pairing							将按键与设备配对。 (KEYCODE_PAIRING)
@@ -1197,20 +1197,20 @@ path: stylesheet-extra.include
 									但此键码是在遥控器电池电量不足时发送的。(VK_RC_LOW_BATTERY)
 			KEY_OPT RecordSpeedNext			在媒体录制速度之间循环切换。
 									(VK_RECORD_SPEED_NEXT)
-			KEY_OPT RfBypass						触发 RF （射频）输入旁路模式（将 RF 
-									输入直接传递到 RF 输出）。 (VK_RF_BYPASS)
+			KEY_OPT RfBypass						触发 RF (射频)输入旁路模式(将 RF 
+									输入直接传递到 RF 输出)。 (VK_RF_BYPASS)
 			KEY_OPT ScanChannelsToggle	切换到扫描通道模式。 (VK_SCAN_CHANNELS_TOGGLE)
 			KEY_OPT ScreenModeNext			将显示屏模式前进到下一个可用模式。
 									(VK_SCREEN_MODE_NEXT)
 			KEY_OPT Settings						触发设备设置屏幕的显示。 (VK_SETTINGS, 
 									KEYCODE_SETTINGS)
 			KEY_OPT SplitScreenToggle		切换到分屏模式。 (VK_SPLIT_SCREEN_TOGGLE)
-			KEY_OPT STBInput						在外部 STB （机顶盒）上切换输入模式。
+			KEY_OPT STBInput						在外部 STB (机顶盒)上切换输入模式。
 									(KEYCODE_STB_INPUT)
-			KEY_OPT STBPower						外部 STB（机顶盒）的电源开关。
+			KEY_OPT STBPower						外部 STB(机顶盒)的电源开关。
 									(KEYCODE_STB_POWER)
-			KEY_OPT Subtitle						触发字幕的显示（如果可用）。(VK_SUBTITLE)
-			KEY_OPT Teletext						触发图文电视的显示（如果可用）。(VK_TELETEXT, 
+			KEY_OPT Subtitle						触发字幕的显示(如果可用)。(VK_SUBTITLE)
+			KEY_OPT Teletext						触发图文电视的显示(如果可用)。(VK_TELETEXT, 
 									KEYCODE_TV_TELETEXT)
 			KEY_OPT VideoModeNext				将视频模式前进到下一个可用模式。 
 									(VK_VIDEO_MODE_NEXT)
@@ -1334,7 +1334,7 @@ path: stylesheet-extra.include
 	* <em><a href="https://www.w3.org/TR/security-privacy-questionnaire/#underlying-platform-data">
 		2.6 规范中的特性是否向源(origins)公开了有关底层平台的信息?</a></em>:
 		{{KeyboardEvent/key}} 属性包含用户按下的键的的值。
-		这可以用来推断用户正在使用的启用了特定语言环境（或 [=IME=] ）的键盘。
+		这可以用来推断用户正在使用的启用了特定语言环境(或 [=IME=] )的键盘。
 
 	* <em><a href=
 		"https://www.w3.org/TR/security-privacy-questionnaire/#legitimate-misuse">

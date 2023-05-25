@@ -1,19 +1,32 @@
-<h1>UI Events KeyboardEvent key Implementation Report</h1>
+<link href="./override.css" rel="stylesheet" />
+<script defer src="./custom-script.js"></script>
+<script src="./backup-script.js"></script>
 
 <pre class="metadata">
-Shortname: uievents-key-impl
-Level:
+Title: 用户界面事件键盘事件 key 属性实现报告(UI Events KeyboardEvent key Implementation Report)
+Shortname: uievents-key-impl-cn
+Level: none
 Group: webapps
-Status: ED
-ED: https://w3c.github.io/uievents-key/impl-report.html
-Repository: w3c/uievents-key
-Editor: Gary Kacmarcik, Google, garykac@google.com
+Status: UD
+ED: 
+Repository: mangwu/uievents-key-cn
+Boilerplate: repository-issue-tracking off, copyright off, property-index off
+No Editor: true
+Text Macro: DATE 2023年5月25日
+Text Macro: LONGSTATUS 翻译草案
+!本版本: <a href="https://mangwu.github.io/uievents-key-cn/impl-report.html">https://mangwu.github.io/uievents-key-cn/impl-report.html</a>
+!规范反馈: <a href="https://github.com/w3c/uievents-key/issues/">GitHub-w3c-uievents-key-issues</a>
+!翻译反馈: <a href="https://github.com/mangwu/uievents-key-cn/issues/">GitHub-mangwu-uievents-key-cn-issues</a>
+!编辑者: 
+	<a class="p-name fn u-email email" href="mailto:garykac@google.com">Gary Kacmarcik</a>(Google)
+!翻译者: 
+	<a class="p-name fn u-email email" href="mailto:1185956753@qq.com">mangwu</a>
 Abstract:
-	This document reports on implementations of the [[!UIEvents-Key]] specification.
+	本文档报告了 [[!UIEvents-Key]] 规范的实现情况。
 </pre>
 
 <pre class="anchors">
-url: http://www.w3.org/TR/uievents-key/#; type: dfn; spec: uievents-key;
+url: https://mangwu.github.io/uievents-key-cn/#; type: dfn; spec: uievents-key;
 	text: 键属性值
 </pre>
 
@@ -21,105 +34,109 @@ url: http://www.w3.org/TR/uievents-key/#; type: dfn; spec: uievents-key;
 path: stylesheet-extra.include
 </pre>
 
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction">简介</h2>
 
-	The [[!UIEvents-Code]] specification defines the set of values that are valid for use
-	in the {{KeyboardEvent/key}} attribute.
+	[[!UIEvents-Key]] 规范定义了一组可在 {{KeyboardEvent/key}} 
+	属性中使用的有效值集合。
 
-	This document summarizes the current implementation status of the
-	{{KeyboardEvent/key}} attribute and its values.
+	本文档总结了 {{KeyboardEvent/key}} 属性及其值的当前实现状态。
 
-	The following versions of each user agents were tested:
-	* Google Chrome 60.0.3112.113 (OS X 10.12.2, Windows 10, Ubuntu)
-	* Microsoft Edge 40.15063.0.0 (Windows 10)
-	* Mozilla Firefox 55.0 (OS X 10.12.2, Windows 10, Ubuntu) & Nightly 95 (macOS 11.6)
-	* Apple Safari Version 15.0 (macOS 11.6)
+	测试了每个用户代理的以下版本: 
+	* Google Chrome 60.0.3112.113 (Windows 10, OS X 10.12.2, Ubuntu)
+	* Mozilla Firefox 55.0 (Windows 10, OS X 10.12.2, Ubuntu)
+	* Microsoft Edge 83.0.478.58 (Windows 10)
+	* Apple Safari 13.1.1 (OS X 10.14.6)
 
-<h2 id="methodology">Methodology</h2>
+	<div class="note custom-note">
+	从左到右的格式是"厂商 浏览器名称 浏览器版本 
+	(用于测试的一个或多个操作系统及其版本)"。
+	</div>
 
-	Because there is no automated way to test these key press events (expecially
-	considering that international keyboard are often required), these tests were all
-	performed manually.
+<h2 id="methodology">测试方法</h2>
+
+	由于没有自动的方法来测试这些按键事件(特别是考虑到通常需要国际键盘)，
+	这些测试都是手动进行的。
 	
-	There are two kinds of required values for this attribute: Unnamed and Named.
+	此属性( {{KeyboardEvent/key}} )有两种必需值: 未命名(Unnamed)和已命名(Name)。
 	
-	* The Unnamed values can be any valid printable Unicode character. Since there are
-		an extremely large number of these values, it is not practical to test every possible
-		one. Instead, a sampling of 63 of the most common keys are tested.
+	* 未命名的值可以是任何有效的可打印的 Unicode 字符。由于这些值的数量非常大，
+		因此测试每一个可能的值是不现实的。替代方案是，对63个最常见的键进行抽样测试。
 	
-	* There are 38 required Named values and they are all manually tested.
+	* 有38个必需的命名值，它们都是手动测试的。
 	
-	Manual tests were performed by visiting the
-	<a href="https://domeventviewer.com/key-event-viewer.html">domeeventviewer.com/key-event-viewer.html</a>
-	test page and examining the "key" column after pressing the key being tested. To test
-	keys (like "AltGraph") that are only present on keyboards for certain locales,
-	this requires using a keyboard from a locale that contains the key being tested.
+	手动测试是通过访问
+	<a href="https://domeventviewer.com/key-event-viewer.html">
+	domeeventviewer.com/key-event-viewer.html</a> 
+	测试页面并在按下测试键后检查"key"列来执行的。
+	要测试仅存在于特定地区键盘上的键(如"AltGraph")，
+	需要使用包含被测试键的键盘。
 
-	For purposes of this report, Chrome, Firefox and Safari are considered independent
-	implementations.
-
-<h2 id="results">Results</h2>
+	就本报告而言，Chrome、Firefox和Safari被视为独立的实现。
 	
-<h3 id="summary">Summary</h3>
+	<div class="note custom-note">
+	本实现报告不具备实时性，想要获取浏览器实时的 {{KeyboardEvent/key}} 属性值，
+	访问本规范给出的 <a href="https://domeventviewer.com/key-event-viewer.html">
+	domeeventviewer.com/key-event-viewer.html</a> 自己尝试测试。
+	</div>
 
-	Manual tests for all 63 of the sampled Unnamed and all 38 of the Named required values
-	of the {{KeyboardEvent/key}} attribute <b>Pass</b> in at least 2 independent
-	implementations.
+<h2 id="results">结果</h2>
 	
-	The Candidate Recommendation exit criteria are therefore fulfilled.  
+<h3 id="summary">总结</h3>
+
+	在至少2个独立的实现中对 {{KeyboardEvent/key}} 属性 <b>通过(Pass)</b> 
+	的所有63个采样的未命名值(sampled Unnamed)和所有38个必需的命名值
+	(Named required values)进行了手动测试。
 	
-	In addition, the specification describes a number of optional Named values that may be
-	used to support multimedia or legacy keyboards. Of these, manual tests confirm that
-	39 of these Pass in at least 2 independent implementations.
-
-<h3 id="raw-results">Raw Results</h3>
-
-	The following tables present the result of the manual tests.
+	候选推荐标准的校验准则因此完全满足
+	(The Candidate Recommendation exit criteria are therefore fulfilled)
 	
-	Entries marked "Pass" generate the expected value when the corresponding key is
-	pressed.
+	此外，本文档描述了一些可选名称值(optional Named values)，
+	这些可选值在支持多媒体或遗留键盘上被使用。其中，
+	手动测试证实其中39个在至少2个独立的实现中通过。
 
-	Entries marked "Fail" generate some value other than the expected value when the
-	corresponding key is pressed. Wherever possible, a Note is included that provides more
-	information about the failure.
+<h3 id="raw-results">原始结果</h3>
 
-	Entries marked with a "?" have not been tested, typically because devices
-	with that key were not available (for example, because keyboards with those keys are
-	not supported on that platform).
+	下表显示了手动测试的结果。
+	
+	当按下相应的键时，标记为"通过(Pass)"的条目将生成预期值。
 
-	<h4 id="key-attribute">The {{KeyboardEvent/key}} Attribute</h4>
+	当按下相应的键时，标记为"失败(Fail)"的条目会生成一些预期值以外的值。
+	在可能的情况下，表格项会给出一个注释，提供有关失败的更多信息。
 
-		The {{KeyboardEvent/key}} attribute (defined in [[!UIEvents]]) is present in all
-		browsers tested.
+	标有"?"的条目尚未经过测试，通常是因为带有该键的设备不可用
+	(例如，因为带有这些键的键盘在该平台上不受支持)。
+
+	<h4 id="key-attribute">{{KeyboardEvent/key}} 属性</h4>
+
+		{{KeyboardEvent/key}} (在[[!UIEvents]]中定义) 存在于所有测试的浏览器中。
 
 		<table id="key-attribute-impl" class="data-table full-width">
 		<thead><tr>
-			<th>{{KeyboardEvent}} attribute</th>
+			<th>{{KeyboardEvent}} 属性</th>
 			<th class="key-impl-data">Chrome</th>
 			<th class="key-impl-data">Edge</th>
 			<th class="key-impl-data">Firefox</th>
 			<th class="key-impl-data">Safari</th>
-			<th>Notes</th>
+			<th>注释</th>
 		</tr></thead>
 		<tbody>
 		<tr>
 			<td>{{KeyboardEvent/key}}</td>
-			<td class="key-impl-data"><span class="key-impl-yes">Pass</span></td>
-			<td class="key-impl-data"><span class="key-impl-yes">Pass</span></td>
-			<td class="key-impl-data"><span class="key-impl-yes">Pass</span></td>
-			<td class="key-impl-data"><span class="key-impl-yes">Pass</span></td>
+			<td class="key-impl-data"><span class="key-impl-yes">通过</span></td>
+			<td class="key-impl-data"><span class="key-impl-yes">通过</span></td>
+			<td class="key-impl-data"><span class="key-impl-yes">通过</span></td>
+			<td class="key-impl-data"><span class="key-impl-yes">通过</span></td>
 			<td></td>
 		</tr>
 		</tbody></table>
 
-	<h4 id="required-unnamed-key-attribute-values">Required Unnamed Keys</h4>
+	<h4 id="required-unnamed-key-attribute-values">
+	必需的未命名键(Required Unnamed Keys)</h4>
 
-		The {{KeyboardEvent/key}} attribute can contain any character that can be
-		produced by any key in any locale, so it is beyond the scope of this document
-		to attempt to enumerate all possible values that can be contained.
+		{{KeyboardEvent/key}} 属性可以包含任何区域设置中的可以由任何键生成的任何字符
+		，因此尝试枚举所有可能包含的值超出了本文档的范围。
 	
-		This section provides a basic sampling of key types and identifies if those
-		keys are generally supported by the user agent.
+		本节提供基本类型的采样键，并确定用户代理是否大概支持这些键。
 
 			BEGIN_KEY_IMPL_TABLE unnamed keys
 				<!--     Key-name					Chrome	Edge	Firefox	Safari	Notes	-->
@@ -129,16 +146,16 @@ path: stylesheet-extra.include
 				KEY_IMPL_NOLINK Space				Y		Y		Y		Y		
 			END_KEY_IMPL_TABLE
 
-	<h4 id="required-named-key-attribute-values">Required Named Keys</h4>
+	<h4 id="required-named-key-attribute-values">
+	必需的命名键(Required Named Keys)</h4>
 
-		This section lists the basic set of named key attributes that corresponds
-		to values generated by a standard keyboard layout.
+		本节列出了与标准键盘布局生成的值相对应的命名键属性值的基本集合。
 	
 		BEGIN_KEY_IMPL_TABLE required named keys
 			<!--     Key-name					Chrome	Edge	Firefox	Safari	Notes	-->
 			KEY_IMPL Unidentified				Y		Y		Y		Y
 
-			KEY_IMPL_SECTION Modifier Keys
+			KEY_IMPL_SECTION 修饰键
 			KEY_IMPL Alt						Y		Y		Y		Y
 			KEY_IMPL AltGraph					Y		Y		Y		?
 			KEY_IMPL CapsLock					Y		Y		Y		Y
@@ -148,11 +165,11 @@ path: stylesheet-extra.include
 			KEY_IMPL ScrollLock					Y		Y		Y		?
 			KEY_IMPL Shift						Y		Y		Y		Y
 
-			KEY_IMPL_SECTION Whitespace Keys
+			KEY_IMPL_SECTION 空格键
 			KEY_IMPL Enter						Y		Y		Y		Y
 			KEY_IMPL Tab						Y		Y		Y		Y
 
-			KEY_IMPL_SECTION Navigation Keys
+			KEY_IMPL_SECTION 导航按键
 			KEY_IMPL ArrowDown					Y		Y		Y		Y
 			KEY_IMPL ArrowLeft					Y		Y		Y		Y
 			KEY_IMPL ArrowRight					Y		Y		Y		Y
@@ -162,43 +179,43 @@ path: stylesheet-extra.include
 			KEY_IMPL PageDown					Y		Y		Y		Y
 			KEY_IMPL PageUp						Y		Y		Y		Y
 
-			KEY_IMPL_SECTION Editing Keys
+			KEY_IMPL_SECTION 编辑键
 			KEY_IMPL Backspace					Y		Y		Y		Y
 			KEY_IMPL Delete						Y		Y		Y		Y
 			KEY_IMPL Insert						Y		Y		Y		?
 
-			KEY_IMPL_SECTION UI Keys
+			KEY_IMPL_SECTION UI(用户界面)按键
 			KEY_IMPL ContextMenu				Y		Y		Y		?
 			KEY_IMPL Escape						Y		Y		Y		Y
 			KEY_IMPL Pause						Y		Y		Y		?
 
-			KEY_IMPL_SECTION Device Keys
+			KEY_IMPL_SECTION 设备(Device)按键
 			KEY_IMPL PrintScreen				Y		Y		Y		?
 
-			KEY_IMPL_SECTION General-Purpose Function Keys
-			KEY_IMPL F1							Y		Y		Y		Y		Chrome opens help page and doesn't send keyup event
+			KEY_IMPL_SECTION 通用功能键
+			KEY_IMPL F1							Y		Y		Y		Y		Chrome 打开帮助页面，不发送 keyup 事件
 			KEY_IMPL F2							Y		Y		Y		Y
-			KEY_IMPL F3							Y		Y		Y		Y		Chrome/Firefox open Find bar. Chrome doesn't send keyup event
+			KEY_IMPL F3							Y		Y		Y		Y		Chrome/Firefox 打开查找栏。Chrome不发送 keyup 事件
 			KEY_IMPL F4							Y		Y		Y		Y
-			KEY_IMPL F5							Y		Y		Y		Y		Chrome/Firefox refresh page
+			KEY_IMPL F5							Y		Y		Y		Y		Chrome/Firefox 刷新页面
 			KEY_IMPL F6							Y		Y		Y		Y
-			KEY_IMPL F7							Y		Y		Y		Y		Firefox enables/disables Caret Browsing.
+			KEY_IMPL F7							Y		Y		Y		Y		Firefox 启用/禁用指针浏览模式。
 			KEY_IMPL F8							Y		Y		Y		Y
 			KEY_IMPL F9							Y		Y		Y		Y
 			KEY_IMPL F10						Y		Y		Y		Y
-			KEY_IMPL F11						Y		Y		Y		Y		Chrome enters/leaves fullscreen   
-			KEY_IMPL F12						Y		Y		Y		Y		Chome/Firefox open/close debug console.
+			KEY_IMPL F11						Y		Y		Y		Y		Chrome 进入/离开全屏模式  
+			KEY_IMPL F12						Y		Y		Y		Y		Chome/Firefox 打开/关闭调试控制台。
 		END_KEY_IMPL_TABLE
 
-	<h4 id="optional-editing-named-key-attribute-values">Optional Editing Named Keys</h4>
+	<h4 id="optional-editing-named-key-attribute-values">
+	可选的编辑命名键(Optional Editing Named Keys)</h4>
 
-		Since some of these values are dependent on specific keyboards, user agents
-		are not not expected to support all of these values.
+		由于这些值中的一些值依赖于特定的键盘，因此不期望用户代理支持所有这些值。
 
 		BEGIN_KEY_IMPL_TABLE editing named keys
 			<!--     Key-name					Chrome	Edge	Firefox	Safari	Notes	-->
 
-			KEY_IMPL_SECTION Editing Keys
+			KEY_IMPL_SECTION 编辑键
 			KEY_IMPL Clear						Y		Y		Y		?
 			KEY_IMPL Copy						F		F		F		?
 			KEY_IMPL CrSel						Y		Y		Y		?
@@ -209,7 +226,7 @@ path: stylesheet-extra.include
 			KEY_IMPL Redo						F		F		Y		?
 			KEY_IMPL Undo						Y		F		Y		?
 
-			KEY_IMPL_SECTION IME and Composition Keys
+			KEY_IMPL_SECTION 输入法和组合(IME and Composition)键
 			KEY_IMPL AllCandidates				F		F		F		?
 			KEY_IMPL Alphanumeric				Y		F		Y		?
 			KEY_IMPL CodeInput					F		F		F		?
@@ -228,12 +245,12 @@ path: stylesheet-extra.include
 			KEY_IMPL Process					Y		F		F		?
 			KEY_IMPL SingleCandidate			F		F		F		?
 
-			KEY_IMPL_SECTION IME keys specific to Korean keyboards
+			KEY_IMPL_SECTION 韩语键盘专用的输入法键
 			KEY_IMPL HangulMode					Y		F		Y		?
 			KEY_IMPL HanjaMode					Y		F		Y		?
 			KEY_IMPL JunjaMode					Y		Y		Y		?
 
-			KEY_IMPL_SECTION IME keys specific to Japanese keyboards
+			KEY_IMPL_SECTION 日语键盘专用的输入法键
 			KEY_IMPL Eisu						F		F		F		?
 			KEY_IMPL Hankaku					Y		F		Y		?
 			KEY_IMPL Hiragana					Y		F		Y		?
@@ -247,31 +264,30 @@ path: stylesheet-extra.include
 
 		END_KEY_IMPL_TABLE
 
-	<h4 id="optional-device-specific-named-key-attribute-values">Optional Device-specific Named Keys</h4>
+	<h4 id="optional-device-specific-named-key-attribute-values">
+	可选的设备特定的命名键(Optional Device-specific Named Keys)</h4>
 
-		This sections lists named key attributes that correspond to values
-		generated by keys found on specialized keyboards, for example:
-		* Multimedia keyboards
-		* Keyboard with special IME support
-		* Remote control devices
+		本节列出了与专用键盘上的键生成的值相对应的命名键属性值，例如: 
+		* 多媒体键盘
+		* 支持特殊输入法的键盘
+		* 远程控制设备(遥控器)
 		
-		Because of the device-specific nature of these values, it is not expected that
-		user agents will support all of these values
+		由于这些值具有设备特定的性质，预计用户代理不会支持所有这些值
 	
 		BEGIN_KEY_IMPL_TABLE optional named keys
 			<!--     Key-name					Chrome	Edge	Firefox	Safari	Notes	-->
 
-			KEY_IMPL_SECTION Modifier Keys
+			KEY_IMPL_SECTION 修饰键
 			KEY_IMPL Fn							F		F		F		F
 			KEY_IMPL FnLock						F		F		F		F
 			KEY_IMPL Symbol						F		F		F		F
 			KEY_IMPL SymbolLock					F		F		F		F
 
-			KEY_IMPL_SECTION Legacy modifier keys
+			KEY_IMPL_SECTION 遗留修饰键
 			KEY_IMPL Hyper						F		F		F		F
 			KEY_IMPL Super						F		F		F		F
 
-			KEY_IMPL_SECTION UI Keys
+			KEY_IMPL_SECTION UI(用户界面)按键
 			KEY_IMPL Accept						Y		Y		Y		F
 			KEY_IMPL Again						F		F		F		F
 			KEY_IMPL Attn						Y		Y		Y		F
@@ -285,7 +301,7 @@ path: stylesheet-extra.include
 			KEY_IMPL ZoomIn						F		F		F		F
 			KEY_IMPL ZoomOut					F		F		F		F
 
-			KEY_IMPL_SECTION Device Keys
+			KEY_IMPL_SECTION 设备(Device)按键
 			KEY_IMPL BrightnessDown				F		F		F		F
 			KEY_IMPL BrightnessUp				F		F		F		F
 			KEY_IMPL Eject						F		F		F		F
@@ -296,13 +312,13 @@ path: stylesheet-extra.include
 			KEY_IMPL Standby					Y		F		Y		F
 			KEY_IMPL WakeUp						F		F		F		F
 
-			KEY_IMPL_SECTION General-Purpose Function Keys
+			KEY_IMPL_SECTION 通用功能键
 			KEY_IMPL Soft1						F		F		F		F
 			KEY_IMPL Soft2						F		F		F		F
 			KEY_IMPL Soft3						F		F		F		F
 			KEY_IMPL Soft4						F		F		F		F
 
-			KEY_IMPL_SECTION Multimedia Keys
+			KEY_IMPL_SECTION 多媒体按键
 			KEY_IMPL ChannelDown				F		F		F		F
 			KEY_IMPL ChannelUp					F		F		F		F
 			KEY_IMPL Close						F		F		Y		F
@@ -321,15 +337,15 @@ path: stylesheet-extra.include
 			KEY_IMPL MediaTrackPrevious			Y		F		Y		F
 			KEY_IMPL New						F		F		Y		F
 			KEY_IMPL Open						Y		F		Y		F
-			KEY_IMPL Print						F		F		F		F		Firefox returns PrintScreen; Chrome returns Undefined
+			KEY_IMPL Print						F		F		F		F		Firefox返回 PrintScreen; Chrome返回 Undefined 
 			KEY_IMPL Save						F		F		Y		F
 			KEY_IMPL SpellCheck					F		F		F		F
 
-			KEY_IMPL_SECTION Multimedia Numpad Keys
+			KEY_IMPL_SECTION 多媒体数字键盘键
 			KEY_IMPL Key11						F		F		F		F
 			KEY_IMPL Key12						F		F		F		F
 
-			KEY_IMPL_SECTION Audio Keys
+			KEY_IMPL_SECTION 音频键
 			KEY_IMPL AudioBalanceLeft			F		F		F		F
 			KEY_IMPL AudioBalanceRight			F		F		F		F
 			KEY_IMPL AudioBassBoostDown			F		F		F		F
@@ -348,11 +364,11 @@ path: stylesheet-extra.include
 			KEY_IMPL MicrophoneVolumeUp			F		F		F		F
 			KEY_IMPL MicrophoneVolumeMute		F		F		F		F
 
-			KEY_IMPL_SECTION Speech Keys
+			KEY_IMPL_SECTION 语音键
 			KEY_IMPL SpeechCorrectionList		F		F		F		F
 			KEY_IMPL SpeechInputToggle			F		F		F		F
 
-			KEY_IMPL_SECTION Application Keys
+			KEY_IMPL_SECTION 应用程序键
 			KEY_IMPL LaunchApplication1			F		F		F		F
 			KEY_IMPL LaunchApplication2			F		F		F		F
 			KEY_IMPL LaunchCalendar				F		F		F		F
@@ -367,16 +383,16 @@ path: stylesheet-extra.include
 			KEY_IMPL LaunchWebCam				F		F		F		F
 			KEY_IMPL LaunchWordProcessor		F		F		F		F
 
-			KEY_IMPL_SECTION Browser Keys
+			KEY_IMPL_SECTION 浏览器键
 			KEY_IMPL BrowserBack				Y		F		Y		F
-			KEY_IMPL BrowserFavorites			Y		F		F		F		Key handled by browser in Firefox
+			KEY_IMPL BrowserFavorites			Y		F		F		F		键在 Firefox 浏览器中会被处理
 			KEY_IMPL BrowserForward				Y		F		Y		F
 			KEY_IMPL BrowserHome				F		F		F		F
 			KEY_IMPL BrowserRefresh				F		F		F		F
 			KEY_IMPL BrowserSearch				F		F		F		F
 			KEY_IMPL BrowserStop				F		F		F		F
 
-			KEY_IMPL_SECTION Mobile Phone Keys
+			KEY_IMPL_SECTION 移动电话按键
 			KEY_IMPL AppSwitch					F		F		F		F
 			KEY_IMPL Call						F		F		F		F
 			KEY_IMPL Camera						F		F		F		F
@@ -390,7 +406,7 @@ path: stylesheet-extra.include
 			KEY_IMPL MannerMode					F		F		F		F
 			KEY_IMPL VoiceDial					F		F		F		F
 
-			KEY_IMPL_SECTION TV Keys
+			KEY_IMPL_SECTION 电视(TV)按键
 			KEY_IMPL TV							F		F		F		F
 			KEY_IMPL TV3DMode					F		F		F		F
 			KEY_IMPL TVAntennaCable				F		F		F		F
@@ -422,7 +438,7 @@ path: stylesheet-extra.include
 			KEY_IMPL TVTerrestrialDigital		F		F		F		F
 			KEY_IMPL TVTimer					F		F		F		F
 
-			KEY_IMPL_SECTION Media Controller Keys
+			KEY_IMPL_SECTION 媒体控制器按键
 			KEY_IMPL AVRInput					F		F		F		F
 			KEY_IMPL AVRPower					F		F		F		F
 			KEY_IMPL ColorF0Red					F		F		F		F
@@ -497,8 +513,7 @@ path: stylesheet-extra.include
 			KEY_IMPL ZoomToggle					F		F		F		F
 		END_KEY_IMPL_TABLE
 
-<h2 id="acknowledgements-contributors">Acknowledgements</h2>
+<h2 id="acknowledgements-contributors">鸣谢</h2>
 
-	Special thanks to Masayuki Nakano (Mozilla) for his work gathering some of the
-	implementation data that was used in this document - particularly those relating
-	to IMEs and composition.
+	特别感谢 Masayuki Nakano (Mozilla) 收集了一些实现数据(本文档中使用了) —— 
+	特别是与 IMEs 和(输入)组成相关的数据。

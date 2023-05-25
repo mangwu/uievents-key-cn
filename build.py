@@ -70,9 +70,9 @@ class Parser():
 			value = self.impl_info[ua]
 			data = ''
 			if value == 'Y':
-				data = '<span class="key-impl-yes">Pass</span>'
+				data = '<span class="key-impl-yes">通过</span>'
 			elif value == 'F':
-				data = '<span class="key-impl-no">Fail</span>'
+				data = '<span class="key-impl-no">失败</span>'
 			elif value == '?':
 				data = '<span>?</span>'
 			else:
@@ -235,7 +235,7 @@ class Parser():
 			header = '<thead><tr><th>[=键属性值=]</th>'
 			for ua in USER_AGENTS:
 				header += '<th class="key-impl-data">%s</th>' % ua
-			header += '<th>Notes</th></tr></thead>\n'
+			header += '<th>注释</th></tr></thead>\n'
 			return (
 				'<table id="key-table-%s" class="data-table full-width">\n'
 				'%s'
