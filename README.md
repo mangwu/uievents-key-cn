@@ -1,42 +1,44 @@
-# UI Events KeyboardEvent key Values
+# UI 用户界面键盘事件 key 属性值(UI Events KeyboardEvent key Values)
 
-This repository is for the [UI Events key](https://w3c.github.io/uievents-key/)
-specification.
+本仓库属于翻译参考，不具备规范一致性，下面都是对被fork的[源仓库](https://github.com/w3c/uievents-key)的`README.md`的翻译， 本仓库生成的非标准提案包含译者对原规范的理解，不属于规范文档，只能作为学习参考。 翻译链接如下
 
-The there is also an [Implementation Report](https://w3c.github.io/uievents-key/impl-report.html) for this spec.
+1. [UI 用户界面键盘事件 key 属性值](https://mangwu.github.io/uievents-key-cn/)
+2. [实现报告](https://mangwu.github.io/uievents-key-cn/impl-report.html)
 
-## Building
+此fork仓库的源仓库用于编写  [UI Events key](https://w3c.github.io/uievents-key/) 规范。 
 
-This spec was created using [bikeshed](https://github.com/tabatkins/bikeshed).
-If you would like to contribute edits, please make sure that your changes
-build correctly.
+该规范还包含一份 [实现报告](https://w3c.github.io/uievents-key/impl-report.html)。
 
-To **build** this spec:
+## 构建
 
-1. Clone this repo into a local directory.
-1. Install [bikeshed](https://github.com/tabatkins/bikeshed)
-1. Run `python build.py` in your local directory.
+此规范是使用 [bikeshed](https://github.com/tabatkins/bikeshed) 创建的。
+如果您想贡献编辑，请确保您的更改能正确生成。
 
-To **make edits** to the spec:
+要**构建**此规范，请执行以下操作:
 
-1. Edit the `index-source.txt` file.
-2. Build (as above). This will update the `index.bs` and `index.html` files.
+1. 将此仓库克隆到本地目录中。
+1. 安装 [bikeshed](https://github.com/tabatkins/bikeshed)
+1. 在本地目录中运行`python build.py`。
 
-When submitting pull requests, make sure you don't include the `index.bs`
-file in your changelist - it's part of `.gitignore` so that you don't include
-it accidentally. All changes should be made in the `index-source.txt`
-file.
+要编辑本规范，请执行以下操作:
 
-To **update the implementation report**:
+1. 编辑 `index-source.txt` 文件。
+2. 构建 (上面的构建操作)。构建成功后会创建 `index.bs` 和 `index.html` 文件.
 
-1. Edit the `impl-report.txt` file.
-2. Build (as above). This will update the `impl-report.bs` and `impl-report.html` files.
+提交 pull 请求时，请确保您的变更列表中没有包含 `index.bs` 文件——它是
+`.gitignore` 的一部分，这样您就不会意外包含它。所有更改都应在
+`index-source.txt`文件中进行。
 
-As with the `index.bs` file, make sure you don't check in the `impl-report.bs` file.
-It is also listed in the `.gitignore` file.
+要**更新实现报告**，请执行以下操作
 
-## Visitors Who Read This Spec Also Read
+1. 编辑 `impl-report.txt` 文件。
+2. 构建 (上面的构建操作)。构建成功后会创建 `impl-report.bs` 和`impl-report.html` 文件。
+
+与 `index.bs` 文件一样，请确保您没有拉入 `impl-port.bs` 文件。
+它也列在 `.gitignore` 文件中。
+
+## 阅读本规范的读者也阅读
 
 * UI Events : [Github project](https://github.com/w3c/uievents/), [Link to spec](https://w3c.github.io/uievents/)
-* UI Events KeyboardEvent code Values : [Github project](https://github.com/w3c/uievents-code/), [Link to spec](https://w3c.github.io/uievents-code/)
+* UI Events KeyboardEvent code Values : [Github 项目](https://github.com/w3c/uievents-code/), [规范链接](https://w3c.github.io/uievents-code/)
 
