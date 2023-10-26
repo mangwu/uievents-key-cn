@@ -1258,7 +1258,7 @@ path: stylesheet-extra.include
 			KEY_DUP_OPT MediaStop						停止播放、暂停、快进、回退或录制媒体
 									(如果尚未停止)。 (VK_STOP)
 			KEY_DUP_OPT MediaPause					暂停当前播放的媒体。 (VK_PAUSE)
-			KEY_DUP_OPT MediaNextTrack			查找下一个媒体或节目(program track)。 
+			KEY_DUP_OPT MediaTrackNext			查找下一个媒体或节目(program track)。 
 									(VK_TRACK_NEXT)
 			KEY_DUP_OPT MediaTrackPrevious	查找上一个媒体或节目(program track)。 
 									(VK_TRACK_PREV)
